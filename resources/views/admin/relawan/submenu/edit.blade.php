@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Edit Submenu Donor')
+@section('title', 'Edit Submenu Relawan')
 
 @section('content')
 <div class="bg-white rounded-lg shadow-md p-6">
@@ -10,7 +10,7 @@
         <div>
             <ol class="breadcrumb mb-0">
                 <li class="breadcrumb-item">
-                    <a href="{{ route('admin.donor-submenu.index') }}"
+                    <a href="{{ route('admin.relawan-submenu.index') }}"
                        class="text-danger fw-semibold text-decoration-none">
                         <i class="bi bi-arrow-left-circle me-1"></i>
                         Kembali ke Daftar Submenu
@@ -24,7 +24,7 @@
     </div>
 
     <h2 class="text-danger text-center fw-bold mb-4">
-        Edit Submenu Donor Darah
+        Edit Submenu Relawan
     </h2>
 
     {{-- Alert --}}

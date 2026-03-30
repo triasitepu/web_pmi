@@ -6,12 +6,12 @@
 <div class="bg-white rounded-lg shadow-md p-6">
 
   <div class="d-flex justify-content-between align-items-center mb-4">
-    <h2 class="fw-bold fs-3 mb-0" style="color: #0d6efd;">
+    <h2 class="fw-bold fs-3 mb-0" style="color: #d60100;">
       Kelola Submenu Relawan
     </h2>
 
     <a href="{{ route('admin.relawan-submenu.create') }}"
-       class="btn btn-primary shadow-sm px-4 py-2 fw-semibold">
+       class="btn btn-danger shadow-sm px-4 py-2 fw-semibold">
       <i class="bi bi-plus-circle me-2"></i> Tambah Submenu
     </a>
   </div>
@@ -24,7 +24,7 @@
 
   <div class="table-responsive">
     <table class="table table-bordered table-striped align-middle table-hover">
-      <thead class="text-center text-white" style="background-color: #0d6efd;">
+      <thead class="text-center text-white" style="background-color: #d60100;">
         <tr>
           <th style="width:5%">No</th>
           <th>Nama Submenu</th>

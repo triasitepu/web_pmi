@@ -1,8 +1,9 @@
-    <?php
+<?php
 
-    namespace App\Http\Controllers;
+namespace App\Http\Controllers;
 
     use App\Models\Relawan;
+    use App\Models\SubmenuRelawan;
     use Illuminate\Http\Request;
     use Illuminate\Support\Str;
 
@@ -10,8 +11,10 @@
     {
         public function index()
         {
-            $relawans = Relawan::latest()->get();
-            return view('admin.relawan.index', compact('relawans'));
+            $relawanSubmenus = SubmenuRelawan::with('relawan')
+                                ->orderBy('urutan', 'asc')
+                                ->get();
+            return view('admin.relawan.menu', compact('relawanSubmenus'));
         }
 
         public function create()

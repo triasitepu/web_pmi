@@ -174,11 +174,12 @@ Route::middleware(['auth', 'role:admin,superadmin'])
         | SUBMENU RELAWAN (CRUD)
         |--------------------------------------------------------------------------
         */
-         Route::prefix('relawan/{relawan}/submenu')->name('relawan-submenu.')->group(function () {
+         Route::prefix('relawan-submenu')->name('relawan-submenu.')->group(function () {
 
             Route::get('/', [SubmenuRelawanController::class, 'index'])->name('index');
             Route::get('/create', [SubmenuRelawanController::class, 'create'])->name('create');
             Route::post('/', [SubmenuRelawanController::class, 'store'])->name('store');
+            Route::get('/{id}', [SubmenuRelawanController::class, 'show'])->name('show');
             Route::get('/{id}/edit', [SubmenuRelawanController::class, 'edit'])->name('edit');
             Route::put('/{id}', [SubmenuRelawanController::class, 'update'])->name('update');
             Route::delete('/{id}', [SubmenuRelawanController::class, 'destroy'])->name('destroy');

@@ -22,7 +22,7 @@ class SubmenuRelawanController extends Controller
     public function create()
     {
         $relawans = Relawan::all();
-        return view('admin.relawan.submenu.create', compact('relawans'));
+        return view('admin.relawan.submenu.tambah', compact('relawans'));
     }
 
     public function store(Request $request)
@@ -50,7 +50,7 @@ class SubmenuRelawanController extends Controller
 
         $submenu->save();
 
-        return redirect()->route('admin.submenu-relawan.index')
+        return redirect()->route('admin.relawan-submenu.index')
             ->with('success', 'Submenu Relawan berhasil ditambahkan');
     }
 
@@ -94,8 +94,15 @@ class SubmenuRelawanController extends Controller
 
         $submenu->save();
 
-        return redirect()->route('admin.submenu-relawan.index')
+        return redirect()->route('admin.relawan-submenu.index')
             ->with('success', 'Submenu Relawan berhasil diupdate');
+    }
+
+    public function show($id)
+    {
+        $submenu = SubmenuRelawan::findOrFail($id);
+
+        return view('admin.relawan.submenu.show', compact('submenu'));
     }
 
     public function destroy($id)
@@ -108,7 +115,7 @@ class SubmenuRelawanController extends Controller
 
         $submenu->delete();
 
-        return redirect()->route('admin.submenu-relawan.index')
+        return redirect()->route('admin.relawan-submenu.index')
             ->with('success', 'Submenu Relawan berhasil dihapus');
     }
 }

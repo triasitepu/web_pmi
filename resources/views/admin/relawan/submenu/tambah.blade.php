@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Tambah Submenu Donor Darah')
+@section('title', 'Tambah Submenu Relawan')
 
 @section('content')
 <div class="bg-white rounded-lg shadow-md p-6">
@@ -10,12 +10,12 @@
     <div>
       <ol class="breadcrumb mb-0">
         <li class="breadcrumb-item">
-          <a href="{{ route('admin.donor.index') }}" class="text-danger fw-semibold text-decoration-none">
-            <i class="bi bi-arrow-left-circle me-1"></i> Daftar Donor Darah
+          <a href="{{ route('admin.relawan-submenu.index') }}" class="text-danger fw-semibold text-decoration-none">
+            <i class="bi bi-arrow-left-circle me-1"></i> Daftar Submenu Relawan
           </a>
         </li>
         <li class="breadcrumb-item active text-muted" aria-current="page">
-          Tambah Submenu Donor Darah
+          Tambah Submenu Relawan
         </li>
       </ol>
     </div>
@@ -23,7 +23,7 @@
 
   {{-- Judul --}}
   <h2 class="text-danger text-center text-2xl font-bold mb-4">
-    Tambah Submenu Donor Darah Baru
+    Tambah Submenu Relawan Baru
   </h2>
 
   {{-- Pesan sukses/error --}}
@@ -34,19 +34,19 @@
   @endif
 
   {{-- Form Tambah --}}
-  <form action="{{ route('admin.donor-submenu.store') }}" method="POST">
+  <form action="{{ route('admin.relawan-submenu.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
 
-    {{-- Pilih Donor Darah --}}
+    {{-- Pilih Relawan --}}
     <div class="mb-3">
-      <label for="donor_darah_id" class="form-label fw-semibold">Pilih Donor Darah</label>
-      <select name="donor_darah_id" id="donor_darah_id" class="form-select w-100" required>
-        <option value="" disabled selected>-- Pilih Kategori --</option>
-        @foreach($donorMenus as $donor)
-          <option value="{{ $donor->id }}">{{ $donor->nama ?? 'Donor ' . $donor->id }}</option>
+      <label for="relawan_id" class="form-label fw-semibold">Pilih Relawan</label>
+      <select name="relawan_id" id="relawan_id" class="form-select w-100" required>
+        <option value="" disabled selected>-- Pilih Relawan --</option>
+        @foreach($relawans as $relawan)
+          <option value="{{ $relawan->id }}">{{ $relawan->nama_menu ?? 'Relawan ' . $relawan->id }}</option>
         @endforeach
       </select>
-      @error('donor_darah_id')
+      @error('relawan_id')
         <div class="text-danger small mt-1">{{ $message }}</div>
       @enderror
     </div>
@@ -59,11 +59,42 @@
         name="nama_submenu"
         id="nama_submenu"
         class="form-control w-100"
-        placeholder="Masukkan nama submenu donor darah"
+        placeholder="Masukkan nama submenu relawan"
         value="{{ old('nama_submenu') }}"
         required
       >
       @error('nama_submenu')
+        <div class="text-danger small mt-1">{{ $message }}</div>
+      @enderror
+    </div>
+
+    {{-- Input Isi --}}
+    <div class="mb-3">
+      <label for="isi" class="form-label fw-semibold">Isi</label>
+      <textarea
+        name="isi"
+        id="isi"
+        class="form-control w-100"
+        placeholder="Masukkan isi submenu"
+        rows="5"
+        required
+      >{{ old('isi') }}</textarea>
+      @error('isi')
+        <div class="text-danger small mt-1">{{ $message }}</div>
+      @enderror
+    </div>
+
+    {{-- Input Foto --}}
+    <div class="mb-3">
+      <label for="foto" class="form-label fw-semibold">Foto (Opsional)</label>
+      <input
+        type="file"
+        name="foto"
+        id="foto"
+        class="form-control w-100"
+        accept="image/*"
+      >
+      @error('foto')
         <div class="text-danger small mt-1">{{ $message }}</div>
       @enderror
     </div>
