@@ -21,10 +21,14 @@ class SubmenuDonorController extends Controller
 
     public function show($slug)
     {
+        $submenus = SubmenuDonor::with('donor')
+                    ->orderBy('urutan', 'asc')
+                    ->get();
+
         $submenu = SubmenuDonor::where('slug', $slug)->firstOrFail();
         $kontens = $submenu->kontens()->latest()->get();
 
-        return view('admin.donor.submenu.index', compact('submenu', 'kontens'));
+        return view('admin.donor.submenu.index', compact('submenus', 'submenu', 'kontens'));
     }
 
     public function create()

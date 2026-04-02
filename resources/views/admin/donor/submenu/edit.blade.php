@@ -24,7 +24,7 @@
     </div>
 
     <h2 class="text-danger text-center fw-bold mb-4">
-        Edit Submenu Donor Darah
+        Edit Submenu {{ $submenu->nama_submenu }}
     </h2>
 
     {{-- Alert --}}
@@ -52,7 +52,21 @@
         @csrf
         @method('PUT')
 
-
+        {{-- Pilih Donor Darah --}}
+        <div class="mb-3">
+            <label for="donor_darah_id" class="form-label fw-semibold">Pilih Donor Darah</label>
+            <select name="donor_darah_id" id="donor_darah_id" class="form-select @error('donor_darah_id') is-invalid @enderror" required>
+                <option value="" disabled>-- Pilih Donor Darah --</option>
+                @foreach($donorMenus as $donor)
+                    <option value="{{ $donor->id }}" {{ old('donor_darah_id', $submenu->donor_darah_id) == $donor->id ? 'selected' : '' }}>
+                        {{ $donor->nama_menu ?? 'Donor ' . $donor->id }}
+                    </option>
+                @endforeach
+            </select>
+            @error('donor_darah_id')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
 
         {{-- Nama Submenu --}}
         <div class="mb-3">

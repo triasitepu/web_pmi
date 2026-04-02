@@ -12,7 +12,7 @@
         <li class="breadcrumb-item">
           <a href="{{ route('admin.relawan-submenu.index') }}" 
              class="text-danger fw-semibold text-decoration-none">
-            <i class="bi bi-arrow-left-circle me-1"></i> Daftar Submenu Relawan
+            <i class="bi bi-arrow-left-circle me-1"></i> Daftar Submenu
           </a>
         </li>
         <li class="breadcrumb-item active text-muted">
@@ -32,10 +32,16 @@
          class="btn btn-warning btn-sm">
         <i class="bi bi-pencil-square me-1"></i> Edit
       </a>
-      <a href="{{ route('admin.relawan-submenu.index') }}" 
-         class="btn btn-secondary btn-sm">
-        <i class="bi bi-arrow-left me-1"></i> Kembali
-      </a>
+      <form action="{{ route('admin.relawan-submenu.destroy', $submenu->id) }}" 
+            method="POST" 
+            class="d-inline"
+            onsubmit="return confirm('Yakin ingin menghapus submenu ini?')">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="btn btn-danger btn-sm">
+          <i class="bi bi-trash me-1"></i> Hapus
+        </button>
+      </form>
     </div>
   </div>
 
@@ -116,21 +122,7 @@
         </div>
       </div>
 
-      {{-- Aksi --}}
-      <div class="mt-4">
-        <button type="button" class="btn btn-warning" onclick="editSubmenu()">
-          <i class="bi bi-pencil-square me-1"></i> Edit Submenu
-        </button>
-        <button type="button" class="btn btn-danger" onclick="deleteSubmenu()">
-          <i class="bi bi-trash me-1"></i> Hapus Submenu
-        </button>
-        <a href="{{ route('admin.relawan-submenu.index') }}" class="btn btn-secondary">
-          <i class="bi bi-arrow-left me-1"></i> Kembali
-        </a>
-      </div>
-    </div>
-  </div>
-
+      
 </div>
 
 <script>

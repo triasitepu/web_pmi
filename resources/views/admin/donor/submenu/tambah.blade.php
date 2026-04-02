@@ -37,9 +37,9 @@
   <form action="{{ route('admin.donor-submenu.store') }}" method="POST">
     @csrf
 
-    {{-- Pilih Donor Darah --}}
+    {{-- Pilih Kategori --}}
     <div class="mb-3">
-      <label for="donor_darah_id" class="form-label fw-semibold">Pilih Donor Darah</label>
+      <label for="donor_darah_id" class="form-label fw-semibold">Pilih Kategori</label>
       <select name="donor_darah_id" id="donor_darah_id" class="form-select w-100" required>
         <option value="" disabled selected>-- Pilih Kategori --</option>
         @foreach($donorMenus as $donor)
@@ -80,6 +80,38 @@
         value="{{ old('urutan', 0) }}"
         min="0"
       >
+    </div>
+
+    {{-- Input Isi/Konten --}}
+    <div class="mb-3">
+      <label for="isi" class="form-label fw-semibold">Isi/Konten</label>
+      <textarea
+        name="isi"
+        id="isi"
+        class="form-control w-100"
+        rows="5"
+        placeholder="Masukkan konten submenu donor darah"
+        required
+      >{{ old('isi') }}</textarea>
+      @error('isi')
+        <div class="text-danger small mt-1">{{ $message }}</div>
+      @enderror
+    </div>
+
+    {{-- Upload Foto --}}
+    <div class="mb-3">
+      <label for="foto" class="form-label fw-semibold">Foto (Opsional)</label>
+      <input
+        type="file"
+        name="foto"
+        id="foto"
+        class="form-control w-100"
+        accept="image/*"
+      >
+      <small class="text-muted">Format: JPG, JPEG, PNG. Ukuran maksimal: 2MB</small>
+      @error('foto')
+        <div class="text-danger small mt-1">{{ $message }}</div>
+      @enderror
     </div>
 
     {{-- Tombol Simpan --}}

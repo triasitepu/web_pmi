@@ -63,18 +63,12 @@
 
     <hr class="opacity-50">
 
-    {{-- DIKLAT PMI --}}
-    <a href="#" class="nav-link text-white">
-      <i class="bi bi-heart-pulse me-2"></i>
-      Diklat PMI
-    </a>
-
     {{-- RELAWAN PMI --}}
     <div class="nav-item">
       <a class="nav-link text-white"
          href="{{ route('admin.relawan-submenu.index') }}">
         <i class="bi bi-people me-2"></i>
-        Relawan PMI
+        Kelola Relawan
       </a>
 
       @if($relawanSubmenus->isNotEmpty())
@@ -82,7 +76,7 @@
           @foreach($relawanSubmenus as $submenu)
             <li class="nav-item">
               <a class="nav-link text-white small"
-                 href="{{ route('admin.relawan-submenu.index', $submenu->id) }}">
+                 href="{{ route('admin.relawan-submenu.show', $submenu->id) }}">
                 <i class="bi bi-file-earmark-text me-2"></i>
                 {{ $submenu->nama_submenu }}
               </a>
@@ -93,7 +87,11 @@
     </div>
 
     <hr class="opacity-50">
-
+    {{-- DIKLAT PMI --}}
+    <a href="#" class="nav-link text-white">
+      <i class="bi bi-heart-pulse me-2"></i>
+      Diklat PMI
+    </a>
     {{-- KEBENCANAAN --}}
     <a href="#" class="nav-link text-white">
       <i class="bi bi-heart-pulse me-2"></i>

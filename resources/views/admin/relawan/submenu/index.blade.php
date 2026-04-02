@@ -9,8 +9,7 @@
   <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-3">
     <div>
       <ol class="breadcrumb mb-0">
-        <li class="breadcrumb-item active text-muted">
-          <i class="bi bi-file-earmark-text me-1"></i> Detail Submenu Relawan
+        <li class="text-danger text-2xl font-bold"> Daftar Submenu Relawan
         </li>
       </ol>
     </div>
@@ -21,12 +20,6 @@
     </div>
   </div>
 
-  {{-- Judul Halaman --}}
-  <div class="mb-4">
-    <h2 class="text-danger text-2xl font-bold">
-      <i class="bi bi-file-earmark-text me-2"></i>Detail Submenu Relawan
-    </h2>
-  </div>
 
   {{-- Alert --}}
   @if(session('success'))
@@ -41,143 +34,85 @@
     </div>
   @endif
 
-  {{-- Selector Submenu --}}
-  <div class="card border-0 shadow-sm mb-4">
-    <div class="card-body">
-      <label for="submenuSelect" class="form-label fw-bold mb-2">
-        <i class="bi bi-list-ul me-1"></i>Pilih Submenu
-      </label>
-      <select class="form-select form-select-lg" id="submenuSelect" onchange="ubahSubmenu(this.value)">
-        <option value="">-- Pilih Submenu --</option>
-        @forelse($submenus as $submenu)
-          <option value="{{ $submenu->id }}">
-            {{ $submenu->relawan->nama ?? 'N/A' }} - {{ $submenu->nama_submenu }}
-          </option>
-        @empty
-          <option disabled>Tidak ada data submenu</option>
-        @endforelse
-      </select>
-    </div>
-  </div>
+  {{-- Table --}}
+   <div class="table-responsive">
+    <table class="table table-bordered table-striped align-middle table-hover">
+      <thead class="text-center text-white" style="background-color: #d60100;">
+        <tr>
+          <th style="width:5%">No</th>
+          <th>Judul</th>
+          <th>Isi</th>
+          <th>Foto</th>
+          <th>Status</th>
+          <th style="width:25%">Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        @forelse($submenus as $key => $submenu)
+        <tr>
+          <td class="text-center">{{ $key + 1 }}</td>
+          {{-- Judul --}}
+          <td>{{ $submenu->nama_submenu }}</td>
 
-  {{-- Detail Submenu --}}
-  <div id="detailContainer">
-    @if($submenus->count() > 0)
-      @php $firstSubmenu = $submenus->first(); @endphp
-      <div class="row" id="submenuDetail">
-        {{-- Foto --}}
-        <div class="col-md-4">
-          <div class="card border-0 shadow-sm">
-            @if($firstSubmenu->foto)
-              <img src="{{ asset('storage/' . $firstSubmenu->foto) }}" 
-                   alt="{{ $firstSubmenu->nama_submenu }}" 
-                   class="card-img-top" 
-                   style="height: 300px; object-fit: cover;">
+          {{-- Isi dipotong agar tidak terlalu panjang --}}
+          <td>
+            {{ \Illuminate\Support\Str::limit(strip_tags($submenu->isi), 100) }}
+          </td>
+
+          {{-- Foto --}}
+          <td class="text-center">
+            @if($submenu->foto)
+              <img src="{{ asset('storage/' . $submenu->foto) }}" 
+                   alt="Foto" 
+                   width="100" 
+                   class="img-thumbnail">
             @else
-              <div class="card-img-top bg-light d-flex align-items-center justify-content-center" 
-                   style="height: 300px;">
-                <div class="text-center text-muted">
-                  <i class="bi bi-image" style="font-size: 3rem;"></i>
-                  <p class="mt-2">Tidak ada foto</p>
-                </div>
-              </div>
+              <span class="text-muted">Tidak ada foto</span>
             @endif
-            <div class="card-body">
-              <h6 class="text-muted mb-2">Informasi</h6>
-              <table class="table table-sm table-borderless">
-                <tr>
-                  <td class="text-muted" style="width: 40%;">Relawan:</td>
-                  <td><span class="badge bg-info">{{ $firstSubmenu->relawan->nama ?? 'N/A' }}</span></td>
-                </tr>
-                <tr>
-                  <td class="text-muted">Urutan:</td>
-                  <td><strong>{{ $firstSubmenu->urutan ?? '-' }}</strong></td>
-                </tr>
-                <tr>
-                  <td class="text-muted">Status:</td>
-                  <td>
-                    @if($firstSubmenu->is_active)
-                      <span class="badge bg-success">Aktif</span>
-                    @else
-                      <span class="badge bg-secondary">Tidak Aktif</span>
-                    @endif
-                  </td>
-                </tr>
-                <tr>
-                  <td class="text-muted">Dibuat:</td>
-                  <td>{{ $firstSubmenu->created_at?->format('d M Y H:i') ?? '-' }}</td>
-                </tr>
-                <tr>
-                  <td class="text-muted">Diupdate:</td>
-                  <td>{{ $firstSubmenu->updated_at?->format('d M Y H:i') ?? '-' }}</td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div>
+          </td>
 
-        {{-- Konten --}}
-        <div class="col-md-8">
-          <div class="card border-0 shadow-sm">
-            <div class="card-header bg-danger text-white">
-              <h5 class="mb-0">{{ $firstSubmenu->nama_submenu }}</h5>
-            </div>
-            <div class="card-body">
-              <h6 class="text-muted mb-3">Konten</h6>
-              <div class="border p-4 rounded bg-light">
-                {!! $firstSubmenu->isi !!}
-              </div>
-            </div>
-          </div>
+          {{-- Status --}}
+          <td class="text-center">
+            @if($submenu->is_active)
+              <span class="badge bg-success">Aktif</span>
+            @else
+              <span class="badge bg-secondary">Tidak Aktif</span>
+            @endif
+          </td>
 
           {{-- Aksi --}}
-          <div class="mt-4">
-            <a href="{{ route('admin.relawan-submenu.edit', $firstSubmenu->id) }}" class="btn btn-warning">
-              <i class="bi bi-pencil-square me-1"></i> Edit Submenu
+          <td class="text-center">
+            <a href="{{ route('admin.relawan-submenu.show', $submenu->id) }}" 
+               class="btn btn-info btn-sm">
+              <i class="bi bi-eye"></i> Detail
             </a>
-            <button type="button" class="btn btn-danger" onclick="deleteSubmenu({{ $firstSubmenu->id }})">
-              <i class="bi bi-trash me-1"></i> Hapus Submenu
-            </button>
-          </div>
-        </div>
-      </div>
-    @else
-      <div class="alert alert-info text-center py-5">
-        <i class="bi bi-info-circle me-2" style="font-size: 2rem;"></i>
-        <p class="mt-2">Belum ada submenu. <a href="{{ route('admin.relawan-submenu.create') }}">Buat submenu baru</a></p>
-      </div>
-    @endif
+            <a href="{{ route('admin.relawan-submenu.edit', $submenu->id) }}" 
+               class="btn btn-warning btn-sm">
+              <i class="bi bi-pencil-square"></i> Edit
+            </a>
+            {{-- Hapus --}}
+            <form action="{{ route('admin.relawan-submenu.destroy', $submenu->id) }}" 
+                  method="POST" 
+                  class="d-inline"
+                  onsubmit="return confirm('Yakin ingin menghapus submenu ini?')">
+              @csrf
+              @method('DELETE')
+              <button type="submit" class="btn btn-danger btn-sm">
+                <i class="bi bi-trash"></i> Hapus
+              </button>
+            </form>
+          </td>
+        </tr>
+        @empty
+        <tr>
+          <td colspan="6" class="text-center py-4">
+            <i class="bi bi-info-circle me-2"></i>Belum ada data submenu
+          </td>
+        </tr>
+        @endforelse
+      </tbody>
+    </table>
   </div>
 
 </div>
-
-<script>
-@php
-  $showRouteTemplate = route('admin.relawan-submenu.show', ['id' => 'SUBMENU_ID']);
-  $destroyRouteTemplate = route('admin.relawan-submenu.destroy', ['id' => 'SUBMENU_ID']);
-@endphp
-
-function ubahSubmenu(submenuId) {
-  if (submenuId === '') {
-    location.reload();
-    return;
-  }
-  const url = "{{ $showRouteTemplate }}".replace('SUBMENU_ID', submenuId);
-  window.location.href = url;
-}
-
-function deleteSubmenu(submenuId) {
-  if (confirm('Yakin ingin menghapus submenu ini?')) {
-    const form = document.createElement('form');
-    form.method = 'POST';
-    form.action = "{{ $destroyRouteTemplate }}".replace('SUBMENU_ID', submenuId);
-    form.innerHTML = `
-      @csrf
-      @method('DELETE')
-    `;
-    document.body.appendChild(form);
-    form.submit();
-  }
-}
-</script>
 @endsection

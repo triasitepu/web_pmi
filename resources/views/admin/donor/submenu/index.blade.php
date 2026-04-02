@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Kelola Submenu Donor')
+@section('title', 'Detail Submenu Donor')
 
 @section('content')
 <div class="bg-white rounded-lg shadow-md p-6">
@@ -12,7 +12,7 @@
         <li class="breadcrumb-item">
           <a href="{{ route('admin.donor-submenu.index') }}" 
              class="text-danger fw-semibold text-decoration-none">
-            <i class="bi bi-arrow-left-circle me-1"></i> Daftar Submenu Donor Darah
+            <i class="bi bi-arrow-left-circle me-1"></i> Daftar Submenu Donor
           </a>
         </li>
         <li class="breadcrumb-item active text-muted">
@@ -22,77 +22,117 @@
     </div>
   </div>
 
-  {{-- Judul Halaman --}}
+  {{-- Judul --}}
   <div class="d-flex justify-content-between align-items-center mb-4">
     <h2 class="text-danger text-2xl font-bold">
-      Konten Submenu: {{ $submenu->nama_submenu }}
+      <i class="bi bi-file-earmark-text me-2"></i>{{ $submenu->nama_submenu }}
     </h2>
+
+    {{-- Aksi --}}
+    <div>
+      <a href="{{ route('admin.donor-submenu.edit', $submenu->id) }}" 
+         class="btn btn-warning btn-sm">
+        <i class="bi bi-pencil-square me-1"></i> Edit
+      </a>
+
+      <form action="{{ route('admin.donor-submenu.destroy', $submenu->id) }}" 
+            method="POST" 
+            class="d-inline"
+            onsubmit="return confirm('Yakin ingin menghapus submenu ini?')">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="btn btn-danger btn-sm">
+          <i class="bi bi-trash me-1"></i> Hapus
+        </button>
+      </form>
+    </div>
   </div>
 
   {{-- Alert --}}
   @if(session('success'))
-    <div class="alert alert-success">{{ session('success') }}</div>
+    <div class="alert alert-success alert-dismissible fade show">
+      <i class="bi bi-check-circle me-2"></i>{{ session('success') }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
   @elseif(session('error'))
-    <div class="alert alert-danger">{{ session('error') }}</div>
+    <div class="alert alert-danger alert-dismissible fade show">
+      <i class="bi bi-exclamation-circle me-2"></i>{{ session('error') }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
   @endif
 
-  {{-- Table --}}
-  <div class="table-responsive">
-    <table class="table table-bordered table-striped align-middle">
-      <thead class="table-danger text-center">
-        <tr>
-          <th style="width:5%">No</th>
-          <th>Judul</th>
-          <th>Isi</th>
-          <th>Foto</th>
-          <th style="width:20%">Aksi</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="text-center">1</td>
+  {{-- Detail --}}
+  <div class="row">
 
-          {{-- Judul --}}
-          <td>{{ $submenu->nama_submenu }}</td>
+    {{-- FOTO + INFO --}}
+    <div class="col-md-4">
+      <div class="card border-0 shadow-sm">
 
-          {{-- Isi dipotong agar tidak terlalu panjang --}}
-          <td>
-            {{ \Illuminate\Support\Str::limit(strip_tags($submenu->isi), 100) }}
-          </td>
+        @if($submenu->foto)
+          <img src="{{ asset('storage/' . $submenu->foto) }}" 
+               class="card-img-top"
+               style="height: 300px; object-fit: cover;">
+        @else
+          <div class="card-img-top bg-light d-flex align-items-center justify-content-center" 
+               style="height: 300px;">
+            <div class="text-center text-muted">
+              <i class="bi bi-image" style="font-size: 3rem;"></i>
+              <p class="mt-2">Tidak ada foto</p>
+            </div>
+          </div>
+        @endif
 
-          {{-- Foto --}}
-          <td class="text-center">
-            @if($submenu->foto)
-              <img src="{{ asset('storage/' . $submenu->foto) }}" 
-                   alt="Foto" 
-                   width="100" 
-                   class="img-thumbnail">
-            @else
-              <span class="text-muted">Tidak ada foto</span>
-            @endif
-          </td>
+        <div class="card-body">
+          <h6 class="text-muted mb-2">Informasi</h6>
+          <table class="table table-sm table-borderless">
+            <tr>
+              <td class="text-muted" style="width: 40%;">Donor:</td>
+              <td>
+                <span class="badge bg-info">
+                  {{ $submenu->donor->nama_menu ?? 'N/A' }}
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-muted">Urutan:</td>
+              <td><strong>{{ $submenu->urutan ?? '-' }}</strong></td>
+            </tr>
+            <tr>
+              <td class="text-muted">Status:</td>
+              <td>
+                @if($submenu->is_active)
+                  <span class="badge bg-success">Aktif</span>
+                @else
+                  <span class="badge bg-secondary">Tidak Aktif</span>
+                @endif
+              </td>
+            </tr>
+            <tr>
+              <td class="text-muted">Dibuat:</td>
+              <td>{{ $submenu->created_at?->format('d M Y H:i') }}</td>
+            </tr>
+            <tr>
+              <td class="text-muted">Diupdate:</td>
+              <td>{{ $submenu->updated_at?->format('d M Y H:i') }}</td>
+            </tr>
+          </table>
+        </div>
 
-          {{-- Aksi --}}
-          <td class="text-center">
-            <a href="{{ route('admin.donor-submenu.edit', $submenu->id) }}" 
-               class="btn btn-warning btn-sm">
-              <i class="bi bi-pencil-square"></i> Edit
-            </a>
-            {{-- Hapus --}}
-            <form action="{{ route('admin.donor-submenu.destroy', $submenu->id) }}" 
-                  method="POST" 
-                  class="d-inline"
-                  onsubmit="return confirm('Yakin ingin menghapus konten ini?')">
-              @csrf
-              @method('DELETE')
-              <button type="submit" class="btn btn-danger btn-sm">
-                <i class="bi bi-trash"></i> Hapus
-              </button>
-            </form>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+      </div>
+    </div>
+
+    {{-- KONTEN --}}
+    <div class="col-md-8">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body">
+          <h6 class="text-muted mb-3">Konten</h6>
+          <div class="border p-4 rounded bg-light">
+            {!! $submenu->isi !!}
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
 </div>

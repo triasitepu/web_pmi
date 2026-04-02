@@ -45,14 +45,28 @@
         </div>
     @endif
 
-    <form action="{{ route('admin.donor-submenu.update', $submenu->id) }}"
+    <form action="{{ route('admin.relawan-submenu.update', $submenu->id) }}"
           method="POST"
           enctype="multipart/form-data">
 
         @csrf
         @method('PUT')
 
-
+        {{-- Pilih Relawan --}}
+        <div class="mb-3">
+            <label for="relawan_id" class="form-label fw-semibold">Pilih Relawan</label>
+            <select name="relawan_id" id="relawan_id" class="form-select @error('relawan_id') is-invalid @enderror" required>
+                <option value="" disabled>-- Pilih Relawan --</option>
+                @foreach($relawans as $relawan)
+                    <option value="{{ $relawan->id }}" {{ old('relawan_id', $submenu->relawan_id) == $relawan->id ? 'selected' : '' }}>
+                        {{ $relawan->nama_menu ?? 'Relawan ' . $relawan->id }}
+                    </option>
+                @endforeach
+            </select>
+            @error('relawan_id')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
 
         {{-- Nama Submenu --}}
         <div class="mb-3">

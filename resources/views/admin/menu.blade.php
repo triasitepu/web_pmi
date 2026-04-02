@@ -5,17 +5,21 @@
 @section('content')
 <div class="bg-white rounded-lg shadow-md p-6">
 
-  <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
-    <h2 class="fw-bold fs-3 mb-0" style="color: #d60100;">
-      Kelola Profil PMI
-    </h2>
-
-    <a href="{{ route('admin.submenu.create', $menu->id) }}"
-      class="btn btn-danger shadow-sm px-4 py-2 fw-semibold">
-        <i class="bi bi-plus-circle me-2"></i> Tambah Profil Baru
-    </a>
-
+  {{-- Breadcrumb --}}
+  <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-3">
+    <div>
+      <ol class="breadcrumb mb-0">
+        <li class="text-danger text-2xl font-bold"> Daftar Submenu Profil PMI
+        </li>
+      </ol>
+    </div>
+    <div>
+      <a href="{{ route('admin.submenu.create', $menu->id) }}" class="btn btn-danger btn-sm">
+        <i class="bi bi-plus-circle me-2"></i> Tambah Submenu
+      </a>
+    </div>
   </div>
+
 
   {{-- Pesan sukses / error --}}
   @if(session('success'))
