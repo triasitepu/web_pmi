@@ -3,14 +3,16 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\ProfilPmiController;
-use App\Http\Controllers\SubmenuController;
+use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\SubmenuProfilController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\LayananController;
 use App\Http\Controllers\DonorDarahController;
 use App\Http\Controllers\SubmenuDonorController;
 use App\Http\Controllers\RelawanController;
 use App\Http\Controllers\SubmenuRelawanController;
+use App\Http\Controllers\KebencanaanController;
+use App\Http\Controllers\SubmenuKebencanaanController;
 
 Route::get('/tes-sederhana', function () {
     return 'TES ROUTE SEDERHANA BERHASIL! (tanpa auth, prefix, middleware)';
@@ -22,8 +24,7 @@ Route::get('/tes-sederhana', function () {
 */
 
 Route::get('/', fn() => view('home'))->name('home');
-Route::get('/about', [ProfilPmiController::class, 'show'])
-    ->name('about');
+Route::get('/about', fn() => view('about'))->name('about');
 Route::get('/relawan', fn() => view('relawan'))->name('relawan');
 
 Route::prefix('layanan')->group(function () {
@@ -61,41 +62,46 @@ Route::middleware(['auth', 'role:admin,superadmin'])
         Route::get('/dashboard', [DashboardController::class, 'index'])
             ->name('dashboard');
 
-        /*
+         /*
         |--------------------------------------------------------------------------
-        | MENU PROFIL PMI (Controller: ProfilPmiController)
+        | MENU  PROFIL PMI
         |--------------------------------------------------------------------------
         */
 
-        Route::prefix('profil-pmi')->name('profil-pmi.')->group(function () {
-
-            // Tampilkan menu profil PMI
-            Route::get('/', [ProfilPmiController::class, 'index'])
+        Route::prefix('profil')->name('profil.')->group(function () {
+            Route::get('/', [ProfilController::class, 'index'])
                 ->name('index');
 
-            // Edit menu
-            Route::get('/{id_menu}/edit', [ProfilPmiController::class, 'edit'])
+            Route::get('/create', [ProfilController::class, 'create'])
+                ->name('create');
+
+            Route::post('/', [ProfilController::class, 'store'])
+                ->name('store');
+
+            Route::get('/{id}/edit', [ProfilController::class, 'edit'])
                 ->name('edit');
 
-            Route::put('/{id_menu}', [ProfilPmiController::class, 'update'])
+            Route::put('/{id}', [ProfilController::class, 'update'])
                 ->name('update');
-        });
 
-        /*
+            Route::delete('/{id}', [ProfilController::class, 'destroy'])
+                ->name('destroy');
+        });
+         /*
         |--------------------------------------------------------------------------
-        | SUBMENU (Controller: SubmenuController)
+        | SUBMENU PROFIL(CRUD)
         |--------------------------------------------------------------------------
         */
+         Route::prefix('profil-submenu')->name('profil-submenu.')->group(function () {
 
-          // Submenu CRUD
-    Route::prefix('submenu')->name('submenu.')->group(function () {
-        Route::get('/{id_menu}', [SubmenuController::class, 'index'])->name('index');
-        Route::get('/{id_menu}/create', [SubmenuController::class, 'create'])->name('create');
-        Route::post('/{id_menu}', [SubmenuController::class, 'store'])->name('store');
-        Route::get('/{id_menu}/{id_submenu}/edit', [SubmenuController::class, 'edit'])->name('edit');
-        Route::put('/{id_menu}/{id_submenu}', [SubmenuController::class, 'update'])->name('update');
-        Route::delete('/{id_menu}/{id_submenu}', [SubmenuController::class, 'destroy'])->name('destroy');
-        Route::get('/{id_menu}/{id_submenu}', [SubmenuController::class, 'show'])->name('show');
+            Route::get('/', [SubmenuProfilController::class, 'index'])->name('index');
+            Route::get('/create', [SubmenuProfilController::class, 'create'])->name('create');
+            Route::post('/', [SubmenuProfilController::class, 'store'])->name('store');
+            Route::get('/{id}', [SubmenuProfilController::class, 'show'])->name('show');
+            Route::get('/{id}/edit', [SubmenuProfilController::class, 'edit'])->name('edit');
+            Route::put('/{id}', [SubmenuProfilController::class, 'update'])->name('update');
+            Route::delete('/{id}', [SubmenuProfilController::class, 'destroy'])->name('destroy');
+
         });
          /*
         |--------------------------------------------------------------------------
@@ -124,8 +130,7 @@ Route::middleware(['auth', 'role:admin,superadmin'])
             Route::get('/', [SubmenuDonorController::class, 'index'])
                 ->name('index');
 
-            Route::get('admin/donor/{slug}', [SubmenuDonorController::class, 'show'])       
-                ->name('admin.donor.show');
+            Route::get('/{id}', [SubmenuDonorController::class, 'show'])->name('show');
 
 
             Route::get('/create', [SubmenuDonorController::class, 'create'])
@@ -183,6 +188,49 @@ Route::middleware(['auth', 'role:admin,superadmin'])
             Route::get('/{id}/edit', [SubmenuRelawanController::class, 'edit'])->name('edit');
             Route::put('/{id}', [SubmenuRelawanController::class, 'update'])->name('update');
             Route::delete('/{id}', [SubmenuRelawanController::class, 'destroy'])->name('destroy');
+
+        });
+
+
+          /*
+        |--------------------------------------------------------------------------
+        | MENU  KEBENCANAAN PMI
+        |--------------------------------------------------------------------------
+        */
+
+        Route::prefix('kebencanaan')->name('kebencanaan.')->group(function () {
+            Route::get('/', [KebencanaanController::class, 'index'])
+                ->name('index');
+
+            Route::get('/create', [KebencanaanController::class, 'create'])
+                ->name('create');
+
+            Route::post('/', [KebencanaanController::class, 'store'])
+                ->name('store');
+
+            Route::get('/{id}/edit', [KebencanaanController::class, 'edit'])
+                ->name('edit');
+
+            Route::put('/{id}', [KebencanaanController::class, 'update'])
+                ->name('update');
+
+            Route::delete('/{id}', [KebencanaanController::class, 'destroy'])
+                ->name('destroy');
+        });
+         /*
+        |--------------------------------------------------------------------------
+        | SUBMENU KEBENCANAAN (CRUD)
+        |--------------------------------------------------------------------------
+        */
+         Route::prefix('kebencanaan-submenu')->name('kebencanaan-submenu.')->group(function () {
+
+            Route::get('/', [SubmenuKebencanaanController::class, 'index'])->name('index');
+            Route::get('/create', [SubmenuKebencanaanController::class, 'create'])->name('create');
+            Route::post('/', [SubmenuKebencanaanController::class, 'store'])->name('store');
+            Route::get('/{id}', [SubmenuKebencanaanController::class, 'show'])->name('show');
+            Route::get('/{id}/edit', [SubmenuKebencanaanController::class, 'edit'])->name('edit');
+            Route::put('/{id}', [SubmenuKebencanaanController::class, 'update'])->name('update');
+            Route::delete('/{id}', [SubmenuKebencanaanController::class, 'destroy'])->name('destroy');
 
         });
         /*

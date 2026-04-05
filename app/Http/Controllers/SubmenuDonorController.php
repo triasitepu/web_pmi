@@ -19,18 +19,6 @@ class SubmenuDonorController extends Controller
         return view('admin.donor.menu', compact('submenus'));
     }
 
-    public function show($slug)
-    {
-        $submenus = SubmenuDonor::with('donor')
-                    ->orderBy('urutan', 'asc')
-                    ->get();
-
-        $submenu = SubmenuDonor::where('slug', $slug)->firstOrFail();
-        $kontens = $submenu->kontens()->latest()->get();
-
-        return view('admin.donor.submenu.index', compact('submenus', 'submenu', 'kontens'));
-    }
-
     public function create()
     {
         $donorMenus = DonorDarah::all();
@@ -111,6 +99,13 @@ class SubmenuDonorController extends Controller
 
         return redirect()->route('admin.donor-submenu.index')
                          ->with('success', 'Submenu berhasil diupdate');
+    }
+
+    public function show($id)
+    {
+        $submenu = SubmenuDonor::findOrFail($id);
+
+        return view('admin.donor.submenu.show', compact('submenu'));
     }
 
     public function destroy($id)

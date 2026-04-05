@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 
-use App\Models\Menu;
-use App\Models\Submenu;
+use App\Models\Profil;
+use App\Models\SubmenuProfil;
 use Illuminate\Http\Request;
 
 class ProfilPmiController extends Controller
@@ -14,11 +14,11 @@ class ProfilPmiController extends Controller
      */
 public function index()
 {
-    $menu = Menu::where('kategori', 'profil-pmi')->first();
+    $profil = Profil::where('kategori', 'profil-pmi')->first();
 
-    $submenus = $menu ? $menu->submenus : collect();
+    $submenus = $profil ? $profil->submenus : collect();
 
-    return view('admin.menu', compact('menu', 'submenus'));
+    return view('admin.menu', compact('profil', 'submenus'));
 }
 
     /**
@@ -26,7 +26,7 @@ public function index()
      */
     public function edit($id_menu)
     {
-        $menu = Menu::where('id', $id_menu)
+        $menu = Profil::where('id', $id_menu)
                     ->where('kategori', 'profil-pmi')
                     ->firstOrFail();
 
@@ -38,7 +38,7 @@ public function index()
      */
     public function update(Request $request, $id_menu)
     {
-        $menu = Menu::where('id', $id_menu)
+        $menu = Profil::where('id', $id_menu)
                     ->where('kategori', 'profil-pmi')
                     ->firstOrFail();
 
@@ -55,11 +55,11 @@ public function index()
     }
     public function show()
 {
-    $menu = \App\Models\Menu::where('kategori', 'profil-pmi')->firstOrFail();
+    $profil = \App\Models\Profil::where('kategori', 'profil-pmi')->firstOrFail();
 
-    $submenus = \App\Models\Submenu::where('id', $menu->id)->get();
+    $submenus = \App\Models\SubmenuProfil::where('id_menu', $profil->id)->get();
 
-    return view('about', compact('menu', 'submenus'));
+    return view('about', compact('profil', 'submenus'));
 }
 
 }

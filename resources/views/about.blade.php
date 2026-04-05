@@ -1,84 +1,63 @@
 @extends('layouts.main')
 
+@section('title', 'Relawan - PMI Magetan')
+
 @section('content')
-<title>Profil - Palang Merah Indonesia Magetan</title>
-
-<section class="breadcrumbs-page-wrap">
-  <div class="bg-fixed pos-rel breadcrumbs-page"
-       style="background-image: url('{{ asset('images/bg.jpg') }}');">
-    <div class="container text-center text-white">
-      <h1 class="fw-bold">Tentang Kami</h1>
-      <nav aria-label="breadcrumb" class="breadcrumb-wrap d-flex justify-content-center">
-        <ol class="breadcrumb bg-transparent mb-0">
-          <li class="breadcrumb-item">
-            <a href="{{ route('home') }}" class="text-white">Home</a>
-          </li>
-          <li class="breadcrumb-item active text-light">Profil</li>
-        </ol>
-      </nav>
-    </div>
-  </div>
-</section>
-
-<main id="body-content">
-  <section class="wide-tb-80 bg-light">
-    <div class="container">
-
-@forelse($submenus as $index => $submenu)
-
-<div class="row align-items-center g-5 mb-5">
-
-    @if($index % 2 == 0)
-        {{-- IMAGE KIRI --}}
-        <div class="col-lg-6">
-            <div class="overflow-hidden rounded-4 shadow-lg">
-                <img src="{{ asset('storage/' . $submenu->foto) }}"
-                     class="img-fluid w-100"
-                     style="object-fit:cover;">
+  <title>Relawan - Palang Merah Indonesia Magetan</title>
+    <section class="breadcrumbs-page-wrap">
+      <div class="bg-fixed pos-rel breadcrumbs-page"
+            style="background-image: url('{{ asset('images/bg.jpg') }}');">
+        <div class="container">
+          <h1>Relawan Palang Merah Indonesia</h1>
+          <nav aria-label="breadcrumb" class="breadcrumb-wrap">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="index.php">Home</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">Relawan Palang Merah Indonesia</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </section>
+    <main id="body-content">
+      <section class="wide-tb-50">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <dl>
+                <dd> Palang Merah Remaja (PMR)adalah wadah kegiatan remaja di sekolah atau lembaga pendidikan normal dalam kepalangmerahanmelalui program kegiatan ekstra kurikuler <br /> Anggota PMR: <ul>
+                    <li>PMR MULA setingkat SD</li>
+                    <li>PMR MADYA setingkat SMP</li>
+                    <li>PMR WIRAsetingkat SMA</li>
+                  </ul> Syarat menjadi Anggota PMR: <ul>
+                    <li>WNI atau WNA yang berdomisili di Indonesia</li>
+                    <li>Berusia 7-20 tahun dan belum menikah</li>
+                    <li>Berpendidikan setingkat SD, SLTP dan SLTA</li>
+                    <li>Bersedia mengikuti pelatihan dan pendidikan dasar kepalangmerahan</li>
+                    <li>Mendapat persetujuan orang tua/wali</li>
+                  </ul> Kegiatan PMR: <ul>
+                    <li>Pengumpulan bantuan di sekolah untuk korban bencana</li>
+                    <li>Bakti sosial dengan kunjungan ke rumah sakit atau panti jompo/panti asuhan untuk perawatan keluarga, gerakan kebersihan lingkungan, dsb</li>
+                    <li>Mengikuti gerakan kakek/nenek angkatasuh</li>
+                    <li>Mengikuti pelatihan remaja sebaya di bidang kesehatan remaja dan HIV/AIDS</li>
+                    <li>Donor darah siswa</li>
+                    <li>Seni (majalah dinding, lomba-lomba)</li>
+                    <li>Program persahabatan remaja palang merah regional/internasional</li>
+                    <li>Jumbara (Jumpa Bakti Gembira) PMR</li>
+                  </ul>
+                  <br /> Untuk Mendaftar sebagai anggota PMR, dapat menghubungi paihak sekolah masing-masing. <br />
+                  <br />
+                  <br /> Ruang lingkup kegiatan PMR dikenal dengan nama Tri Bakti Remaja yang mengandung arti <ul>
+                    <li>Berbakti kepada masyarakat(seperti mengadakan kunjungan berkala ke panti jompo, menjadi donor darah</li>
+                    <li>Mempertinggi keterampilan serta memelihara kebersihan dan kesehatan(misalnya, mempraktikkan kebersihan dan kesehatan di lingkungan sekitar</li>
+                    <li>Mempererat persahabatan nasional dan internasional(contohnya, melakukan latihan gabungan PMR dengan kelompok PMR lain, saling bertukar album persahabatan)</li>
+                  </ul>
+                </dd>
+              </dl>
             </div>
+          </div>
         </div>
-
-        {{-- TEXT KANAN --}}
-        <div class="col-lg-6">
-            <h3 class="fw-bold text-danger mb-3">
-                {{ $submenu->judul }}
-            </h3>
-            <div class="text-secondary fs-5 lh-lg">
-                {!! $submenu->isi !!}
-            </div>
-        </div>
-
-    @else
-        {{-- TEXT KIRI --}}
-        <div class="col-lg-6 order-lg-1 order-2">
-            <h3 class="fw-bold text-danger mb-3">
-                {{ $submenu->judul }}
-            </h3>
-            <div class="text-secondary fs-5 lh-lg">
-                {!! $submenu->isi !!}
-            </div>
-        </div>
-
-        {{-- IMAGE KANAN --}}
-        <div class="col-lg-6 order-lg-2 order-1">
-            <div class="overflow-hidden rounded-4 shadow-lg">
-                <img src="{{ asset('storage/' . $submenu->foto) }}"
-                     class="img-fluid w-100"
-                     style="object-fit:cover;">
-            </div>
-        </div>
-    @endif
-
-</div>
-
-@empty
-
-        <div class="text-center text-muted py-5">
-          Konten profil belum tersedia.
-        </div>
-      @endforelse
-
-    </div>
-  </section>
-</main>
+      </section>
+    </main>
 @endsection

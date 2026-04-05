@@ -16,9 +16,9 @@
     {{-- PROFIL PMI --}}
     <div class="nav-item">
       <a class="nav-link text-white"
-         href="{{ route('admin.profil-pmi.index') }}">
-        <i class="bi bi-building me-2"></i>
-        Profil PMI
+         href="{{ route('admin.profil-submenu.index') }}">
+        <i class="bi bi-people me-2"></i>
+        Kelola Profil
       </a>
 
       @if($profilSubmenus->isNotEmpty())
@@ -26,9 +26,9 @@
           @foreach($profilSubmenus as $submenu)
             <li class="nav-item">
               <a class="nav-link text-white small"
-                 href="{{ route('admin.submenu.show', [$submenu->id_menu, $submenu->id_submenu]) }}">
+                 href="{{ route('admin.profil-submenu.show', $submenu->id) }}">
                 <i class="bi bi-file-earmark-text me-2"></i>
-                {{ $submenu->judul }}
+                {{ $submenu->nama_submenu }}
               </a>
             </li>
           @endforeach
@@ -93,10 +93,27 @@
       Diklat PMI
     </a>
     {{-- KEBENCANAAN --}}
-    <a href="#" class="nav-link text-white">
-      <i class="bi bi-heart-pulse me-2"></i>
-      Kebencanaan PMI
-    </a>
+    <div class="nav-item">
+      <a class="nav-link text-white"
+         href="{{ route('admin.kebencanaan-submenu.index') }}">
+        <i class="bi bi-people me-2"></i>
+        Kelola Kebencanaan
+      </a>
+
+      @if($kebencanaanSubmenus->isNotEmpty())
+        <ul class="nav flex-column ps-4">
+          @foreach($kebencanaanSubmenus as $submenu)
+            <li class="nav-item">
+              <a class="nav-link text-white small"
+                 href="{{ route('admin.kebencanaan-submenu.show', $submenu->id) }}">
+                <i class="bi bi-file-earmark-text me-2"></i>
+                {{ $submenu->nama_submenu }}
+              </a>
+            </li>
+          @endforeach
+        </ul>
+      @endif
+    </div>
 
     {{-- SUPERADMIN --}}
     @if(strtolower(auth()->user()->peran) === 'superadmin')

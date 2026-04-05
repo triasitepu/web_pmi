@@ -4,11 +4,12 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
-use App\Models\Submenu;
-use App\Models\Menu;
+use App\Models\SubmenuProfil;
+use App\Models\Profil;
 use App\Models\DonorDarah;
 use App\Models\SubmenuDonor;
 use App\Models\SubmenuRelawan;
+use App\Models\SubmenuKebencanaan;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -22,8 +23,8 @@ public function boot()
 {
     View::composer(['layouts.admin', 'admin.sidebar'], function ($view) {
         // Profil PMI
-        $profilMenus = Menu::where('kategori', 'profil-pmi')->get();
-        $profilSubmenus = Submenu::whereHas('menu', fn($q) => $q->where('kategori','profil-pmi'))->get();
+        $profilMenus = Profil::where('kategori', 'profil')->get();
+        $profilSubmenus = SubmenuProfil::whereHas('profil', fn($q) => $q->where('kategori','profil'))->get();
 
 
         $view->with([
@@ -52,7 +53,12 @@ public function boot()
             'menuDefault' => $profilMenus->first(),
             'relawanSubmenus' => $relawanSubmenus,
         ]);
-        
+
+        //Kebencanaan
+          $kebencanaanSubmenus = SubmenuKebencanaan::where('is_active', 1)->orderBy('urutan')->get(); 
+        $view->with([
+            'kebencanaanSubmenus' => $kebencanaanSubmenus,
+        ]);
     });
 }
 

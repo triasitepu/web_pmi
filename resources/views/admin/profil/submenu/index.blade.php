@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Kelola Donor Darah')
+@section('title', 'Kelola Submenu Profil')
 
 @section('content')
 <div class="bg-white rounded-lg shadow-md p-6">
@@ -9,24 +9,32 @@
   <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-3">
     <div>
       <ol class="breadcrumb mb-0">
-        <li class="text-danger text-2xl font-bold"> Daftar Submenu Donor
+        <li class="text-danger text-2xl font-bold"> Daftar Submenu Profil
         </li>
       </ol>
     </div>
     <div>
-      <a href="{{ route('admin.donor-submenu.create') }}" class="btn btn-danger btn-sm">
+      <a href="{{ route('admin.profil-submenu.create') }}" class="btn btn-danger btn-sm">
         <i class="bi bi-plus-circle me-2"></i> Tambah Submenu
       </a>
     </div>
   </div>
 
 
+  {{-- Alert --}}
   @if(session('success'))
-    <div class="alert alert-success">
-      {{ session('success') }}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <i class="bi bi-check-circle me-2"></i>{{ session('success') }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+  @elseif(session('error'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <i class="bi bi-exclamation-circle me-2"></i>{{ session('error') }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
     </div>
   @endif
 
+  {{-- Table --}}
    <div class="table-responsive">
     <table class="table table-bordered table-striped align-middle table-hover">
       <thead class="text-center text-white" style="background-color: #d60100;">
@@ -74,16 +82,16 @@
 
           {{-- Aksi --}}
           <td class="text-center">
-            <a href="{{ route('admin.donor-submenu.show', $submenu->id) }}"
+            <a href="{{ route('admin.profil-submenu.show', $submenu->id) }}" 
                class="btn btn-info btn-sm">
               <i class="bi bi-eye"></i> Detail
             </a>
-            <a href="{{ route('admin.donor-submenu.edit', $submenu->id) }}" 
+            <a href="{{ route('admin.profil-submenu.edit', $submenu->id) }}" 
                class="btn btn-warning btn-sm">
               <i class="bi bi-pencil-square"></i> Edit
             </a>
             {{-- Hapus --}}
-            <form action="{{ route('admin.donor-submenu.destroy', $submenu->id) }}" 
+            <form action="{{ route('admin.profil-submenu.destroy', $submenu->id) }}" 
                   method="POST" 
                   class="d-inline"
                   onsubmit="return confirm('Yakin ingin menghapus submenu ini?')">
