@@ -1,204 +1,269 @@
-@extends('layouts.main')
+<!DOCTYPE html>
 
-@section('content')
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Beranda - PMI Portal</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;800&amp;family=Inter:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#00608e",
+                    "secondary-fixed-dim": "#c8c6c6",
+                    "error": "#ba1a1a",
+                    "surface-dim": "#dadada",
+                    "surface-container-high": "#e8e8e8",
+                    "on-primary-fixed-variant": "#93000e",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#e2e2e2",
+                    "outline": "#926f6b",
+                    "on-tertiary-fixed": "#001e30",
+                    "background": "#f9f9f9",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#007ab3",
+                    "on-tertiary-fixed-variant": "#004b70",
+                    "on-primary-fixed": "#410003",
+                    "on-surface": "#1a1c1c",
+                    "primary-container": "#e21f26",
+                    "outline-variant": "#e7bdb8",
+                    "inverse-on-surface": "#f1f1f1",
+                    "on-secondary-fixed-variant": "#474747",
+                    "on-surface-variant": "#5d3f3c",
+                    "surface": "#f9f9f9",
+                    "surface-bright": "#f9f9f9",
+                    "secondary-container": "#e4e2e2",
+                    "tertiary-fixed": "#cae6ff",
+                    "on-background": "#1a1c1c",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "surface-variant": "#e2e2e2",
+                    "primary-fixed-dim": "#ffb4ac",
+                    "inverse-surface": "#2f3131",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed": "#e4e2e2",
+                    "on-tertiary-container": "#f8faff",
+                    "surface-container-low": "#f3f3f3",
+                    "on-error": "#ffffff",
+                    "secondary": "#5e5e5e",
+                    "on-primary-container": "#fffaf9",
+                    "surface-tint": "#c00016",
+                    "primary-fixed": "#ffdad6",
+                    "surface-container": "#eeeeee",
+                    "primary": "#ba0015",
+                    "tertiary-fixed-dim": "#8ecdff",
+                    "on-secondary-container": "#646464",
+                    "inverse-primary": "#ffb4ac",
+                    "on-primary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .editorial-shadow {
+            box-shadow: 0 12px 32px -4px rgba(74, 74, 74, 0.08);
+        }
+        .asymmetric-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+        }
+        @media (max-width: 768px) {
+            .asymmetric-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-white">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-gray-950/80 backdrop-blur-md shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-8 h-20 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-black text-red-600 dark:text-red-500 font-headline">PMI Magetan</div>
+<div class="hidden md:flex items-center gap-8 font-headline text-sm font-semibold tracking-tight">
+<a class="text-gray-600 dark:text-gray-400 hover:text-red-500 transition-colors duration-150" href="/">Beranda</a>    
+<a class="text-gray-600 dark:text-gray-400 hover:text-red-500 transition-colors duration-150" href="{{ route('about') }}">Tentang Kami</a>
+<a class="text-gray-600 dark:text-gray-400 hover:text-red-500 transition-colors duration-150" href="{{ route('ambulans') }}">Ambulans</a>
+<a class="text-gray-600 dark:text-gray-400 hover:text-red-500 transition-colors duration-150" href="{{ route('bencana') }}">Bencana</a>
+<a class="text-gray-600 dark:text-gray-400 hover:text-red-500 transition-colors duration-150" href="{{ route('diklat') }}">Pelatihan</a>
+<a class="text-gray-600 dark:text-gray-400 hover:text-red-500 transition-colors duration-150" href="{{ route('donor') }}">Darah</a>
+<a class="text-red-600 dark:text-red-500 border-b-2 border-red-600 pb-1" href="{{ route('relawan') }}">Relawan</a>
+</div>
+<button class="bg-primary-container text-white px-6 py-2.5 rounded-lg font-headline font-bold text-sm hover:opacity-90 active:scale-95 transition-all">Hotline Darurat</button>
+</div>
+</nav>
 
-{{-- ----- SECTION BANNER ----- --}}
-<section class="main-banner home-style-second">
-    <div class="slides-wrap">
-        <div class="owl-carousel owl-theme">
-            <div class="owl-slide d-flex align-items-center cover"
-                 style="background-image: url('{{ asset('images/bg.jpg') }}');">
-                <div class="container">
-                    <div class="row justify-content-center justify-content-md-start no-gutters">
-                        <div class="col-10 col-md-6 static">
-                            <div class="owl-slide-text">
-                                <h3 class="owl-slide-animated owl-slide-title">Selamat Datang</h3>
-                                <h1 class="owl-slide-animated owl-slide-subtitle">
-                                    Palang Merah Indonesia Magetan
-                                </h1>
-                                <div class="owl-slide-animated owl-slide-cta">
-                                    <a class="btn btn-primary me-3" href="{{ route('about') }}" role="button">
-                                        Selengkapnya
-                                    </a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative h-[870px] flex items-center overflow-hidden bg-surface-dim">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-60 mix-blend-multiply" data-alt="Humanitarian workers providing medical assistance in a community setting, warm cinematic lighting, high-end editorial photography style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1f9mxCTL3rdhuC1nlA-3B0V5Qvl3vJ4RfyjFYy4BTay53vBAvUKEbK8mg4otmYVSAycFVK38N7Oc9pXbwBHHE5g4nSCOf3BaOBPNNgE8vOpxH9rOqAAHIwCLwvW6oJxBK_BT8-MviIxSVx6NAEtznCrmVFLnLJEKvwyJ23F_3fO7JgL0ycu5YOGW4dVnvU-Q01Uzn5ZP7T7cXR5aIchi3ItXUJCMlq8jtxicZUdxFVNVMEowYTa7Nt0l7YmlNzdN6T4zcQJVksQ"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/40 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
+<div class="max-w-2xl space-y-6">
+<h1 class="text-6xl md:text-8xl font-black text-white leading-tight tracking-tighter">
+                        Kemanusiaan untuk Semua
+                    </h1>
+<p class="text-xl text-white/90 font-medium leading-relaxed max-w-lg">
+                        Melayani dengan tulus, bergerak dengan sigap. Kami hadir sebagai garda terdepan dalam aksi kemanusiaan di Kabupaten Magetan.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-primary-container text-on-primary px-10 py-4 rounded-xl font-bold text-lg hover:bg-primary transition-all shadow-lg">
+                            Donasi Sekarang
+                        </button>
+<button class="bg-white/10 backdrop-blur-md border border-white/30 text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all">
+                            Layanan Darurat
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Section (Asymmetric) -->
+<section class="bg-surface-container-low py-24 relative overflow-hidden">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="space-y-2">
+<span class="text-primary font-bold tracking-widest text-sm uppercase">Dampak Nyata</span>
+<h2 class="text-4xl font-black text-on-surface">Statistik Kemanusiaan</h2>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-2xl shadow-sm border-b-4 border-primary">
+<span class="text-5xl font-black text-primary block mb-2">1,240+</span>
+<p class="text-secondary font-bold">Relawan Aktif</p>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-2xl shadow-sm mt-8 md:mt-12">
+<span class="text-5xl font-black text-primary block mb-2">450</span>
+<p class="text-secondary font-bold">Kantong Darah/Bulan</p>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-2xl shadow-sm">
+<span class="text-5xl font-black text-primary block mb-2">24/7</span>
+<p class="text-secondary font-bold">Respon Ambulans</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Services (Bento Grid) -->
+<section class="py-32 bg-surface">
+<div class="max-w-7xl mx-auto px-8">
+<div class="mb-16 text-center max-w-2xl mx-auto">
+<h2 class="text-4xl font-extrabold mb-4">Layanan Utama Kami</h2>
+<p class="text-secondary text-lg">Komitmen kami untuk memberikan bantuan dan pelayanan terbaik bagi masyarakat Magetan melalui berbagai program unggulan.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[600px]">
+<!-- Card 1: Ambulans -->
+<div class="md:col-span-8 bg-surface-container-lowest rounded-3xl overflow-hidden group relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-20" data-alt="Close up of a modern emergency ambulance vehicle with reflective markings, bright daytime lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkyBzLhNlrBapa5q7TKfjsemsoh7amoaNK-ul3YUqIDvMPnIRmQBUP4Ar-lV2KT3tOlsl6_PKVkq1JhrE38Lqd2gauJtjRpRpbS7K4FLQHJm3PDXtbZVztrisVhvwjKGFVEAYusE9tXai1difTcZTsuYd_Zr3ft0v3GtIgGV_oM2BAYqdpSYG_xp5UiAjrVWGhphHp3HbiC8clCvOzh-zWGZoy5CWc7iQdhb2YgUSid4M1LONWJI9ktV9K5PG4PqEBk8qU9nxOgw"/>
+<div class="absolute inset-0 p-12 flex flex-col justify-end">
+<span class="material-symbols-outlined text-primary text-5xl mb-6">emergency</span>
+<h3 class="text-3xl font-black mb-4">Layanan Ambulans 24 Jam</h3>
+<p class="text-secondary max-w-md mb-8">Respon cepat darurat medis untuk seluruh wilayah Kabupaten Magetan dengan fasilitas medis lengkap.</p>
+<button class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">
+                                Selengkapnya <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card 2: Donor Darah -->
+<div class="md:col-span-4 bg-primary-container rounded-3xl p-10 flex flex-col justify-between text-white">
+<div>
+<span class="material-symbols-outlined text-5xl mb-6" style="font-variation-settings: 'FILL' 1;">volunteer_activism</span>
+<h3 class="text-2xl font-black mb-4">Donor Darah</h3>
+<p class="opacity-90 leading-relaxed">Setetes darah Anda, nyawa bagi mereka. Cek stok darah dan jadwal donor hari ini.</p>
+</div>
+<button class="bg-white text-primary font-bold py-3 rounded-xl hover:bg-surface-container-low transition-colors mt-8">
+                            Cek Stok Darah
+                        </button>
+</div>
+<!-- Card 3: Diklat -->
+<div class="md:col-span-5 bg-surface-container-low rounded-3xl p-10 relative overflow-hidden group">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">school</span>
+<h3 class="text-2xl font-black mb-2">Diklat &amp; Pelatihan</h3>
+<p class="text-secondary">Pelatihan Pertolongan Pertama dan Kesiapsiagaan Bencana untuk instansi dan sekolah.</p>
+</div>
+<div class="absolute -bottom-10 -right-10 opacity-10 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[200px]">medical_services</span>
+</div>
+</div>
+<!-- Card 4: Relawan -->
+<div class="md:col-span-7 bg-surface-container-high rounded-3xl p-10 flex items-center gap-8">
+<div class="hidden sm:block w-32 h-32 rounded-full overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Portrait of a smiling young volunteer in a uniform, soft natural outdoor lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwke_9QCEWgH9cItFhsMIvKxfG1zNOK8tMiCBUZeV_Zx67SJsb5Ascbv9UbeGTjsUtSPAXucMAgjnrKx3OX8BEP6Iyp8mf409qafbVfccTK4ALaLikSEZlef9z7VPbN5luBl6jsxC4hnww6aEOWZTLnOsCCxA1Fa4eGgt9Y6bzxh1cPhKR3GJdzRnHgOgNDVqY8PPni4rTAdBmj2WVxrW1sajOXJOuIRp2EdYesnyKr9orpz6oNzZt-vZ6me1gSCrZpQSFCEIyVw"/>
+</div>
+<div>
+<h3 class="text-2xl font-black mb-2">Gabung Menjadi Relawan</h3>
+<p class="text-secondary mb-4">Wujudkan kepedulianmu melalui aksi nyata. Bergabunglah dengan ribuan relawan PMI Magetan lainnya.</p>
+<button class="bg-on-background text-surface px-6 py-2 rounded-lg font-bold hover:opacity-90 transition-opacity">
+                                Daftar Sekarang
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Mitra Kami Section -->
+<section class="py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-12">
+<h2 class="text-2xl font-bold text-secondary">Mitra Strategis Kami</h2>
+</div>
+<div class="flex flex-wrap justify-center items-center gap-16 grayscale opacity-50 hover:grayscale-0 transition-all">
+<span class="text-2xl font-black font-manrope">PEMKAB MAGETAN</span>
+<span class="text-2xl font-black font-manrope">KEMENKES RI</span>
+<span class="text-2xl font-black font-manrope">BASARNAS</span>
+<span class="text-2xl font-black font-manrope">BNPB</span>
+<span class="text-2xl font-black font-manrope">RSUD SAYIDIMAN</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 font-inter text-sm leading-relaxed">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 py-12 max-w-7xl mx-auto gap-6">
+<div class="space-y-4 text-center md:text-left">
+<div class="font-manrope font-bold text-slate-900 dark:text-white text-xl">
+                    PMI Kabupaten Magetan
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-{{-- ----- SECTION INFORMASI ----- --}}
-<section class="bg-white">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-5 col-md-12 order-lg-last">
-
-                <div class="home-second-donation-form">
-                    <div class="funds-committed">
-                        <div class="gift-icon">
-                            <i class="icofont-people"></i>
-                        </div>
-                        <small>
-                            <strong style="font-size: 24px;">Informasi</strong><br>
-                        </small>
-                    </div>
-
-                    <div class="form-style">
-                        <a class="mb-4 btn btn-block btn-danger text-left">
-                            <i class="icofont-blood-drop"></i> Rincian Stock Darah
-                        </a>
-                        <a class="mb-4 btn btn-block btn-danger text-left">
-                            <i class="icofont-blood"></i> Informasi Kebutuhan Darah
-                        </a>
-                        <a class="mb-4 btn btn-block btn-danger text-left">
-                            <i class="icofont-clock-time"></i> Jadwal Donor Darah
-                        </a>
-                        <a class="mb-4 btn btn-block btn-danger text-left">
-                            <i class="icofont-medical-sign"></i> Prosedur Permintaan Darah
-                        </a>
-                        <a class="mb-4 btn btn-block btn-danger text-left">
-                            <i class="icofont-law-document"></i> Prosedur Donor Darah
-                        </a>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="col-lg-7 col-md-12">
-                <h1 class="heading-main">Profil PMI Magetan</h1>
-                <p>
-                   PMI Magetan tidak terlepas dari misi sosial dan kemanusiaan yang harus diembannya. Palang Merah Indonesia merupakan salah satu Perhimpunan sosial kemanusiaan, sejak tahun 1945. Pada saat itu, PMI Magetan berstatus PMI Cabang. Dalam menjalankan misi sosial kemanusiaannya, PMI Magetan telah melakukan bantuan penanggulangan bencana baik didalam kota maupun dikota-kota lainnya di Indonesia.
-                </p>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-{{-- ----- SECTION LAYANAN ----- --}}
-<section class="wide-tb-100 pb-5 bg-green">
-    <div class="container">
-        <h1 class="heading-main" style="color: #fff;">Layanan Kami</h1>
-    </div>
-</section>
-
-<section class="pt-4 pb-4 bg-light">
-    <div class="container">
-        <div class="row text-center">
-
-            {{-- Ambulans --}}
-            <div class="col-sm-6 col-lg-3 mb-4">
-                <img src="{{ asset('images/-sxPkWOP45VIxLWC3Hw65epUphvUoVPvQ.jpg') }}"
-                     class="img-fluid mb-2" alt="Ambulans">
-                <h5>Ambulans</h5>
-                <p>Pesan ambulan sekarang, pertolongan akan segera datang</p>
-                <a class="btn btn-sm btn-primary">Panggil Ambulans</a>
-            </div>
-
-            {{-- Donor Darah --}}
-            <div class="col-sm-6 col-lg-3 mb-4">
-                <img src="{{ asset('images/-1Bm9mITIpIYTyKaxZDhnm0wdr0v8VKlb.jpg') }}"
-                     class="img-fluid mb-2" alt="Donor Darah">
-                <h5>Donor Darah</h5>
-                <p>Sumbangkan sebagian darah kepada yang membutuhkan</p>
-                <a class="btn btn-sm btn-primary">Ayo Donor Darah</a>
-            </div>
-
-            {{-- Diklat --}}
-            <div class="col-sm-6 col-lg-3 mb-4">
-                <img src="{{ asset('images/-MPCtabAhhBFbpw0tF1zHqk4h1K1J8xjG.jpg') }}"
-                     class="img-fluid mb-2" alt="Diklat">
-                <h5>Diklat</h5>
-                <p>Pendidikan dan pelatihan PMI tersertifikasi</p>
-                <a class="btn btn-sm btn-primary">Bergabung</a>
-            </div>
-
-            {{-- Relawan --}}
-            <div class="col-sm-6 col-lg-3 mb-4">
-                <img src="{{ asset('images/-AzARsp09rjsIhr2RqRBDqX39UtDG53C2.jpg') }}"
-                     class="img-fluid mb-2" alt="Relawan">
-                <h5>Relawan</h5>
-                <p>Ayo jadi relawan PMI Magetan, bersama bantu sesama</p>
-                <a class="btn btn-sm btn-primary">Selengkapnya</a>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-{{-- ----- SECTION TESTIMONI / QUOTE ----- --}}
-<section class="wide-tb-100 bg-scroll bg-img-2 pos-rel callout-style-1">
-    <div class="bg-overlay black opacity-50"></div>
-    <div class="container">
-        <h1 class="heading-main light-mode orange">
-            <small>H. Rustam Efendi - Ketua PMI Provinsi Magetan</small>
-            Mengabdi di PMI ada tiga hal...
-        </h1>
-    </div>
-</section>
-
-{{-- ----- SECTION MITRA ----- --}}
- <section class="wide-tb-100 pt-5 shadow">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-12">
-        <h1 class="heading-main"> Mitra Kami </h1>
-      </div>
-
-      <div class="col-sm-12">
-        <div class="owl-carousel owl-theme" id="home-clients">
-
-          <div class="item">
-            <div class="clients-logo">
-              <a>
-                <img src="{{ asset('images/bmkg.png') }}" alt="Magetan">
-              </a>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="clients-logo">
-              <a>
-               <img src="{{ asset('images/bmkg.png') }}" width="200">
-              </a>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="clients-logo">
-              <a>
-                <img src="{{ asset('images/bpbd.png') }}" alt="BPBD">
-              </a>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="clients-logo">
-              <a>
-                <img src="{{ asset('images/bnpb.png') }}" alt="BNPB">
-              </a>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="clients-logo">
-              <a>
-                <img src="{{ asset('images/icrc.png') }}" alt="ICRC">
-              </a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-@endsection
+<p class="text-slate-500 max-w-xs">Markas PMI Kab. Magetan, Jl. Salak No.1, Magetan, Jawa Timur.</p>
+<p class="text-slate-500 dark:text-slate-400">© 2024 PMI Kabupaten Magetan. Kemanusiaan untuk Semua.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-slate-500 dark:text-slate-400 hover:text-red-600 dark:hover:text-red-400 underline-offset-4 hover:underline transition-all duration-300" href="#">Kebijakan Privasi</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-red-600 dark:hover:text-red-400 underline-offset-4 hover:underline transition-all duration-300" href="#">Kontak Darurat</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-red-600 dark:hover:text-red-400 underline-offset-4 hover:underline transition-all duration-300" href="#">Pusat Bantuan</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-red-600 dark:hover:text-red-400 underline-offset-4 hover:underline transition-all duration-300" href="#">Lokasi Markas</a>
+</div>
+<div class="flex gap-4">
+<button class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-sm">public</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-sm">share</span>
+</button>
+</div>
+</div>
+</footer>
+</body></html>

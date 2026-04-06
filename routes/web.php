@@ -26,12 +26,11 @@ Route::get('/tes-sederhana', function () {
 Route::get('/', fn() => view('home'))->name('home');
 Route::get('/about', fn() => view('about'))->name('about');
 Route::get('/relawan', fn() => view('relawan'))->name('relawan');
+Route::get('/bencana', fn() => view('bencana'))->name('bencana');
+Route::get('/ambulans', fn() => view('ambulans'))->name('ambulans');
+Route::get('/donor', fn() => view('donor'))->name('donor');
+Route::get('/diklat', fn() => view('diklat'))->name('diklat');
 
-Route::prefix('layanan')->group(function () {
-    Route::get('/ambulans', [LayananController::class, 'ambulans'])->name('layanan.ambulans');
-    Route::get('/bencana', [LayananController::class, 'bencana'])->name('layanan.bencana');
-
-});
 
 
 

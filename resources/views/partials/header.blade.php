@@ -44,8 +44,8 @@
                         Layanan
                     </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ route('layanan.ambulans') }}">Ambulans</a></li>
-                            <li><a class="dropdown-item" href="{{ route('layanan.bencana') }}">Penanggulangan Bencana</a></li>
+                            <li><a class="dropdown-item" href="{{ route('ambulans') }}">Ambulans</a></li>
+                            <li><a class="dropdown-item" href="{{ route('bencana') }}">Penanggulangan Bencana</a></li>
                             <li><a class="dropdown-item" href="#">Diklat Bersertifikat</a></li>
                             <li><a class="dropdown-item" href="#">Donor Darah</a></li>
                         </ul>
