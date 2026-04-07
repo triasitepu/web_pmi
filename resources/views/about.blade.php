@@ -131,9 +131,6 @@
 <span class="inline-block py-1 px-3 bg-primary-container text-on-primary text-xs font-bold tracking-widest rounded mb-6">SEJAK 1945</span>
 <h1 class="text-6xl md:text-7xl font-extrabold text-white leading-tight mb-8">Detak jantung <br/><span class="text-primary-fixed">kemanusiaan.</span></h1>
 <p class="text-white/90 text-lg md:text-xl leading-relaxed max-w-lg font-light mb-10">Berdedikasi untuk meringankan penderitaan manusia, melindungi kehidupan, dan memastikan rasa hormat terhadap setiap individu melalui aksi kemanusiaan yang netral dan tidak memihak.</p>
-<div class="flex flex-wrap gap-4">
-<button class="signature-gradient text-white px-8 py-4 rounded-lg font-bold text-base shadow-xl active:scale-95 transition-all">Menjadi Relawan</button>
-<button class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-lg font-bold text-base hover:bg-white/20 active:scale-95 transition-all">Donasi Sekarang</button>
 </div>
 </div>
 </div>
@@ -142,31 +139,52 @@
 <section class="py-24 bg-surface-container-low px-8">
 <div class="max-w-7xl mx-auto">
 <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+
 <!-- Mission -->
 <div class="md:col-span-7 bg-surface-container-lowest p-12 flex flex-col justify-between group overflow-hidden relative">
-<div class="relative z-10">
-<span class="material-symbols-outlined text-primary text-5xl mb-8" data-icon="volunteer_activism">volunteer_activism</span>
-<h2 class="text-4xl font-extrabold text-on-surface mb-6">Our Mission</h2>
-<p class="text-secondary text-lg leading-relaxed max-w-xl">
-                                To prevent and alleviate human suffering in the face of emergencies by mobilizing the power of volunteers and the generosity of donors. We stand ready to serve the most vulnerable, regardless of creed, race, or politics.
-                            </p>
-</div>
+    
+    <div class="relative z-10">
+        <span class="material-symbols-outlined text-primary text-5xl mb-8">
+            volunteer_activism
+        </span>
+
+        {{-- Judul --}}
+        <h2 class="text-4xl font-extrabold text-on-surface mb-6">
+            {{ $misi->nama_submenu ?? 'MISI KAMI' }}
+        </h2>
+
+        {{-- Isi --}}
+        <div class="text-secondary text-lg leading-relaxed max-w-xl">
+            {!! $misi->isi ?? 'Isi misi belum tersedia' !!}
+        </div>
+    </div>
+
 <div class="mt-12 relative z-10">
 <div class="flex items-center gap-4 text-primary font-bold">
-<span>Learn our core values</span>
-<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
 </div>
 </div>
 <!-- Abstract texture -->
 <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors"></div>
 </div>
+
 <!-- Vision -->
 <div class="md:col-span-5 bg-primary-container p-12 text-on-primary flex flex-col justify-center">
-<span class="material-symbols-outlined text-white/40 text-8xl mb-8 self-end" data-icon="visibility" data-weight="fill" style="font-variation-settings: 'FILL' 1;">visibility</span>
-<h2 class="text-3xl font-bold mb-4">Our Vision</h2>
-<p class="text-white/80 text-lg leading-relaxed">
-                            A world where humanity is protected, where communities are resilient in the face of disaster, and where the dignity of every person is upheld through swift, professional, and compassionate response.
-                        </p>
+    
+    <span class="material-symbols-outlined text-white/40 text-8xl mb-8 self-end"
+          style="font-variation-settings: 'FILL' 1;">
+        visibility
+    </span>
+
+    {{-- Judul --}}
+    <h2 class="text-3xl font-bold mb-4">
+        {{ $visi->nama_submenu ?? 'VISI KAMI' }}
+    </h2>
+
+    {{-- Isi --}}
+    <div class="text-white/80 text-lg leading-relaxed">
+        {!! $visi->isi ?? 'Isi visi belum tersedia' !!}
+    </div>
+
 </div>
 <!-- Stats Bar -->
 <div class="md:col-span-12 bg-surface-container-lowest py-10 px-12 grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -237,9 +255,55 @@
 <div class="relative group pt-12">
 <div class="absolute top-0 left-0 w-full h-[85%] bg-surface-container-lowest rounded-2xl -z-10 group-hover:translate-y-2 transition-transform duration-500"></div>
 <div class="px-8 pb-12">
-<img class="w-48 h-48 rounded-full object-cover mx-auto mb-8 shadow-2xl ring-8 ring-surface-container-low" data-alt="Professional portrait of a woman leader, confident expression, soft corporate lighting, blurred office background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCASUcMKd6Z_dsoaCsbzCfN7Tt8P0_V-3xb7ALHqvVjxvYwMbSJEk-ifRbgxJoTjkeAWqIkRn9fj-3jmqfnOpfa-b1lq5wlpfG_bLtVj2F6_-pByiFeCjO01cXIMp7odpGHPugyqB-xE0bL_MqPqfcCt9UpUsmQ5somIpX8zsgzw0NN4BCsA9h_fi1U7PPcRfIa3-dbn5UoOeA0EKC7UE8m2lMLliOZTTFwrPNghK3_xQRoj_3QywuBLdmG-rrdzKWiPlZaVmyEGA"/>
-<h3 class="text-xl font-bold text-center mb-1">Sarah Chambers</h3>
-<p class="text-primary text-xs uppercase tracking-widest font-bold text-center mb-4">Direktur Eksekutif</p>
+<img class="w-48 h-48 rounded-full object-cover mx-auto mb-8 shadow-2xl ring-8 ring-surface-container-low"
+     src="{{ url('storage/' . $Direktur->foto) }}"
+     alt="{{ $Direktur->nama }}" />
+
+<h3 class="text-xl font-bold text-center mb-1">
+    {{ $Direktur->nama_submenu ?? 'Nama Direktur' }}
+</h3>
+
+<p class="text-primary text-xs uppercase tracking-widest font-bold text-center mb-4">
+    {{ $Direktur->isi ?? 'Isi belum tersedia' }}
+</p>
+<p class="text-secondary text-sm text-center leading-relaxed italic">"Kekuatan kita tidak terletak pada infrastruktur, melainkan pada empati para relawan kita."</p>
+</div>
+</div>
+<div class="relative group md:translate-y-12">
+<div class="absolute top-0 left-0 w-full h-[85%] bg-surface-container-lowest rounded-2xl -z-10 group-hover:translate-y-2 transition-transform duration-500"></div>
+<div class="px-8 pb-12">
+<img class="w-48 h-48 rounded-full object-cover mx-auto mb-8 shadow-2xl ring-8 ring-surface-container-low" data-alt="Professional portrait of a male medical director, friendly and authoritative, natural light, clean minimalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6tLe9aqjQAhC5inUUgeti6RQgccyNHryi0Ukxo739LDrNZugBrTnCJCtOQ4hsnNUo4XBwJWWcCJ7yywL_-umqQCuYdIwGUIlaZGX_iAL8zYQSm1E_YCCPSpnzgddSNPNSPqO8117yZXYGE9AbJ35rnFgnB9aAVPXCyDpFHiltRwLroyNxxxz5Ear-XLSFSSoh0Rlr7mXzOf6gtD9EwYyCfYrZ7n8bH7IRJsGialu6YEMQEk0zN1TfA-0ExnygVczLxvrleumQhg"/>
+<h3 class="text-xl font-bold text-center mb-1">Dr. Michael Chen</h3>
+<p class="text-primary text-xs uppercase tracking-widest font-bold text-center mb-4">Operasi Medis</p>
+<p class="text-secondary text-sm text-center leading-relaxed italic">"Efisiensi dalam bantuan kemanusiaan adalah pembeda antara nyawa yang hilang dan nyawa yang terselamatkan."</p>
+</div>
+</div>
+<div class="relative group pt-12">
+<div class="absolute top-0 left-0 w-full h-[85%] bg-surface-container-lowest rounded-2xl -z-10 group-hover:translate-y-2 transition-transform duration-500"></div>
+<div class="px-8 pb-12">
+<img class="w-48 h-48 rounded-full object-cover mx-auto mb-8 shadow-2xl ring-8 ring-surface-container-low" data-alt="Professional portrait of a woman in humanitarian field gear, looking optimistic, soft sunlight filtering through trees" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTGen51CwSspnfeQ3xiTGYCw6KA6viwwTPopedr8nQO2vk8mOey0Ct3uycupg_V2Dp0IPh08m7mc7Xm-EJCH_bdp0wDbZ3ycZB52c5r0F8PQx8-K2W8hLwROZxPM8oySIw7WniSQ8eYAiyc164RNJ2SRKF1OrsvQF_zDD33YXORj_98OWPzJ4a24-L_YsphwHjMrk6zZVwi6uuiaUaoF8_kbPoa9oN1Nyph5NJzu1pDlLLhqwaJ8Qhu89RVNnKtGkg05xLZfvdAQ"/>
+<h3 class="text-xl font-bold text-center mb-1">Elena Rodriguez</h3>
+<p class="text-primary text-xs uppercase tracking-widest font-bold text-center mb-4">Pemimpin Relawan Global</p>
+<p class="text-secondary text-sm text-center leading-relaxed italic">"Membangun jembatan harapan melintasi setiap perbatasan dan setiap budaya."</p>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="relative group pt-12">
+<div class="absolute top-0 left-0 w-full h-[85%] bg-surface-container-lowest rounded-2xl -z-10 group-hover:translate-y-2 transition-transform duration-500"></div>
+<div class="px-8 pb-12">
+<img class="w-48 h-48 rounded-full object-cover mx-auto mb-8 shadow-2xl ring-8 ring-surface-container-low"
+     src="{{ url('storage/' . $Direktur->foto) }}"
+     alt="{{ $Direktur->nama }}" />
+
+<h3 class="text-xl font-bold text-center mb-1">
+    {{ $Direktur->nama_submenu ?? 'Nama Direktur' }}
+</h3>
+
+<p class="text-primary text-xs uppercase tracking-widest font-bold text-center mb-4">
+    {{ $Direktur->isi ?? 'Isi belum tersedia' }}
+</p>
 <p class="text-secondary text-sm text-center leading-relaxed italic">"Kekuatan kita tidak terletak pada infrastruktur, melainkan pada empati para relawan kita."</p>
 </div>
 </div>
@@ -269,15 +333,8 @@
 <div class="max-w-5xl mx-auto signature-gradient rounded-3xl p-16 text-center text-white relative overflow-hidden">
 <div class="relative z-10">
 <h2 class="text-4xl md:text-5xl font-black mb-6">Siap untuk membuat perubahan?</h2>
-<p class="text-white/80 text-lg mb-10 max-w-2xl mx-auto">Waktu atau donasi Anda bisa menjadi titik balik bagi seseorang yang berada dalam krisis. Bergabunglah dengan portal hari ini.</p>
-<div class="flex flex-col md:flex-row justify-center gap-4">
-<button class="bg-white text-primary px-10 py-4 rounded-xl font-bold hover:bg-surface-container-low transition-colors shadow-xl">Gabung sebagai Relawan</button>
-<button class="bg-white/10 border border-white/30 text-white px-10 py-4 rounded-xl font-bold hover:bg-white/20 transition-colors">Mulai Donasi Bulanan</button>
-</div>
-</div>
-<!-- Decorative elements -->
-<div class="absolute -top-12 -left-12 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
-<div class="absolute -bottom-12 -right-12 w-64 h-64 bg-black/10 rounded-full blur-3xl"></div>
+<p class="text-white/80 text-lg mb-10 max-w-2xl mx-auto">Waktu atau donasi Anda bisa menjadi titik balik
+     bagi seseorang yang berada dalam krisis. Bergabunglah dengan portal hari ini.</p>
 </div>
 </section>
 </main>

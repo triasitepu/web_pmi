@@ -64,7 +64,7 @@
     <div class="col-md-4">
       <div class="card border-0 shadow-sm">
         @if($submenu->foto)
-          <img src="{{ asset('storage/' . $submenu->foto) }}" 
+          <<img src="{{ url('storage/' . $submenu->foto) }}"
                alt="{{ $submenu->nama_submenu }}" 
                class="card-img-top" 
                style="height: 300px; object-fit: cover;">

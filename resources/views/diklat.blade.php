@@ -109,7 +109,7 @@
 <a class="text-gray-600 dark:text-gray-400 hover:text-red-500 transition-colors duration-150" href="{{ route('about') }}">Tentang Kami</a>
 <a class="text-gray-600 dark:text-gray-400 hover:text-red-500 transition-colors duration-150" href="{{ route('ambulans') }}">Ambulans</a>
 <a class="text-gray-600 dark:text-gray-400 hover:text-red-500 transition-colors duration-150" href="{{ route('bencana') }}">Bencana</a>
-<a class="text-gray-600 dark:text-gray-400 hover:text-red-500 transition-colors duration-150" href="{{ route('diklat') }}">Diklat</a>
+<a class="text-gray-600 dark:text-gray-400 hover:text-red-500 transition-colors duration-150" href="{{ route('diklat') }}">Pelatihan</a>
 <a class="text-gray-600 dark:text-gray-400 hover:text-red-500 transition-colors duration-150" href="{{ route('donor') }}">Darah</a>
 <a class="text-red-600 dark:text-red-500 border-b-2 border-red-600 pb-1" href="{{ route('relawan') }}">Relawan</a>
 </div>

@@ -146,33 +146,23 @@ body{
 <body class="bg-gray-50">
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg fixed-top py-2 shadow-sm">
-  <div class="container d-flex justify-content-between align-items-center">
-
-    <a class="navbar-brand fw-bold text-dark d-flex align-items-center" href="{{ route('admin.dashboard') }}">
-      <img src="{{ asset('images/logo.png') }}" alt="Logo PMI" width="100" class="me-2">
-
-      <div class="d-flex flex-column">
-        <span style="font-size:0.95rem;font-weight:600;">
-          PMI Kabupaten Magetan
-        </span>
-        <small style="font-size:0.75rem;color:#555;">
-          Palang Merah Indonesia
-        </small>
-      </div>
-
-    </a>
-
-    <form method="POST" action="{{ route('logout') }}" class="m-0">
-      @csrf
-      <button type="submit"
-              class="rounded-pill bg-red-600 hover:bg-red-700 text-white px-4 py-2 fw-semibold border-0">
-        <i class="bi bi-box-arrow-right me-1"></i> Logout
-      </button>
-    </form>
-
-  </div>
+<header class="fixed top-0 left-72 right-0 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl flex justify-between items-center h-16 px-8 border-b border-slate-200/50 dark:border-slate-800/50 z-40">
+<div class="flex items-center gap-8">
+<h1 class="font-black text-red-600 dark:text-red-500 font-headline tracking-tight uppercase text-sm">Dashboard Utama</h1>
+<nav class="hidden md:flex gap-6">
+<a class="text-red-600 border-b-2 border-red-600 pb-1 font-manrope text-sm tracking-tight" href="{{ route('admin.dashboard') }}">Dashboard</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-red-500 transition-all font-manrope text-sm tracking-tight" href="{{ route('admin.profil-submenu.index') }}">Kelola Profil</a>
 </nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-3 pl-4 border-l border-slate-200 dark:border-slate-800">
+<div class="text-right">
+<p class="text-xs font-bold text-slate-900 dark:text-white leading-none">{{ auth()->user()->nama_pengguna ?? 'Admin' }}</p>
+</div>
+<img alt="Administrator Profile" class="w-8 h-8 rounded-full object-cover border border-slate-200" data-alt="professional portrait of a confident middle-aged man in business attire, clean grey background, soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOh27tdFfyiOjhTq67ooP2rK7W-kusvrkOGenRDQ2TnP7zHmPmJAWolaBYfGThLCj1v-l_4f-cFcpHye2OWih9KX0ZXZpLHGIIEROcrcbgEusxVFU1dd0mlV3zojD5Ejyf8WYK1T2QLmVKDCoQQH5ZqOIq4Iy-UF3gbPzEDKoU6wcpdL4n5YeMgX5ItVy0YIIWs9QMOypZBdIxp0As_sRDRwbEIHWzpRSN2o31IKNK8rT6nrvfABk_O8psWeZUdcwMt4rBBnjzjQ"/>
+</div>
+</div>
+</header>
 
 {{-- Sidebar --}}
 @include('admin.sidebar')

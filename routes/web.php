@@ -24,7 +24,7 @@ Route::get('/tes-sederhana', function () {
 */
 
 Route::get('/', fn() => view('home'))->name('home');
-Route::get('/about', fn() => view('about'))->name('about');
+Route::get('/about', [SubmenuProfilController::class, 'landing'])->name('about');
 Route::get('/relawan', fn() => view('relawan'))->name('relawan');
 Route::get('/bencana', fn() => view('bencana'))->name('bencana');
 Route::get('/ambulans', fn() => view('ambulans'))->name('ambulans');

@@ -118,4 +118,15 @@ class SubmenuProfilController extends Controller
         return redirect()->route('admin.profil-submenu.index')
             ->with('success', 'Submenu Profil berhasil dihapus');
     }
+
+    public function landing()
+{
+    $visi = SubmenuProfil::where('slug', 'visi')->first();
+    $misi = SubmenuProfil::where('slug', 'misi')->first();
+    $Direktur = SubmenuProfil::where('slug', 'Direktur')->first();
+
+    return view('about', compact('visi', 'misi', 'Direktur'));
 }
+}
+
+
