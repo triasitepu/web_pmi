@@ -101,21 +101,7 @@
 </head>
 <body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-white">
 <!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-gray-950/80 backdrop-blur-md shadow-sm dark:shadow-none">
-<div class="flex justify-between items-center px-8 h-20 max-w-screen-2xl mx-auto">
-<div class="text-2xl font-black text-red-600 dark:text-red-500 font-headline">PMI Magetan</div>
-<div class="hidden md:flex items-center gap-8 font-headline text-sm font-semibold tracking-tight">
-<a class="text-gray-600 dark:text-gray-400 hover:text-red-500 transition-colors duration-150" href="/">Beranda</a>    
-<a class="text-gray-600 dark:text-gray-400 hover:text-red-500 transition-colors duration-150" href="{{ route('about') }}">Tentang Kami</a>
-<a class="text-gray-600 dark:text-gray-400 hover:text-red-500 transition-colors duration-150" href="{{ route('ambulans') }}">Ambulans</a>
-<a class="text-gray-600 dark:text-gray-400 hover:text-red-500 transition-colors duration-150" href="{{ route('bencana') }}">Bencana</a>
-<a class="text-gray-600 dark:text-gray-400 hover:text-red-500 transition-colors duration-150" href="{{ route('diklat') }}">Pelatihan</a>
-<a class="text-gray-600 dark:text-gray-400 hover:text-red-500 transition-colors duration-150" href="{{ route('donor') }}">Darah</a>
-<a class="text-red-600 dark:text-red-500 border-b-2 border-red-600 pb-1" href="{{ route('relawan') }}">Relawan</a>
-</div>
-<button class="bg-primary-container text-white px-6 py-2.5 rounded-lg font-headline font-bold text-sm hover:opacity-90 active:scale-95 transition-all">Hotline Darurat</button>
-</div>
-</nav>
+@extends('partials.header')
 
 
 

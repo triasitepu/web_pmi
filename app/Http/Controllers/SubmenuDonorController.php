@@ -122,4 +122,11 @@ class SubmenuDonorController extends Controller
         return redirect()->route('admin.donor-submenu.index')
                          ->with('success', 'Submenu berhasil dihapus');
     }
+
+        public function landing()
+    {
+    $goldara = SubmenuDonor::where('slug', 'goldara')->first();
+
+    return view('donor', compact('goldara'));
+    }
 }

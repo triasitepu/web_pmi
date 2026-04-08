@@ -14,6 +14,7 @@ use App\Http\Controllers\SubmenuRelawanController;
 use App\Http\Controllers\KebencanaanController;
 use App\Http\Controllers\SubmenuKebencanaanController;
 
+
 Route::get('/tes-sederhana', function () {
     return 'TES ROUTE SEDERHANA BERHASIL! (tanpa auth, prefix, middleware)';
 });
@@ -28,7 +29,7 @@ Route::get('/about', [SubmenuProfilController::class, 'landing'])->name('about')
 Route::get('/relawan', fn() => view('relawan'))->name('relawan');
 Route::get('/bencana', fn() => view('bencana'))->name('bencana');
 Route::get('/ambulans', fn() => view('ambulans'))->name('ambulans');
-Route::get('/donor', fn() => view('donor'))->name('donor');
+Route::get('/donor', [SubmenuDonorController::class, 'landing'])->name('donor');
 Route::get('/diklat', fn() => view('diklat'))->name('diklat');
 
 
@@ -56,6 +57,30 @@ Route::middleware(['auth', 'role:admin,superadmin'])
     ->prefix('admin')
     ->name('admin.')
     ->group(function () {
+
+    Route::middleware(['auth'])->group(function () {
+
+    Route::get('/kelola-admin', [UserController::class, 'index'])
+        ->name('admin.index');
+
+    Route::get('/kelola-admin/create', [UserController::class, 'create'])
+        ->name('admin.create');
+
+    Route::post('/kelola-admin/store', [UserController::class, 'store'])
+        ->name('admin.store');
+
+    Route::get('/kelola-admin/edit/{id}', [UserController::class, 'edit'])
+        ->name('admin.edit');
+
+    Route::post('/kelola-admin/update/{id}', [UserController::class, 'update'])
+        ->name('admin.update');
+
+    Route::post('/kelola-admin/toggle/{id}', [UserController::class, 'toggleStatus'])
+        ->name('admin.toggle');
+    Route::delete('/kelola-admin/destroy/{id}', [UserController::class, 'destroy'])
+        ->name('admin.destroy');
+
+});
 
         // Dashboard
         Route::get('/dashboard', [DashboardController::class, 'index'])

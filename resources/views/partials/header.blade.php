@@ -1,77 +1,74 @@
 <header>
-    <div class="top-bar-right d-flex align-items-center text-md-left">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col d-flex align-items-center contact-info">
-                    <div>
-                        <i data-feather="phone"></i> (021) 775 6643
-                    </div>
-                    <div>
-                        <i data-feather="mail"></i>
-                        <a style="color: black;">info@pmimagetan.com</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+   <nav class="fixed top-0 w-full z-50 bg-white dark:bg-gray-950 shadow-md">
+<div class="flex justify-between items-center px-8 h-20 max-w-screen-2xl mx-auto">
+    <div class="flex items-center">
+    <a href="/" class="flex items-center bg-white rounded-b-lg px-2 py-1 shadow-sm">
+        <img src="{{ asset('images/logo.png') }}" 
+             alt="PMI Logo" 
+             class="h-12 w-auto object-contain">
+
+        <span class="ml-3 font-bold text-lg text-red-600">
+            Magetan
+        </span>
+    </a>
+</div>
+<div class="hidden md:flex items-center gap-8 font-headline text-sm font-semibold tracking-tight">
+<a class="text-gray-600 dark:text-gray-400 hover:text-red-500 transition-colors duration-150" href="/">Beranda</a>    
+<a class="text-gray-600 dark:text-gray-400 hover:text-red-500 transition-colors duration-150" href="{{ route('about') }}">Tentang Kami</a>
+<div class="relative">
+    <button onclick="toggleDropdown()" 
+        class="flex items-center gap-1 text-gray-600 dark:text-gray-400 hover:text-red-500">
+        Layanan
+        <span class="material-symbols-outlined text-base">expand_more</span>
+    </button>
+
+    {{-- DROPDOWN --}}
+    <div id="dropdownMenu"
+         class="hidden absolute bg-white dark:bg-gray-900 shadow-lg rounded-xl mt-3 w-52 py-2 z-50">
+
+        <a href="{{ route('ambulans') }}" class="block px-4 py-2 hover:bg-red-50 text-sm">
+            Ambulans
+        </a>
+
+        <a href="{{ route('bencana') }}" class="block px-4 py-2 hover:bg-red-50 text-sm">
+            Bencana
+        </a>
+
+        <a href="{{ route('diklat') }}" class="block px-4 py-2 hover:bg-red-50 text-sm">
+            Pelatihan
+        </a>
+
+        <a href="{{ route('donor') }}" class="block px-4 py-2 hover:bg-red-50 text-sm">
+            Donor Darah
+        </a>
+
+        <a href="{{ route('relawan') }}" class="block px-4 py-2 hover:bg-red-50 text-sm">
+            Relawan
+        </a>
+
     </div>
+</div>
 
-    <nav class="navbar navbar-expand-lg header-fullpage sticky-top">
-        <div class="container text-nowrap">
-            <div class="d-flex align-items-center w-100 col p-0 logo-brand">
-                <a class="navbar-brand rounded-bottom light-bg" href="/">
-                    <img src="{{ asset('images/logo.png') }}" height="100" alt="PMI Logo">
-                    <span class="ms-3 fw-bold">Magetan</span>
-                </a>
-            </div>
+<button class="bg-primary-container text-white px-6 py-2.5 rounded-lg font-headline font-bold text-sm hover:opacity-90 active:scale-95 transition-all">Hotline Darurat</button>
+</div>
+</div>
+</nav>
 
-            <div class="d-inline-flex request-btn order-lg-last col-auto p-0 align-items-center">
-                <button class="navbar-toggler x collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
+<script>
+function toggleDropdown() {
+    const menu = document.getElementById('dropdownMenu');
+    menu.classList.toggle('hidden');
+}
 
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="/">Beranda</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">Tentang Kami</a></li>
+// Tutup dropdown kalau klik di luar
+document.addEventListener('click', function (e) {
+    const button = e.target.closest('button');
+    const menu = document.getElementById('dropdownMenu');
 
-
-                    <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="layananDropdown" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Layanan
-                    </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ route('ambulans') }}">Ambulans</a></li>
-                            <li><a class="dropdown-item" href="{{ route('bencana') }}">Penanggulangan Bencana</a></li>
-                            <li><a class="dropdown-item" href="#">Diklat Bersertifikat</a></li>
-                            <li><a class="dropdown-item" href="#">Donor Darah</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item"><a class="nav-link" href="{{ route('relawan') }}">Relawan</a>
-                    </li>
-                     <!-- LOGIN ADMIN -->
-                    <li class="nav-item ms-lg-3">
-                        <a href="{{ route('login') }}"
-                           class="btn btn-danger px-4 py-2 rounded-pill fw-semibold">
-                            <i class="bi bi-person-lock me-1"></i> Login</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <script>
-    window.addEventListener('scroll', function() {
-        const header = document.querySelector('.header-fullpage');
-        if (window.scrollY > 0) { // scroll lebih dari 0
-            header.classList.add('fixed');
-        } else {
-            header.classList.remove('fixed');
-        }
-    });
+    if (!e.target.closest('#dropdownMenu') && !button) {
+        menu.classList.add('hidden');
+    }
+});
 </script>
 
 </header>

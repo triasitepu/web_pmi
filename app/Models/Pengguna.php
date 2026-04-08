@@ -16,6 +16,7 @@ class Pengguna extends Authenticatable
         'kata_sandi',
         'peran',
         'status',
+        'remember_token',
     ];
 
     protected $hidden = [

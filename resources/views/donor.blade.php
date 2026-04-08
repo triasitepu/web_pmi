@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 
-<html class="light" lang="id"><head>
+<html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Donor - PMI Portal</title>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;800&amp;family=Inter:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<title>PMI Portal | Donor Darah</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
@@ -74,7 +73,7 @@
                     "label": ["Inter"]
             }
           },
-        },
+        }
       }
     </script>
 <style>
@@ -85,43 +84,16 @@
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
         }
-        .editorial-shadow {
-            box-shadow: 0 12px 32px -4px rgba(74, 74, 74, 0.08);
-        }
-        .asymmetric-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-        }
-        @media (max-width: 768px) {
-            .asymmetric-grid {
-                grid-template-columns: 1fr;
-            }
-        }
     </style>
 </head>
-<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-white">
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
 <!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-gray-950/80 backdrop-blur-md shadow-sm dark:shadow-none">
-<div class="flex justify-between items-center px-8 h-20 max-w-screen-2xl mx-auto">
-<div class="text-2xl font-black text-red-600 dark:text-red-500 font-headline">PMI Magetan</div>
-<div class="hidden md:flex items-center gap-8 font-headline text-sm font-semibold tracking-tight">
-<a class="text-gray-600 dark:text-gray-400 hover:text-red-500 transition-colors duration-150" href="/">Beranda</a>    
-<a class="text-gray-600 dark:text-gray-400 hover:text-red-500 transition-colors duration-150" href="{{ route('about') }}">Tentang Kami</a>
-<a class="text-gray-600 dark:text-gray-400 hover:text-red-500 transition-colors duration-150" href="{{ route('ambulans') }}">Ambulans</a>
-<a class="text-gray-600 dark:text-gray-400 hover:text-red-500 transition-colors duration-150" href="{{ route('bencana') }}">Bencana</a>
-<a class="text-gray-600 dark:text-gray-400 hover:text-red-500 transition-colors duration-150" href="{{ route('diklat') }}">Pelatihan</a>
-<a class="text-gray-600 dark:text-gray-400 hover:text-red-500 transition-colors duration-150" href="{{ route('donor') }}">Darah</a>
-<a class="text-red-600 dark:text-red-500 border-b-2 border-red-600 pb-1" href="{{ route('relawan') }}">Relawan</a>
-</div>
-<button class="bg-primary-container text-white px-6 py-2.5 rounded-lg font-headline font-bold text-sm hover:opacity-90 active:scale-95 transition-all">Hotline Darurat</button>
-</div>
-</nav>
-
+@extends('partials.header')
 <main class="pt-20">
 <!-- Hero Section -->
 <section class="relative h-[614px] flex items-center overflow-hidden bg-surface">
 <div class="absolute inset-0 z-0">
-<img class="w-full h-full object-cover opacity-20" data-alt="close-up of a healthcare professional preparing equipment for a blood donation in a clean, modern medical facility with soft ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8yoS-4TOYFxqIizRZEhIfi6PmQyb9aEKsUe5ZX2XF4fFfuipcJ5IAJqgPyVtJAayIbtf2LFa2_Fko6qVjWqoyc_wBOfiwh4rcSut0vTzEcXIFP6M5nSgKpBrcM8iWDwlTwOtTcSGZ9Kgdp7Ninqk7Bzo3ngWQyVJnx_WY_8it2P2UDvDcBide7RScj_k9DA_f08h2faABuAfQHXMTHQz1B7SrC5qlVsAdoV82iOecbegBR8LuDZpscq8UFENUcfGKr2u0CFR3lQ"/>
+<img class="w-full h-full object-cover opacity-20" data-alt="close-up of a healthcare professional preparing equipment for a blood donation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8yoS-4TOYFxqIizRZEhIfi6PmQyb9aEKsUe5ZX2XF4fFfuipcJ5IAJqgPyVtJAayIbtf2LFa2_Fko6qVjWqoyc_wBOfiwh4rcSut0vTzEcXIFP6M5nSgKpBrcM8iWDwlTwOtTcSGZ9Kgdp7Ninqk7Bzo3ngWQyVJnx_WY_8it2P2UDvDcBide7RScj_k9DA_f08h2faABuAfQHXMTHQz1B7SrC5qlVsAdoV82iOecbegBR8LuDZpscq8UFENUcfGKr2u0CFR3lQ"/>
 <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent"></div>
 </div>
 <div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
@@ -135,86 +107,224 @@
 </div>
 </div>
 </section>
-<!-- Bento Grid: Blood Stocks & Status -->
+<!-- 1. Real-time Blood Stock Section -->
 <section class="py-24 bg-surface-container-low">
 <div class="max-w-7xl mx-auto px-8">
 <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
 <div>
 <h2 class="text-4xl font-headline font-extrabold mb-4 tracking-tight">Stok Darah Real-time</h2>
-<p class="text-secondary max-w-md font-body leading-relaxed">Pemantauan real-time bank darah lokal. Tipe O- dan B- saat ini sangat dibutuhkan.</p>
+<p class="text-secondary max-w-md font-body leading-relaxed">Pantau ketersediaan stok darah di bank darah kami secara langsung.</p>
 </div>
-<div class="flex items-center gap-2 text-sm font-label font-semibold text-secondary"><span class="w-3 h-3 rounded-full bg-green-500 animate-pulse"></span> Update terakhir: 14:02 Hari Ini</div>
+<div class="flex items-center gap-2 text-sm font-label font-semibold text-secondary">
+<span class="w-3 h-3 rounded-full bg-green-500 animate-pulse"></span> Update terakhir: 14:02 Hari Ini
+                </div>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-<!-- High Demand Card -->
-<div class="md:col-span-2 bg-surface-container-lowest p-8 rounded-xl flex flex-col justify-between">
+<!-- Summary Metrics Added Here -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
+<div class="bg-white p-6 rounded-xl shadow-sm border border-surface-container-high flex items-center gap-6">
+<div class="w-16 h-16 rounded-full bg-primary-container/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">volunteer_activism</span>
+</div>
 <div>
-<span class="material-symbols-outlined text-primary text-4xl mb-6">warning</span>
-<h3 class="text-2xl font-headline font-bold mb-2">Kekurangan Kritis</h3>
-<p class="text-secondary mb-8 leading-relaxed">Donor universal (O Negatif) sangat dibutuhkan untuk operasi trauma darurat hari ini.</p>
-</div>
-<div class="grid grid-cols-4 gap-4">
-<div class="text-center">
-<div class="text-3xl font-headline font-black text-primary">O-</div>
-<div class="text-[10px] font-label font-bold uppercase text-primary">KRITIS</div>
-</div>
-<div class="text-center">
-<div class="text-3xl font-headline font-black text-tertiary">B-</div>
-<div class="text-[10px] font-label font-bold uppercase text-tertiary">RENDAH</div>
-</div>
-<div class="text-center opacity-40">
-<div class="text-3xl font-headline font-black text-on-surface">A+</div>
-<div class="text-[10px] font-label font-bold uppercase">STABIL</div>
-</div>
-<div class="text-center opacity-40">
-<div class="text-3xl font-headline font-black text-on-surface">AB+</div>
-<div class="text-[10px] font-label font-bold uppercase">STABIL</div>
+<p class="text-secondary text-xs font-bold uppercase tracking-wider mb-1">Total Donasi Bulan Ini</p>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-headline font-black text-on-surface">850</span>
+<span class="text-secondary text-sm font-semibold">Kantong</span>
 </div>
 </div>
 </div>
-<!-- Supply Level Bento Items -->
-<div class="bg-surface-container-lowest p-8 rounded-xl border-l-4 border-primary">
-<h4 class="font-headline font-bold text-lg mb-1">O Positive</h4>
-<div class="text-4xl font-headline font-black mb-4">42%</div>
-<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
-<div class="bg-primary h-full w-[42%]"></div>
-</div>
-<p class="mt-4 text-xs font-label text-secondary">Tingkat optimal: 75%+</p>
-</div>
-<div class="bg-surface-container-lowest p-8 rounded-xl border-l-4 border-tertiary">
-<h4 class="font-headline font-bold text-lg mb-1">A Negative</h4>
-<div class="text-4xl font-headline font-black mb-4">68%</div>
-<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
-<div class="bg-tertiary h-full w-[68%]"></div>
-</div>
-<p class="mt-4 text-xs font-label text-secondary">Pasokan stabil tersedia</p>
-</div>
-<!-- Small Stat Cards -->
-<div class="bg-white p-8 rounded-xl shadow-sm md:col-span-1">
-<span class="material-symbols-outlined text-secondary mb-4">volunteer_activism</span>
-<div class="text-4xl font-headline font-black text-on-surface">1,240</div>
-<div class="text-sm font-label text-secondary">Donations this month</div>
-</div>
-<div class="bg-white p-8 rounded-xl shadow-sm md:col-span-1">
-<span class="material-symbols-outlined text-secondary mb-4">schedule</span>
-<div class="text-4xl font-headline font-black text-on-surface">15m</div>
-<div class="text-sm font-label text-secondary">Avg. donation time</div>
-</div>
-<div class="bg-primary text-on-primary p-8 rounded-xl md:col-span-2 flex items-center justify-between">
+<div class="bg-white p-6 rounded-xl shadow-sm border border-surface-container-high flex items-center gap-6">
+<div class="w-16 h-16 rounded-full bg-primary-container/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">groups</span></div>
 <div>
-<h4 class="text-2xl font-headline font-bold">Siap membantu?</h4>
-<p class="text-on-primary/80 text-sm">Temukan pusat donor terdekat dan pesan slot Anda.</p>
+<p class="text-secondary text-xs font-bold uppercase tracking-wider mb-1">Rata-rata Donor Harian Nasional</p>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-headline font-black text-on-surface">280</span>
+<span class="text-secondary text-sm font-semibold">Orang</span>
 </div>
-<button class="bg-white text-primary px-6 py-3 rounded font-headline font-bold text-sm">Cek Jadwal</button>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- A Stock -->
+<div class="bg-white p-6 rounded-xl border-l-4 border-primary shadow-sm">
+<div class="flex justify-between items-center mb-4">
+<span class="text-3xl font-headline font-black text-on-surface">A</span>
+<span class="px-2 py-1 rounded text-[10px] font-bold bg-error-container text-error uppercase">Kritis</span>
+</div>
+
+<div class="text-4xl font-headline font-black mb-2">
+    {!! $goldara->isi ?? 'Stok belum tersedia' !!}
+</div>
+
+<div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[24%]"></div>
+</div>
+<p class="mt-4 text-xs font-label text-secondary">Butuh donor segera</p>
+</div>
+<!-- B Stock -->
+<div class="bg-white p-6 rounded-xl border-l-4 border-yellow-500 shadow-sm">
+<div class="flex justify-between items-center mb-4">
+<span class="text-3xl font-headline font-black text-on-surface">B</span>
+<span class="px-2 py-1 rounded text-[10px] font-bold bg-yellow-100 text-yellow-700 uppercase">Menipis</span>
+</div>
+<div class="text-4xl font-headline font-black mb-2">48%</div>
+<div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden">
+<div class="bg-yellow-500 h-full w-[48%]"></div>
+</div>
+<p class="mt-4 text-xs font-label text-secondary">Pasokan berkurang</p>
+</div>
+<!-- AB Stock -->
+<div class="bg-white p-6 rounded-xl border-l-4 border-tertiary shadow-sm">
+<div class="flex justify-between items-center mb-4">
+<span class="text-3xl font-headline font-black text-on-surface">AB</span>
+<span class="px-2 py-1 rounded text-[10px] font-bold bg-green-100 text-green-700 uppercase">Aman</span>
+</div>
+<div class="text-4xl font-headline font-black mb-2">82%</div>
+<div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden">
+<div class="bg-green-500 h-full w-[82%]"></div>
+</div>
+<p class="mt-4 text-xs font-label text-secondary">Pasokan melimpah</p>
+</div>
+<!-- O Stock -->
+<div class="bg-white p-6 rounded-xl border-l-4 border-primary shadow-sm">
+<div class="flex justify-between items-center mb-4">
+<span class="text-3xl font-headline font-black text-on-surface">O</span>
+<span class="px-2 py-1 rounded text-[10px] font-bold bg-error-container text-error uppercase">Kritis</span>
+</div>
+<div class="text-4xl font-headline font-black mb-2">15%</div>
+<div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[15%]"></div>
+</div>
+<p class="mt-4 text-xs font-label text-secondary">Stok sangat rendah</p>
 </div>
 </div>
 </div>
 </section>
-<!-- Requirements Section: Editorial Layout -->
+<!-- 2. Jadwal Donor Darah (Fixed Locations) -->
+<section class="py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-8">
+<div class="mb-12">
+<h2 class="text-4xl font-headline font-extrabold mb-4 tracking-tight">Jadwal Donor Darah</h2>
+<p class="text-secondary max-w-md font-body leading-relaxed">Sesi donor darah rutin di lokasi rumah sakit dan pusat kesehatan tetap.</p>
+</div>
+<div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-surface-container-high">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low border-b border-surface-container-high">
+<tr>
+<th class="px-8 py-4 font-headline font-bold text-sm uppercase tracking-wider text-secondary">Lokasi</th>
+<th class="px-8 py-4 font-headline font-bold text-sm uppercase tracking-wider text-secondary">Waktu Operasional</th>
+<th class="px-8 py-4 font-headline font-bold text-sm uppercase tracking-wider text-secondary text-right">Aksi</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high">
+<tr class="hover:bg-gray-50 transition-colors">
+<td class="px-8 py-6">
+<div class="font-headline font-bold text-lg">RSUD dr. Sayidiman</div>
+<div class="text-secondary text-sm flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                                    Jl. Pahlawan No. 2, Magetan
+                                </div>
+</td>
+<td class="px-8 py-6">
+<div class="text-on-surface font-semibold text-sm">Senin - Sabtu</div>
+<div class="text-secondary text-xs mt-1">08:00 - 20:00 WIB</div>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="bg-on-surface text-surface px-6 py-2.5 rounded font-headline font-bold text-sm">Daftar</button>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 transition-colors">
+<td class="px-8 py-6">
+<div class="font-headline font-bold text-lg">Unit Donor Darah PMI Magetan</div>
+<div class="text-secondary text-sm flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                                    Jl. Salak No. 1, Magetan
+                                </div>
+</td>
+<td class="px-8 py-6">
+<div class="text-on-surface font-semibold text-sm">Buka 24 Jam</div>
+<div class="text-secondary text-xs mt-1">Setiap Hari</div>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="bg-on-surface text-surface px-6 py-2.5 rounded font-headline font-bold text-sm">Daftar</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- 3. Jadwal Unit Keliling Section -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-headline font-extrabold mb-4 tracking-tight">Jadwal Unit Keliling</h2>
+<p class="text-secondary font-body">Kunjungi armada kami di berbagai lokasi strategis untuk mendonorkan darah Anda.</p>
+</div>
+<div class="grid grid-cols-1 gap-6 max-w-4xl mx-auto">
+<!-- Mobile Unit Item 1 -->
+<div class="bg-white p-6 md:p-8 rounded-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-sm border border-surface-container-high transition-transform hover:scale-[1.01]">
+<div class="flex gap-6 items-center">
+<div class="text-center bg-primary-container/10 px-5 py-3 rounded-xl border border-primary-container/20">
+<div class="text-xs font-label font-bold text-primary uppercase">Nov</div>
+<div class="text-3xl font-headline font-black text-primary">24</div>
+</div>
+<div>
+<h4 class="font-headline font-bold text-xl mb-1">Central Plaza Mobile Unit</h4>
+<div class="text-secondary text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">schedule</span> 09:00 - 14:00
+                                <span class="mx-2">•</span>
+<span class="material-symbols-outlined text-sm">group</span> Sisa 12 Slot
+                            </div>
+</div>
+</div>
+<button class="w-full md:w-auto bg-primary text-white px-8 py-3 rounded-lg font-headline font-bold text-sm shadow-md hover:bg-primary/90 transition-all">Pesan Slot</button>
+</div>
+<!-- Mobile Unit Item 2 -->
+<div class="bg-white p-6 md:p-8 rounded-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-sm border border-surface-container-high transition-transform hover:scale-[1.01]">
+<div class="flex gap-6 items-center">
+<div class="text-center bg-primary-container/10 px-5 py-3 rounded-xl border border-primary-container/20">
+<div class="text-xs font-label font-bold text-primary uppercase">Nov</div>
+<div class="text-3xl font-headline font-black text-primary">25</div>
+</div>
+<div>
+<h4 class="font-headline font-bold text-xl mb-1">Pasar Baru Magetan</h4>
+<div class="text-secondary text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">schedule</span> 08:00 - 12:00
+                                <span class="mx-2">•</span>
+<span class="material-symbols-outlined text-sm">group</span> Penuh
+                            </div>
+</div>
+</div>
+<button class="w-full md:w-auto bg-surface-container-highest text-secondary px-8 py-3 rounded-lg font-headline font-bold text-sm cursor-not-allowed" disabled="">Terisi Penuh</button>
+</div>
+<!-- Mobile Unit Item 3 -->
+<div class="bg-white p-6 md:p-8 rounded-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-sm border border-surface-container-high transition-transform hover:scale-[1.01]">
+<div class="flex gap-6 items-center">
+<div class="text-center bg-primary-container/10 px-5 py-3 rounded-xl border border-primary-container/20">
+<div class="text-xs font-label font-bold text-primary uppercase">Nov</div>
+<div class="text-3xl font-headline font-black text-primary">27</div>
+</div>
+<div>
+<h4 class="font-headline font-bold text-xl mb-1">GOR Ki Mageti</h4>
+<div class="text-secondary text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">schedule</span> 10:00 - 16:00
+                                <span class="mx-2">•</span>
+<span class="material-symbols-outlined text-sm">group</span> Sisa 45 Slot
+                            </div>
+</div>
+</div>
+<button class="w-full md:w-auto bg-primary text-white px-8 py-3 rounded-lg font-headline font-bold text-sm shadow-md hover:bg-primary/90 transition-all">Pesan Slot</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Requirements Section -->
 <section class="py-24 bg-surface">
 <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
 <div class="relative">
-<img class="rounded-2xl z-10 relative" data-alt="warm and welcoming lifestyle shot of a smiling donor comfortably sitting in a modern donation chair with a healthcare provider nearby" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcUEcpTQ5Ik6u3nVeKCwozJWVHi0KI5zy2Z0ccm1ewZS6Kc1BKrm3AagmnHK6QjcWbLGxNk2QbiJQjTUaoUgLWJE0HCacbesBEUfRRSk19-ygXvpwQQmxEB93m8WcZTMRaONflTSbN3GWpzcc8HrVKUjfpFvKLuUj4oUOFQZ9N3NU0xXVT5SzDkwIRNfur6UJc29Jvryr9DLwPpzF_WihMdI8qTAChYCsSGbLancZ_L6SHqga_E3T0_wwah1jaiCFym8HW3Jv9lA"/>
+<img class="rounded-2xl z-10 relative" data-alt="smiling donor sitting in a donation chair" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcUEcpTQ5Ik6u3nVeKCwozJWVHi0KI5zy2Z0ccm1ewZS6Kc1BKrm3AagmnHK6QjcWbLGxNk2QbiJQjTUaoUgLWJE0HCacbesBEUfRRSk19-ygXvpwQQmxEB93m8WcZTMRaONflTSbN3GWpzcc8HrVKUjfpFvKLuUj4oUOFQZ9N3NU0xXVT5SzDkwIRNfur6UJc29Jvryr9DLwPpzF_WihMdI8qTAChYCsSGbLancZ_L6SHqga_E3T0_wwah1jaiCFym8HW3Jv9lA"/>
 <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-primary-container/10 rounded-full -z-0"></div>
 </div>
 <div>
@@ -252,77 +362,6 @@
 </div>
 </div>
 </section>
-<!-- Schedules: Interactive Table Style -->
-<section class="py-24 bg-surface-container-low">
-<div class="max-w-5xl mx-auto px-8">
-<div class="text-center mb-16">
-<h2 class="text-4xl font-headline font-extrabold mb-4 tracking-tight">Stok Darah Real-time</h2>
-<p class="text-secondary font-body">Pemantauan real-time bank darah lokal. Tipe O- dan B- saat ini sangat dibutuhkan.</p>
-</div>
-<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm">
-<div class="grid grid-cols-1 divide-y divide-surface-container-high">
-<!-- Schedule Row -->
-<div class="p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 hover:bg-surface-container-lowest transition-colors">
-<div class="flex gap-6 items-center">
-<div class="text-center bg-surface-container-high px-4 py-2 rounded">
-<div class="text-sm font-label font-bold text-secondary uppercase">Nov</div>
-<div class="text-2xl font-headline font-extrabold text-on-surface">24</div>
-</div>
-<div>
-<h4 class="font-headline font-bold text-lg">Central Plaza Mobile Unit</h4>
-<p class="text-secondary text-sm">Pemantauan real-time bank darah lokal. Tipe O- dan B- saat ini sangat dibutuhkan.</p>
-</div>
-</div>
-<div class="flex items-center gap-4 w-full md:w-auto">
-<div class="hidden lg:flex items-center gap-2 text-xs font-label text-tertiary bg-tertiary-fixed px-3 py-1 rounded-full">
-<span class="material-symbols-outlined text-sm">check_circle</span>
-                                    12 Slots Left
-                                </div>
-<button class="w-full md:w-auto bg-on-surface text-surface px-6 py-2 rounded font-headline font-bold text-sm">Pesan Jadwal</button>
-</div>
-</div>
-<div class="p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 hover:bg-surface-container-lowest transition-colors">
-<div class="flex gap-6 items-center">
-<div class="text-center bg-surface-container-high px-4 py-2 rounded">
-<div class="text-sm font-label font-bold text-secondary uppercase">Nov</div>
-<div class="text-2xl font-headline font-extrabold text-on-surface">25</div>
-</div>
-<div>
-<h4 class="font-headline font-bold text-lg">District Health Hospital</h4>
-<p class="text-secondary text-sm">Pemantauan real-time bank darah lokal. Tipe O- dan B- saat ini sangat dibutuhkan.</p>
-</div>
-</div>
-<div class="flex items-center gap-4 w-full md:w-auto">
-<div class="hidden lg:flex items-center gap-2 text-xs font-label text-error bg-error-container px-3 py-1 rounded-full">
-<span class="material-symbols-outlined text-sm">warning</span>
-                                    Filling Fast
-                                </div>
-<button class="w-full md:w-auto bg-on-surface text-surface px-6 py-2 rounded font-headline font-bold text-sm">Pesan Jadwal</button>
-</div>
-</div>
-<div class="p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 hover:bg-surface-container-lowest transition-colors">
-<div class="flex gap-6 items-center">
-<div class="text-center bg-surface-container-high px-4 py-2 rounded">
-<div class="text-sm font-label font-bold text-secondary uppercase">Nov</div>
-<div class="text-2xl font-headline font-extrabold text-on-surface">27</div>
-</div>
-<div>
-<h4 class="font-headline font-bold text-lg">Community Community Hall</h4>
-<p class="text-secondary text-sm">Pemantauan real-time bank darah lokal. Tipe O- dan B- saat ini sangat dibutuhkan.</p>
-</div>
-</div>
-<div class="flex items-center gap-4 w-full md:w-auto">
-<div class="hidden lg:flex items-center gap-2 text-xs font-label text-tertiary bg-tertiary-fixed px-3 py-1 rounded-full">
-<span class="material-symbols-outlined text-sm">check_circle</span>
-                                    45 Slots Left
-                                </div>
-<button class="w-full md:w-auto bg-on-surface text-surface px-6 py-2 rounded font-headline font-bold text-sm">Pesan Jadwal</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
 <!-- Process Section -->
 <section class="py-24 bg-surface-container-highest">
 <div class="max-w-7xl mx-auto px-8">
@@ -335,7 +374,7 @@
 </div>
 <div class="text-center">
 <div class="text-6xl font-headline font-black text-outline-variant/30 mb-4">02</div>
-<h4 class="font-headline font-bold text-xl mb-2">Pemeriksaan Fisik Singkat</h4>
+<h4 class="font-headline font-bold text-xl mb-2">Pemeriksaan Fisik</h4>
 <p class="text-secondary text-sm">Pemeriksaan cepat denyut nadi, tekanan darah, dan kadar hemoglobin Anda.</p>
 </div>
 <div class="text-center">
@@ -346,7 +385,7 @@
 <div class="text-center">
 <div class="text-6xl font-headline font-black text-outline-variant/30 mb-4">04</div>
 <h4 class="font-headline font-bold text-xl mb-2">Pemulihan</h4>
-<p class="text-secondary text-sm">Nikmati makanan ringan dan minuman gratis sambil beristirahat selama 15 menit.</p>
+<p class="text-secondary text-sm">Nikmati makanan ringan gratis sambil beristirahat selama 15 menit.</p>
 </div>
 </div>
 </div>

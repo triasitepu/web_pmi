@@ -132,6 +132,16 @@
 <span class="material-symbols-outlined" data-icon="volcano">volcano</span>
                     Kelola Kebencanaan
                 </a>
+
+    {{-- SUPERADMIN --}}
+    @if(strtolower(auth()->user()->peran) === 'superadmin')
+
+      <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors font-manrope text-sm font-medium" 
+      href="{{ route('admin.superadmin.users.index') }}">
+<span class="material-symbols-outlined" data-icon="people">people</span>
+                    Kelola Pengguna
+                </a>
+    @endif
 </nav>
 </div>
 <div class="mt-auto p-8">
