@@ -50,6 +50,16 @@
     <!-- Footer -->
     @include('partials.footer')
 
+
+    <!-- chatbox -->
+    @include('partials.chatbox')
+
+    <!-- chat -->
+    <button id="chatToggle"
+class="fixed bottom-6 right-6 w-14 h-14 bg-red-600 text-white rounded-full shadow-lg z-50">
+💬
+</button>
+
     <!-- JS -->
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -71,6 +81,26 @@
     <script src="{{ asset('js/czm-chat-support.min.js') }}"></script>
     <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('js/home-slider.js') }}"></script>
+
+    <script>
+document.addEventListener("DOMContentLoaded", function(){
+
+const toggle = document.getElementById('chatToggle');
+const box = document.getElementById('chatBox');
+const closeBtn = document.getElementById('closeChat');
+const content = document.getElementById('chatContent');
+
+if(toggle){
+    toggle.onclick = () => box.classList.toggle('hidden');
+}
+
+if(closeBtn){
+    closeBtn.onclick = () => box.classList.add('hidden');
+}
+
+// function tetap sama...
+});
+</script>
 
 </body>
 </html>

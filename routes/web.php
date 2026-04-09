@@ -13,6 +13,9 @@ use App\Http\Controllers\RelawanController;
 use App\Http\Controllers\SubmenuRelawanController;
 use App\Http\Controllers\KebencanaanController;
 use App\Http\Controllers\SubmenuKebencanaanController;
+use App\Http\Controllers\DiklatController;
+use App\Http\Controllers\SubmenuDiklatController;
+use App\Http\Controllers\PengaduanController;
 
 
 Route::get('/tes-sederhana', function () {
@@ -31,6 +34,7 @@ Route::get('/bencana', fn() => view('bencana'))->name('bencana');
 Route::get('/ambulans', fn() => view('ambulans'))->name('ambulans');
 Route::get('/donor', [SubmenuDonorController::class, 'landing'])->name('donor');
 Route::get('/diklat', fn() => view('diklat'))->name('diklat');
+Route::post('/pengaduan', [PengaduanController::class, 'store'])->name('pengaduan.store');
 
 
 
@@ -215,7 +219,47 @@ Route::middleware(['auth', 'role:admin,superadmin'])
 
         });
 
+         /*
+        |--------------------------------------------------------------------------
+        | MENU DIKLAT PMI
+        |--------------------------------------------------------------------------
+        */
 
+        Route::prefix('diklat')->name('diklat.')->group(function () {
+            Route::get('/', [DiklatController::class, 'index'])
+                ->name('index');
+
+            Route::get('/create', [DiklatController::class, 'create'])
+                ->name('create');
+
+            Route::post('/', [DiklatController::class, 'store'])
+                ->name('store');
+
+            Route::get('/{id}/edit', [DiklatController::class, 'edit'])
+                ->name('edit');
+
+            Route::put('/{id}', [DiklatController::class, 'update'])
+                ->name('update');
+
+            Route::delete('/{id}', [DiklatController::class, 'destroy'])
+                ->name('destroy');
+        });
+         /*
+        |--------------------------------------------------------------------------
+        | SUBMENU DIKLAT (CRUD)
+        |--------------------------------------------------------------------------
+        */
+         Route::prefix('diklat-submenu')->name('diklat-submenu.')->group(function () {
+
+            Route::get('/', [SubmenuDiklatController::class, 'index'])->name('index');
+            Route::get('/create', [SubmenuDiklatController::class, 'create'])->name('create');
+            Route::post('/', [SubmenuDiklatController::class, 'store'])->name('store');
+            Route::get('/{id}', [SubmenuDiklatController::class, 'show'])->name('show');
+            Route::get('/{id}/edit', [SubmenuDiklatController::class, 'edit'])->name('edit');
+            Route::put('/{id}', [SubmenuDiklatController::class, 'update'])->name('update');
+            Route::delete('/{id}', [SubmenuDiklatController::class, 'destroy'])->name('destroy');
+
+        });
           /*
         |--------------------------------------------------------------------------
         | MENU  KEBENCANAAN PMI

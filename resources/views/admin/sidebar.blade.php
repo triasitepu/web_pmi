@@ -124,7 +124,7 @@ href="{{ route('admin.dashboard') }}">
                     Kelola Relawan
                 </a>
 <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors font-manrope text-sm font-medium" 
-      href="#">
+      href="{{ route('admin.diklat-submenu.index') }}">
 <span class="material-symbols-outlined" data-icon="school">school</span>
                     Diklat PMI
                 </a>

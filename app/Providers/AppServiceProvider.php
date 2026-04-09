@@ -10,6 +10,7 @@ use App\Models\DonorDarah;
 use App\Models\SubmenuDonor;
 use App\Models\SubmenuRelawan;
 use App\Models\SubmenuKebencanaan;
+use App\Models\SubmenuDiklat;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -59,6 +60,15 @@ public function boot()
         $view->with([
             'kebencanaanSubmenus' => $kebencanaanSubmenus,
         ]);
+
+        //Diklat
+          $diklatSubmenus = SubmenuDiklat::where('is_active', 1)->orderBy('urutan')->get(); 
+        $view->with([
+            'diklatSubmenus' => $diklatSubmenus,
+        ]);
+
+        
+
     });
 }
 

@@ -103,7 +103,7 @@
 <!-- TopNavBar -->
 
 @extends('partials.header')
-
+@include('partials.chatbox')
 
 
 <main class="pt-20">
