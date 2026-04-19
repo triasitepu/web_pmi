@@ -28,20 +28,25 @@
       <i class="bi bi-file-earmark-text me-2"></i>{{ $submenu->nama_submenu }}
     </h2>
     <div>
-      <a href="{{ route('admin.diklat-submenu.edit', $submenu->id) }}" 
-         class="btn btn-warning btn-sm">
-        <i class="bi bi-pencil-square me-1"></i> Edit
-      </a>
-      <form action="{{ route('admin.diklat-submenu.destroy', $submenu->id) }}" 
-            method="POST" 
-            class="d-inline"
-            onsubmit="return confirm('Yakin ingin menghapus submenu ini?')">
-        @csrf
-        @method('DELETE')
-        <button type="submit" class="btn btn-danger btn-sm">
-          <i class="bi bi-trash me-1"></i> Hapus
-        </button>
-      </form>
+     
+          <!-- Edit -->
+          <a href="{{ route('admin.diklat-submenu.edit', $submenu->id) }}" 
+            class="btn-icon text-warning">
+            <i class="bi bi-pencil-square"></i>
+          </a>
+
+          <!-- Hapus -->
+          <form action="{{ route('admin.diklat-submenu.destroy', $submenu->id) }}" 
+                method="POST" 
+                class="d-inline"
+                onsubmit="return confirm('Yakin ingin menghapus submenu ini?')">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn-icon text-danger">
+              <i class="bi bi-trash"></i>
+            </button>
+          </form>
+
     </div>
   </div>
 

@@ -120,9 +120,9 @@
                         Melayani dengan tulus, bergerak dengan sigap. Kami hadir sebagai garda terdepan dalam aksi kemanusiaan di Kabupaten Magetan.
                     </p>
 <div class="flex flex-wrap gap-4 pt-4">
-<button class="bg-primary-container text-on-primary px-10 py-4 rounded-xl font-bold text-lg hover:bg-primary transition-all shadow-lg">
+<!-- <button class="bg-primary-container text-on-primary px-10 py-4 rounded-xl font-bold text-lg hover:bg-primary transition-all shadow-lg">
                             Donasi Sekarang
-                        </button>
+                        </button> -->
 <button class="bg-white/10 backdrop-blur-md border border-white/30 text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all">
                             Layanan Darurat
                         </button>

@@ -10,7 +10,7 @@
     <div>
       <ol class="breadcrumb mb-0">
         <li class="breadcrumb-item">
-          <a href="{{ route('admin.donor.index') }}" class="text-danger fw-semibold text-decoration-none">
+          <a href="{{ route('admin.donor.index') }}" class="text-black fw-semibold text-decoration-none">
             <i class="bi bi-arrow-left-circle me-1"></i> Daftar Donor Darah
           </a>
         </li>
@@ -22,7 +22,7 @@
   </div>
 
   {{-- Judul --}}
-  <h2 class="text-danger text-center text-2xl font-bold mb-4">
+  <h2 class="text-black text-center text-2xl font-bold mb-4">
     Tambah Submenu Donor Darah Baru
   </h2>
 
@@ -116,7 +116,7 @@
 
     {{-- Tombol Simpan --}}
     <div class="text-end mt-4">
-      <button type="submit" class="btn btn-danger px-4">
+      <button type="submit" class="btn btn-soft-danger px-4">
         <i class="bi bi-save me-1"></i> Simpan
       </button>
     </div>

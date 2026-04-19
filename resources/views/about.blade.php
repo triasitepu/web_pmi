@@ -200,33 +200,38 @@
 <div class="max-w-7xl mx-auto">
 <div class="flex flex-col md:flex-row gap-16 items-start">
 <div class="md:w-1/3 sticky top-32">
-<h2 class="text-5xl font-black text-on-surface mb-6">Dekade <br/><span class="text-primary">Dedikasi.</span></h2>
+<h2 class="text-5xl font-black text-on-surface mb-6">Sejarah dan <br/><span class="text-primary">Dedikasi.</span></h2>
 <p class="text-secondary leading-relaxed">Perjalanan kami dimulai dengan satu janji: untuk hadir saat tidak ada orang lain. Jelajahi tonggak sejarah yang mendefinisikan warisan kemanusiaan kami.</p>
 </div>
 <div class="md:w-2/3 space-y-24">
 <div class="flex gap-8 group">
 <div class="text-3xl font-black text-outline-variant/30 group-hover:text-primary transition-colors">1945</div>
 <div>
-<h3 class="text-2xl font-bold mb-4">Yayasan</h3>
-<p class="text-secondary leading-relaxed mb-6">Lahir setelah konflik global, kami mendirikan markas besar pertama kami dengan fokus utama pada penyatuan kembali keluarga dan bantuan medis masa perang.</p>
-<img class="w-full h-64 object-cover rounded-xl grayscale hover:grayscale-0 transition-all duration-700" data-alt="Archival black and white style photo of a humanitarian tent station in a historical field setting, nostalgic and respectful mood" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBCrySCVkEISo-IHvaMM3rcfQT-CyY4jG35xyJnHOmNI5GvUfuNnDl4M8aaPVGYYlGiB6_ZlltBbiJLpcmvBr3I88Xo6ZTFuKlh8u2-l3RXZfEkiGmzmP8O3RRLb5G5PMhmfdEfOAQ_10utly32x9IXsydKM1jXNb64OsDD0QI8ZnEQjIckXv-saFL5GkCA_GRN6d5icxKFHhWYscvC0T8JfsgKLa7nl37OwTa_C_3krMW7_lPc0817jByYjEgGqG23iiSNG6opA"/>
+<h3 class="text-2xl font-bold mb-4">PMI INDONESIA</h3>
+<p class="text-secondary leading-relaxed mb-6"> Palang Merah Indonesia (PMI) merupakan organisasi kemanusiaan yang berperan membantu pemerintah di bidang sosial, kesehatan, dan penanggulangan bencana. Dalam menjalankan tugasnya, PMI berpedoman pada tujuh prinsip dasar Gerakan Palang Merah dan Bulan Sabit Merah Internasional serta amanat Undang-Undang Nomor 1 Tahun 2018 tentang Kepalangmerahan.
+Cikal bakal Palang Merah di Indonesia telah ada sejak tahun 1873 pada masa kolonial Belanda dengan berdirinya Nederlands Rode Kruis Afdeling Indie (NERKAI). Setelah Indonesia merdeka, PMI resmi didirikan pada 17 September 1945 sebagai organisasi kemanusiaan nasional yang bertugas membantu masyarakat dalam berbagai situasi darurat.
+PMI kemudian memperoleh pengakuan internasional pada tahun 1950 dan menjadi bagian dari Gerakan Internasional Palang Merah dan Bulan Sabit Merah. Sejak saat itu, PMI terus berkembang dalam memberikan pelayanan kemanusiaan, baik di bidang penanggulangan bencana, pelayanan darah, kesehatan, maupun pembinaan relawan, tanpa membedakan latar belakang.</p>
+<!-- <img class="w-full h-64 object-cover rounded-xl grayscale hover:grayscale-0 transition-all duration-700" data-alt="Archival black and white style photo of a humanitarian tent station in a historical field setting, nostalgic and respectful mood" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBCrySCVkEISo-IHvaMM3rcfQT-CyY4jG35xyJnHOmNI5GvUfuNnDl4M8aaPVGYYlGiB6_ZlltBbiJLpcmvBr3I88Xo6ZTFuKlh8u2-l3RXZfEkiGmzmP8O3RRLb5G5PMhmfdEfOAQ_10utly32x9IXsydKM1jXNb64OsDD0QI8ZnEQjIckXv-saFL5GkCA_GRN6d5icxKFHhWYscvC0T8JfsgKLa7nl37OwTa_C_3krMW7_lPc0817jByYjEgGqG23iiSNG6opA"/> -->
 </div>
 </div>
 <div class="flex gap-8 group">
 <div class="text-3xl font-black text-outline-variant/30 group-hover:text-primary transition-colors">1982</div>
 <div>
-<h3 class="text-2xl font-bold mb-4">Perluasan Jaringan Bencana</h3>
-<p class="text-secondary leading-relaxed mb-6">Meluncurkan kerangka kerja respon bencana tingkat lanjut, menghubungkan pusat logistik di seluruh negeri untuk mengurangi waktu respon hingga kurang dari 4 jam.</p>
+<h3 class="text-2xl font-bold mb-4">PMI MAGETAN</h3>
+<p class="text-secondary leading-relaxed mb-6">PMI Kabupaten Magetan mulai dirintis pada tahun 1977 yang berawal dari kegiatan Lomba Korps Sukarela (KSR) sebagai titik awal tumbuhnya semangat kepedulian kemanusiaan di masyarakat. Pada masa awal, kegiatan dilaksanakan dengan berbagai keterbatasan, dimulai dari menumpang di RSU Kabupaten Magetan, kemudian berpindah ke Gedung Mahendra (yang saat ini merupakan Kantor BRI Magetan), dilanjutkan ke Jalan A. Yani, rumah Bapak Karyo Sarpan Pande pada tahun 1980, hingga akhirnya menempati lokasi di Jalan Pattimura pada tahun 1981.
+Seiring berkembangnya kegiatan dan meningkatnya kebutuhan pelayanan masyarakat, PMI Kabupaten Magetan mulai mengembangkan pelayanan donor darah yang pada awalnya masih bergantung pada PMI Kabupaten Madiun hingga akhirnya dapat dilaksanakan secara mandiri. Upaya penguatan organisasi juga dilakukan melalui pengajuan lahan kepada Pemerintah Kabupaten Magetan yang kemudian terealisasi dengan pembangunan markas PMI di Jalan MT Haryono secara swadaya.
+Dalam perjalanannya, PMI Kabupaten Magetan terus berkembang sebagai organisasi kemanusiaan yang tidak hanya berfokus pada pelayanan donor darah, tetapi juga aktif dalam penanggulangan bencana, pelayanan kesehatan masyarakat, serta pembinaan relawan melalui Palang Merah Remaja (PMR) dan Korps Sukarela (KSR). Hingga saat ini, PMI Kabupaten Magetan terus berkomitmen meningkatkan kualitas pelayanan dan kehadirannya di tengah masyarakat.
+</p>
 <img class="w-full h-64 object-cover rounded-xl grayscale hover:grayscale-0 transition-all duration-700" data-alt="A fleet of red and white relief trucks parked in a warehouse at dawn, soft atmospheric lighting, organized and ready for action" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCatLyTs01sLsMpmZiwyVpadn9_v0uFkyf1ympZGCveDriTxDEVXegN1rOJ4Fp1sR574i-_WCtqK2lj6be_rN-c90f3z8dC-iIqhgQRyyRV1ilOQIOt-joJR9jthfnnfGfAol_wXxex-586ODG6sa3RimAVT4mPwzYd86jFYaW28pzcAQG2SBYmIiaT6CUHIghQV16f9vLrTcEv0odcyBF3jumJ0NS4FFOUjFvCxzesu8ZcOPU6vMhfK8_e94XAOzvvjq6W_SSNgg"/>
 </div>
 </div>
 <div class="flex gap-8 group">
 <div class="text-3xl font-black text-outline-variant/30 group-hover:text-primary transition-colors">2024</div>
 <div>
-<h3 class="text-2xl font-bold mb-4">Garis Depan Digital</h3>
-<p class="text-secondary leading-relaxed mb-6">Mengintegrasikan AI dan data waktu nyata untuk memprediksi zona krisis dan mengoptimalkan distribusi bank darah, memastikan kami proaktif, bukan sekadar reaktif.</p>
-</div>
-</div>
+<!-- <h3 class="text-2xl font-bold mb-4">Garis Depan Digital</h3> -->
+<!-- <p class="text-secondary leading-relaxed mb-6">Mengintegrasikan AI dan data waktu nyata untuk memprediksi zona krisis dan mengoptimalkan distribusi bank darah, memastikan kami proaktif, bukan sekadar reaktif.</p> -->
+<!-- </div> -->
+<!-- </div> -->
 </div>
 </div>
 </div>

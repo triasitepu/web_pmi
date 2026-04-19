@@ -11,7 +11,7 @@
             <ol class="breadcrumb mb-0">
                 <li class="breadcrumb-item">
                     <a href="{{ route('admin.kebencanaan-submenu.index') }}"
-                       class="text-danger fw-semibold text-decoration-none">
+                       class="text-black fw-semibold text-decoration-none">
                         <i class="bi bi-arrow-left-circle me-1"></i>
                         Kembali ke Daftar Submenu
                     </a>
@@ -23,7 +23,7 @@
         </div>
     </div>
 
-    <h2 class="text-danger text-center fw-bold mb-4">
+    <h2 class="text-black text-center fw-bold mb-4">
         Edit Submenu Kebencanaan
     </h2>
 
@@ -56,7 +56,7 @@
         <div class="mb-3">
             <label for="kebencanaan_id" class="form-label fw-semibold">Pilih Kebencanaan</label>
             <select name="kebencanaan_id" id="kebencanaan_id" class="form-select @error('kebencanaan_id') is-invalid @enderror" required>
-                <option value="" disabled>-- Pilih Kebencanaan --</option>
+                <option value="" disabled>-- Pilih Kategori --</option>
                 @foreach($kebencanaan as $kebencanaan)
                     <option value="{{ $kebencanaan->id }}" {{ old('kebencanaan_id', $submenu->kebencanaan_id) == $kebencanaan->id ? 'selected' : '' }}>
                         {{ $kebencanaan->nama_menu ?? 'Kebencanaan ' . $kebencanaan->id }}
@@ -149,7 +149,7 @@
 
         {{-- Tombol --}}
         <div class="text-end mt-4">
-            <button type="submit" class="btn btn-danger px-4">
+            <button type="submit" class="btn btn-soft-danger px-4">
                 <i class="bi bi-save me-1"></i>
                 Simpan Perubahan
             </button>

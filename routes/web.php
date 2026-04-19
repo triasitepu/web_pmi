@@ -158,14 +158,13 @@ Route::middleware(['auth', 'role:admin,superadmin'])
             Route::get('/', [SubmenuDonorController::class, 'index'])
                 ->name('index');
 
-            Route::get('/{id}', [SubmenuDonorController::class, 'show'])->name('show');
-
-
             Route::get('/create', [SubmenuDonorController::class, 'create'])
                 ->name('create');
 
             Route::post('/', [SubmenuDonorController::class, 'store'])
                 ->name('store');
+
+            Route::get('/{id}', [SubmenuDonorController::class, 'show'])->name('show');
 
             Route::get('/{id}/edit', [SubmenuDonorController::class, 'edit'])
                 ->name('edit');

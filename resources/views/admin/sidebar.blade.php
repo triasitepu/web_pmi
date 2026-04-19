@@ -100,49 +100,90 @@
 </div>
 <nav class="space-y-1">
 <!-- Dashboard Active -->
-<a class="flex items-center gap-3 px-4 py-3 text-red-600 dark:text-red-500 font-bold border-r-4 border-red-600 bg-slate-100 dark:bg-slate-800 transition-colors font-manrope text-sm font-medium" 
-href="{{ route('admin.dashboard') }}">
-<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
-                    Dashboard
-                </a>
-{{-- PROFIL PMI --}}
+<a href="{{ route('admin.dashboard') }}"
+   class="flex items-center gap-3 px-4 py-3 
+   font-manrope text-sm font-medium transition-all duration-200
+
+   {{ request()->routeIs('admin.dashboard') 
+      ? 'bg-slate-200 dark:bg-slate-700 text-black dark:text-white border-r-4 border-red-600 font-bold' 
+      : 'text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800' }}">
+    
+    <span class="material-symbols-outlined">dashboard</span>
+    Dashboard
+</a>
 <div class="flex flex-col">
-    <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors font-manrope text-sm font-medium"
-       href="{{ route('admin.profil-submenu.index') }}">
+    <a href="{{ route('admin.profil-submenu.index') }}"
+       class="flex items-center gap-3 px-4 py-3 
+       font-manrope text-sm font-medium transition-all duration-200
+
+       {{ request()->routeIs('admin.profil-submenu.*') 
+          ? 'bg-slate-200 dark:bg-slate-700 text-black dark:text-white border-r-4 border-red-600 font-bold' 
+          : 'text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800' }}">
        
         <span class="material-symbols-outlined">account_circle</span>
         Kelola Profil PMI
     </a>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors font-manrope text-sm font-medium"
-       href="{{ route('admin.donor-submenu.index') }}">
-<span class="material-symbols-outlined" data-icon="bloodtype">bloodtype</span>
-                    Donor Darah
-                </a>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors font-manrope text-sm font-medium" 
-      href="{{ route('admin.relawan-submenu.index') }}">
-<span class="material-symbols-outlined" data-icon="groups">groups</span>
-                    Kelola Relawan
-                </a>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors font-manrope text-sm font-medium" 
-      href="{{ route('admin.diklat-submenu.index') }}">
-<span class="material-symbols-outlined" data-icon="school">school</span>
-                    Diklat PMI
-                </a>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors font-manrope text-sm font-medium" 
-      href="{{ route('admin.kebencanaan-submenu.index') }}">
-<span class="material-symbols-outlined" data-icon="volcano">volcano</span>
-                    Kelola Kebencanaan
-                </a>
+</div>
+<a href="{{ route('admin.donor-submenu.index') }}"
+   class="flex items-center gap-3 px-4 py-3 
+   font-manrope text-sm font-medium transition-all duration-200
+
+   {{ request()->routeIs('admin.donor-submenu.*') 
+      ? 'bg-slate-200 dark:bg-slate-700 text-black dark:text-white border-r-4 border-red-600 font-bold' 
+      : 'text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800' }}">
+
+    <span class="material-symbols-outlined">bloodtype</span>
+    Donor Darah
+</a>
+<a href="{{ route('admin.relawan-submenu.index') }}"
+   class="flex items-center gap-3 px-4 py-3 
+   font-manrope text-sm font-medium transition-all duration-200
+
+   {{ request()->routeIs('admin.relawan-submenu.*') 
+      ? 'bg-slate-200 dark:bg-slate-700 text-black dark:text-white border-r-4 border-red-600 font-bold' 
+      : 'text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800' }}">
+
+    <span class="material-symbols-outlined" data-icon="groups">groups</span>
+    Kelola Relawan
+</a>
+<a href="{{ route('admin.diklat-submenu.index') }}"
+   class="flex items-center gap-3 px-4 py-3 
+   font-manrope text-sm font-medium transition-all duration-200
+
+   {{ request()->routeIs('admin.diklat-submenu.*') 
+      ? 'bg-slate-200 dark:bg-slate-700 text-black dark:text-white border-r-4 border-red-600 font-bold' 
+      : 'text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800' }}">
+
+    <span class="material-symbols-outlined" data-icon="school">school</span>
+    Diklat PMI
+</a>
+<a href="{{ route('admin.kebencanaan-submenu.index') }}"
+   class="flex items-center gap-3 px-4 py-3 
+   font-manrope text-sm font-medium transition-all duration-200
+
+   {{ request()->routeIs('admin.kebencanaan-submenu.*') 
+      ? 'bg-slate-200 dark:bg-slate-700 text-black dark:text-white border-r-4 border-red-600 font-bold' 
+      : 'text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800' }}">
+
+    <span class="material-symbols-outlined" data-icon="volcano">volcano</span>
+    Kelola Kebencanaan
+</a>
 
 
     {{-- SUPERADMIN --}}
     @if(strtolower(auth()->user()->peran) === 'superadmin')
 
-      <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors font-manrope text-sm font-medium" 
-      href="{{ route('admin.admin.index') }}">
-<span class="material-symbols-outlined" data-icon="people">people</span>
-                    Kelola Pengguna
-                </a>
+      <a href="{{ route('admin.admin.index') }}"
+         class="flex items-center gap-3 px-4 py-3 
+         font-manrope text-sm font-medium transition-all duration-200
+
+         {{ request()->routeIs('admin.admin.*') 
+            ? 'bg-slate-200 dark:bg-slate-700 text-black dark:text-white border-r-4 border-red-600 font-bold' 
+            : 'text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800' }}">
+
+        <span class="material-symbols-outlined" data-icon="people">people</span>
+        Kelola Pengguna
+      </a>
     @endif
 
   </div>

@@ -1715,6 +1715,21 @@ blockquote:before,
     border-color: #da0419;
 }
 
+.btn-soft-danger {
+    background-color: #4d8b4a;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-soft-danger:hover {
+    background-color: #9fcc9d;
+    color: #000000;
+    transform: translateY(-1px);
+}
+
 .btn-danger.focus,
 .btn-danger:focus {
     color: #fff;
@@ -2138,7 +2153,77 @@ blockquote:before,
     box-shadow: none !important;
 }
 
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    margin: 0 2px;
+}
+
+.btn-icon i {
+    font-size: 16px;
+}
+
+/* Hover efek */
+.btn-icon:hover {
+    transform: translateY(-2px);
+    background-color: #e9ecef;
+}
+
+/* Warna hover spesifik */
+.btn-icon.text-info:hover {
+    color: #0dcaf0;
+}
+
+.btn-icon.text-warning:hover {
+    color: #ffc107;
+}
+
+.btn-icon.text-danger:hover {
+    color: #dc3545;
+}
+
 /* 4.10 Buttons Styles End */
+
+*------------------------------------------*/
+/*   Table Styles
+/*------------------------------------------*/
+
+.custom-table {
+    border-collapse: separate;
+    border-spacing: 0 10px; /* jarak antar baris */
+}
+
+.custom-table thead th {
+    border: none;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #000000;
+    letter-spacing: 0.5px;
+}
+
+.custom-table tbody tr {
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    border-radius: 10px;
+}
+
+.custom-table tbody td {
+    border: none;
+    padding: 15px;
+    vertical-align: middle;
+}
+
+.custom-table tbody tr:hover {
+    transform: scale(1.002);
+    transition: 0.2s;
+}
 
 /*------------------------------------------*/
 /*   4.11 Fonts Style For Charity Icons
@@ -5464,6 +5549,7 @@ footer .social-icons a:hover {
 .map-icon .icon-box-1 h3 {
     color: #FFF;
 }
+
 
 /* 8.2 About Page Style End */
 

@@ -11,7 +11,7 @@
             <ol class="breadcrumb mb-0">
                 <li class="breadcrumb-item">
                     <a href="{{ route('admin.admin.index') }}" 
-                       class="text-danger fw-semibold text-decoration-none">
+                       class="text-black fw-semibold text-decoration-none">
                         <i class="bi bi-arrow-left-circle me-1"></i>
                         Kembali ke Daftar Pengguna
                     </a>
@@ -24,7 +24,7 @@
     </div>
 
     {{-- Judul --}}
-    <h2 class="text-danger text-center fw-bold mb-4">
+    <h2 class="text-black text-center fw-bold mb-4">
         Edit Pengguna
     </h2>
 
@@ -130,7 +130,7 @@
 
         {{-- Tombol --}}
         <div class="text-end mt-4">
-            <button type="submit" class="btn btn-danger px-4">
+            <button type="submit" class="btn btn-soft-danger px-4">
                 <i class="bi bi-save me-1"></i>
                 Simpan Perubahan
             </button>

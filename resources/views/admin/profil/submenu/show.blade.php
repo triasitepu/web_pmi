@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Detail Submenu Relawan')
+@section('title', 'Detail Submenu Profil')
 
 @section('content')
 <div class="bg-white rounded-lg shadow-md p-6">
@@ -11,7 +11,7 @@
       <ol class="breadcrumb mb-0">
         <li class="breadcrumb-item">
           <a href="{{ route('admin.profil-submenu.index') }}" 
-             class="text-danger fw-semibold text-decoration-none">
+             class="text-black fw-semibold text-decoration-none">
             <i class="bi bi-arrow-left-circle me-1"></i> Daftar Submenu
           </a>
         </li>
@@ -24,24 +24,27 @@
 
   {{-- Judul Halaman --}}
   <div class="d-flex justify-content-between align-items-center mb-4">
-    <h2 class="text-danger text-2xl font-bold">
+    <h2 class="text-black text-2xl font-bold">
       <i class="bi bi-file-earmark-text me-2"></i>{{ $submenu->nama_submenu }}
     </h2>
     <div>
-      <a href="{{ route('admin.profil-submenu.edit', $submenu->id) }}" 
-         class="btn btn-warning btn-sm">
-        <i class="bi bi-pencil-square me-1"></i> Edit
-      </a>
-      <form action="{{ route('admin.profil-submenu.destroy', $submenu->id) }}" 
-            method="POST" 
-            class="d-inline"
-            onsubmit="return confirm('Yakin ingin menghapus submenu ini?')">
-        @csrf
-        @method('DELETE')
-        <button type="submit" class="btn btn-danger btn-sm">
-          <i class="bi bi-trash me-1"></i> Hapus
-        </button>
-      </form>
+       <!-- Edit -->
+          <a href="{{ route('admin.profil-submenu.edit', $submenu->id) }}" 
+            class="btn-icon text-warning">
+            <i class="bi bi-pencil-square"></i>
+          </a>
+
+          <!-- Hapus -->
+          <form action="{{ route('admin.profil-submenu.destroy', $submenu->id) }}" 
+                method="POST" 
+                class="d-inline"
+                onsubmit="return confirm('Yakin ingin menghapus submenu ini?')">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn-icon text-danger">
+              <i class="bi bi-trash"></i>
+            </button>
+          </form>
     </div>
   </div>
 

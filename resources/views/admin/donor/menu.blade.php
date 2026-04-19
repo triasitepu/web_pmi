@@ -9,12 +9,12 @@
   <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-3">
     <div>
       <ol class="breadcrumb mb-0">
-        <li class="text-danger text-2xl font-bold"> Daftar Submenu Donor
+        <li class="text-black text-2xl font-bold"> Daftar Submenu Donor
         </li>
       </ol>
     </div>
     <div>
-      <a href="{{ route('admin.donor-submenu.create') }}" class="btn btn-danger btn-sm">
+      <a href="{{ route('admin.donor-submenu.create') }}" class="btn btn-soft-danger btn-sm">
         <i class="bi bi-plus-circle me-2"></i> Tambah Submenu
       </a>
     </div>
@@ -74,25 +74,30 @@
 
           {{-- Aksi --}}
           <td class="text-center">
-            <a href="{{ route('admin.donor-submenu.show', $submenu->id) }}"
-               class="btn btn-info btn-sm">
-              <i class="bi bi-eye"></i> Detail
-            </a>
-            <a href="{{ route('admin.donor-submenu.edit', $submenu->id) }}" 
-               class="btn btn-warning btn-sm">
-              <i class="bi bi-pencil-square"></i> Edit
-            </a>
-            {{-- Hapus --}}
-            <form action="{{ route('admin.donor-submenu.destroy', $submenu->id) }}" 
-                  method="POST" 
-                  class="d-inline"
-                  onsubmit="return confirm('Yakin ingin menghapus submenu ini?')">
-              @csrf
-              @method('DELETE')
-              <button type="submit" class="btn btn-danger btn-sm">
-                <i class="bi bi-trash"></i> Hapus
-              </button>
-            </form>
+
+          <!-- Detail -->
+          <a href="{{ route('admin.donor-submenu.show', $submenu->id) }}"
+            class="btn-icon text-info">
+            <i class="bi bi-eye"></i>
+          </a>
+
+          <!-- Edit -->
+          <a href="{{ route('admin.donor-submenu.edit', $submenu->id) }}" 
+            class="btn-icon text-warning">
+            <i class="bi bi-pencil-square"></i>
+          </a>
+
+          <!-- Hapus -->
+          <form action="{{ route('admin.donor-submenu.destroy', $submenu->id) }}" 
+                method="POST" 
+                class="d-inline"
+                onsubmit="return confirm('Yakin ingin menghapus submenu ini?')">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn-icon text-danger">
+              <i class="bi bi-trash"></i>
+            </button>
+          </form>
           </td>
         </tr>
         @empty

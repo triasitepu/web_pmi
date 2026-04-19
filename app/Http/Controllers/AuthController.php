@@ -198,23 +198,6 @@ class AuthController extends Controller
         return redirect()->back()->with('success', ucfirst($pengguna->peran) . ' berhasil dihapus.');
     }
 
-    public function updateProfile(Request $request)
-    {
-        $user = Auth::user();
-
-        $request->validate([
-            'nama_pengguna' => 'required|string|max:45',
-            'kata_sandi' => 'nullable|string|min:6|confirmed',
-        ]);
-
-        $user->nama_pengguna = $request->nama_pengguna;
-        if ($request->filled('kata_sandi')) {
-            $user->kata_sandi = Hash::make($request->kata_sandi);
-        }
-        $user->save();
-
-        return redirect()->back()->with('success', 'Profil berhasil diperbarui!');
-    }
 
     public function updatePengguna(Request $request)
     {
@@ -245,92 +228,5 @@ class AuthController extends Controller
         return redirect()->back()->with('success', 'Pengguna berhasil diperbarui!');
     }
 
-    public function showForgotPassword()
-    {
-        return view('forgot_password');
-    }
-
-    public function sendResetCode(Request $request)
-    {
-        $request->validate([
-            'email' => 'required|email|exists:pengguna,email',
-        ]);
-
-        $pengguna = Pengguna::where('email', $request->email)->first();
-
-        if ($pengguna->status !== 'Aktif') {
-            return back()->withErrors(['email' => 'Akun Anda tidak aktif.']);
-        }
-
-        $resetCode = str_pad(rand(0, 9999), 4, '0', STR_PAD_LEFT);
-        $expiresAt = Carbon::now()->addMinutes(10);
-
-        $pengguna->update([
-            'reset_code' => $resetCode,
-            'reset_code_expires_at' => $expiresAt,
-        ]);
-
-        Mail::raw("Kode verifikasi Anda adalah: $resetCode. Kode ini berlaku selama 10 menit.", function ($message) use ($pengguna) {
-            $message->to($pengguna->email)
-                    ->subject('Kode Verifikasi Lupa Kata Sandi');
-        });
-
-        return redirect()->route('verify.code')->with('email', $pengguna->email)->with('success', 'Kode verifikasi telah dikirim ke email Anda.');
-    }
-
-    public function showVerifyCode()
-    {
-        $email = session('email');
-        if (!$email) {
-            return redirect()->route('forgot.password')->withErrors(['error' => 'Masukkan email terlebih dahulu.']);
-        }
-        return view('verifikasi_email', compact('email'));
-    }
-
-    public function verifyCode(Request $request)
-    {
-        $request->validate([
-            'email' => 'required|email|exists:pengguna,email',
-            'digit1' => 'required|numeric',
-            'digit2' => 'required|numeric',
-            'digit3' => 'required|numeric',
-            'digit4' => 'required|numeric',
-        ]);
-
-        $code = $request->digit1 . $request->digit2 . $request->digit3 . $request->digit4;
-        $pengguna = Pengguna::where('email', $request->email)->first();
-
-        if ($pengguna->reset_code !== $code || Carbon::now()->gt($pengguna->reset_code_expires_at)) {
-            return back()->withErrors(['error' => 'Kode verifikasi salah atau telah kadaluarsa.']);
-        }
-
-        return redirect()->route('reset.password')->with('email', $pengguna->email)->with('success', 'Kode verifikasi valid.');
-    }
-
-    public function showResetPassword()
-    {
-        $email = session('email');
-        if (!$email) {
-            return redirect()->route('forgot.password')->withErrors(['error' => 'Masukkan email dan verifikasi kode terlebih dahulu.']);
-        }
-        return view('reset_password', compact('email'));
-    }
-
-    public function resetPassword(Request $request)
-    {
-        $request->validate([
-            'email' => 'required|email|exists:pengguna,email',
-            'kata_sandi' => 'required|string|min:6|confirmed',
-        ]);
-
-        $pengguna = Pengguna::where('email', $request->email)->first();
-
-        $pengguna->update([
-            'kata_sandi' => Hash::make($request->kata_sandi),
-            'reset_code' => null,
-            'reset_code_expires_at' => null,
-        ]);
-
-        return redirect()->route('login')->with('success', 'Kata sandi berhasil direset. Silakan login.');
-    }
+    
 }

@@ -1,90 +1,6 @@
-<!DOCTYPE html>
-
-<html lang="id"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>PMI Kabupaten Magetan - Admin Dashboard</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "surface-container-high": "#e8e8e8",
-                    "surface-container": "#eeeeee",
-                    "surface-container-highest": "#e2e2e2",
-                    "inverse-surface": "#2f3131",
-                    "primary-fixed": "#ffdad6",
-                    "on-primary-fixed-variant": "#93000e",
-                    "surface-tint": "#c00016",
-                    "primary": "#ba0015",
-                    "surface-container-low": "#f3f3f3",
-                    "on-secondary-container": "#646464",
-                    "secondary-fixed": "#e4e2e2",
-                    "surface-bright": "#f9f9f9",
-                    "tertiary-container": "#007ab3",
-                    "primary-container": "#e21f26",
-                    "inverse-primary": "#ffb4ac",
-                    "tertiary-fixed": "#cae6ff",
-                    "on-surface-variant": "#5d3f3c",
-                    "outline-variant": "#e7bdb8",
-                    "on-secondary-fixed-variant": "#474747",
-                    "error-container": "#ffdad6",
-                    "on-primary-container": "#fffaf9",
-                    "surface-dim": "#dadada",
-                    "outline": "#926f6b",
-                    "secondary": "#5e5e5e",
-                    "on-error-container": "#93000a",
-                    "on-background": "#1a1c1c",
-                    "secondary-fixed-dim": "#c8c6c6",
-                    "secondary-container": "#e4e2e2",
-                    "on-surface": "#1a1c1c",
-                    "background": "#f9f9f9",
-                    "surface-variant": "#e2e2e2",
-                    "primary-fixed-dim": "#ffb4ac",
-                    "on-tertiary-fixed": "#001e30",
-                    "tertiary-fixed-dim": "#8ecdff",
-                    "surface": "#f9f9f9",
-                    "on-tertiary": "#ffffff",
-                    "on-secondary": "#ffffff",
-                    "on-error": "#ffffff",
-                    "tertiary": "#00608e",
-                    "surface-container-lowest": "#ffffff",
-                    "inverse-on-surface": "#f1f1f1",
-                    "error": "#ba1a1a",
-                    "on-secondary-fixed": "#1b1c1c",
-                    "on-primary": "#ffffff",
-                    "on-primary-fixed": "#410003",
-                    "on-tertiary-container": "#f8faff",
-                    "on-tertiary-fixed-variant": "#004b70"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.125rem",
-                    "lg": "0.25rem",
-                    "xl": "0.5rem",
-                    "full": "0.75rem"
-            },
-            "fontFamily": {
-                    "headline": ["Manrope"],
-                    "body": ["Inter"],
-                    "label": ["Inter"]
-            }
-          },
-        },
-      }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        body { font-family: 'Inter', sans-serif; }
-        h1, h2, h3, .font-headline { font-family: 'Manrope', sans-serif; }
-    </style>
-</head>
+@extends('layouts.admin')
+@section('title', 'Dashboard Admin')
+@section('content')
 <body class="bg-surface text-on-surface min-h-screen">
 <!-- SideNavBar -->
 <aside class="fixed left-0 top-0 h-full flex flex-col bg-slate-50 dark:bg-slate-900 h-screen w-72 border-r-0 z-50">
@@ -100,51 +16,96 @@
 </div>
 <nav class="space-y-1">
 <!-- Dashboard Active -->
-<a class="flex items-center gap-3 px-4 py-3 text-red-600 dark:text-red-500 font-bold border-r-4 border-red-600 bg-slate-100 dark:bg-slate-800 transition-colors font-manrope text-sm font-medium" href="#">
-<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
-                    Dashboard
-                </a>
-{{-- PROFIL PMI --}}
+<a href="{{ route('admin.dashboard') }}"
+   class="flex items-center gap-3 px-4 py-3 
+   font-manrope text-sm font-medium transition-all duration-200
+
+   {{ request()->routeIs('admin.dashboard') 
+      ? 'bg-slate-200 dark:bg-slate-700 text-black dark:text-white border-r-4 border-red-600 font-bold' 
+      : 'text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800' }}">
+    
+    <span class="material-symbols-outlined">dashboard</span>
+    Dashboard
+</a>
 <div class="flex flex-col">
-    <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors font-manrope text-sm font-medium"
-       href="{{ route('admin.profil-submenu.index') }}">
+    <a href="{{ route('admin.profil-submenu.index') }}"
+       class="flex items-center gap-3 px-4 py-3 
+       font-manrope text-sm font-medium transition-all duration-200
+
+       {{ request()->routeIs('admin.profil-submenu.*') 
+          ? 'bg-slate-200 dark:bg-slate-700 text-black dark:text-white border-r-4 border-red-600 font-bold' 
+          : 'text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800' }}">
        
         <span class="material-symbols-outlined">account_circle</span>
         Kelola Profil PMI
     </a>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors font-manrope text-sm font-medium"
-       href="{{ route('admin.donor-submenu.index') }}">
-<span class="material-symbols-outlined" data-icon="bloodtype">bloodtype</span>
-                    Donor Darah
-                </a>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors font-manrope text-sm font-medium" 
-      href="{{ route('admin.relawan-submenu.index') }}">
-<span class="material-symbols-outlined" data-icon="groups">groups</span>
-                    Kelola Relawan
-                </a>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors font-manrope text-sm font-medium" 
-      href="#">
-<span class="material-symbols-outlined" data-icon="school">school</span>
-                    Diklat PMI
-                </a>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors font-manrope text-sm font-medium" 
-      href="{{ route('admin.kebencanaan-submenu.index') }}">
-<span class="material-symbols-outlined" data-icon="volcano">volcano</span>
-                    Kelola Kebencanaan
-                </a>
+</div>
+<a href="{{ route('admin.donor-submenu.index') }}"
+   class="flex items-center gap-3 px-4 py-3 
+   font-manrope text-sm font-medium transition-all duration-200
+
+   {{ request()->routeIs('admin.donor-submenu.*') 
+      ? 'bg-slate-200 dark:bg-slate-700 text-black dark:text-white border-r-4 border-red-600 font-bold' 
+      : 'text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800' }}">
+
+    <span class="material-symbols-outlined">bloodtype</span>
+    Donor Darah
+</a>
+<a href="{{ route('admin.relawan-submenu.index') }}"
+   class="flex items-center gap-3 px-4 py-3 
+   font-manrope text-sm font-medium transition-all duration-200
+
+   {{ request()->routeIs('admin.relawan-submenu.*') 
+      ? 'bg-slate-200 dark:bg-slate-700 text-black dark:text-white border-r-4 border-red-600 font-bold' 
+      : 'text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800' }}">
+
+    <span class="material-symbols-outlined" data-icon="groups">groups</span>
+    Kelola Relawan
+</a>
+<a href="{{ route('admin.diklat-submenu.index') }}"
+   class="flex items-center gap-3 px-4 py-3 
+   font-manrope text-sm font-medium transition-all duration-200
+
+   {{ request()->routeIs('admin.diklat-submenu.*') 
+      ? 'bg-slate-200 dark:bg-slate-700 text-black dark:text-white border-r-4 border-red-600 font-bold' 
+      : 'text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800' }}">
+
+    <span class="material-symbols-outlined" data-icon="school">school</span>
+    Diklat PMI
+</a>
+<a href="{{ route('admin.kebencanaan-submenu.index') }}"
+   class="flex items-center gap-3 px-4 py-3 
+   font-manrope text-sm font-medium transition-all duration-200
+
+   {{ request()->routeIs('admin.kebencanaan-submenu.*') 
+      ? 'bg-slate-200 dark:bg-slate-700 text-black dark:text-white border-r-4 border-red-600 font-bold' 
+      : 'text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800' }}">
+
+    <span class="material-symbols-outlined" data-icon="volcano">volcano</span>
+    Kelola Kebencanaan
+</a>
+
 
     {{-- SUPERADMIN --}}
     @if(strtolower(auth()->user()->peran) === 'superadmin')
 
-      <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors font-manrope text-sm font-medium" 
-      href="{{ route('admin.superadmin.users.index') }}">
-<span class="material-symbols-outlined" data-icon="people">people</span>
-                    Kelola Pengguna
-                </a>
+      <a href="{{ route('admin.admin.index') }}"
+         class="flex items-center gap-3 px-4 py-3 
+         font-manrope text-sm font-medium transition-all duration-200
+
+         {{ request()->routeIs('admin.admin.*') 
+            ? 'bg-slate-200 dark:bg-slate-700 text-black dark:text-white border-r-4 border-red-600 font-bold' 
+            : 'text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800' }}">
+
+        <span class="material-symbols-outlined" data-icon="people">people</span>
+        Kelola Pengguna
+      </a>
     @endif
-</nav>
+
+  </div>
+  </nav>
 </div>
-<div class="mt-auto p-8">
+  <div class="mt-auto p-8">
 <form method="POST" action="{{ route('logout') }}">
     @csrf
     <button type="submit"
@@ -159,9 +120,9 @@
 <!-- TopNavBar -->
 <header class="fixed top-0 left-72 right-0 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl flex justify-between items-center h-16 px-8 border-b border-slate-200/50 dark:border-slate-800/50 z-40">
 <div class="flex items-center gap-8">
-<h1 class="font-black text-red-600 dark:text-red-500 font-headline tracking-tight uppercase text-sm">Dashboard Utama</h1>
+<h1 class="font-black text-black-600 dark:text-black-500 font-headline tracking-tight uppercase text-sm">Dashboard Utama</h1>
 <nav class="hidden md:flex gap-6">
-<a class="text-red-600 border-b-2 border-red-600 pb-1 font-manrope text-sm tracking-tight" href="#">Dashboard</a>
+<a class="text-black-600 border-b-2 border-black-600 pb-1 font-manrope text-sm tracking-tight" href="#">Dashboard</a>
 <a class="text-slate-500 dark:text-slate-400 hover:text-red-500 transition-all font-manrope text-sm tracking-tight" href="#">Kelola Profil</a>
 </nav>
 </div>
@@ -206,7 +167,7 @@
 </div>
 <p class="text-secondary text-xs font-bold uppercase tracking-widest mb-1">Stok Darah (O+)</p>
 <p class="text-3xl font-black text-on-surface font-headline">12 Unit</p>
-<p class="text-[10px] text-red-600 mt-2 font-medium">Butuh donor segera</p>
+<p class="text-[10px] text-black-600 mt-2 font-medium">Butuh donor segera</p>
 </div>
 <!-- Training Cycles -->
 <div class="bg-surface-container-lowest p-6 rounded-xl relative overflow-hidden group">
@@ -239,33 +200,33 @@
 <!-- Blood Stock Detailed -->
 <div class="bg-surface-container-lowest rounded-xl overflow-hidden">
 <div class="p-6 border-b border-surface-container flex justify-between items-center">
-<h3 class="font-bold text-lg font-headline">Status Stok Darah Nasional</h3>
+<h3 class="font-bold text-lg font-headline">Status Stok Darah </h3>
 <button class="text-primary text-xs font-bold hover:underline">Lihat Detail Inventaris</button>
 </div>
 <div class="p-8 grid grid-cols-2 md:grid-cols-4 gap-8">
 <div class="text-center">
-<div class="text-4xl font-black text-red-600 font-headline mb-2">A+</div>
+<div class="text-4xl font-black text-black-600 font-headline mb-2">A+</div>
 <p class="text-xs font-bold text-secondary uppercase">24 Unit</p>
 <div class="mt-2 h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
 <div class="bg-emerald-500 h-full w-[60%]"></div>
 </div>
 </div>
 <div class="text-center">
-<div class="text-4xl font-black text-red-600 font-headline mb-2">B+</div>
+<div class="text-4xl font-black text-black-600 font-headline mb-2">B+</div>
 <p class="text-xs font-bold text-secondary uppercase">18 Unit</p>
 <div class="mt-2 h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
 <div class="bg-amber-500 h-full w-[40%]"></div>
 </div>
 </div>
 <div class="text-center">
-<div class="text-4xl font-black text-red-600 font-headline mb-2">AB+</div>
+<div class="text-4xl font-black text-black-600 font-headline mb-2">AB+</div>
 <p class="text-xs font-bold text-secondary uppercase">8 Unit</p>
 <div class="mt-2 h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
 <div class="bg-red-500 h-full w-[15%]"></div>
 </div>
 </div>
 <div class="text-center">
-<div class="text-4xl font-black text-red-600 font-headline mb-2">O+</div>
+<div class="text-4xl font-black text-black-600 font-headline mb-2">O+</div>
 <p class="text-xs font-bold text-secondary uppercase">12 Unit</p>
 <div class="mt-2 h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
 <div class="bg-red-500 h-full w-[25%]"></div>

@@ -8,12 +8,12 @@
   {{-- HEADER --}}
   <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-3">
     <ol class="breadcrumb mb-0">
-        <li class="text-danger text-2xl font-bold"> Kelola Pengguna </li>
+        <li class="text-black text-2xl font-bold"> Kelola Pengguna </li>
         </li>
       </ol>
 
     <div>
-      <a href="{{ route('admin.admin.create') }}" class="btn btn-danger btn-sm">
+      <a href="{{ route('admin.admin.create') }}" class="btn btn-soft-danger btn-sm">
         <i class="bi bi-plus-circle me-1"></i> Tambah Admin
       </a>
     </div>
@@ -36,9 +36,6 @@
   <div class="card border-0 shadow-sm">
     <div class="card-body">
 
-      <div class="d-flex justify-content-between align-items-center mb-3">
-        <h6 class="text-muted mb-0">Daftar Pengguna</h6>
-      </div>
 
       <div class="table-responsive">
   <table class="table table-bordered table-striped align-middle table-hover">
@@ -82,27 +79,26 @@
             <span class="badge bg-secondary">Tidak Aktif</span>
           @endif
         </td>
-
         {{-- Aksi --}}
-        <td class="text-center">
-          
-
-          {{-- Edit --}}
-          <a href="{{ route('admin.admin.edit', $pengguna->id_pengguna) }}" class="btn btn-warning btn-sm">
-            <i class="bi bi-pencil-square"></i> Edit
+          <td class="text-center">
+          <!-- Edit -->
+          <a href="{{ route('admin.admin.edit', $pengguna->id_pengguna) }}" 
+            class="btn-icon text-warning">
+            <i class="bi bi-pencil-square"></i>
           </a>
 
-          {{-- Hapus --}}
-          <form action="{{ route('admin.admin.destroy', $pengguna->id_pengguna) }}" method="POST" class="d-inline"
-                onsubmit="return confirm('Yakin ingin menghapus pengguna ini?')">
+          <!-- Hapus -->
+          <form action="{{ route('admin.admin.destroy', $pengguna->id_pengguna) }}" 
+                method="POST" 
+                class="d-inline"
+                onsubmit="return confirm('Yakin ingin menghapus submenu ini?')">
             @csrf
             @method('DELETE')
-            <button type="submit" class="btn btn-danger btn-sm">
-              <i class="bi bi-trash"></i> Hapus
+            <button type="submit" class="btn-icon text-danger">
+              <i class="bi bi-trash"></i>
             </button>
           </form>
-
-        </td>
+          </td>
       </tr>
 
       @empty

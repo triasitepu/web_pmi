@@ -11,7 +11,7 @@
             <ol class="breadcrumb mb-0">
                 <li class="breadcrumb-item">
                     <a href="{{ route('admin.profil-submenu.index') }}"
-                       class="text-danger fw-semibold text-decoration-none">
+                       class="text-black fw-semibold text-decoration-none">
                         <i class="bi bi-arrow-left-circle me-1"></i>
                         Kembali ke Daftar Submenu
                     </a>
@@ -23,7 +23,7 @@
         </div>
     </div>
 
-    <h2 class="text-danger text-center fw-bold mb-4">
+    <h2 class="text-black text-center fw-bold mb-4">
         Edit Submenu Profil
     </h2>
 
@@ -149,8 +149,7 @@
 
         {{-- Tombol --}}
         <div class="text-end mt-4">
-            <button type="submit" class="btn btn-danger px-4">
-                <i class="bi bi-save me-1"></i>
+            <button type="submit" class="btn btn-primary px-4">
                 Simpan Perubahan
             </button>
         </div>

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\SubmenuDonor;
+use App\Models\SubmenuDonor;        
 
 class DonorDarahController extends Controller
 {

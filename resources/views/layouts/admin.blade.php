@@ -9,6 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
+
   {{-- Tailwind --}}
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -114,6 +115,36 @@ body{
     margin-left:0;
     padding:1rem;
   }
+  .custom-table {
+    border-collapse: separate;
+    border-spacing: 0 10px; /* jarak antar baris */
+}
+
+.custom-table thead th {
+    border: none;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #6c757d;
+    letter-spacing: 0.5px;
+}
+
+.custom-table tbody tr {
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    border-radius: 10px;
+}
+
+.custom-table tbody td {
+    border: none;
+    padding: 15px;
+    vertical-align: middle;
+}
+
+.custom-table tbody tr:hover {
+    transform: scale(1.002);
+    transition: 0.2s;
+
+}
 
 }
 
@@ -138,6 +169,8 @@ body{
 }
 
 </style>
+  {{-- Custom CSS --}}
+  <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
 @stack('styles')
 
@@ -148,10 +181,10 @@ body{
 <!-- Navbar -->
 <header class="fixed top-0 left-72 right-0 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl flex justify-between items-center h-16 px-8 border-b border-slate-200/50 dark:border-slate-800/50 z-40">
 <div class="flex items-center gap-8">
-<h1 class="font-black text-red-600 dark:text-red-500 font-headline tracking-tight uppercase text-sm">Dashboard Utama</h1>
+<h1 class="font-black text-black dark:text-black-500 font-headline tracking-tight uppercase text-sm">Dashboard Utama</h1>
 <nav class="hidden md:flex gap-6">
-<a class="text-red-600 border-b-2 border-red-600 pb-1 font-manrope text-sm tracking-tight" href="{{ route('admin.dashboard') }}">Dashboard</a>
-<a class="text-slate-500 dark:text-slate-400 hover:text-red-500 transition-all font-manrope text-sm tracking-tight" href="{{ route('admin.profil-submenu.index') }}">Kelola Profil</a>
+<a class="text-black border-b-2 border-black pb-1 font-manrope text-sm tracking-tight" href="{{ route('admin.dashboard') }}">Dashboard</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-black-500 transition-all font-manrope text-sm tracking-tight" href="{{ route('admin.profil-submenu.index') }}">Kelola Profil</a>
 </nav>
 </div>
 <div class="flex items-center gap-6">

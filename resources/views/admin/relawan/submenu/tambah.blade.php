@@ -10,7 +10,7 @@
     <div>
       <ol class="breadcrumb mb-0">
         <li class="breadcrumb-item">
-          <a href="{{ route('admin.relawan-submenu.index') }}" class="text-danger fw-semibold text-decoration-none">
+          <a href="{{ route('admin.relawan-submenu.index') }}" class="text-black fw-semibold text-decoration-none">
             <i class="bi bi-arrow-left-circle me-1"></i> Daftar Submenu Relawan
           </a>
         </li>
@@ -22,7 +22,7 @@
   </div>
 
   {{-- Judul --}}
-  <h2 class="text-danger text-center text-2xl font-bold mb-4">
+  <h2 class="text-black text-center text-2xl font-bold mb-4">
     Tambah Submenu Relawan Baru
   </h2>
 
@@ -41,7 +41,7 @@
     <div class="mb-3">
       <label for="relawan_id" class="form-label fw-semibold">Pilih Relawan</label>
       <select name="relawan_id" id="relawan_id" class="form-select w-100" required>
-        <option value="" disabled selected>-- Pilih Relawan --</option>
+        <option value="" disabled selected>-- Pilih Kategori --</option>
         @foreach($relawans as $relawan)
           <option value="{{ $relawan->id }}">{{ $relawan->nama_menu ?? 'Relawan ' . $relawan->id }}</option>
         @endforeach
@@ -115,7 +115,7 @@
 
     {{-- Tombol Simpan --}}
     <div class="text-end mt-4">
-      <button type="submit" class="btn btn-danger px-4">
+      <button type="submit" class="btn btn-soft-danger px-4">
         <i class="bi bi-save me-1"></i> Simpan
       </button>
     </div>
