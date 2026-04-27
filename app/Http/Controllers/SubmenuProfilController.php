@@ -124,8 +124,13 @@ class SubmenuProfilController extends Controller
     $visi = SubmenuProfil::where('slug', 'visi')->first();
     $misi = SubmenuProfil::where('slug', 'misi')->first();
     $Direktur = SubmenuProfil::where('slug', 'Direktur')->first();
+    $PMIMagetan = SubmenuProfil::where('slug', 'PMIMagetan')->first();
+    $PMI = SubmenuProfil::where('slug', 'PMI')->first();
+    $Direktur2 = SubmenuProfil::where('slug', 'Direktur2')->first();
+    $Direktur3 = SubmenuProfil::where('slug', 'Direktur3')->first();
 
-    return view('about', compact('visi', 'misi', 'Direktur'));
+
+    return view('about', compact('visi', 'misi','PMI', 'PMIMagetan', 'Direktur', 'Direktur2', 'Direktur3'));
 }
 }
 

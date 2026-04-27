@@ -29,11 +29,11 @@ Route::get('/tes-sederhana', function () {
 
 Route::get('/', fn() => view('home'))->name('home');
 Route::get('/about', [SubmenuProfilController::class, 'landing'])->name('about');
-Route::get('/relawan', fn() => view('relawan'))->name('relawan');
-Route::get('/bencana', fn() => view('bencana'))->name('bencana');
+Route::get('/relawan', [SubmenuRelawanController::class, 'landing'])->name('relawan');
+Route::get('/bencana', [SubmenuKebencanaanController::class, 'landing'])->name('bencana');
 Route::get('/ambulans', fn() => view('ambulans'))->name('ambulans');
 Route::get('/donor', [SubmenuDonorController::class, 'landing'])->name('donor');
-Route::get('/diklat', fn() => view('diklat'))->name('diklat');
+Route::get('/diklat', [SubmenuDiklatController::class, 'landing'])->name('diklat');
 Route::post('/pengaduan', [PengaduanController::class, 'store'])->name('pengaduan.store');
 
 
@@ -73,15 +73,15 @@ Route::middleware(['auth', 'role:admin,superadmin'])
     Route::post('/kelola-admin/store', [UserController::class, 'store'])
         ->name('admin.store');
 
-    Route::get('/kelola-admin/edit/{id}', [UserController::class, 'edit'])
+    Route::get('/kelola-admin/edit/{id_pengguna}', [UserController::class, 'edit'])
         ->name('admin.edit');
 
-    Route::post('/kelola-admin/update/{id}', [UserController::class, 'update'])
+    Route::post('/kelola-admin/update/{id_pengguna}', [UserController::class, 'update'])
         ->name('admin.update');
 
-    Route::post('/kelola-admin/toggle/{id}', [UserController::class, 'toggleStatus'])
+    Route::post('/kelola-admin/toggle/{id_pengguna}', [UserController::class, 'toggleStatus'])
         ->name('admin.toggle');
-    Route::delete('/kelola-admin/destroy/{id}', [UserController::class, 'destroy'])
+    Route::delete('/kelola-admin/destroy/{id_pengguna}', [UserController::class, 'destroy'])
         ->name('admin.destroy');
 
 });

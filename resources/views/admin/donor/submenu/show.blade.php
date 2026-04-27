@@ -11,7 +11,7 @@
       <ol class="breadcrumb mb-0">
         <li class="breadcrumb-item">
           <a href="{{ route('admin.donor-submenu.index') }}" 
-             class="text-danger fw-semibold text-decoration-none">
+             class="text-black fw-semibold text-decoration-none">
             <i class="bi bi-arrow-left-circle me-1"></i> Daftar Submenu
           </a>
         </li>
@@ -24,7 +24,7 @@
 
   {{-- Judul Halaman --}}
   <div class="d-flex justify-content-between align-items-center mb-4">
-    <h2 class="text-danger text-2xl font-bold">
+    <h2 class="text-black text-2xl font-bold">
       <i class="bi bi-file-earmark-text me-2"></i>{{ $submenu->nama_submenu }}
     </h2>
     <div>

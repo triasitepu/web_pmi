@@ -49,7 +49,13 @@
     </div>
 </div>
 
-<button class="bg-primary-container text-white px-6 py-2.5 rounded-lg font-headline font-bold text-sm hover:opacity-90 active:scale-95 transition-all">Hotline Darurat</button>
+<button>
+<a href="https://wa.me/6281234567890?text=Halo%20Admin%20PMI"
+target="_blank"
+class="bg-red-600 text-white px-6 py-2.5 rounded-lg flex items-center gap-2 hover:opacity-90 transition">
+    <i class="bi bi-whatsapp"></i>
+    Hotline Darurat
+</a></button>
 </div>
 </div>
 </nav>

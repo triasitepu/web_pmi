@@ -123,10 +123,10 @@ class SubmenuDiklatController extends Controller
                          ->with('success', 'Submenu berhasil dihapus');
     }
 
-    //     public function landing()
-    // {
-    // $goldara = SubmenuDiklat::where('slug', 'goldara')->first();
+        public function landing()
+    {
+    $goldara = SubmenuDiklat::where('slug', 'goldara')->first();
 
-    // return view('diklat', compact('goldara'));
-    // }
+    return view('diklat', compact('goldara'));
+    }
 }

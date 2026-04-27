@@ -118,4 +118,14 @@ class SubmenuRelawanController extends Controller
         return redirect()->route('admin.relawan-submenu.index')
             ->with('success', 'Submenu Relawan berhasil dihapus');
     }
+    public function landing()
+    {
+    $totalrelawan = SubmenuRelawan::where('slug', 'totalrelawan')->first();
+    $misi = SubmenuRelawan::where('slug', 'misi')->first();
+    $formulir = SubmenuRelawan::where('slug', 'formulir')->first();
+    $persyaratan = SubmenuRelawan::where('slug', 'persyaratan')->first();
+    
+
+    return view('relawan', compact('totalrelawan', 'misi', 'formulir', 'persyaratan'));
+    }
 }

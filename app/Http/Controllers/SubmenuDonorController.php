@@ -14,7 +14,7 @@ class SubmenuDonorController extends Controller
     {
         $submenus = SubmenuDonor::with('donor')
                     ->orderBy('urutan', 'asc')
-                    ->get();
+                    ->paginate(10);
 
         return view('admin.donor.menu', compact('submenus'));
     }
@@ -125,8 +125,35 @@ class SubmenuDonorController extends Controller
 
         public function landing()
     {
-    $goldara = SubmenuDonor::where('slug', 'goldara')->first();
+    $wba = SubmenuDonor::where('slug', 'wba')->first();
+    $wbb = SubmenuDonor::where('slug', 'wbb')->first();
+    $wbo = SubmenuDonor::where('slug', 'wbo')->first();
+    $wbab = SubmenuDonor::where('slug', 'wbab')->first();
+    $prca = SubmenuDonor::where('slug', 'prca')->first();
+    $prcb = SubmenuDonor::where('slug', 'prcb')->first();
+    $prco = SubmenuDonor::where('slug', 'prco')->first();
+    $prcab = SubmenuDonor::where('slug', 'prcab')->first();
+    $tca = SubmenuDonor::where('slug', 'tca')->first();
+    $tcb = SubmenuDonor::where('slug', 'tcb')->first();
+    $tco = SubmenuDonor::where('slug', 'tco')->first();
+    $tcab = SubmenuDonor::where('slug', 'tcab')->first();
+    $ffpa = SubmenuDonor::where('slug', 'ffpa')->first();
+    $ffpb = SubmenuDonor::where('slug', 'ffpb')->first();
+    $ffpo = SubmenuDonor::where('slug', 'ffpo')->first();
+    $ffpab = SubmenuDonor::where('slug', 'ffpab')->first();
+    $jadwal1 = SubmenuDonor::where('slug', 'jadwal1')->first();
+    $lokasi1 = SubmenuDonor::where('slug', 'lokasi1')->first();
+    $jadwal2 = SubmenuDonor::where('slug', 'jadwal2')->first();
+    $lokasi2 = SubmenuDonor::where('slug', 'lokasi2')->first(); 
+    $totaldonor = SubmenuDonor::where('slug', 'totaldonor')->first(); 
+    $donornasional = SubmenuDonor::where('slug', 'donornasional')->first();
 
-    return view('donor', compact('goldara'));
+    
+
+
+
+
+    return view('donor', compact('wba', 'wbb', 'wbo', 'wbab', 'prca', 'prcb', 'prco', 'prcab', 'tca', 'tcb', 'tco', 'tcab',
+     'ffpa', 'ffpb', 'ffpo', 'ffpab', 'jadwal1', 'lokasi1', 'jadwal2', 'lokasi2', 'totaldonor', 'donornasional'));
     }
 }

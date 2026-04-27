@@ -81,14 +81,14 @@
         <div class="mb-3">
             <label class="form-label fw-semibold">Password Baru</label>
             <input type="password"
-                   name="password"
-                   class="form-control @error('password') is-invalid @enderror">
+                   name="kata_sandi"
+                   class="form-control @error('kata_sandi') is-invalid @enderror">
 
             <small class="text-muted">
                 Kosongkan jika tidak ingin mengganti password
             </small>
 
-            @error('password')
+            @error('kata_sandi')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
         </div>
@@ -100,12 +100,13 @@
                     class="form-select @error('peran') is-invalid @enderror"
                     required>
                 <option value="">-- Pilih Peran --</option>
-                <option value="Admin" 
-                    {{ old('peran', $admin->peran) == 'Admin' ? 'selected' : '' }}>
+                <option value="admin" 
+                    {{ old('peran', strtolower($admin->peran)) == 'admin' ? 'selected' : '' }}>
                     Admin
                 </option>
-                <option value="Superadmin" 
-                    {{ old('peran', $admin->peran) == 'Superadmin' ? 'selected' : '' }}>
+
+                <option value="superadmin" 
+                    {{ old('peran', strtolower($admin->peran)) == 'superadmin' ? 'selected' : '' }}>
                     Superadmin
                 </option>
             </select>
@@ -119,11 +120,12 @@
         <div class="mb-4">
             <label class="form-label fw-semibold d-block">Status</label>
             <div class="form-check form-switch">
+                <input type="hidden" name="status" value="Tidak Aktif">
                 <input class="form-check-input"
-                       type="checkbox"
-                       name="status"
-                       value="Aktif"
-                       {{ old('status', $admin->status) == 'Aktif' ? 'checked' : '' }}>
+                    type="checkbox"
+                    name="status"
+                    value="Aktif"
+                    {{ old('status', $admin->status) == 'Aktif' ? 'checked' : '' }}>
                 <label class="form-check-label">Aktif</label>
             </div>
         </div>

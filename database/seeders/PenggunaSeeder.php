@@ -10,20 +10,35 @@ class PenggunaSeeder extends Seeder
 {
     public function run()
     {
-        Pengguna::create([
-            'nama_pengguna' => 'Superadmin',
-            'email' => 'superadmin@gmail.com',
-            'kata_sandi' => Hash::make('superadmin123'),
-            'role' => 'superadmin',
-            'status' => 'aktif',
-        ]);
+        Pengguna::updateOrCreate(
+            ['email' => 'admin@gmail.com'],
+            [
+                'nama_pengguna' => 'Admin',
+                'kata_sandi' => Hash::make('password123'),
+                'peran' => 'admin',
+                'status' => 'Aktif', // pastikan huruf besar
+            ]
+        );
 
-        Pengguna::create([
-            'nama_pengguna' => 'Admin',
-            'email' => 'admin@gmail.com',
-            'kata_sandi' => Hash::make('admin123'),
-            'role' => 'admin',
-            'status' => 'aktif',
-        ]);
+        Pengguna::updateOrCreate(
+            ['email' => 'superadmin@gmail.com'],
+            [
+                'nama_pengguna' => 'Superadmin',
+                'kata_sandi' => Hash::make('password123'),
+                'peran' => 'superadmin',
+                'status' => 'Aktif',
+            ]
+        );
+
+        Pengguna::updateOrCreate(
+            ['email' => 'admindonor@gmail.com'],
+            [
+                'nama_pengguna' => 'Admin',
+                'kata_sandi' => Hash::make('donor123'),
+                'peran' => 'admin',
+                'status' => 'Aktif', // pastikan huruf besar
+            ]
+        );
+
     }
 }

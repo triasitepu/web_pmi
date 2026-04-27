@@ -30,6 +30,7 @@
                     "on-primary-fixed": "#410003",
                     "on-surface": "#1a1c1c",
                     "primary-container": "#e21f26",
+                    "primary-softcontainer": "#B77466", 
                     "outline-variant": "#e7bdb8",
                     "inverse-on-surface": "#f1f1f1",
                     "on-secondary-fixed-variant": "#474747",
@@ -98,10 +99,10 @@
 </div>
 <div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
 <div class="max-w-2xl">
-<span class="inline-block px-4 py-1.5 mb-6 bg-primary-container/10 text-primary font-headline font-bold text-xs uppercase tracking-widest rounded">Hadiah Kehidupan</span>
-<h1 class="text-6xl md:text-7xl font-headline font-extrabold text-on-background leading-[1.1] mb-8 tracking-tight">Darah Anda <br/><span class="text-primary">adalah harapan</span> <br/> bagi mereka.</h1>
+<!-- <span class="inline-block px-4 py-1.5 mb-6 bg-primary-container/10 text-primary font-headline font-bold text-xs uppercase tracking-widest rounded">Hadiah Kehidupan</span> -->
+<h1 class="text-6xl md:text-7xl font-headline font-extrabold text-on-background leading-[1.1] mb-8 tracking-tight">Darah Anda <br/><span class="text-primary-softcontainer">adalah harapan</span> <br/> bagi mereka.</h1>
 <div class="flex flex-wrap gap-4">
-<button class="bg-primary-container text-on-primary-container px-8 py-4 rounded font-headline font-bold text-lg hover:brightness-110 transition-all">Cek Jadwal</button>
+<button class="bg-primary-softcontainer text-on-background px-8 py-4 rounded font-headline font-bold text-lg hover:brightness-110 transition-all">Cek Jadwal</button>
 <button class="bg-surface-container-highest text-on-surface px-8 py-4 rounded font-headline font-bold text-lg hover:bg-surface-container-high transition-all">Syarat Donor</button>
 </div>
 </div>
@@ -128,7 +129,7 @@
 <div>
 <p class="text-secondary text-xs font-bold uppercase tracking-wider mb-1">Total Donasi Bulan Ini</p>
 <div class="flex items-baseline gap-2">
-<span class="text-3xl font-headline font-black text-on-surface">850</span>
+<span class="text-3xl font-headline font-black text-on-surface">{{ $totaldonor->isi ?? 0 }}</span>
 <span class="text-secondary text-sm font-semibold">Kantong</span>
 </div>
 </div>
@@ -139,70 +140,123 @@
 <div>
 <p class="text-secondary text-xs font-bold uppercase tracking-wider mb-1">Rata-rata Donor Harian Nasional</p>
 <div class="flex items-baseline gap-2">
-<span class="text-3xl font-headline font-black text-on-surface">280</span>
+<span class="text-3xl font-headline font-black text-on-surface">{{ $donornasional->isi ?? 0 }}</span>
 <span class="text-secondary text-sm font-semibold">Orang</span>
 </div>
 </div>
 </div>
 </div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-<!-- A Stock -->
-<div class="bg-white p-6 rounded-xl border-l-4 border-primary shadow-sm">
-<div class="flex justify-between items-center mb-4">
-<span class="text-3xl font-headline font-black text-on-surface">A</span>
-<span class="px-2 py-1 rounded text-[10px] font-bold bg-error-container text-error uppercase">Kritis</span>
+<!-- Stock Table -->
+<div class="bg-on-primary rounded-2xl overflow-hidden shadow-sm border border-surface-container-high">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+
+<thead class="bg-primary-container/10 border-b border-surface-container-high">
+<tr>
+<th class="px-8 py-5 font-headline font-bold text-sm uppercase tracking-wider text-black">
+    Komponen Darah
+</th>
+<th class="px-8 py-5 text-center font-headline font-black text-lg text-black">A</th>
+<th class="px-8 py-5 text-center font-headline font-black text-lg text-black">B</th>
+<th class="px-8 py-5 text-center font-headline font-black text-lg text-black">O</th>
+<th class="px-8 py-5 text-center font-headline font-black text-lg text-black">AB</th>
+</tr>
+</thead>
+
+<tbody class="divide-y divide-surface-container-high">
+
+{{-- FUNCTION STATUS --}}
+@php
+function getStatus($val) {
+    if ($val == 0) return ['Kosong', 'text-error'];
+    if ($val <= 5) return ['Kritis', 'text-error'];
+    return ['Aman', 'text-on-surface'];
+}
+@endphp
+
+<!-- WB -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-8 py-6">
+    <div class="font-headline font-bold text-base">Whole Blood (WB)</div>
+    <div class="text-secondary text-xs">Darah Lengkap</div>
+</td>
+
+@foreach([$wba->isi ?? 0, $wbb->isi ?? 0, $wbo->isi ?? 0, $wbab->isi ?? 0] as $val)
+@php [$label, $color] = getStatus($val); @endphp
+<td class="px-8 py-6 text-center">
+    <div class="font-headline font-black text-2xl {{ $color }}">{{ $val }}</div>
+    <div class="text-[10px] font-bold uppercase {{ $color }} mt-1">{{ $label }}</div>
+</td>
+@endforeach
+
+</tr>
+
+<!-- PRC -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-8 py-6">
+    <div class="font-headline font-bold text-base">Packed Red Cell (PRC)</div>
+    <div class="text-secondary text-xs">Sel Darah Merah Pekat</div>
+</td>
+
+@foreach([$prca->isi ?? 0, $prcb->isi ?? 0, $prco->isi ?? 0, $prcab->isi ?? 0] as $val)
+@php [$label, $color] = getStatus($val); @endphp
+<td class="px-8 py-6 text-center">
+    <div class="font-headline font-black text-2xl {{ $color }}">{{ $val }}</div>
+    <div class="text-[10px] font-bold uppercase {{ $color }} mt-1">{{ $label }}</div>
+</td>
+@endforeach
+
+</tr>
+
+<!-- TC -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-8 py-6">
+    <div class="font-headline font-bold text-base">Trombocyte Concentrate (TC)</div>
+    <div class="text-secondary text-xs">Konsentrat Trombosit</div>
+</td>
+
+@foreach([$tca->isi ?? 0, $tcb->isi ?? 0, $tco->isi ?? 0, $tcab->isi ?? 0] as $val)
+@php [$label, $color] = getStatus($val); @endphp
+<td class="px-8 py-6 text-center">
+    <div class="font-headline font-black text-2xl {{ $color }}">{{ $val }}</div>
+    <div class="text-[10px] font-bold uppercase {{ $color }} mt-1">{{ $label }}</div>
+</td>
+@endforeach
+
+</tr>
+
+<!-- FFP -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-8 py-6">
+    <div class="font-headline font-bold text-base">Fresh Frozen Plasma (FFP)</div>
+    <div class="text-secondary text-xs">Plasma Beku Segar</div>
+</td>
+
+@foreach([$ffpa->isi ?? 0, $ffpb->isi ?? 0, $ffpo->isi ?? 0, $ffpab->isi ?? 0] as $val)
+@php [$label, $color] = getStatus($val); @endphp
+<td class="px-8 py-6 text-center">
+    <div class="font-headline font-black text-2xl {{ $color }}">{{ $val }}</div>
+    <div class="text-[10px] font-bold uppercase {{ $color }} mt-1">{{ $label }}</div>
+</td>
+@endforeach
+
+</tr>
+
+</tbody>
+</table>
 </div>
 
-<div class="text-4xl font-headline font-black mb-2">
-    {!! $goldara->isi ?? 'Stok belum tersedia' !!}
-</div>
-
-<div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden">
-<div class="bg-primary h-full w-[24%]"></div>
-</div>
-<p class="mt-4 text-xs font-label text-secondary">Butuh donor segera</p>
-</div>
-<!-- B Stock -->
-<div class="bg-white p-6 rounded-xl border-l-4 border-yellow-500 shadow-sm">
-<div class="flex justify-between items-center mb-4">
-<span class="text-3xl font-headline font-black text-on-surface">B</span>
-<span class="px-2 py-1 rounded text-[10px] font-bold bg-yellow-100 text-yellow-700 uppercase">Menipis</span>
-</div>
-<div class="text-4xl font-headline font-black mb-2">48%</div>
-<div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden">
-<div class="bg-yellow-500 h-full w-[48%]"></div>
-</div>
-<p class="mt-4 text-xs font-label text-secondary">Pasokan berkurang</p>
-</div>
-<!-- AB Stock -->
-<div class="bg-white p-6 rounded-xl border-l-4 border-tertiary shadow-sm">
-<div class="flex justify-between items-center mb-4">
-<span class="text-3xl font-headline font-black text-on-surface">AB</span>
-<span class="px-2 py-1 rounded text-[10px] font-bold bg-green-100 text-green-700 uppercase">Aman</span>
-</div>
-<div class="text-4xl font-headline font-black mb-2">82%</div>
-<div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden">
-<div class="bg-green-500 h-full w-[82%]"></div>
-</div>
-<p class="mt-4 text-xs font-label text-secondary">Pasokan melimpah</p>
-</div>
-<!-- O Stock -->
-<div class="bg-white p-6 rounded-xl border-l-4 border-primary shadow-sm">
-<div class="flex justify-between items-center mb-4">
-<span class="text-3xl font-headline font-black text-on-surface">O</span>
-<span class="px-2 py-1 rounded text-[10px] font-bold bg-error-container text-error uppercase">Kritis</span>
-</div>
-<div class="text-4xl font-headline font-black mb-2">15%</div>
-<div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden">
-<div class="bg-primary h-full w-[15%]"></div>
-</div>
-<p class="mt-4 text-xs font-label text-secondary">Stok sangat rendah</p>
+<div class="bg-primary-container/0 px-8 py-4 border-t border-surface-container-high">
+<p class="text-xs text-secondary italic">
+    * Data di atas adalah jumlah kantong darah yang tersedia saat ini.
+</p>
 </div>
 </div>
 </div>
 </section>
+
 <!-- 2. Jadwal Donor Darah (Fixed Locations) -->
-<section class="py-24 bg-surface">
+<!-- <section class="py-24 bg-surface">
 <div class="max-w-7xl mx-auto px-8">
 <div class="mb-12">
 <h2 class="text-4xl font-headline font-extrabold mb-4 tracking-tight">Jadwal Donor Darah</h2>
@@ -220,10 +274,10 @@
 <tbody class="divide-y divide-surface-container-high">
 <tr class="hover:bg-gray-50 transition-colors">
 <td class="px-8 py-6">
-<div class="font-headline font-bold text-lg">RSUD dr. Sayidiman</div>
+<div class="font-headline font-bold text-lg">{{ $jadwal1->nama_submenu ?? '' }}</div>
 <div class="text-secondary text-sm flex items-center gap-1 mt-1">
 <span class="material-symbols-outlined text-sm">location_on</span>
-                                    Jl. Pahlawan No. 2, Magetan
+                                    {{ $jadwal1->isi ?? '' }}
                                 </div>
 </td>
 <td class="px-8 py-6">
@@ -254,70 +308,85 @@
 </table>
 </div>
 </div>
-</section>
+</section> -->
 <!-- 3. Jadwal Unit Keliling Section -->
-<section class="py-24 bg-surface-container-low">
+<!-- Jadwal Unit Keliling Section -->
+<section class="py-24 bg-primary-container/10">
 <div class="max-w-7xl mx-auto px-8">
-<div class="text-center mb-16">
-<h2 class="text-4xl font-headline font-extrabold mb-4 tracking-tight">Jadwal Unit Keliling</h2>
-<p class="text-secondary font-body">Kunjungi armada kami di berbagai lokasi strategis untuk mendonorkan darah Anda.</p>
+
+<div class="mb-12">
+    <h2 class="text-4xl font-headline font-extrabold mb-4 tracking-tight">
+        Jadwal Donor Darah
+    </h2>
+    <p class="text-secondary max-w-md font-body leading-relaxed">
+        Sesi donor darah rutin di lokasi rumah sakit dan pusat kesehatan tetap.
+    </p>
 </div>
-<div class="grid grid-cols-1 gap-6 max-w-4xl mx-auto">
-<!-- Mobile Unit Item 1 -->
-<div class="bg-white p-6 md:p-8 rounded-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-sm border border-surface-container-high transition-transform hover:scale-[1.01]">
-<div class="flex gap-6 items-center">
-<div class="text-center bg-primary-container/10 px-5 py-3 rounded-xl border border-primary-container/20">
-<div class="text-xs font-label font-bold text-primary uppercase">Nov</div>
-<div class="text-3xl font-headline font-black text-primary">24</div>
+
+<div class="bg-surface-container-low rounded-2xl overflow-hidden shadow-sm border border-surface-container-high">
+<table class="w-full text-left">
+
+    <!-- HEADER -->
+    <thead class="bg-surface-container border-b border-surface-container-high">
+        <tr>
+            <th class="px-8 py-4 font-headline font-bold text-sm uppercase tracking-wider text-secondary">
+                Lokasi
+            </th>
+            <th class="px-8 py-4 font-headline font-bold text-sm uppercase tracking-wider text-secondary">
+                Waktu Operasional
+            </th>
+        </tr>
+    </thead>
+
+    <!-- BODY -->
+    <tbody class="divide-y divide-surface-container-high">
+
+        <tr class="hover:bg-surface-container transition-colors">
+            <td class="px-8 py-6">
+                <div class="font-headline font-bold text-lg">
+                    {{ $lokasi1->isi ?? '' }}
+                </div>
+            </td>
+
+            @php
+                $jadwal = explode('|', $jadwal1->isi ?? '');
+            @endphp
+
+            <td class="px-8 py-6">
+                <div class="text-on-surface font-semibold text-sm">
+                    {{ $jadwal[0] ?? '' }}
+                </div>
+                <div class="text-secondary text-xs mt-1">
+                    {{ $jadwal[1] ?? '' }}
+                </div>
+            </td>
+        </tr>
+
+        <tr class="hover:bg-surface-container transition-colors">
+            <td class="px-8 py-6">
+                <div class="font-headline font-bold text-lg">
+                    {{ $lokasi2->isi ?? '' }}
+                </div>
+            </td>
+
+            @php
+                $jadwal = explode('|', $jadwal2->isi ?? '');
+            @endphp
+
+            <td class="px-8 py-6">
+                <div class="text-on-surface font-semibold text-sm">
+                    {{ $jadwal[0] ?? '' }}
+                </div>
+                <div class="text-secondary text-xs mt-1">
+                    {{ $jadwal[1] ?? '' }}
+                </div>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
 </div>
-<div>
-<h4 class="font-headline font-bold text-xl mb-1">Central Plaza Mobile Unit</h4>
-<div class="text-secondary text-sm flex items-center gap-1">
-<span class="material-symbols-outlined text-sm">schedule</span> 09:00 - 14:00
-                                <span class="mx-2">•</span>
-<span class="material-symbols-outlined text-sm">group</span> Sisa 12 Slot
-                            </div>
-</div>
-</div>
-<button class="w-full md:w-auto bg-primary text-white px-8 py-3 rounded-lg font-headline font-bold text-sm shadow-md hover:bg-primary/90 transition-all">Pesan Slot</button>
-</div>
-<!-- Mobile Unit Item 2 -->
-<div class="bg-white p-6 md:p-8 rounded-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-sm border border-surface-container-high transition-transform hover:scale-[1.01]">
-<div class="flex gap-6 items-center">
-<div class="text-center bg-primary-container/10 px-5 py-3 rounded-xl border border-primary-container/20">
-<div class="text-xs font-label font-bold text-primary uppercase">Nov</div>
-<div class="text-3xl font-headline font-black text-primary">25</div>
-</div>
-<div>
-<h4 class="font-headline font-bold text-xl mb-1">Pasar Baru Magetan</h4>
-<div class="text-secondary text-sm flex items-center gap-1">
-<span class="material-symbols-outlined text-sm">schedule</span> 08:00 - 12:00
-                                <span class="mx-2">•</span>
-<span class="material-symbols-outlined text-sm">group</span> Penuh
-                            </div>
-</div>
-</div>
-<button class="w-full md:w-auto bg-surface-container-highest text-secondary px-8 py-3 rounded-lg font-headline font-bold text-sm cursor-not-allowed" disabled="">Terisi Penuh</button>
-</div>
-<!-- Mobile Unit Item 3 -->
-<div class="bg-white p-6 md:p-8 rounded-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-sm border border-surface-container-high transition-transform hover:scale-[1.01]">
-<div class="flex gap-6 items-center">
-<div class="text-center bg-primary-container/10 px-5 py-3 rounded-xl border border-primary-container/20">
-<div class="text-xs font-label font-bold text-primary uppercase">Nov</div>
-<div class="text-3xl font-headline font-black text-primary">27</div>
-</div>
-<div>
-<h4 class="font-headline font-bold text-xl mb-1">GOR Ki Mageti</h4>
-<div class="text-secondary text-sm flex items-center gap-1">
-<span class="material-symbols-outlined text-sm">schedule</span> 10:00 - 16:00
-                                <span class="mx-2">•</span>
-<span class="material-symbols-outlined text-sm">group</span> Sisa 45 Slot
-                            </div>
-</div>
-</div>
-<button class="w-full md:w-auto bg-primary text-white px-8 py-3 rounded-lg font-headline font-bold text-sm shadow-md hover:bg-primary/90 transition-all">Pesan Slot</button>
-</div>
-</div>
+
 </div>
 </section>
 <!-- Requirements Section -->
@@ -363,7 +432,7 @@
 </div>
 </section>
 <!-- Process Section -->
-<section class="py-24 bg-surface-container-highest">
+<section class="py-24 bg-primary-container/10">
 <div class="max-w-7xl mx-auto px-8">
 <h2 class="text-4xl font-headline font-extrabold mb-16 tracking-tight text-center">Apa yang diharapkan</h2>
 <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
@@ -379,7 +448,7 @@
 </div>
 <div class="text-center">
 <div class="text-6xl font-headline font-black text-outline-variant/30 mb-4">03</div>
-<h4 class="font-headline font-bold text-xl mb-2">Proses Donasi</h4>
+<h4 class="font-headline font-bold text-xl mb-2">Proses Donor</h4>
 <p class="text-secondary text-sm">Duduk santai dan rileks. Proses donasi hanya memakan waktu sekitar 8-10 menit.</p>
 </div>
 <div class="text-center">

@@ -108,224 +108,256 @@
 
 <main class="pt-20">
 <!-- Hero Section: Active Disaster Brief -->
-<section class="relative w-full py-24 bg-surface-container-low overflow-hidden">
-<div class="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center">
-<div class="z-10">
-<span class="inline-flex items-center gap-2 px-3 py-1 bg-red-100 text-primary font-bold text-xs tracking-widest uppercase rounded-sm mb-6"><span class="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span> Respon Aktif</span>
-<h1 class="text-5xl md:text-6xl font-extrabold text-on-surface leading-[1.1] mb-6">Respon Cepat untuk Banjir Terbaru</h1>
-<p class="text-lg text-secondary leading-relaxed mb-10 max-w-lg">Tim kami saat ini berada di lapangan menyediakan air bersih, bantuan medis, dan tempat tinggal bagi lebih dari 5.000 keluarga yang terdampak bencana regional baru-baru ini.</p>
-<div class="flex flex-wrap gap-4">
-<button class="signature-gradient text-on-primary px-8 py-4 rounded-lg font-bold text-base shadow-lg hover:shadow-xl transition-all active:scale-95">Donasi Sekarang</button>
-<button class="bg-surface-container-highest text-on-surface px-8 py-4 rounded-lg font-bold text-base hover:bg-surface-container-high transition-all">Lihat Laporan Situasi</button>
+<section class="relative h-[716px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="professional rescue team in red uniforms conducting disaster preparedness drill in mountain terrain during dawn with cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOZ-9k4rUIPfEHCVncwM_DgowYAsL3NXX4q4EZ71vLQyz6YK7fRnXzPSKLNoLUq6wP8_F7Z6vM8em8drKLGT4LxLxP9C1rV22BdSaGyfBqvUeli09p_zGM5cT3QelSb46jgoC1vkec4PJt659PvOq3GRmbZ46JPaDftq1BSEYUibUkmxwWLVFhjlfSMXdCaq8hfiQydiR0tWnFu4nHCCceoqBKMffiHrF9C2in6Vn1OkoB63p1cIEP2-vd3PVHQroT-vNToiTzsg"/>
+<div class="absolute inset-0 bg-gradient-to-r from-on-background/80 via-on-background/40 to-transparent"></div>
 </div>
-</div>
-<div class="relative">
-<div class="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative z-10">
-<img class="w-full h-full object-cover" data-alt="Humanitarian aid workers in red vests unloading supplies from a truck in a flooded village at dusk, cinematic low angle lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNrJKDSy9SI_Ti8oNhunvZoQqzngXdwKHrW4kVE2OW9vtBY9WBYN8aWtv9NheroIhlwP9-b-eX16Q2IR2StyddZoqJsFfBrRpaAy5bB3WFVjpsfkDD49b5p2bnpaKPPgGoSzGmHYhJGnV9HYuVA4vDZIPzf19_h7HmxqaSMFitkeJrxzN5XRizIykw3eCAIMwYjNgT99kMJrmembHGwF3d1mNFabNXRUM7olj-b-wVi_49Qy_ZBhRY2B59kTMuRsw1wZFE7PsWDw"/>
-</div>
-<div class="absolute -bottom-8 -left-8 bg-surface-container-lowest p-8 rounded-xl card-shadow z-20 max-w-xs">
-<div class="text-primary text-4xl font-black mb-1">94%</div>
-<p class="text-sm text-secondary font-medium">Donasi disalurkan langsung ke operasi lapangan dan pasokan darurat.</p>
-</div>
+<div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
+<div class="max-w-3xl">
+<span class="inline-block px-3 py-1 bg-primary-container text-on-primary text-[10px] font-black tracking-widest uppercase mb-4 rounded-sm">DIVISI PENANGGULANGAN BENCANA</span>
+<h1 class="font-headline text-5xl md:text-7xl font-black text-white leading-none tracking-tighter mb-6 uppercase">Penanggulangan Bencana PMI Kabupaten Magetan</h1>
+<p class="text-white/80 text-xl font-body leading-relaxed max-w-lg border-l-4 border-primary-container pl-6">Membangun ketangguhan masyarakat Magetan melalui kesiapsiagaan terpadu dan respons cepat yang berlandaskan kemanusiaan.</p>
 </div>
 </div>
 </section>
-<!-- Current Responses Bento Grid -->
+<!-- Section 2: Geografis & Kerentanan -->
 <section class="py-24 bg-surface">
 <div class="max-w-7xl mx-auto px-8">
-<div class="flex justify-between items-end mb-12">
-<div>
-<h2 class="text-3xl font-extrabold text-on-surface mb-2">Operasi Bantuan Berjalan</h2>
-<p class="text-secondary">Melacak jejak global kami dalam manajemen krisis kemanusiaan.</p>
-</div>
-<a class="text-primary font-bold flex items-center gap-1 hover:gap-2 transition-all" href="#">Semua Laporan <span class="material-symbols-outlined">arrow_forward</span></a>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-<!-- Bento Main -->
-<div class="md:col-span-8 bg-surface-container-lowest rounded-2xl p-8 card-shadow flex flex-col justify-between group cursor-pointer border border-transparent hover:border-outline-variant/30 transition-all">
-<div>
-<div class="flex justify-between items-start mb-12">
-<span class="bg-tertiary/10 text-tertiary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Tim respon aktif di lokasi</span>
-<span class="text-secondary text-sm">Pembaruan: 2 jam lalu</span>
-</div>
-<h3 class="text-3xl font-bold mb-4 leading-tight group-hover:text-primary transition-colors">Rekonstruksi Jawa Barat Tahap II</h3>
-<p class="text-secondary mb-8 max-w-xl">Fokus pada perumahan tahan gempa dan pusat layanan kesehatan masyarakat bagi warga yang mengungsi di dataran tinggi yang terdampak.</p>
-</div>
-<div class="flex items-center gap-4">
-<div class="flex -space-x-3 overflow-hidden">
-<img alt="" class="inline-block h-10 w-10 rounded-full ring-2 ring-white" data-alt="Portrait of a medical volunteer smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVkzq2yvatywfu2m_sT2ME6gGQvTLG0u8XZP5Cudqesjf6dXV1C2icKN6ySQ6od8yooSly_vnGPttFCSsop8QP_kb9ls8XfbkfSDmYoEary9mWroDhyneaSRSbRz3Xe91zCXMqhesDNwsr2lA0-Q5fgJg_QhvtrBSMyY50f6xdQffX1f4VATNCoiZjJ1mfUAVUorT_un7qrmU3SOS2wfvLXNiFlGuAXNC5DC0_pmSdJSkhpN__5VHtGavtsSycc89KjpEYso7Y8A"/>
-<img alt="" class="inline-block h-10 w-10 rounded-full ring-2 ring-white" data-alt="Portrait of a female humanitarian coordinator" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkJfAWZypoaSGewS5CHFs45IFEFMpIMsM9V-lMOEAeVjXCmbAmnM5WAhmoiQ4LKH5YsNDsX0SP-wDjtvKGhitXhhuv6XuTllSo5JO16lEeOrSznfpuYDCyLGONZT5su6wue2rgve-S5mWxbCUr8Hmz5h1n4DeVAxjFhHaGd-XkjOfUdflv0s0YN7UWV3pk7NYHdNgU6gWCavQthiBt-YJD53LAltWBGlhr5zaD6QvDcDgDiGu2iPbvsy25ajmHl3b4YZ5o7xoi8A"/>
-<div class="h-10 w-10 rounded-full ring-2 ring-white bg-surface-container-high flex items-center justify-center text-[10px] font-bold text-secondary">+12</div>
-</div>
-<span class="text-xs font-semibold text-secondary">Tim respon aktif di lokasi</span>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
+<div class="md:col-span-7">
+<h2 class="font-headline text-4xl font-extrabold text-on-surface mb-8 tracking-tight uppercase">Geografis &amp; Kerentanan Wilayah</h2>
+<div class="space-y-6 text-secondary text-lg leading-relaxed">
+<p>Kabupaten Magetan memiliki karakteristik geografis yang unik dengan tantangan bencana yang spesifik. Terletak di lereng Gunung Lawu, wilayah barat Magetan memiliki risiko tinggi terhadap <strong>tanah longsor</strong> dan angin kencang.</p>
+<p>Sementara itu, wilayah dataran rendah dan bantaran sungai memiliki kerentanan terhadap <strong>banjir genangan</strong> saat musim penghujan ekstrim. PMI Kabupaten Magetan secara aktif memetakan titik-titik rawan ini untuk mempercepat koordinasi saat tanggap darurat.</p>
+<p class="font-bold text-on-surface italic">"Kesiapsiagaan masyarakat di lereng Lawu dan dataran rendah Magetan adalah prioritas utama kami dalam meminimalisir dampak bencana."</p>
 </div>
 </div>
-<!-- Bento Small 1 -->
-<div class="md:col-span-4 bg-primary text-on-primary rounded-2xl p-8 flex flex-col justify-between relative overflow-hidden group shadow-lg">
-<div class="relative z-10">
-<span class="material-symbols-outlined text-4xl mb-4">volunteer_activism</span>
-<h3 class="text-xl font-bold mb-2">Dana Bantuan Darurat</h3>
-<p class="text-on-primary/80 text-sm leading-relaxed">Pendanaan segera untuk logistik, obat-obatan, dan penyebaran air bersih.</p>
+<div class="md:col-span-5">
+<div class="aspect-square bg-surface-container-low relative rounded-2xl overflow-hidden p-8 flex items-center justify-center border border-outline-variant/10">
+<img class="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-20" data-alt="minimalist clean topographic map showing disaster risk zones in monochrome red and gray palette with surgical precision styling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv_UMglFm5RfG0V9_4r7Pp9hm5sOCbflR_1fssTlV7D7qp4ruU0Go7uxKwx5R9Tb_MbLnZ42rcTSBS3uch5c9rZeIZIKpfBHu-ZVbB7XuU5Uc8SEnM1aBGDRHHu0zxN3eKadlPWIm-ZwFai6f2lGJStB4Qh2OeVZt1CJrcSTWdb9jryqmpyl1GStrozHnTC5NmcgMfTLaUlxaygjvayW1s5676luQG8zbZaD1QG_-joubotgc_rg6KtO3Lp24V_ukAwdfX_vSd2Q"/>
+<div class="relative text-center">
+<span class="text-7xl font-black text-primary font-headline uppercase">Lawu</span>
+<p class="text-xs uppercase font-bold tracking-widest mt-2 text-secondary">Zona Risiko Tinggi</p>
+<p class="text-sm text-secondary mt-4 max-w-[200px] mx-auto">Pemetaan intensif area rawan longsor dan pergerakan tanah di Magetan Barat.</p>
 </div>
-<button class="relative z-10 w-full mt-8 bg-white text-primary font-bold py-3 rounded-lg hover:bg-on-primary-container transition-colors active:scale-95">Donasi ke Dana Umum</button>
-<div class="absolute -right-4 -bottom-4 opacity-10 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-[160px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
-</div>
-</div>
-<!-- Bento Side 1 -->
-<div class="md:col-span-4 bg-surface-container-low rounded-2xl p-8 border border-transparent hover:border-outline-variant/20 transition-all">
-<div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-primary">water_drop</span>
-</div>
-<h3 class="text-lg font-bold mb-3">Krisis Air Bersih</h3>
-<p class="text-secondary text-sm leading-relaxed mb-6">Mengerahkan unit pemurnian mobile ke Sumatera Utara setelah kerusakan infrastruktur.</p>
-<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
-<div class="bg-primary h-full w-3/4 rounded-full"></div>
-</div>
-<div class="flex justify-between mt-2 text-[10px] font-bold text-secondary-fixed-dim uppercase tracking-tighter">
-<span>Target tercapai: 75%</span>
-<span>$15k / $20k</span>
-</div>
-</div>
-<!-- Bento Side 2 -->
-<div class="md:col-span-8 bg-surface-container-lowest rounded-2xl overflow-hidden grid md:grid-cols-2 card-shadow">
-<div class="p-8 flex flex-col justify-center">
-<h3 class="text-xl font-bold mb-4">Logistik &amp; Rantai Pasok</h3>
-<p class="text-secondary text-sm leading-relaxed mb-6">Sistem gudang otomatis kami memastikan bahwa 95% paket darurat mencapai tujuannya dalam waktu 24 jam setelah pemicu bencana.</p>
-<div class="flex gap-4">
-<div class="flex items-center gap-2 text-xs font-bold text-on-surface"><span class="material-symbols-outlined text-tertiary">check_circle</span> Siap Angkutan Udara</div>
-<div class="flex items-center gap-2 text-xs font-bold text-on-surface"><span class="material-symbols-outlined text-tertiary">check_circle</span> Rantai Dingin</div>
-</div>
-</div>
-<div class="relative min-h-[200px]">
-<img class="w-full h-full object-cover" data-alt="Organized stacks of white cardboard aid boxes with a red cross logo in a high-tech warehouse, soft industrial lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJRycnZb6cB1uEpjFjaGjY3KjZ-x_G0VVQK0MIxnRw6HCqLTucLxFVauAn3HO_6APgk7-IiM2c65v_MO6ozosvMbM2Faf-ld2i4aHaFIYZlT8TBqDux4Il_bEL-XtroNN8XPiVngHUONPehX1dZt3Sy-oV1PxOWhQAKD5tlo4p19I9x99S3oyRMAnGZE0Sc27_dItfEi7lwOVsg0PS8dYPkdol36k8QvE8bTpeqC2cEtv7IJL-gbYI_Vk0XtQt4QudZtBNlLR5mA"/>
 </div>
 </div>
 </div>
 </div>
 </section>
-<!-- Safety Tips: Asymmetric Layout -->
+<!-- Section 3: Mandat & Dasar Hukum -->
 <section class="py-24 bg-surface-container-low">
 <div class="max-w-7xl mx-auto px-8">
-<div class="max-w-2xl mb-16">
-<h2 class="text-3xl font-extrabold text-on-surface mb-4">Kesiapsiagaan &amp; Tips Keselamatan</h2>
-<p class="text-secondary leading-relaxed">Pengetahuan adalah garis pertahanan pertama. Pelajari cara melindungi diri Anda dan komunitas Anda selama berbagai skenario darurat.</p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="md:col-span-1">
+<h2 class="font-headline text-3xl font-extrabold text-on-surface uppercase tracking-tight leading-none mb-4">Mandat &amp;<br/>Dasar Hukum</h2>
+<div class="w-16 h-1 bg-primary-container"></div>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-<div class="space-y-8">
-<div class="group">
-<div class="text-6xl font-black text-surface-container-highest group-hover:text-primary/10 transition-colors mb-[-24px] pointer-events-none">01</div>
-<div class="relative pl-4 border-l-2 border-primary/20 group-hover:border-primary transition-colors">
-<h4 class="font-bold text-lg mb-2">Tas Siaga Bencana 101</h4>
-<p class="text-sm text-secondary leading-relaxed">Siapkan tas siaga 72 jam termasuk air, makanan tahan lama, obat-obatan, dan dokumen penting.</p>
+<div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest p-8 rounded-xl border-l-4 border-primary shadow-sm">
+<h4 class="font-headline font-bold text-lg mb-2">UU No. 1 Tahun 2018</h4>
+<p class="text-sm text-secondary leading-relaxed">Landasan hukum penyelenggaraan Kepalangmerahan di Indonesia yang mengatur tugas PMI dalam penanggulangan bencana.</p>
 </div>
+<div class="bg-surface-container-lowest p-8 rounded-xl border-l-4 border-primary shadow-sm">
+<h4 class="font-headline font-bold text-lg mb-2">Perda Kabupaten Magetan</h4>
+<p class="text-sm text-secondary leading-relaxed">Sinergi PMI dengan BPBD Magetan dalam kerangka sistem penanggulangan bencana daerah secara terpadu.</p>
 </div>
-<div class="group">
-<div class="text-6xl font-black text-surface-container-highest group-hover:text-primary/10 transition-colors mb-[-24px] pointer-events-none">02</div>
-<div class="relative pl-4 border-l-2 border-primary/20 group-hover:border-primary transition-colors">
-<h4 class="font-bold text-lg mb-2">Rute Evakuasi</h4>
-<p class="text-sm text-secondary leading-relaxed">Petakan setidaknya dua jalan keluar dari lingkungan Anda dan tetapkan titik temu keluarga.</p>
-</div>
-</div>
-</div>
-<div class="space-y-8 mt-12 md:mt-0">
-<div class="group">
-<div class="text-6xl font-black text-surface-container-highest group-hover:text-primary/10 transition-colors mb-[-24px] pointer-events-none">03</div>
-<div class="relative pl-4 border-l-2 border-primary/20 group-hover:border-primary transition-colors">
-<h4 class="font-bold text-lg mb-2">Kesiapsiagaan Banjir</h4>
-<p class="text-sm text-secondary leading-relaxed">Jangan pernah berkendara melalui area banjir. Putar balik, jangan nekat. Segera pindah ke dataran tinggi.</p>
-</div>
-</div>
-<div class="group">
-<div class="text-6xl font-black text-surface-container-highest group-hover:text-primary/10 transition-colors mb-[-24px] pointer-events-none">04</div>
-<div class="relative pl-4 border-l-2 border-primary/20 group-hover:border-primary transition-colors">
-<h4 class="font-bold text-lg mb-2">Keselamatan Gempa Bumi</h4>
-<p class="text-sm text-secondary leading-relaxed">Berlutut, Berlindung, dan Bertahan. Jauhi kaca, jendela, dan dinding luar.</p>
-</div>
-</div>
-</div>
-<div class="bg-surface-container-lowest rounded-2xl p-8 card-shadow self-start md:-mt-8">
-<h4 class="font-bold text-xl mb-6">Tetap Terinformasi</h4>
-<p class="text-sm text-secondary mb-8">Terima peringatan bencana real-time dan instruksi keselamatan langsung ke perangkat Anda.</p>
-<form class="space-y-4">
-<div class="space-y-1">
-<label class="text-[10px] font-bold uppercase tracking-widest text-secondary-fixed-dim">Lokasi / Kota</label>
-<input class="w-full bg-surface-container-high border-none border-b-2 border-outline-variant/30 focus:border-primary focus:ring-0 text-sm py-3 rounded-t-lg transition-all" placeholder="e.g. Jakarta Pusat" type="text"/>
-</div>
-<button class="w-full bg-on-surface text-surface py-3 rounded-lg font-bold text-sm hover:bg-primary transition-colors">Berlangganan Peringatan</button>
-</form>
 </div>
 </div>
 </div>
 </section>
-<!-- Donation Portal Summary -->
+<!-- Section 4: Prinsip 6 Jam -->
+<section class="py-32 relative overflow-hidden bg-on-background text-white">
+<div class="absolute top-0 right-0 w-1/3 h-full bg-primary-container skew-x-12 translate-x-20"></div>
+<div class="max-w-7xl mx-auto px-8 relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div>
+<h2 class="font-headline text-7xl font-black tracking-tighter uppercase mb-4">Prinsip <span class="text-primary-container">6 Jam</span></h2>
+<p class="text-xl text-white/60 font-medium mb-8">Komitmen respons tercepat untuk keselamatan jiwa di Magetan.</p>
+<div class="flex items-start gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full border-2 border-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container">timer</span>
+</div>
+<p class="text-lg leading-relaxed text-white/80">Personil dan bantuan logistik dasar dari Markas PMI Magetan harus sudah tiba di lokasi kejadian maksimal dalam waktu 6 jam setelah informasi diterima.</p>
+</div>
+</div>
+<div class="flex justify-center">
+<div class="relative w-64 h-64 flex items-center justify-center">
+<div class="absolute inset-0 border-8 border-white/10 rounded-full"></div>
+<div class="absolute inset-0 border-t-8 border-primary-container rounded-full rotate-45"></div>
+<span class="text-6xl font-black font-headline">06:00</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Kapasitas Operasi -->
 <section class="py-24 bg-surface">
-<div class="max-w-4xl mx-auto px-8 text-center">
-<div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-red-50 text-primary mb-8">
-<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">volunteer_activism</span>
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex justify-between items-end mb-16">
+<div>
+<h2 class="font-headline text-4xl font-extrabold text-on-surface tracking-tight uppercase">Kapasitas Operasi PMI Magetan</h2>
+<p class="text-secondary mt-2">Sumber daya lokal dengan dukungan jaringan regional PMI Jawa Timur.</p>
 </div>
-<h2 class="text-4xl font-extrabold mb-6">Kontribusi Anda Menyelamatkan Nyawa</h2>
-<p class="text-secondary text-lg mb-12">Setiap donasi adalah secercah harapan. Baik itu menyediakan makanan untuk sehari atau membangun kembali rumah komunitas, dukungan Anda sangat berarti.</p>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-<button class="py-4 rounded-xl border border-outline-variant/30 font-bold hover:bg-primary hover:text-white hover:border-primary transition-all">$25</button>
-<button class="py-4 rounded-xl border border-outline-variant/30 font-bold hover:bg-primary hover:text-white hover:border-primary transition-all">$50</button>
-<button class="py-4 rounded-xl border border-outline-variant/30 font-bold hover:bg-primary hover:text-white hover:border-primary transition-all">$100</button>
-<button class="py-4 rounded-xl border border-outline-variant/30 font-bold hover:bg-primary hover:text-white hover:border-primary transition-all">Kustom</button>
 </div>
-<button class="signature-gradient text-on-primary px-12 py-5 rounded-full font-black text-lg shadow-xl hover:shadow-2xl transition-all active:scale-95 inline-flex items-center gap-3">Donasi Sekarang <span class="material-symbols-outlined">favorite</span></button>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Warehouse Card -->
+<div class="md:col-span-2 md:row-span-2 bg-surface-container-low rounded-2xl p-10 flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-4xl text-primary mb-6" data-weight="fill">warehouse</span>
+<h3 class="text-2xl font-bold mb-4 font-headline uppercase">Pusat Logistik Lokal</h3>
+<p class="text-secondary text-sm mb-8">Gudang Markas PMI Magetan menyimpan paket bantuan darurat yang siap dimobilisasi segera ke seluruh kecamatan.</p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex items-center gap-3 bg-white p-3 rounded-lg"><span class="w-2 h-2 bg-primary rounded-full"></span><span class="text-xs font-bold uppercase">Markas Pusat</span></div>
+<div class="flex items-center gap-3 bg-white p-3 rounded-lg"><span class="w-2 h-2 bg-primary rounded-full"></span><span class="text-xs font-bold uppercase">Unit Siaga Lawu</span></div>
+<div class="flex items-center gap-3 bg-white p-3 rounded-lg"><span class="w-2 h-2 bg-primary rounded-full"></span><span class="text-xs font-bold uppercase">Logistik Regional</span></div>
+<div class="flex items-center gap-3 bg-white p-3 rounded-lg"><span class="w-2 h-2 bg-primary rounded-full"></span><span class="text-xs font-bold uppercase">Cadangan Darurat</span></div>
+</div>
+</div>
+<!-- Specialty Equipments -->
+<div class="bg-surface-container-lowest border border-surface-container-high rounded-2xl p-8 group hover:bg-primary-container transition-all duration-300">
+<span class="material-symbols-outlined text-3xl mb-4 group-hover:text-white transition-colors">terrain</span>
+<h4 class="font-bold text-sm uppercase group-hover:text-white transition-colors">Unit 4x4</h4>
+<p class="text-[10px] text-secondary mt-2 group-hover:text-white/70 transition-colors">Akses medan berat di lereng Gunung Lawu.</p>
+</div>
+<div class="bg-surface-container-lowest border border-surface-container-high rounded-2xl p-8 group hover:bg-primary-container transition-all duration-300">
+<span class="material-symbols-outlined text-3xl mb-4 group-hover:text-white transition-colors">communication</span>
+<h4 class="font-bold text-sm uppercase group-hover:text-white transition-colors">Radio Jaring</h4>
+<p class="text-[10px] text-secondary mt-2 group-hover:text-white/70 transition-colors">Komunikasi area blank spot pegunungan.</p>
+</div>
+<div class="bg-surface-container-lowest border border-surface-container-high rounded-2xl p-8 group hover:bg-primary-container transition-all duration-300">
+<span class="material-symbols-outlined text-3xl mb-4 group-hover:text-white transition-colors">water_drop</span>
+<h4 class="font-bold text-sm uppercase group-hover:text-white transition-colors">Tangki Air</h4>
+<p class="text-[10px] text-secondary mt-2 group-hover:text-white/70 transition-colors">Distribusi air bersih pasca bencana.</p>
+</div>
+<div class="bg-surface-container-lowest border border-surface-container-high rounded-2xl p-8 group hover:bg-primary-container transition-all duration-300">
+<span class="material-symbols-outlined text-3xl mb-4 group-hover:text-white transition-colors">emergency</span>
+<h4 class="font-bold text-sm uppercase group-hover:text-white transition-colors">Ambulans</h4>
+<p class="text-[10px] text-secondary mt-2 group-hover:text-white/70 transition-colors">Layanan medis gawat darurat 24 jam.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 6: Daftar Layanan -->
+<section class="py-24 bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-16">
+<h2 class="font-headline text-4xl font-extrabold text-on-surface uppercase mb-4 tracking-tighter">Layanan Kemanusiaan Magetan</h2>
+<div class="w-24 h-1 bg-primary-container mx-auto"></div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+<div class="flex flex-col items-center p-6 text-center">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-4 text-primary">
+<span class="material-symbols-outlined text-3xl">groups</span>
+</div>
+<span class="text-xs font-bold uppercase tracking-wider">Evakuasi</span>
+</div>
+<div class="flex flex-col items-center p-6 text-center">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-4 text-primary">
+<span class="material-symbols-outlined text-3xl">home_work</span>
+</div>
+<span class="text-xs font-bold uppercase tracking-wider">Shelter</span>
+</div>
+<div class="flex flex-col items-center p-6 text-center">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-4 text-primary">
+<span class="material-symbols-outlined text-3xl">medical_services</span>
+</div>
+<span class="text-xs font-bold uppercase tracking-wider">P3K</span>
+</div>
+<div class="flex flex-col items-center p-6 text-center">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-4 text-primary">
+<span class="material-symbols-outlined text-3xl">ambulance</span>
+</div>
+<span class="text-xs font-bold uppercase tracking-wider">Ambulans</span>
+</div>
+<div class="flex flex-col items-center p-6 text-center">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-4 text-primary">
+<span class="material-symbols-outlined text-3xl">soup_kitchen</span>
+</div>
+<span class="text-xs font-bold uppercase tracking-wider">Dapur Umum</span>
+</div>
+<div class="flex flex-col items-center p-6 text-center">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-4 text-primary">
+<span class="material-symbols-outlined text-3xl">package_2</span>
+</div>
+<span class="text-xs font-bold uppercase tracking-wider">Logistik</span>
+</div>
+<div class="flex flex-col items-center p-6 text-center">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-4 text-primary">
+<span class="material-symbols-outlined text-3xl">faucet</span>
+</div>
+<span class="text-xs font-bold uppercase tracking-wider">WASH</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 7: Tips Keselamatan -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+<div class="max-w-xl">
+<h2 class="font-headline text-4xl font-extrabold text-on-surface uppercase tracking-tight">Tips Keselamatan Warga Magetan</h2>
+<p class="text-secondary mt-2">Panduan mitigasi mandiri berdasarkan karakteristik wilayah Kabupaten Magetan.</p>
+</div>
+<div class="h-px flex-grow bg-outline-variant/30 hidden md:block mx-8 mb-4"></div>
+<button class="text-primary font-bold text-sm uppercase flex items-center gap-2">Unduh Panduan <span class="material-symbols-outlined">download</span></button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Flood -->
+<div class="bg-surface-container-lowest p-1 overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-shadow group">
+<img class="w-full h-48 object-cover rounded-xl mb-6" data-alt="conceptual photo of flood emergency kit including boots and waterproof bag on a wet surface with moody atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6Sh-2RhrzeI-qJAI8yWkmcpQRzHNZ44ojF8E77TDBfHYriH-2VGsd0ZgpZaD9dCzXZUIlfzmmvb9135sIIvthTOlNcm02BP0GSWuaIjZghWGgo_QhW7iqpGJw29Dr6NjGYE_sfMTKF1gm2fM3Sw-wuk5BDupgXWVgb4p44bdegOniXdm-FFBvBGRMqsJqNray-1wTZLjNzEa94D6nmBMjE1cZmgzBoHgJ-6jOg6J4A6kznTKl6A4IaE_b-UCABonXNF50qqXnJQ"/>
+<div class="p-6">
+<h4 class="font-headline font-extrabold text-xl mb-3">Siaga Banjir</h4>
+<p class="text-xs text-secondary leading-relaxed mb-6">Untuk warga di dataran rendah, pantau tinggi muka air sungai saat hujan lebat di hulu Lawu.</p>
+<a class="text-[10px] font-black uppercase tracking-widest text-primary flex items-center gap-2" href="#">Baca Selengkapnya <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
+</div>
+</div>
+<!-- Landslide -->
+<div class="bg-surface-container-lowest p-1 overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-shadow">
+<img class="w-full h-48 object-cover rounded-xl mb-6" data-alt="mountainous area with visible landslide warning signs and lush green vegetation under overcast sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGAJ0XoWzm8bi5IeSqs6y8WRCauznJ1PfJj7VqAdzXrDKOQzaXIPzzgCZVYG3imQ4zzM2ZKzUWyk-RlK-a3F17Po3RMDWGkJ3nLvremlFsJ8_hwghC1eXKmyMZXMcg2-FvCPqfIJ9MP_YJiKwSbhbrhSg-afMkE1ozg2Ddyrgsz6_8mrr_RxWhv082TYzbkbXr1KdcwFu5ZCVPuxWJ0W77jCg9i8iq6bXJ5BRwjG-rSvSsoya731b3hx_f5sLvVy08cVU3UStToQ"/>
+<div class="p-6">
+<h4 class="font-headline font-extrabold text-xl mb-3">Waspada Longsor</h4>
+<p class="text-xs text-secondary leading-relaxed mb-6">Waspadai rekahan tanah di lereng Lawu. Segera mengungsi jika terdengar suara gemuruh dari atas.</p>
+<a class="text-[10px] font-black uppercase tracking-widest text-primary flex items-center gap-2" href="#">Baca Selengkapnya <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
+</div>
+</div>
+<!-- Earthquake -->
+<div class="bg-surface-container-lowest p-1 overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-shadow">
+<img class="w-full h-48 object-cover rounded-xl mb-6" data-alt="safety demonstration showing a person doing drop cover and hold on under a sturdy table in a modern living room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4DGODtTqLlO0blGVtpAAmi4MXd5a4iO8JJM2s9vx2FAJTxZG-YqbGIMXbh1Sk7FIAnEO4CuxQPgTwZ7Ea7EBYG-o2im-TczBlNzhw5gClYWHClPkHTOC9xa491A-qZ35WtSTRy6GKyuoqlmNTw5k7y8BVDmuOP1BAxcZkM9npF4NZhAKJTOcLNi0u3OvPWEwEi3tAOar6V_R0ILSaAN-yb1Eb1ewOWuBEX4oap33fBf6rF9a9IYcw1a4trK0dHJ3wcXgjsRFPfg"/>
+<div class="p-6">
+<h4 class="font-headline font-extrabold text-xl mb-3">Gempa Bumi</h4>
+<p class="text-xs text-secondary leading-relaxed mb-6">Jangan panik, lakukan Drop-Cover-Hold On. Hindari area di dekat dinding kaca atau lemari tinggi.</p>
+<a class="text-[10px] font-black uppercase tracking-widest text-primary flex items-center gap-2" href="#">Baca Selengkapnya <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
+</div>
+</div>
+<!-- Volcano -->
+<div class="bg-surface-container-lowest p-1 overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-shadow">
+<img class="w-full h-48 object-cover rounded-xl mb-6" data-alt="emergency N95 mask and goggles laid out for volcanic ash protection with a blurred mountain in the background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfFA9O1QczI9uDfaz-hug7ErzqADpWhW2AivXTBhbRkoREmNDvzt6oGH7Qo4SVk3OMtpmd4In96WMIjoaaL_MRlGjG-c_8Eedo190qyYdAKSpKfCBdWHI5OiNZniczgS2uoD1AQUMUkj56b_qfEzDQI1JOVvzGM7nePhoSzc98QyUEmVe5MI9eCrdR-bBZy3QlVfo__VYRI4DhenwJRohbzadKteBxfZTwEUWx69ltm75SJ0rFdCBgnBsrjwmZEFDk62vhXY5i_A"/>
+<div class="p-6">
+<h4 class="font-headline font-extrabold text-xl mb-3">Abu Vulkanik</h4>
+<p class="text-xs text-secondary leading-relaxed mb-6">Selalu sediakan masker N95 di rumah jika terjadi peningkatan aktivitas vulkanik di kawasan Lawu.</p>
+<a class="text-[10px] font-black uppercase tracking-widest text-primary flex items-center gap-2" href="#">Baca Selengkapnya <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
+</div>
+</div>
+</div>
 </div>
 </section>
 </main>
-<!-- Footer -->
-<footer class="w-full py-12 px-8 bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto font-inter text-sm leading-relaxed">
-<div>
-<div class="text-xl font-bold text-gray-900 dark:text-white mb-4">PMI Portal</div>
-<p class="text-gray-500 dark:text-gray-400 mb-6">Berdedikasi pada keunggulan kemanusiaan dan intervensi darurat cepat sejak 1945.</p>
-<div class="flex space-x-4">
-<a class="text-gray-400 hover:text-red-600 transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
-<a class="text-gray-400 hover:text-red-600 transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
-<a class="text-gray-400 hover:text-red-600 transition-colors" href="#"><span class="material-symbols-outlined">call</span></a>
+<!-- Footer Shell -->
+<footer class="bg-slate-50 dark:bg-slate-950">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center py-12 px-8 border-t border-slate-200 dark:border-slate-800">
+<div class="mb-8 md:mb-0">
+<div class="text-lg font-bold text-slate-900 dark:text-slate-100 uppercase font-headline mb-2">PMI KABUPATEN MAGETAN</div>
+<p class="font-['Inter'] text-xs tracking-wide leading-relaxed text-slate-500 uppercase">© 2024 PALANG MERAH INDONESIA KABUPATEN MAGETAN. DIVISI PENANGGULANGAN BENCANA.</p>
 </div>
-</div>
-<div class="grid grid-cols-2 gap-4">
-<div>
-<h5 class="font-bold text-gray-900 dark:text-white mb-4">Layanan</h5>
-<ul class="space-y-2">
-<li><a class="text-gray-500 dark:text-gray-400 hover:text-red-600" href="#">Bank Darah</a></li>
-<li><a class="text-gray-500 dark:text-gray-400 hover:text-red-600" href="#">Ambulans</a></li>
-<li><a class="text-gray-500 dark:text-gray-400 hover:text-red-600" href="#">Kebencanaan</a></li>
-<li><a class="text-gray-500 dark:text-gray-400 hover:text-red-600" href="#">Relawan</a></li>
-</ul>
-</div>
-<div>
-<h5 class="font-bold text-gray-900 dark:text-white mb-4">Layanan</h5>
-<ul class="space-y-2">
-<li><a class="text-gray-500 dark:text-gray-400 hover:text-red-600" href="#">Bank Darah</a></li>
-<li><a class="text-gray-500 dark:text-gray-400 hover:text-red-600" href="#">Ambulans</a></li>
-<li><a class="text-gray-500 dark:text-gray-400 hover:text-red-600" href="#">Kebencanaan</a></li>
-<li><a class="text-gray-500 dark:text-gray-400 hover:text-red-600" href="#">Relawan</a></li>
-</ul>
-</div>
-</div>
-<div class="bg-surface-container-high rounded-xl p-6 flex flex-col justify-between">
-<div class="font-bold text-on-surface mb-2">Darurat?</div>
-<p class="text-xs text-secondary mb-4">Hubungi hotline nasional kami yang tersedia 24/7 untuk koordinasi bencana segera.</p>
-<div class="text-2xl font-black text-primary">112</div>
-</div>
-</div>
-<div class="max-w-7xl mx-auto px-8 mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 flex justify-between items-center text-gray-500 dark:text-gray-400 text-xs">
-<div>© 2024 Layanan Kemanusiaan. Seluruh Hak Cipta Dilindungi.</div>
-<div class="flex gap-6">
-<span>Indonesia</span>
-<span>Inggris</span>
-</div>
+<nav class="flex flex-wrap justify-center gap-8 font-['Inter'] text-xs tracking-wide uppercase">
+<a class="text-slate-500 hover:text-slate-900 underline decoration-red-600/30 underline-offset-4 transition-opacity opacity-80 hover:opacity-100" href="#">Etika Operasional</a>
+<a class="text-slate-500 hover:text-slate-900 underline decoration-red-600/30 underline-offset-4 transition-opacity opacity-80 hover:opacity-100" href="#">Privasi</a>
+<a class="text-slate-500 hover:text-slate-900 underline decoration-red-600/30 underline-offset-4 transition-opacity opacity-80 hover:opacity-100" href="#">Legal</a>
+<a class="text-slate-500 hover:text-slate-900 underline decoration-red-600/30 underline-offset-4 transition-opacity opacity-80 hover:opacity-100" href="#">Donasi</a>
+</nav>
 </div>
 </footer>
-<!-- FAB for Emergency -->
-<div class="fixed bottom-8 right-8 z-[100] md:hidden">
-<button class="signature-gradient w-16 h-16 rounded-full flex items-center justify-center text-white shadow-2xl active:scale-90 transition-transform">
-<span class="material-symbols-outlined text-3xl">emergency</span>
-</button>
-</div>
 </body></html>

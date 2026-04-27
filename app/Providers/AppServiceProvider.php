@@ -20,56 +20,38 @@ class AppServiceProvider extends ServiceProvider
         //
     }
 
-public function boot()
-{
-    View::composer(['layouts.admin', 'admin.sidebar'], function ($view) {
-        // Profil PMI
-        $profilMenus = Profil::where('kategori', 'profil')->get();
-        $profilSubmenus = SubmenuProfil::whereHas('profil', fn($q) => $q->where('kategori','profil'))->get();
+        public function boot()
+        {
+            View::composer(['layouts.admin', 'admin.sidebar'], function ($view) {
+                // Profil PMI
+                $profilMenus = Profil::where('kategori', 'profil')->get();
+                $profilSubmenus = SubmenuProfil::whereHas('profil', fn($q) => $q->where('kategori','profil'))->get();
 
+                $view->with([
+                    'profilMenus' => $profilMenus,
+                    'profilSubmenus' => $profilSubmenus,
+                    'menuDefault' => $profilMenus->first(),
+                ]);
 
-        $view->with([
-            'profilMenus' => $profilMenus,
-            'profilSubmenus' => $profilSubmenus,
-            'menuDefault' => $profilMenus->first(),
-          
-        ]);
+                // Donor
+                $donorSubmenus = SubmenuDonor::where('is_active', 1)->orderBy('urutan')->get();
+                $view->with(['donorSubmenus' => $donorSubmenus]);
 
-        //Donor Darah
-        $donorSubmenus = SubmenuDonor::where('is_active', 1)->orderBy('urutan')->get();
+                // Relawan
+                $relawanSubmenus = SubmenuRelawan::where('is_active', 1)->orderBy('urutan')->get();
+                $view->with(['relawanSubmenus' => $relawanSubmenus]);
 
-        $view->with([
-            'profilMenus' => $profilMenus,
-            'profilSubmenus' => $profilSubmenus,
-            'menuDefault' => $profilMenus->first(),
-            'donorSubmenus' => $donorSubmenus,
-        ]);
+                // Kebencanaan
+                $kebencanaanSubmenus = SubmenuKebencanaan::where('is_active', 1)->orderBy('urutan')->get();
+                $view->with(['kebencanaanSubmenus' => $kebencanaanSubmenus]);
 
-        //Relawan
-          $relawanSubmenus = SubmenuRelawan::where('is_active', 1)->orderBy('urutan')->get();
+                // Diklat
+                $diklatSubmenus = SubmenuDiklat::where('is_active', 1)->orderBy('urutan')->get();
+                $view->with(['diklatSubmenus' => $diklatSubmenus]);
+            });
 
-        $view->with([
-            'profilMenus' => $profilMenus,
-            'profilSubmenus' => $profilSubmenus,
-            'menuDefault' => $profilMenus->first(),
-            'relawanSubmenus' => $relawanSubmenus,
-        ]);
-
-        //Kebencanaan
-          $kebencanaanSubmenus = SubmenuKebencanaan::where('is_active', 1)->orderBy('urutan')->get(); 
-        $view->with([
-            'kebencanaanSubmenus' => $kebencanaanSubmenus,
-        ]);
-
-        //Diklat
-          $diklatSubmenus = SubmenuDiklat::where('is_active', 1)->orderBy('urutan')->get(); 
-        $view->with([
-            'diklatSubmenus' => $diklatSubmenus,
-        ]);
-
-        
-
-    });
-}
+            // ✅ INI YANG BENAR (global ke semua view)
+            View::share('totalrelawan', SubmenuRelawan::where('slug', 'totalrelawan')->first());
+        }
 
 }

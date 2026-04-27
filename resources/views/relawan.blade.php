@@ -110,7 +110,9 @@
 <!-- Hero Section: The Empathetic Sentinel Style -->
 <section class="relative min-h-[716px] flex items-center overflow-hidden">
 <div class="absolute inset-0 z-0">
-<img class="w-full h-full object-cover" data-alt="portrait of diverse humanitarian volunteers smiling warmly in a bright community center with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd0ScAyIvscY76x3jDqFCPHutmu1OzjGnxeM6uMLUwA2EbUpft2WP9nexBkwUSxLRZKT5IJvXJOv5-Q8upTTn8vMmJJ88J_t_yN84NdAcoF--Reh-NEpBtx9yHDBHI2N_X9Hk7v56HA4prOlGSNZmpRXyTSi5WmLEvMq7lek0NKS24uKYxuYGEUmQ9lYv8HXjUEZDpWoR9hCAgHjA-uyDiVcCMEaPZrB3-huzij7cThK62_lUe7GVf-LZcwAkt2OZp6dVoHwsqSg"/>
+<img class="w-full h-full object-cover"
+src="https://images.unsplash.com/photo-1584515933487-779824d29309"
+alt="Tim medis dan relawan kemanusiaan">
 <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent"></div>
 </div>
 <div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
@@ -169,127 +171,205 @@
 </div>
 </section>
 <!-- Programs: Asymmetric Editorial Layout -->
-<section class="py-24 bg-surface-container-low" id="programs">
+<!-- PMR Section -->
+<section class="py-24 bg-white" id="pmr">
 <div class="max-w-7xl mx-auto px-8">
-<div class="asymmetric-grid gap-16 items-start">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 <div>
-<h2 class="text-5xl font-headline font-black tracking-tight mb-12">Program Aktif</h2>
-<div class="space-y-12">
-<!-- Program 1 -->
-<div class="group flex gap-8 pb-12 border-b border-outline-variant/20">
-<span class="text-4xl font-headline font-black text-primary/20 group-hover:text-primary transition-colors">01</span>
+<span class="text-primary font-headline font-bold tracking-widest text-xs uppercase mb-4 block">UNTUK PELAJAR</span>
+<h2 class="text-4xl md:text-5xl font-headline font-black mb-6">Palang Merah Remaja (PMR)</h2>
+<p class="text-lg text-secondary mb-8 leading-relaxed">
+                        Wadah kegiatan remaja di sekolah atau lembaga pendidikan melalui kegiatan ekstrakurikuler yang membentuk karakter kemanusiaan sejak dini.
+                    </p>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+<div class="p-4 bg-surface-container-low rounded-xl border-l-4 border-primary">
+<p class="font-black text-primary text-xl">Mula</p>
+<p class="text-xs font-bold text-secondary uppercase">Tingkat SD</p>
+</div>
+<div class="p-4 bg-surface-container-low rounded-xl border-l-4 border-primary">
+<p class="font-black text-primary text-xl">Madya</p>
+<p class="text-xs font-bold text-secondary uppercase">Tingkat SMP</p>
+</div>
+<div class="p-4 bg-surface-container-low rounded-xl border-l-4 border-primary">
+<p class="font-black text-primary text-xl">Wira</p>
+<p class="text-xs font-bold text-secondary uppercase">Tingkat SMA</p>
+</div>
+</div>
+<div class="bg-tertiary-container/10 p-8 rounded-2xl">
+<h4 class="font-headline font-bold text-tertiary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+                        Tri Bakti Remaja
+</h4>
+<ol class="space-y-3 text-sm text-on-tertiary-fixed-variant font-medium">
+<li class="flex gap-3">
+<span class="font-black text-tertiary">1.</span>
+<span>Berbakti kepada masyarakat.</span>
+</li>
+<li class="flex gap-3">
+<span class="font-black text-tertiary">2.</span>
+<span>Mempertinggi keterampilan &amp; kesehatan.</span>
+</li>
+<li class="flex gap-3">
+<span class="font-black text-tertiary">3.</span>
+<span>Mempererat persahabatan nasional &amp; internasional.</span>
+</li>
+</ol>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-3xl editorial-shadow">
+<h3 class="text-2xl font-headline font-black mb-6">Persyaratan &amp; Kegiatan</h3>
+<div class="space-y-8">
 <div>
-<h3 class="text-2xl font-headline font-extrabold mb-4 group-hover:text-primary transition-colors">Respons Darurat Bencana</h3>
-<p class="text-secondary mb-6 leading-relaxed">Tim pengerahan cepat untuk zona bencana alam, menyediakan pertolongan pertama, dukungan logistik, dan distribusi air bersih.</p>
-<div class="flex gap-4">
-<span class="px-3 py-1 bg-surface-container-highest text-xs font-bold rounded-full">URGENT</span>
-<span class="px-3 py-1 bg-surface-container-highest text-xs font-bold rounded-full">MENDESAK</span>
-</div>
-</div>
-</div>
-<!-- Program 2 -->
-<div class="group flex gap-8 pb-12 border-b border-outline-variant/20">
-<span class="text-4xl font-headline font-black text-primary/20 group-hover:text-primary transition-colors">02</span>
-<div>
-<h3 class="text-2xl font-headline font-extrabold mb-4 group-hover:text-primary transition-colors">Klinik Kesehatan Keliling</h3>
-<p class="text-secondary mb-6 leading-relaxed">Membantu tenaga medis di daerah terpencil dengan pemeriksaan kesehatan, vaksinasi, dan pendidikan kesehatan masyarakat.</p>
-<div class="flex gap-4">
-<span class="px-3 py-1 bg-surface-container-highest text-xs font-bold rounded-full">MEDICAL</span>
-<span class="px-3 py-1 bg-surface-container-highest text-xs font-bold rounded-full">MEDIS</span>
-</div>
-</div>
-</div>
-<!-- Program 3 -->
-<div class="group flex gap-8">
-<span class="text-4xl font-headline font-black text-primary/20 group-hover:text-primary transition-colors">03</span>
-<div>
-<h3 class="text-2xl font-headline font-extrabold mb-4 group-hover:text-primary transition-colors">Logistik Donor Darah</h3>
-<p class="text-secondary mb-6 leading-relaxed">Mengelola pendaftaran donor dan dukungan di lokasi untuk kampanye donor darah nasional.</p>
-<div class="flex gap-4">
-<span class="px-3 py-1 bg-surface-container-highest text-xs font-bold rounded-full">ADMIN</span>
-<span class="px-3 py-1 bg-surface-container-highest text-xs font-bold rounded-full">ADMIN</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sticky top-32 space-y-8">
-<div class="bg-surface-container-lowest p-8 rounded-xl editorial-shadow overflow-hidden relative">
-<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -mr-10 -mt-10"></div>
-<h4 class="text-xl font-headline font-extrabold mb-4 relative z-10">Dampak Saat Ini</h4>
-<div class="space-y-6 relative z-10">
-<div>
-<p class="text-3xl font-headline font-black text-primary">12.4k</p>
-<p class="text-sm text-secondary font-bold uppercase tracking-wider">Relawan Aktif</p>
+<h4 class="text-xs font-bold text-secondary uppercase tracking-widest mb-4">Syarat Keanggotaan</h4>
+<ul class="grid grid-cols-2 gap-3 text-sm">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span> WNI/WNA</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span> Usia 7-20 Tahun</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span> Belum Menikah</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span> Izin Orang Tua</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span> Pendidikan Aktif</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span> Bersedia Berlatih</li>
+</ul>
 </div>
 <div>
-<p class="text-3xl font-headline font-black text-primary">450+</p>
-<p class="text-sm text-secondary font-bold uppercase tracking-wider">Misi Setiap Tahun</p>
+<h4 class="text-xs font-bold text-secondary uppercase tracking-widest mb-4">Aktivitas Utama</h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container-high rounded text-xs font-semibold">Bantuan Bencana</span>
+<span class="px-3 py-1 bg-surface-container-high rounded text-xs font-semibold">Kunjungan Sosial</span>
+<span class="px-3 py-1 bg-surface-container-high rounded text-xs font-semibold">Perawatan Lansia</span>
+<span class="px-3 py-1 bg-surface-container-high rounded text-xs font-semibold">Pelatih Sebaya HIV/AIDS</span>
+<span class="px-3 py-1 bg-surface-container-high rounded text-xs font-semibold">Donor Darah Siswa</span>
+<span class="px-3 py-1 bg-surface-container-high rounded text-xs font-semibold">Lomba Mural/Seni</span>
+<span class="px-3 py-1 bg-surface-container-high rounded text-xs font-semibold">Jumbara</span>
+</div>
+</div>
+<div class="pt-6 border-t border-outline-variant/30">
+<p class="text-sm font-bold mb-3">Cara Mendaftar:</p>
+<div class="flex items-start gap-3 bg-primary/5 p-4 rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="school">school</span>
+<p class="text-sm text-secondary">Silakan hubungi unit kegiatan siswa atau pembina ekstrakurikuler di sekolah masing-masing.</p>
 </div>
 </div>
 </div>
-<img class="w-full h-64 object-cover rounded-xl grayscale hover:grayscale-0 transition-all duration-700" data-alt="cinematic close-up of two people shaking hands with red cross insignia on a volunteer uniform sleeve" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTjWpZ-RWpk7Hv2BfpxkZ5d3oAJG_oPgvYt_XOaxRTRNL_D54Kjvu294Sl6eoqNMLRc5t8P8NQ-VekGXETu8P0FDkyn-SyxO_hO7chLn5Ws4ScXEtGde3HSBOiSzLp6_foGMKnbhyA1K78EfU_Rj96eNi2PvGMqZUUU-98M0Us3_GGdjfaYupulhx02GJymYdMy2a9SOZCzWGnHvRcAvqL4Qq84918wsU5G7EZWYMS0nCE3t6eVxH4FXVq1DTI8quoBtU4RfrTog"/>
 </div>
 </div>
 </div>
 </section>
-<!-- Registration Form -->
-<section class="py-24 bg-surface overflow-hidden" id="register">
+<!-- KSR & TSR Section -->
+<section class="py-24 bg-surface-container-low" id="ksr-tsr">
 <div class="max-w-7xl mx-auto px-8">
-<div class="bg-surface-container-lowest rounded-2xl overflow-hidden flex flex-col md:flex-row shadow-2xl shadow-on-surface/5">
-<div class="md:w-1/3 bg-primary p-12 text-on-primary flex flex-col justify-between">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- KSR -->
+<div class="bg-surface-container-lowest p-10 rounded-2xl editorial-shadow relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -mr-8 -mt-8 group-hover:bg-primary/10 transition-colors"></div>
+<div class="relative z-10">
+<div class="w-16 h-16 bg-primary-container text-white rounded-xl flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-3xl" data-icon="volunteer_activism">volunteer_activism</span>
+</div>
+<h3 class="text-3xl font-headline font-black mb-4">Korps Sukarela (KSR)</h3>
+<p class="text-secondary leading-relaxed mb-8">
+                            Relawan terlatih PMI yang aktif dalam aksi sosial, penanggulangan bencana, layanan kesehatan, dan pengelolaan donor darah.
+                        </p>
+<div class="space-y-6">
 <div>
-<h2 class="text-4xl font-headline font-black mb-6">Ambil langkah pertama.</h2>
-<p class="text-on-primary/80 leading-relaxed">Perjalanan Anda sebagai relawan PMI dimulai di sini. Isi formulir dan koordinator kami akan menghubungi Anda dalam waktu 48 jam.</p>
+<h4 class="text-xs font-bold text-secondary uppercase tracking-widest mb-3">Persyaratan</h4>
+<ul class="space-y-2 text-sm">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="check">check</span> Usia 18-35 Tahun</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="check">check</span> Sehat Jasmani &amp; Rohani</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="check">check</span> Min. Pendidikan SMA/Sederajat</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="check">check</span> Lulus Pelatihan Dasar</li>
+</ul>
 </div>
-<div class="space-y-4">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-<span class="text-sm font-bold">Tanda Pengenal Resmi</span>
+<div>
+<h4 class="text-xs font-bold text-secondary uppercase tracking-widest mb-3">Kegiatan</h4>
+<div class="grid grid-cols-1 gap-2">
+<div class="flex items-center gap-3 text-sm font-semibold text-on-surface">
+<span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Tanggap Darurat Bencana
 </div>
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-<span class="text-sm font-bold">Tanda Pengenal Resmi</span>
+<div class="flex items-center gap-3 text-sm font-semibold text-on-surface">
+<span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Pelayanan Kesehatan
 </div>
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-<span class="text-sm font-bold">Cakupan Asuransi</span>
-</div>
+<div class="flex items-center gap-3 text-sm font-semibold text-on-surface">
+<span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Manajemen Donor Darah
 </div>
 </div>
-<div class="md:w-2/3 p-12">
-<form class="grid grid-cols-1 md:grid-cols-2 gap-8">
-<div class="space-y-2">
-<label class="text-xs font-bold text-secondary uppercase tracking-widest">Nama Lengkap</label>
-<input class="w-full bg-surface-container-high border-none border-b-2 border-transparent focus:border-primary focus:ring-0 rounded-t-lg transition-colors py-4" placeholder="Nama Anda" type="text"/>
 </div>
-<div class="space-y-2">
-<label class="text-xs font-bold text-secondary uppercase tracking-widest">Alamat Email</label>
-<input class="w-full bg-surface-container-high border-none border-b-2 border-transparent focus:border-primary focus:ring-0 rounded-t-lg transition-colors py-4" placeholder="john@example.com" type="email"/>
 </div>
-<div class="space-y-2">
-<label class="text-xs font-bold text-secondary uppercase tracking-widest">Nomor Telepon</label>
-<input class="w-full bg-surface-container-high border-none border-b-2 border-transparent focus:border-primary focus:ring-0 rounded-t-lg transition-colors py-4" placeholder="+62 812 ..." type="tel"/>
 </div>
-<div class="space-y-2">
-<label class="text-xs font-bold text-secondary uppercase tracking-widest">Program Pilihan</label>
-<select class="w-full bg-surface-container-high border-none border-b-2 border-transparent focus:border-primary focus:ring-0 rounded-t-lg transition-colors py-4">
-<option>Respons Darurat</option>
-<option>Klinik Kesehatan</option>
-<option>Logistik Darah</option>
-<option>Dukungan Admin</option>
-</select>
 </div>
-<div class="md:col-span-2 space-y-2">
-<label class="text-xs font-bold text-secondary uppercase tracking-widest">Pesan / Pengalaman (Opsional)</label>
-<textarea class="w-full bg-surface-container-high border-none border-b-2 border-transparent focus:border-primary focus:ring-0 rounded-t-lg transition-colors py-4" placeholder="Ceritakan mengapa Anda ingin bergabung..." rows="4"></textarea>
+<!-- TSR -->
+<div class="bg-surface-container-lowest p-10 rounded-2xl editorial-shadow relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-tertiary/5 rounded-bl-full -mr-8 -mt-8 group-hover:bg-tertiary/10 transition-colors"></div>
+<div class="relative z-10">
+<div class="w-16 h-16 bg-tertiary text-white rounded-xl flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-3xl" data-icon="engineering">engineering</span>
 </div>
-<div class="md:col-span-2">
-<button class="w-full bg-primary-container text-on-primary py-5 rounded-lg font-headline font-bold text-lg hover:opacity-90 transition-opacity" type="submit">Daftar Relawan</button>
-<p class="text-center text-xs text-secondary mt-4">Dengan mengirimkan, Anda menyetujui Ketentuan Layanan dan Kebijakan Privasi kami.</p>
+<h3 class="text-3xl font-headline font-black mb-4">Tenaga Sukarela (TSR)</h3>
+<p class="text-secondary leading-relaxed mb-8">
+                            Relawan ahli yang berkontribusi berdasarkan spesialisasi profesi atau keahlian khusus untuk mendukung operasi kemanusiaan.
+                        </p>
+<div class="space-y-6">
+<div>
+<h4 class="text-xs font-bold text-secondary uppercase tracking-widest mb-3">Persyaratan</h4>
+<ul class="space-y-2 text-sm">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary text-sm" data-icon="check">check</span> Memiliki Keahlian Khusus</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary text-sm" data-icon="check">check</span> Medis, Logistik, IT, dll</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary text-sm" data-icon="check">check</span> Bersedia Berkontribusi</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary text-sm" data-icon="check">check</span> Komitmen pada Kemanusiaan</li>
+</ul>
 </div>
-</form>
+<div>
+<h4 class="text-xs font-bold text-secondary uppercase tracking-widest mb-3">Kegiatan</h4>
+<div class="grid grid-cols-1 gap-2">
+<div class="flex items-center gap-3 text-sm font-semibold text-on-surface">
+<span class="w-1.5 h-1.5 bg-tertiary rounded-full"></span> Dukungan Teknis Operasi
 </div>
+<div class="flex items-center gap-3 text-sm font-semibold text-on-surface">
+<span class="w-1.5 h-1.5 bg-tertiary rounded-full"></span> Konsultasi Profesional
+</div>
+<div class="flex items-center gap-3 text-sm font-semibold text-on-surface">
+<span class="w-1.5 h-1.5 bg-tertiary rounded-full"></span> Pelatihan Spesialis
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- Registration Form -->
+<section class="py-24 bg-outline-variant text-on-surface">
+<div class="max-w-5xl mx-auto px-8 text-center">
+<h2 class="text-4xl md:text-5xl font-black mb-8 tracking-tighter">Siap Menjadi Relawan Masa Depan?</h2>
+<p class="text-xl text-black/80 mb-12 max-w-2xl mx-auto leading-relaxed">Pendaftaran anggota PMR dilakukan langsung melalui unit sekolah masing-masing di bawah koordinasi Pembina PMR Sekolah.</p>
+<div class="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-white/20 inline-block text-left mb-12">
+<h4 class="font-bold text-lg mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+                        Langkah Pendaftaran:
+                    </h4>
+<ol class="space-y-3 text-sm text-black/90 list-decimal list-inside">
+<li>Hubungi Pembina PMR atau Pengurus OSIS di sekolahmu.</li>
+<li>Isi formulir pendaftaran yang disediakan pihak sekolah.</li>
+<li>Kumpulkan berkas pendukung (foto, surat izin orang tua).</li>
+<li>Ikuti masa orientasi dan pelantikan anggota baru.</li>
+</ol>
+</div>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+
+<a href="{{ $formulir->isi ?? '#' }}" 
+   target="_blank"
+   class="bg-white text-primary px-10 py-5 rounded-md font-extrabold shadow-xl hover:bg-on-primary-container transition-all">
+   Download Formulir Umum
+</a>
+
+<a href="{{ $persyaratan->isi ?? '#' }}" 
+   target="_blank"
+   class="bg-primary-container border border-white/30 text-white px-10 py-5 rounded-md font-extrabold hover:bg-white/10 transition-all">
+   Download Persyaratan
+</a>
+
 </div>
 </div>
 </section>

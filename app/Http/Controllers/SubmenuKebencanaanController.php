@@ -118,4 +118,12 @@ class SubmenuKebencanaanController extends Controller
         return redirect()->route('admin.kebencanaan-submenu.index')
             ->with('success', 'Submenu Kebencanaan berhasil dihapus');
     }
+
+    public function landing()
+    {
+    $layout1 = SubmenuKebencanaan::where('slug', 'layout1')->first();
+    
+
+    return view('bencana', compact('layout1'));
+    }
 }

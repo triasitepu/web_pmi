@@ -152,10 +152,12 @@
 <div class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600">
 <span class="material-symbols-outlined">groups</span>
 </div>
-<span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded">+12%</span>
+<span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded"></span>
 </div>
 <p class="text-secondary text-xs font-bold uppercase tracking-widest mb-1">Total Relawan</p>
-<p class="text-3xl font-black text-on-surface font-headline">1,428</p>
+<p class="text-3xl font-black text-on-surface font-headline">
+  {{ $totalrelawan->isi ?? 0 }}
+</p>
 </div>
 <!-- Blood Stock Alerts -->
 <div class="bg-surface-container-lowest p-6 rounded-xl relative overflow-hidden border-l-4 border-red-500 group">

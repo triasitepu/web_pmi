@@ -31,6 +31,7 @@
                     "on-primary-fixed": "#410003",
                     "on-surface": "#1a1c1c",
                     "primary-container": "#e21f26",
+                    "primary-softcontainer": "#B77466",                    
                     "outline-variant": "#e7bdb8",
                     "inverse-on-surface": "#f1f1f1",
                     "on-secondary-fixed-variant": "#474747",
@@ -139,7 +140,9 @@
 <h2 class="text-4xl font-black text-on-surface">Statistik Kemanusiaan</h2>
 </div>
 <div class="bg-surface-container-lowest p-10 rounded-2xl shadow-sm border-b-4 border-primary">
-<span class="text-5xl font-black text-primary block mb-2">1,240+</span>
+<span class="text-5xl font-black text-primary block mb-2">
+     {{ $totalrelawan->isi ?? 0 }}
+</span>
 <p class="text-secondary font-bold">Relawan Aktif</p>
 </div>
 <div class="bg-surface-container-lowest p-10 rounded-2xl shadow-sm mt-8 md:mt-12">
@@ -168,28 +171,34 @@
 <span class="material-symbols-outlined text-primary text-5xl mb-6">emergency</span>
 <h3 class="text-3xl font-black mb-4">Layanan Ambulans 24 Jam</h3>
 <p class="text-secondary max-w-md mb-8">Respon cepat darurat medis untuk seluruh wilayah Kabupaten Magetan dengan fasilitas medis lengkap.</p>
-<button class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">
-                                Selengkapnya <span class="material-symbols-outlined">arrow_forward</span>
-</button>
+<a href="{{ route('ambulans') }}" 
+   class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">
+    Selengkapnya 
+    <span class="material-symbols-outlined">arrow_forward</span>
+</a>
 </div>
 </div>
 <!-- Card 2: Donor Darah -->
-<div class="md:col-span-4 bg-primary-container rounded-3xl p-10 flex flex-col justify-between text-white">
+<div class="md:col-span-4 bg-primary-softcontainer rounded-3xl p-10 flex flex-col justify-between text-white">
 <div>
 <span class="material-symbols-outlined text-5xl mb-6" style="font-variation-settings: 'FILL' 1;">volunteer_activism</span>
 <h3 class="text-2xl font-black mb-4">Donor Darah</h3>
 <p class="opacity-90 leading-relaxed">Setetes darah Anda, nyawa bagi mereka. Cek stok darah dan jadwal donor hari ini.</p>
 </div>
-<button class="bg-white text-primary font-bold py-3 rounded-xl hover:bg-surface-container-low transition-colors mt-8">
-                            Cek Stok Darah
-                        </button>
+<a href="{{ route('donor') }}"
+   class="bg-white text-primary font-bold py-3 rounded-xl hover:bg-surface-container-low transition-colors mt-8 flex justify-center items-center">
+   Cek Stok Darah
+</a>
 </div>
 <!-- Card 3: Diklat -->
 <div class="md:col-span-5 bg-surface-container-low rounded-3xl p-10 relative overflow-hidden group">
 <div class="relative z-10">
-<span class="material-symbols-outlined text-primary text-4xl mb-6">school</span>
 <h3 class="text-2xl font-black mb-2">Diklat &amp; Pelatihan</h3>
 <p class="text-secondary">Pelatihan Pertolongan Pertama dan Kesiapsiagaan Bencana untuk instansi dan sekolah.</p>
+<a href="{{ route('diklat') }}" 
+class="bg-on-background text-surface px-6 py-2 rounded-lg font-bold flex justify-center hover:opacity-90 transition-opacity">
+                                Daftar Sekarang
+                            </a>
 </div>
 <div class="absolute -bottom-10 -right-10 opacity-10 group-hover:scale-110 transition-transform">
 <span class="material-symbols-outlined text-[200px]">medical_services</span>
@@ -203,9 +212,6 @@
 <div>
 <h3 class="text-2xl font-black mb-2">Gabung Menjadi Relawan</h3>
 <p class="text-secondary mb-4">Wujudkan kepedulianmu melalui aksi nyata. Bergabunglah dengan ribuan relawan PMI Magetan lainnya.</p>
-<button class="bg-on-background text-surface px-6 py-2 rounded-lg font-bold hover:opacity-90 transition-opacity">
-                                Daftar Sekarang
-                            </button>
 </div>
 </div>
 </div>

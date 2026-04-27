@@ -31,6 +31,7 @@
                     "on-primary-fixed": "#410003",
                     "on-surface": "#1a1c1c",
                     "primary-container": "#e21f26",
+                    "primary-softcontainer": "#B77466", 
                     "outline-variant": "#e7bdb8",
                     "inverse-on-surface": "#f1f1f1",
                     "on-secondary-fixed-variant": "#474747",
@@ -99,12 +100,12 @@
         }
     </style>
 </head>
+
 <body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-white">
 <!-- TopNavBar -->
 
 @extends('partials.header')
-@include('partials.chatbox')
-
+@stack('scripts')
 
 <main class="pt-20">
 <!-- Hero Section -->
@@ -155,7 +156,7 @@
 </div>
 
 <!-- Vision -->
-<div class="md:col-span-5 bg-primary-container p-12 text-on-primary flex flex-col justify-center">
+<div class="md:col-span-5 bg-primary-softcontainer p-12 text-on-primary flex flex-col justify-center">
     
     <span class="material-symbols-outlined text-white/40 text-8xl mb-8 self-end"
           style="font-variation-settings: 'FILL' 1;">
@@ -168,29 +169,29 @@
     </h2>
 
     {{-- Isi --}}
-    <div class="text-white/80 text-lg leading-relaxed">
+    <div class="text-black/80 text-lg leading-relaxed">
         {!! $visi->isi ?? 'Isi visi belum tersedia' !!}
     </div>
 
 </div>
 <!-- Stats Bar -->
-<div class="md:col-span-12 bg-surface-container-lowest py-10 px-12 grid grid-cols-2 md:grid-cols-4 gap-8">
+ <div class="md:col-span-12 bg-surface-container-lowest py-10 px-12 grid grid-cols-2 md:grid-cols-4 gap-8">
 <div class="text-center">
 <div class="text-4xl font-extrabold text-primary mb-1">150+</div>
-<div class="text-xs uppercase tracking-widest text-secondary font-bold">Chapters Nationwide</div>
+<div class="text-xs uppercase tracking-widest text-secondary font-bold">Cabang Nasional</div>
 </div>
 <div class="text-center">
 <div class="text-4xl font-extrabold text-primary mb-1">12M</div>
-<div class="text-xs uppercase tracking-widest text-secondary font-bold">Beneficiaries Yearly</div>
+<div class="text-xs uppercase tracking-widest text-secondary font-bold">Penerima Manfaat Tahunan</div>
 </div>
 <div class="text-center">
 <div class="text-4xl font-extrabold text-primary mb-1">50K+</div>
-<div class="text-xs uppercase tracking-widest text-secondary font-bold">Active Volunteers</div>
+<div class="text-xs uppercase tracking-widest text-secondary font-bold">Relawan Aktif</div>
 </div>
 <div class="text-center">
 <div class="text-4xl font-extrabold text-primary mb-1">24/7</div>
-<div class="text-xs uppercase tracking-widest text-secondary font-bold">Emergency Response</div>
-</div>
+<div class="text-xs uppercase tracking-widest text-secondary font-bold">Respon Cepat</div>
+</div>  
 </div>
 </div>
 </div>
@@ -205,29 +206,28 @@
 </div>
 <div class="md:w-2/3 space-y-24">
 <div class="flex gap-8 group">
-<div class="text-3xl font-black text-outline-variant/30 group-hover:text-primary transition-colors">1945</div>
+<div class="text-3xl font-black text-outline-variant/30 group-hover:text-primary transition-colors"></div>
 <div>
 <h3 class="text-2xl font-bold mb-4">PMI INDONESIA</h3>
-<p class="text-secondary leading-relaxed mb-6"> Palang Merah Indonesia (PMI) merupakan organisasi kemanusiaan yang berperan membantu pemerintah di bidang sosial, kesehatan, dan penanggulangan bencana. Dalam menjalankan tugasnya, PMI berpedoman pada tujuh prinsip dasar Gerakan Palang Merah dan Bulan Sabit Merah Internasional serta amanat Undang-Undang Nomor 1 Tahun 2018 tentang Kepalangmerahan.
-Cikal bakal Palang Merah di Indonesia telah ada sejak tahun 1873 pada masa kolonial Belanda dengan berdirinya Nederlands Rode Kruis Afdeling Indie (NERKAI). Setelah Indonesia merdeka, PMI resmi didirikan pada 17 September 1945 sebagai organisasi kemanusiaan nasional yang bertugas membantu masyarakat dalam berbagai situasi darurat.
-PMI kemudian memperoleh pengakuan internasional pada tahun 1950 dan menjadi bagian dari Gerakan Internasional Palang Merah dan Bulan Sabit Merah. Sejak saat itu, PMI terus berkembang dalam memberikan pelayanan kemanusiaan, baik di bidang penanggulangan bencana, pelayanan darah, kesehatan, maupun pembinaan relawan, tanpa membedakan latar belakang.</p>
-<!-- <img class="w-full h-64 object-cover rounded-xl grayscale hover:grayscale-0 transition-all duration-700" data-alt="Archival black and white style photo of a humanitarian tent station in a historical field setting, nostalgic and respectful mood" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBCrySCVkEISo-IHvaMM3rcfQT-CyY4jG35xyJnHOmNI5GvUfuNnDl4M8aaPVGYYlGiB6_ZlltBbiJLpcmvBr3I88Xo6ZTFuKlh8u2-l3RXZfEkiGmzmP8O3RRLb5G5PMhmfdEfOAQ_10utly32x9IXsydKM1jXNb64OsDD0QI8ZnEQjIckXv-saFL5GkCA_GRN6d5icxKFHhWYscvC0T8JfsgKLa7nl37OwTa_C_3krMW7_lPc0817jByYjEgGqG23iiSNG6opA"/> -->
+<div class="text-secondary leading-relaxed mb-6">
+    {{ $PMI->isi ?? 'Isi belum tersedia' }}
+</div>
+     <!-- <img class="w-full h-64 object-cover rounded-xl grayscale hover:grayscale-0 transition-all duration-700" data-alt="Archival black and white style photo of a humanitarian tent station in a historical field setting, nostalgic and respectful mood" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBCrySCVkEISo-IHvaMM3rcfQT-CyY4jG35xyJnHOmNI5GvUfuNnDl4M8aaPVGYYlGiB6_ZlltBbiJLpcmvBr3I88Xo6ZTFuKlh8u2-l3RXZfEkiGmzmP8O3RRLb5G5PMhmfdEfOAQ_10utly32x9IXsydKM1jXNb64OsDD0QI8ZnEQjIckXv-saFL5GkCA_GRN6d5icxKFHhWYscvC0T8JfsgKLa7nl37OwTa_C_3krMW7_lPc0817jByYjEgGqG23iiSNG6opA"/> -->
 </div>
 </div>
 <div class="flex gap-8 group">
-<div class="text-3xl font-black text-outline-variant/30 group-hover:text-primary transition-colors">1982</div>
+<div class="text-3xl font-black text-outline-variant/30 group-hover:text-primary transition-colors"></div>
 <div>
 <h3 class="text-2xl font-bold mb-4">PMI MAGETAN</h3>
-<p class="text-secondary leading-relaxed mb-6">PMI Kabupaten Magetan mulai dirintis pada tahun 1977 yang berawal dari kegiatan Lomba Korps Sukarela (KSR) sebagai titik awal tumbuhnya semangat kepedulian kemanusiaan di masyarakat. Pada masa awal, kegiatan dilaksanakan dengan berbagai keterbatasan, dimulai dari menumpang di RSU Kabupaten Magetan, kemudian berpindah ke Gedung Mahendra (yang saat ini merupakan Kantor BRI Magetan), dilanjutkan ke Jalan A. Yani, rumah Bapak Karyo Sarpan Pande pada tahun 1980, hingga akhirnya menempati lokasi di Jalan Pattimura pada tahun 1981.
-Seiring berkembangnya kegiatan dan meningkatnya kebutuhan pelayanan masyarakat, PMI Kabupaten Magetan mulai mengembangkan pelayanan donor darah yang pada awalnya masih bergantung pada PMI Kabupaten Madiun hingga akhirnya dapat dilaksanakan secara mandiri. Upaya penguatan organisasi juga dilakukan melalui pengajuan lahan kepada Pemerintah Kabupaten Magetan yang kemudian terealisasi dengan pembangunan markas PMI di Jalan MT Haryono secara swadaya.
-Dalam perjalanannya, PMI Kabupaten Magetan terus berkembang sebagai organisasi kemanusiaan yang tidak hanya berfokus pada pelayanan donor darah, tetapi juga aktif dalam penanggulangan bencana, pelayanan kesehatan masyarakat, serta pembinaan relawan melalui Palang Merah Remaja (PMR) dan Korps Sukarela (KSR). Hingga saat ini, PMI Kabupaten Magetan terus berkomitmen meningkatkan kualitas pelayanan dan kehadirannya di tengah masyarakat.
-</p>
+<div class="text-secondary leading-relaxed mb-6">
+    {{ $PMIMagetan->isi ?? 'Isi belum tersedia' }}
+</div>
 <img class="w-full h-64 object-cover rounded-xl grayscale hover:grayscale-0 transition-all duration-700" data-alt="A fleet of red and white relief trucks parked in a warehouse at dawn, soft atmospheric lighting, organized and ready for action" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCatLyTs01sLsMpmZiwyVpadn9_v0uFkyf1ympZGCveDriTxDEVXegN1rOJ4Fp1sR574i-_WCtqK2lj6be_rN-c90f3z8dC-iIqhgQRyyRV1ilOQIOt-joJR9jthfnnfGfAol_wXxex-586ODG6sa3RimAVT4mPwzYd86jFYaW28pzcAQG2SBYmIiaT6CUHIghQV16f9vLrTcEv0odcyBF3jumJ0NS4FFOUjFvCxzesu8ZcOPU6vMhfK8_e94XAOzvvjq6W_SSNgg"/>
 </div>
 </div>
-<div class="flex gap-8 group">
+<!-- <div class="flex gap-8 group">
 <div class="text-3xl font-black text-outline-variant/30 group-hover:text-primary transition-colors">2024</div>
-<div>
+<div> -->
 <!-- <h3 class="text-2xl font-bold mb-4">Garis Depan Digital</h3> -->
 <!-- <p class="text-secondary leading-relaxed mb-6">Mengintegrasikan AI dan data waktu nyata untuk memprediksi zona krisis dan mengoptimalkan distribusi bank darah, memastikan kami proaktif, bukan sekadar reaktif.</p> -->
 <!-- </div> -->
@@ -240,7 +240,7 @@ Dalam perjalanannya, PMI Kabupaten Magetan terus berkembang sebagai organisasi k
 <section class="py-24 bg-surface-container-low px-8 overflow-hidden">
 <div class="max-w-7xl mx-auto">
 <div class="mb-16 text-center">
-<h2 class="text-4xl font-extrabold mb-4">Pemimpin Penuh Kasih</h2>
+<h2 class="text-4xl font-extrabold mb-4">Tim Kami</h2>
 <p class="text-secondary max-w-xl mx-auto">Temui para ahli berdedikasi yang mengarahkan misi kami menuju masa depan yang lebih aman dan tangguh.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -252,12 +252,12 @@ Dalam perjalanannya, PMI Kabupaten Magetan terus berkembang sebagai organisasi k
      alt="{{ $Direktur->nama }}" />
 
 <h3 class="text-xl font-bold text-center mb-1">
-    {{ $Direktur->nama_submenu ?? 'Nama Direktur' }}
+    {{ $Direktur->isi ?? 'Isi belum tersedia' }}
 </h3>
 
-<p class="text-primary text-xs uppercase tracking-widest font-bold text-center mb-4">
-    {{ $Direktur->isi ?? 'Isi belum tersedia' }}
-</p>
+<p class="text-primary text-xs uppercase tracking-widest font-bold text-center mb-4">Direktur</p>
+   
+
 <p class="text-secondary text-sm text-center leading-relaxed italic">"Kekuatan kita tidak terletak pada infrastruktur, melainkan pada empati para relawan kita."</p>
 </div>
 </div>
@@ -265,45 +265,8 @@ Dalam perjalanannya, PMI Kabupaten Magetan terus berkembang sebagai organisasi k
 <div class="absolute top-0 left-0 w-full h-[85%] bg-surface-container-lowest rounded-2xl -z-10 group-hover:translate-y-2 transition-transform duration-500"></div>
 <div class="px-8 pb-12">
 <img class="w-48 h-48 rounded-full object-cover mx-auto mb-8 shadow-2xl ring-8 ring-surface-container-low" data-alt="Professional portrait of a male medical director, friendly and authoritative, natural light, clean minimalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6tLe9aqjQAhC5inUUgeti6RQgccyNHryi0Ukxo739LDrNZugBrTnCJCtOQ4hsnNUo4XBwJWWcCJ7yywL_-umqQCuYdIwGUIlaZGX_iAL8zYQSm1E_YCCPSpnzgddSNPNSPqO8117yZXYGE9AbJ35rnFgnB9aAVPXCyDpFHiltRwLroyNxxxz5Ear-XLSFSSoh0Rlr7mXzOf6gtD9EwYyCfYrZ7n8bH7IRJsGialu6YEMQEk0zN1TfA-0ExnygVczLxvrleumQhg"/>
-<h3 class="text-xl font-bold text-center mb-1">Dr. Michael Chen</h3>
-<p class="text-primary text-xs uppercase tracking-widest font-bold text-center mb-4">Operasi Medis</p>
-<p class="text-secondary text-sm text-center leading-relaxed italic">"Efisiensi dalam bantuan kemanusiaan adalah pembeda antara nyawa yang hilang dan nyawa yang terselamatkan."</p>
-</div>
-</div>
-<div class="relative group pt-12">
-<div class="absolute top-0 left-0 w-full h-[85%] bg-surface-container-lowest rounded-2xl -z-10 group-hover:translate-y-2 transition-transform duration-500"></div>
-<div class="px-8 pb-12">
-<img class="w-48 h-48 rounded-full object-cover mx-auto mb-8 shadow-2xl ring-8 ring-surface-container-low" data-alt="Professional portrait of a woman in humanitarian field gear, looking optimistic, soft sunlight filtering through trees" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTGen51CwSspnfeQ3xiTGYCw6KA6viwwTPopedr8nQO2vk8mOey0Ct3uycupg_V2Dp0IPh08m7mc7Xm-EJCH_bdp0wDbZ3ycZB52c5r0F8PQx8-K2W8hLwROZxPM8oySIw7WniSQ8eYAiyc164RNJ2SRKF1OrsvQF_zDD33YXORj_98OWPzJ4a24-L_YsphwHjMrk6zZVwi6uuiaUaoF8_kbPoa9oN1Nyph5NJzu1pDlLLhqwaJ8Qhu89RVNnKtGkg05xLZfvdAQ"/>
-<h3 class="text-xl font-bold text-center mb-1">Elena Rodriguez</h3>
-<p class="text-primary text-xs uppercase tracking-widest font-bold text-center mb-4">Pemimpin Relawan Global</p>
-<p class="text-secondary text-sm text-center leading-relaxed italic">"Membangun jembatan harapan melintasi setiap perbatasan dan setiap budaya."</p>
-</div>
-</div>
-</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-<div class="relative group pt-12">
-<div class="absolute top-0 left-0 w-full h-[85%] bg-surface-container-lowest rounded-2xl -z-10 group-hover:translate-y-2 transition-transform duration-500"></div>
-<div class="px-8 pb-12">
-<img class="w-48 h-48 rounded-full object-cover mx-auto mb-8 shadow-2xl ring-8 ring-surface-container-low"
-     src="{{ url('storage/' . $Direktur->foto) }}"
-     alt="{{ $Direktur->nama }}" />
-
 <h3 class="text-xl font-bold text-center mb-1">
-    {{ $Direktur->nama_submenu ?? 'Nama Direktur' }}
-</h3>
-
-<p class="text-primary text-xs uppercase tracking-widest font-bold text-center mb-4">
-    {{ $Direktur->isi ?? 'Isi belum tersedia' }}
-</p>
-<p class="text-secondary text-sm text-center leading-relaxed italic">"Kekuatan kita tidak terletak pada infrastruktur, melainkan pada empati para relawan kita."</p>
-</div>
-</div>
-<div class="relative group md:translate-y-12">
-<div class="absolute top-0 left-0 w-full h-[85%] bg-surface-container-lowest rounded-2xl -z-10 group-hover:translate-y-2 transition-transform duration-500"></div>
-<div class="px-8 pb-12">
-<img class="w-48 h-48 rounded-full object-cover mx-auto mb-8 shadow-2xl ring-8 ring-surface-container-low" data-alt="Professional portrait of a male medical director, friendly and authoritative, natural light, clean minimalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6tLe9aqjQAhC5inUUgeti6RQgccyNHryi0Ukxo739LDrNZugBrTnCJCtOQ4hsnNUo4XBwJWWcCJ7yywL_-umqQCuYdIwGUIlaZGX_iAL8zYQSm1E_YCCPSpnzgddSNPNSPqO8117yZXYGE9AbJ35rnFgnB9aAVPXCyDpFHiltRwLroyNxxxz5Ear-XLSFSSoh0Rlr7mXzOf6gtD9EwYyCfYrZ7n8bH7IRJsGialu6YEMQEk0zN1TfA-0ExnygVczLxvrleumQhg"/>
-<h3 class="text-xl font-bold text-center mb-1">Dr. Michael Chen</h3>
+    {{ $Direktur2->isi ?? 'Isi belum tersedia' }}</h3>
 <p class="text-primary text-xs uppercase tracking-widest font-bold text-center mb-4">Operasi Medis</p>
 <p class="text-secondary text-sm text-center leading-relaxed italic">"Efisiensi dalam bantuan kemanusiaan adalah pembeda antara nyawa yang hilang dan nyawa yang terselamatkan."</p>
 </div>
@@ -312,23 +275,34 @@ Dalam perjalanannya, PMI Kabupaten Magetan terus berkembang sebagai organisasi k
 <div class="absolute top-0 left-0 w-full h-[85%] bg-surface-container-lowest rounded-2xl -z-10 group-hover:translate-y-2 transition-transform duration-500"></div>
 <div class="px-8 pb-12">
 <img class="w-48 h-48 rounded-full object-cover mx-auto mb-8 shadow-2xl ring-8 ring-surface-container-low" data-alt="Professional portrait of a woman in humanitarian field gear, looking optimistic, soft sunlight filtering through trees" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTGen51CwSspnfeQ3xiTGYCw6KA6viwwTPopedr8nQO2vk8mOey0Ct3uycupg_V2Dp0IPh08m7mc7Xm-EJCH_bdp0wDbZ3ycZB52c5r0F8PQx8-K2W8hLwROZxPM8oySIw7WniSQ8eYAiyc164RNJ2SRKF1OrsvQF_zDD33YXORj_98OWPzJ4a24-L_YsphwHjMrk6zZVwi6uuiaUaoF8_kbPoa9oN1Nyph5NJzu1pDlLLhqwaJ8Qhu89RVNnKtGkg05xLZfvdAQ"/>
-<h3 class="text-xl font-bold text-center mb-1">Elena Rodriguez</h3>
+<h3 class="text-xl font-bold text-center mb-1">
+    {{ $Direktur3->isi ?? 'Isi belum tersedia' }}
+</h3>
 <p class="text-primary text-xs uppercase tracking-widest font-bold text-center mb-4">Pemimpin Relawan Global</p>
 <p class="text-secondary text-sm text-center leading-relaxed italic">"Membangun jembatan harapan melintasi setiap perbatasan dan setiap budaya."</p>
 </div>
 </div>
 </div>
 </div>
+
 </section>
 <!-- CTA Section -->
-<section class="py-24 px-8">
+<!-- <section class="py-24 px-8">
 <div class="max-w-5xl mx-auto signature-gradient rounded-3xl p-16 text-center text-white relative overflow-hidden">
 <div class="relative z-10">
 <h2 class="text-4xl md:text-5xl font-black mb-6">Siap untuk membuat perubahan?</h2>
-<p class="text-white/80 text-lg mb-10 max-w-2xl mx-auto">Waktu atau donasi Anda bisa menjadi titik balik
-     bagi seseorang yang berada dalam krisis. Bergabunglah dengan portal hari ini.</p>
+<p class="text-white/80 text-lg mb-10 max-w-2xl mx-auto">Waktu atau donasi Anda bisa menjadi titik balik bagi seseorang yang berada dalam krisis. Bergabunglah dengan portal hari ini.</p>
+<div class="flex flex-col md:flex-row justify-center gap-4">
+<button class="bg-white text-primary px-10 py-4 rounded-xl font-bold hover:bg-surface-container-low transition-colors shadow-xl">Gabung sebagai Relawan</button>
+<button class="bg-white/10 border border-white/30 text-white px-10 py-4 rounded-xl font-bold hover:bg-white/20 transition-colors">Mulai Donasi Bulanan</button>
 </div>
-</section>
+</div>
+</div>
+<!-- Decorative elements -->
+<div class="absolute -top-12 -left-12 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-12 -right-12 w-64 h-64 bg-black/10 rounded-full blur-3xl"></div>
+</div>
+</section> -->
 </main>
 <!-- Footer -->
 <footer class="bg-gray-50 py-12 px-8 border-t border-gray-200">

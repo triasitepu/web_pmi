@@ -21,7 +21,7 @@ class SubmenuRelawan extends Model
 
     public function relawan()
     {
-        return $this->belongsTo(Relawan::class, 'relawan_id');
+        return $this->belongsTo(Relawan::class, 'relawan_id', 'id');
     }
 
     protected static function booted()

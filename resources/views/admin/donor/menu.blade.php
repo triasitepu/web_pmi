@@ -42,7 +42,7 @@
       <tbody>
         @forelse($submenus as $key => $submenu)
         <tr>
-          <td class="text-center">{{ $key + 1 }}</td>
+          <td class="text-center">{{ $submenus->firstItem() + $key }}</td>
           {{-- Judul --}}
           <td>{{ $submenu->nama_submenu }}</td>
 
@@ -109,6 +109,15 @@
         @endforelse
       </tbody>
     </table>
+    <div class="d-flex justify-content-between align-items-center mt-3">
+    <div>
+        Menampilkan {{ $submenus->firstItem() }} - {{ $submenus->lastItem() }} 
+        dari {{ $submenus->total() }} data
+    </div>
+    <div>
+        {{ $submenus->links() }}
+    </div>
+</div>
   </div>
 
 </div>

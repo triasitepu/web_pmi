@@ -53,12 +53,7 @@
 
     <!-- chatbox -->
     @include('partials.chatbox')
-
-    <!-- chat -->
-    <button id="chatToggle"
-class="fixed bottom-6 right-6 w-14 h-14 bg-red-600 text-white rounded-full shadow-lg z-50">
-💬
-</button>
+    @stack('scripts')
 
     <!-- JS -->
     <script src="{{ asset('js/jquery.min.js') }}"></script>

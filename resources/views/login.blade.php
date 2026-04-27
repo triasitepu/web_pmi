@@ -31,24 +31,25 @@
 
         .illustration {
             flex: 1;
-            background: url('{{ asset('images/login-pmi.png') }}') center/contain no-repeat;
+            background: url('{{ asset('images/logo.png') }}') center/contain no-repeat;
             background-color: #fff;
         }
 
         .login-container {
             flex: 1;
-            background-color: #b91c1c; /* merah PMI */
+            background-color: #fff; /* merah PMI */
             padding: 60px 50px;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            color: #fff;
+            color: #000;
             position: relative;
+            
         }
 
         h2 {
             text-align: center;
-            color: #fff;
+            color: #000;
             margin-bottom: 10px;
             font-size: 26px;
             letter-spacing: 1px;
@@ -62,7 +63,7 @@
         }
 
         label {
-            color: #fff;
+            color: #000;
             font-weight: 500;
             margin-bottom: 6px;
             display: block;
@@ -171,7 +172,7 @@
         id="email"
         name="email"
         value="{{ old('email') }}"
-        placeholder="admin@gmail.com"
+        placeholder="Masukkan Email"
         required
     >
 

@@ -28,7 +28,7 @@ class AuthController extends Controller
     public function showLogin()
     {
         if (Auth::check()) {
-            $role = strtolower(Auth::user()->role);
+            $role = strtolower(Auth::user()->peran);
             if ($role === 'superadmin') {
                 return redirect()->route('admin.dashboard');
             } elseif ($role === 'admin') {
@@ -65,10 +65,6 @@ class AuthController extends Controller
         $request->session()->regenerate();
         $role = strtolower($pengguna->peran);
 
-        Auth::login($pengguna);
-        $request->session()->regenerate();
-
-        $peran = strtolower($pengguna->peran);
 
         if ($role === 'superadmin') {
             return redirect()->route('admin.dashboard');
@@ -99,7 +95,7 @@ class AuthController extends Controller
     // 👤 Halaman Tambah Admin (khusus superadmin)
     public function addAdmin()
     {
-        $penggunas = Pengguna::whereIn('peran', ['Admin', 'Superadmin'])->get();
+        $penggunas = Pengguna::whereIn('peran', ['admin', 'superadmin'])->get();
         return view('superadmin.addAdmin', compact('penggunas'));
     }
 
@@ -116,68 +112,40 @@ class AuthController extends Controller
             'nama_pengguna' => $request->nama_pengguna,
             'email' => $request->email,
             'kata_sandi' => Hash::make($request->kata_sandi),
-            'peran' => ucfirst($request->peran),
+            'peran' => strtolower($request->peran),
             'status' => 'Aktif',
         ]);
 
         return redirect()->back()->with('success', 'Pengguna berhasil ditambahkan!');
     }
 
-    // Toggle status admin/superadmin
-    public function toggleAdmin($id_pengguna)
-    {
-        $pengguna = Pengguna::findOrFail($id_pengguna);
 
-        // Cek apakah superadmin mencoba mengubah statusnya sendiri
-        if ($pengguna->id_pengguna === Auth::user()->id_pengguna) {
-            return redirect()->back()->with('error', 'Anda tidak dapat mengubah status akun Anda sendiri.');
+    // Toggle status admin
+    public function toggleStatusAdmin($id_pengguna)
+        {
+            // 🔐 hanya superadmin
+            if (strtolower(Auth::user()->peran) !== 'superadmin') {
+                return redirect()->back()->with('error', 'Akses ditolak.');
+            }
+
+            $pengguna = Pengguna::findOrFail($id_pengguna);
+
+            // 🚫 tidak bisa ubah diri sendiri
+            if ($pengguna->id_pengguna === Auth::user()->id_pengguna) {
+                return redirect()->back()->with('error', 'Tidak bisa menonaktifkan akun sendiri.');
+            }
+
+            // ✅ hanya admin & superadmin
+            if (!in_array(strtolower($pengguna->peran), ['admin', 'superadmin'])) {
+                return redirect()->back()->with('error', 'Role tidak valid.');
+            }
+
+            // 🔄 toggle status
+            $pengguna->status = $pengguna->status === 'Aktif' ? 'Tidak Aktif' : 'Aktif';
+            $pengguna->save();
+
+            return redirect()->back()->with('success', 'Status pengguna berhasil diperbarui!');
         }
-
-        if (!in_array(strtolower($pengguna->peran), ['admin', 'superadmin'])) {
-            return redirect()->back()->with('error', 'Hanya admin dan superadmin yang dapat diubah statusnya.');
-        }
-
-        $pengguna->status = $pengguna->status === 'Aktif' ? 'Tidak Aktif' : 'Aktif';
-        $pengguna->save();
-
-        return redirect()->back()->with('success', 'Status ' . $pengguna->peran . ' berhasil diubah.');
-    }
-
-    // Toggle status admin/superadmin via AJAX
-    public function toggleAdminAjax($id_pengguna)
-    {
-        $pengguna = Pengguna::findOrFail($id_pengguna);
-
-        // Cek apakah superadmin mencoba mengubah statusnya sendiri
-        if ($pengguna->id_pengguna === Auth::user()->id_pengguna) {
-            return response()->json(['error' => 'Anda tidak dapat mengubah status akun Anda sendiri.'], 403);
-        }
-
-        // Hanya izinkan perubahan status untuk admin dan superadmin
-        if (!in_array(strtolower($pengguna->peran), ['admin', 'superadmin'])) {
-            return response()->json(['error' => 'Hanya admin dan superadmin yang dapat diubah statusnya.'], 403);
-        }
-
-        $pengguna->status = $pengguna->status === 'Aktif' ? 'Tidak Aktif' : 'Aktif';
-        $pengguna->save();
-
-        return response()->json([
-            'success' => true,
-            'status' => $pengguna->status,
-            'peran' => $pengguna->peran,
-        ]);
-
-        $admin->nama_pengguna = $request->nama_pengguna;
-        $admin->email = $request->email;
-
-        if ($request->filled('kata_sandi')) {
-            $admin->kata_sandi = Hash::make($request->kata_sandi);
-        }
-
-        $admin->save();
-
-        return redirect()->route('admin.profil')->with('success', 'Profil berhasil diperbarui!');
-    }
 
     public function deletePengguna($id_pengguna)
     {
@@ -198,35 +166,63 @@ class AuthController extends Controller
         return redirect()->back()->with('success', ucfirst($pengguna->peran) . ' berhasil dihapus.');
     }
 
+        public function updatePasswordAdmin(Request $request)
+        {
+            // 🔐 hanya superadmin
+            if (strtolower(Auth::user()->peran) !== 'superadmin') {
+                return redirect()->back()->with('error', 'Akses ditolak.');
+            }
 
-    public function updatePengguna(Request $request)
-    {
-        if (strtolower(Auth::user()->peran) !== 'superadmin') {
-            return redirect()->back()->with('error', 'Hanya superadmin yang dapat mengedit pengguna lain.');
-        }
+            // ✅ validasi
+            $request->validate([
+                'id_pengguna' => 'required|exists:pengguna,id_pengguna',
+                'kata_sandi' => 'required|string|min:6',
+            ]);
 
-        $request->validate([
-            'id_pengguna' => 'required|exists:pengguna,id_pengguna',
-            'nama_pengguna' => 'required|string|max:45',
-            'peran' => 'required|in:admin,superadmin',
-            'kata_sandi' => 'nullable|string|min:6',
-        ]);
+            $pengguna = Pengguna::findOrFail($request->id_pengguna);
 
-        $pengguna = Pengguna::findOrFail($request->id_pengguna);
+            // 🚫 tidak boleh ubah diri sendiri
+            if ($pengguna->id_pengguna === Auth::user()->id_pengguna) {
+                return redirect()->back()->with('error', 'Tidak bisa mengubah password sendiri di sini.');
+            }
 
-        if ($pengguna->id_pengguna === Auth::user()->id_pengguna) {
-            return redirect()->back()->with('error', 'Gunakan pengaturan profil untuk mengedit akun Anda sendiri.');
-        }
-
-        $pengguna->nama_pengguna = $request->nama_pengguna;
-        $pengguna->peran = ucfirst($request->peran);
-        if ($request->filled('kata_sandi')) {
+            // 🔑 update password
             $pengguna->kata_sandi = Hash::make($request->kata_sandi);
+            $pengguna->save();
+
+            return redirect()->back()->with('success', 'Password admin berhasil diperbarui!');
         }
-        $pengguna->save();
+        public function updatePengguna(Request $request, $id_pengguna)
+        {
+            if (strtolower(Auth::user()->peran) !== 'superadmin') {
+                return redirect()->back()->with('error', 'Akses ditolak.');
+            }
 
-        return redirect()->back()->with('success', 'Pengguna berhasil diperbarui!');
-    }
+            $request->validate([
+                'nama_pengguna' => 'required|string|max:45',
+                'email' => 'required|email',
+                'peran' => 'required|in:admin,superadmin',
+                'kata_sandi' => 'nullable|string|min:6',
+            ]);
 
+            $pengguna = Pengguna::findOrFail($id_pengguna);
+
+            if ($pengguna->id_pengguna === Auth::user()->id_pengguna) {
+                return redirect()->back()->with('error', 'Gunakan menu profil untuk edit diri sendiri.');
+            }
+
+            $pengguna->nama_pengguna = $request->nama_pengguna;
+            $pengguna->email = $request->email;
+            $pengguna->peran = $request->peran;
+            $pengguna->status = $request->has('status') ? 'Aktif' : 'Tidak Aktif';
+
+            if ($request->filled('kata_sandi')) {
+                $pengguna->kata_sandi = Hash::make($request->kata_sandi);
+            }
+
+            $pengguna->save();
+
+            return redirect()->back()->with('success', 'Pengguna berhasil diperbarui!');
+        }
     
 }

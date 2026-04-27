@@ -37,7 +37,7 @@ class UserController extends Controller
             'nama_pengguna' => $request->nama_pengguna,
             'email' => $request->email,
             'kata_sandi' => Hash::make($request->password),
-            'peran' => 'Admin',
+            'peran' => 'admin',
             'status' => 'Aktif'
         ]);
 
@@ -52,17 +52,45 @@ class UserController extends Controller
     }
 
     public function update(Request $request, $id)
-    {
-        $admin = Pengguna::findOrFail($id);
+        {
+        
+            // 🔐 hanya superadmin
+            if (strtolower(auth()->user()->peran) !== 'superadmin') {
+                abort(403);
+            }
 
-        $admin->update([
-            'nama_pengguna' => $request->nama_pengguna,
-            'email' => $request->email,
-        ]);
+            $admin = Pengguna::findOrFail($id);
 
-        return redirect()->route('admin.admin.index')
-            ->with('success', 'Data berhasil diupdate!');
-    }
+            // 🚫 tidak boleh edit diri sendiri di sini
+            if (auth()->id() == $admin->id_pengguna) {
+                return back()->with('error', 'Gunakan menu profil untuk edit akun sendiri');
+            }
+
+            // ✅ validasi
+            $request->validate([
+                'nama_pengguna' => 'required|string|max:45',
+                'email' => 'required|email',
+                'peran' => 'required|in:admin,superadmin',
+                'kata_sandi' => 'nullable|min:6',
+                'status' => 'required|in:Aktif,Tidak Aktif',
+            ]);
+
+            // ✏️ update data
+            $admin->nama_pengguna = $request->nama_pengguna;
+            $admin->email = $request->email;
+            $admin->peran = $request->peran;
+            $admin->status = $request->status;
+
+            // 🔑 update password (opsional)
+            if ($request->filled('kata_sandi')) {
+                $admin->kata_sandi = Hash::make($request->kata_sandi);
+            }
+
+            $admin->save();
+
+            return redirect()->route('admin.admin.index')
+                ->with('success', 'Data berhasil diupdate!');
+        }
 
     public function toggleStatus($id)
     {
