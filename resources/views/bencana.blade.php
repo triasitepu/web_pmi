@@ -30,7 +30,8 @@
                     "on-tertiary-fixed-variant": "#004b70",
                     "on-primary-fixed": "#410003",
                     "on-surface": "#1a1c1c",
-                    "primary-container": "#e21f26",
+                    "primary-container": "#B77466",
+                    "primary-softcontainer": "#B77466",
                     "outline-variant": "#e7bdb8",
                     "inverse-on-surface": "#f1f1f1",
                     "on-secondary-fixed-variant": "#474747",
@@ -110,14 +111,16 @@
 <!-- Hero Section: Active Disaster Brief -->
 <section class="relative h-[716px] flex items-center overflow-hidden">
 <div class="absolute inset-0 z-0">
-<img class="w-full h-full object-cover" data-alt="professional rescue team in red uniforms conducting disaster preparedness drill in mountain terrain during dawn with cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOZ-9k4rUIPfEHCVncwM_DgowYAsL3NXX4q4EZ71vLQyz6YK7fRnXzPSKLNoLUq6wP8_F7Z6vM8em8drKLGT4LxLxP9C1rV22BdSaGyfBqvUeli09p_zGM5cT3QelSb46jgoC1vkec4PJt659PvOq3GRmbZ46JPaDftq1BSEYUibUkmxwWLVFhjlfSMXdCaq8hfiQydiR0tWnFu4nHCCceoqBKMffiHrF9C2in6Vn1OkoB63p1cIEP2-vd3PVHQroT-vNToiTzsg"/>
+<img class="w-full h-full object-cover" data-alt="professional rescue team in red uniforms conducting disaster preparedness drill in mountain terrain during dawn with cinematic lighting" src="{{ url('storage/' . $headline->foto) }}"/>
 <div class="absolute inset-0 bg-gradient-to-r from-on-background/80 via-on-background/40 to-transparent"></div>
 </div>
 <div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
 <div class="max-w-3xl">
-<span class="inline-block px-3 py-1 bg-primary-container text-on-primary text-[10px] font-black tracking-widest uppercase mb-4 rounded-sm">DIVISI PENANGGULANGAN BENCANA</span>
+<!-- <span class="inline-block px-3 py-1 bg-primary-container text-on-primary text-[10px] font-black tracking-widest uppercase mb-4 rounded-sm">DIVISI PENANGGULANGAN BENCANA</span> -->
 <h1 class="font-headline text-5xl md:text-7xl font-black text-white leading-none tracking-tighter mb-6 uppercase">Penanggulangan Bencana PMI Kabupaten Magetan</h1>
-<p class="text-white/80 text-xl font-body leading-relaxed max-w-lg border-l-4 border-primary-container pl-6">Membangun ketangguhan masyarakat Magetan melalui kesiapsiagaan terpadu dan respons cepat yang berlandaskan kemanusiaan.</p>
+<p class="text-white/80 text-xl font-body leading-relaxed max-w-lg border-l-4 border-primary-softcontainer pl-6">
+    {{ $headline->isi ?? 'Komitmen kami untuk kesiapsiagaan dan respons cepat dalam menghadapi bencana di Magetan.' }}
+</p>
 </div>
 </div>
 </section>
@@ -135,9 +138,12 @@
 </div>
 <div class="md:col-span-5">
 <div class="aspect-square bg-surface-container-low relative rounded-2xl overflow-hidden p-8 flex items-center justify-center border border-outline-variant/10">
-<img class="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-20" data-alt="minimalist clean topographic map showing disaster risk zones in monochrome red and gray palette with surgical precision styling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv_UMglFm5RfG0V9_4r7Pp9hm5sOCbflR_1fssTlV7D7qp4ruU0Go7uxKwx5R9Tb_MbLnZ42rcTSBS3uch5c9rZeIZIKpfBHu-ZVbB7XuU5Uc8SEnM1aBGDRHHu0zxN3eKadlPWIm-ZwFai6f2lGJStB4Qh2OeVZt1CJrcSTWdb9jryqmpyl1GStrozHnTC5NmcgMfTLaUlxaygjvayW1s5676luQG8zbZaD1QG_-joubotgc_rg6KtO3Lp24V_ukAwdfX_vSd2Q"/>
+<img 
+class="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-20"
+src="{{ asset('images/lawu.jpg') }}"
+alt="Gunung Lawu"/>
 <div class="relative text-center">
-<span class="text-7xl font-black text-primary font-headline uppercase">Lawu</span>
+<span class="text-7xl font-black text-primary-softcontainer font-headline uppercase">Lawu</span>
 <p class="text-xs uppercase font-bold tracking-widest mt-2 text-secondary">Zona Risiko Tinggi</p>
 <p class="text-sm text-secondary mt-4 max-w-[200px] mx-auto">Pemetaan intensif area rawan longsor dan pergerakan tanah di Magetan Barat.</p>
 </div>
@@ -152,14 +158,14 @@
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 <div class="md:col-span-1">
 <h2 class="font-headline text-3xl font-extrabold text-on-surface uppercase tracking-tight leading-none mb-4">Mandat &amp;<br/>Dasar Hukum</h2>
-<div class="w-16 h-1 bg-primary-container"></div>
+<div class="w-16 h-1 bg-primary-softcontainer"></div>
 </div>
 <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
-<div class="bg-surface-container-lowest p-8 rounded-xl border-l-4 border-primary shadow-sm">
+<div class="bg-surface-container-lowest p-8 rounded-xl border-l-4 border-primary-softcontainer shadow-sm">
 <h4 class="font-headline font-bold text-lg mb-2">UU No. 1 Tahun 2018</h4>
 <p class="text-sm text-secondary leading-relaxed">Landasan hukum penyelenggaraan Kepalangmerahan di Indonesia yang mengatur tugas PMI dalam penanggulangan bencana.</p>
 </div>
-<div class="bg-surface-container-lowest p-8 rounded-xl border-l-4 border-primary shadow-sm">
+<div class="bg-surface-container-lowest p-8 rounded-xl border-l-4 border-primary-softcontainer shadow-sm">
 <h4 class="font-headline font-bold text-lg mb-2">Perda Kabupaten Magetan</h4>
 <p class="text-sm text-secondary leading-relaxed">Sinergi PMI dengan BPBD Magetan dalam kerangka sistem penanggulangan bencana daerah secara terpadu.</p>
 </div>
@@ -169,23 +175,23 @@
 </section>
 <!-- Section 4: Prinsip 6 Jam -->
 <section class="py-32 relative overflow-hidden bg-on-background text-white">
-<div class="absolute top-0 right-0 w-1/3 h-full bg-primary-container skew-x-12 translate-x-20"></div>
+<div class="absolute top-0 right-0 w-1/3 h-full bg-primary-softcontainer skew-x-12 translate-x-20"></div>
 <div class="max-w-7xl mx-auto px-8 relative z-10">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 <div>
-<h2 class="font-headline text-7xl font-black tracking-tighter uppercase mb-4">Prinsip <span class="text-primary-container">6 Jam</span></h2>
+<h2 class="font-headline text-7xl font-black tracking-tighter uppercase mb-4">Prinsip <span class="text-primary-softcontainer">6 Jam</span></h2>
 <p class="text-xl text-white/60 font-medium mb-8">Komitmen respons tercepat untuk keselamatan jiwa di Magetan.</p>
 <div class="flex items-start gap-6">
-<div class="flex-shrink-0 w-12 h-12 rounded-full border-2 border-primary-container flex items-center justify-center">
-<span class="material-symbols-outlined text-primary-container">timer</span>
+<div class="flex-shrink-0 w-12 h-12 rounded-full border-2 border-primary-softcontainer flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-softcontainer">timer</span>
 </div>
 <p class="text-lg leading-relaxed text-white/80">Personil dan bantuan logistik dasar dari Markas PMI Magetan harus sudah tiba di lokasi kejadian maksimal dalam waktu 6 jam setelah informasi diterima.</p>
 </div>
 </div>
 <div class="flex justify-center">
 <div class="relative w-64 h-64 flex items-center justify-center">
-<div class="absolute inset-0 border-8 border-white/10 rounded-full"></div>
-<div class="absolute inset-0 border-t-8 border-primary-container rounded-full rotate-45"></div>
+<div class="absolute inset-0 border-8 border-white rounded-full"></div>
+<!-- <div class="absolute inset-0 border-t-8 border-primary-softcontainer rounded-full rotate-45"></div> -->
 <span class="text-6xl font-black font-headline">06:00</span>
 </div>
 </div>
@@ -302,7 +308,10 @@
 <p class="text-secondary mt-2">Panduan mitigasi mandiri berdasarkan karakteristik wilayah Kabupaten Magetan.</p>
 </div>
 <div class="h-px flex-grow bg-outline-variant/30 hidden md:block mx-8 mb-4"></div>
-<button class="text-primary font-bold text-sm uppercase flex items-center gap-2">Unduh Panduan <span class="material-symbols-outlined">download</span></button>
+
+<a class="text-primary font-bold text-sm uppercase flex items-center gap-2" href="{{ route('tips_bencana') }}">
+    Baca Selengkapnya <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</a>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 <!-- Flood -->
@@ -311,7 +320,7 @@
 <div class="p-6">
 <h4 class="font-headline font-extrabold text-xl mb-3">Siaga Banjir</h4>
 <p class="text-xs text-secondary leading-relaxed mb-6">Untuk warga di dataran rendah, pantau tinggi muka air sungai saat hujan lebat di hulu Lawu.</p>
-<a class="text-[10px] font-black uppercase tracking-widest text-primary flex items-center gap-2" href="#">Baca Selengkapnya <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
+<!-- <a class="text-[10px] font-black uppercase tracking-widest text-primary flex items-center gap-2" href="#">Baca Selengkapnya <span class="material-symbols-outlined text-xs">arrow_forward</span></a> -->
 </div>
 </div>
 <!-- Landslide -->
@@ -320,7 +329,7 @@
 <div class="p-6">
 <h4 class="font-headline font-extrabold text-xl mb-3">Waspada Longsor</h4>
 <p class="text-xs text-secondary leading-relaxed mb-6">Waspadai rekahan tanah di lereng Lawu. Segera mengungsi jika terdengar suara gemuruh dari atas.</p>
-<a class="text-[10px] font-black uppercase tracking-widest text-primary flex items-center gap-2" href="#">Baca Selengkapnya <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
+<!-- <a class="text-[10px] font-black uppercase tracking-widest text-primary flex items-center gap-2" href="#">Baca Selengkapnya <span class="material-symbols-outlined text-xs">arrow_forward</span></a> -->
 </div>
 </div>
 <!-- Earthquake -->
@@ -329,7 +338,7 @@
 <div class="p-6">
 <h4 class="font-headline font-extrabold text-xl mb-3">Gempa Bumi</h4>
 <p class="text-xs text-secondary leading-relaxed mb-6">Jangan panik, lakukan Drop-Cover-Hold On. Hindari area di dekat dinding kaca atau lemari tinggi.</p>
-<a class="text-[10px] font-black uppercase tracking-widest text-primary flex items-center gap-2" href="#">Baca Selengkapnya <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
+<!-- <a class="text-[10px] font-black uppercase tracking-widest text-primary flex items-center gap-2" href="#">Baca Selengkapnya <span class="material-symbols-outlined text-xs">arrow_forward</span></a> -->
 </div>
 </div>
 <!-- Volcano -->
@@ -338,7 +347,7 @@
 <div class="p-6">
 <h4 class="font-headline font-extrabold text-xl mb-3">Abu Vulkanik</h4>
 <p class="text-xs text-secondary leading-relaxed mb-6">Selalu sediakan masker N95 di rumah jika terjadi peningkatan aktivitas vulkanik di kawasan Lawu.</p>
-<a class="text-[10px] font-black uppercase tracking-widest text-primary flex items-center gap-2" href="#">Baca Selengkapnya <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
+<!-- <a class="text-[10px] font-black uppercase tracking-widest text-primary flex items-center gap-2" href="#">Baca Selengkapnya <span class="material-symbols-outlined text-xs">arrow_forward</span></a> -->
 </div>
 </div>
 </div>

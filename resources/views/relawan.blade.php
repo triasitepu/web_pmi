@@ -31,6 +31,7 @@
                     "on-primary-fixed": "#410003",
                     "on-surface": "#1a1c1c",
                     "primary-container": "#e21f26",
+                    "primary-softcontainer": "#B77466",
                     "outline-variant": "#e7bdb8",
                     "inverse-on-surface": "#f1f1f1",
                     "on-secondary-fixed-variant": "#474747",
@@ -117,12 +118,12 @@ alt="Tim medis dan relawan kemanusiaan">
 </div>
 <div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
 <div class="max-w-2xl">
-<span class="text-primary font-headline font-extrabold tracking-widest text-xs uppercase mb-4 block">JADILAH PAHLAWAN</span>
-<h1 class="text-6xl md:text-8xl font-headline font-black text-on-surface leading-tight tracking-tighter mb-6">Kemanusiaan <br/><span class="text-primary">Dimulai Dari Anda.</span></h1>
+<!-- <span class="text-primary font-headline font-extrabold tracking-widest text-xs uppercase mb-4 block">JADILAH PAHLAWAN</span> -->
+<h1 class="text-6xl md:text-8xl font-headline font-black text-on-surface leading-tight tracking-tighter mb-6">Kemanusiaan <br/><span class="text-primary-softcontainer">Dimulai Dari Anda.</span></h1>
 <p class="text-lg text-secondary leading-relaxed mb-8 max-w-lg">Bergabunglah dengan ribuan relawan berdedikasi dalam memberikan bantuan penyelamatan jiwa dan harapan bagi masyarakat yang membutuhkan di seluruh negeri.</p>
 <div class="flex flex-wrap gap-4">
-<a class="bg-primary-container text-on-primary px-8 py-4 rounded-lg font-headline font-bold text-base shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform" href="#register">Daftar Relawan</a>
-<a class="bg-surface-container-highest text-on-surface px-8 py-4 rounded-lg font-headline font-bold text-base hover:bg-surface-container-high transition-colors" href="#programs">Jelajahi Program</a>
+<a class="bg-primary-softcontainer text-on-primary px-8 py-4 rounded-lg font-headline font-bold text-base shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform" href="#register">Daftar Relawan</a>
+<a class="bg-surface-container-highest text-on-surface px-8 py-4 rounded-lg font-headline font-bold text-base hover:bg-surface-container-high transition-colors" href="#pmr">Jelajahi Program</a>
 </div>
 </div>
 </div>
@@ -132,7 +133,7 @@ alt="Tim medis dan relawan kemanusiaan">
 <div class="max-w-7xl mx-auto px-8">
 <div class="mb-16">
 <h2 class="text-4xl font-headline font-black tracking-tight mb-4">Mengapa Menjadi Relawan Kami?</h2>
-<div class="h-1.5 w-24 bg-primary rounded-full"></div>
+<div class="h-1.5 w-24 bg-primary-softcontainer rounded-full"></div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 <!-- Benefit 1 -->
@@ -171,7 +172,7 @@ alt="Tim medis dan relawan kemanusiaan">
 </div>
 </section>
 <!-- Programs: Asymmetric Editorial Layout -->
-<!-- PMR Section -->
+<!-- PM SecRtion -->
 <section class="py-24 bg-white" id="pmr">
 <div class="max-w-7xl mx-auto px-8">
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -182,16 +183,16 @@ alt="Tim medis dan relawan kemanusiaan">
                         Wadah kegiatan remaja di sekolah atau lembaga pendidikan melalui kegiatan ekstrakurikuler yang membentuk karakter kemanusiaan sejak dini.
                     </p>
 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
-<div class="p-4 bg-surface-container-low rounded-xl border-l-4 border-primary">
-<p class="font-black text-primary text-xl">Mula</p>
+<div class="p-4 bg-surface-container-low rounded-xl border-l-4 border-primary-softcontainer">
+<p class="font-black text-on-backgorund text-xl">Mula</p>
 <p class="text-xs font-bold text-secondary uppercase">Tingkat SD</p>
 </div>
-<div class="p-4 bg-surface-container-low rounded-xl border-l-4 border-primary">
-<p class="font-black text-primary text-xl">Madya</p>
+<div class="p-4 bg-surface-container-low rounded-xl border-l-4 border-primary-softcontainer">
+<p class="font-black text-on-backgorund text-xl">Madya</p>
 <p class="text-xs font-bold text-secondary uppercase">Tingkat SMP</p>
 </div>
-<div class="p-4 bg-surface-container-low rounded-xl border-l-4 border-primary">
-<p class="font-black text-primary text-xl">Wira</p>
+<div class="p-4 bg-surface-container-low rounded-xl border-l-4 border-primary-softcontainer">
+<p class="font-black text-on-backgorund text-xl">Wira</p>
 <p class="text-xs font-bold text-secondary uppercase">Tingkat SMA</p>
 </div>
 </div>
@@ -221,13 +222,19 @@ alt="Tim medis dan relawan kemanusiaan">
 <div class="space-y-8">
 <div>
 <h4 class="text-xs font-bold text-secondary uppercase tracking-widest mb-4">Syarat Keanggotaan</h4>
-<ul class="grid grid-cols-2 gap-3 text-sm">
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span> WNI/WNA</li>
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span> Usia 7-20 Tahun</li>
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span> Belum Menikah</li>
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span> Izin Orang Tua</li>
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span> Pendidikan Aktif</li>
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span> Bersedia Berlatih</li>
+@php
+$data = explode("\n", $syaratpmr->isi ?? '');
+@endphp
+
+<ul class="space-y-2">
+@foreach($data as $item)
+<li class="flex items-center gap-2">
+    <span class="material-symbols-outlined text-primary text-sm">
+        check_circle
+    </span>
+    {{ trim($item) }}
+</li>
+@endforeach
 </ul>
 </div>
 <div>
@@ -262,7 +269,7 @@ alt="Tim medis dan relawan kemanusiaan">
 <div class="bg-surface-container-lowest p-10 rounded-2xl editorial-shadow relative overflow-hidden group">
 <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -mr-8 -mt-8 group-hover:bg-primary/10 transition-colors"></div>
 <div class="relative z-10">
-<div class="w-16 h-16 bg-primary-container text-white rounded-xl flex items-center justify-center mb-8">
+<div class="w-16 h-16 bg-primary-softcontainer text-white rounded-xl flex items-center justify-center mb-8">
 <span class="material-symbols-outlined text-3xl" data-icon="volunteer_activism">volunteer_activism</span>
 </div>
 <h3 class="text-3xl font-headline font-black mb-4">Korps Sukarela (KSR)</h3>
@@ -272,11 +279,19 @@ alt="Tim medis dan relawan kemanusiaan">
 <div class="space-y-6">
 <div>
 <h4 class="text-xs font-bold text-secondary uppercase tracking-widest mb-3">Persyaratan</h4>
-<ul class="space-y-2 text-sm">
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="check">check</span> Usia 18-35 Tahun</li>
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="check">check</span> Sehat Jasmani &amp; Rohani</li>
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="check">check</span> Min. Pendidikan SMA/Sederajat</li>
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="check">check</span> Lulus Pelatihan Dasar</li>
+@php
+$data = explode("\n", $syaratksr->isi ?? '');
+@endphp
+
+<ul class="space-y-2">
+@foreach($data as $item)
+<li class="flex items-center gap-2">
+    <span class="material-symbols-outlined text-primary-softcontainer text-sm" data-icon="check">check
+
+    </span>
+    {{ trim($item) }}
+</li>
+@endforeach
 </ul>
 </div>
 <div>
@@ -310,11 +325,19 @@ alt="Tim medis dan relawan kemanusiaan">
 <div class="space-y-6">
 <div>
 <h4 class="text-xs font-bold text-secondary uppercase tracking-widest mb-3">Persyaratan</h4>
-<ul class="space-y-2 text-sm">
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary text-sm" data-icon="check">check</span> Memiliki Keahlian Khusus</li>
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary text-sm" data-icon="check">check</span> Medis, Logistik, IT, dll</li>
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary text-sm" data-icon="check">check</span> Bersedia Berkontribusi</li>
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary text-sm" data-icon="check">check</span> Komitmen pada Kemanusiaan</li>
+@php
+$data = explode("\n", $syarattsr->isi ?? '');
+@endphp
+
+<ul class="space-y-2">
+@foreach($data as $item)
+<li class="flex items-center gap-2">
+    <span class="material-symbols-outlined text-tertiary text-sm" data-icon="check">check
+
+    </span>
+    {{ trim($item) }}
+</li>
+@endforeach
 </ul>
 </div>
 <div>
@@ -340,7 +363,7 @@ alt="Tim medis dan relawan kemanusiaan">
 
 
 <!-- Registration Form -->
-<section class="py-24 bg-outline-variant text-on-surface">
+<section  id="register" class="py-24 bg-primary-softcontainer/10 text-on-surface">
 <div class="max-w-5xl mx-auto px-8 text-center">
 <h2 class="text-4xl md:text-5xl font-black mb-8 tracking-tighter">Siap Menjadi Relawan Masa Depan?</h2>
 <p class="text-xl text-black/80 mb-12 max-w-2xl mx-auto leading-relaxed">Pendaftaran anggota PMR dilakukan langsung melalui unit sekolah masing-masing di bawah koordinasi Pembina PMR Sekolah.</p>
@@ -360,13 +383,15 @@ alt="Tim medis dan relawan kemanusiaan">
 
 <a href="{{ $formulir->isi ?? '#' }}" 
    target="_blank"
-   class="bg-white text-primary px-10 py-5 rounded-md font-extrabold shadow-xl hover:bg-on-primary-container transition-all">
+   class="bg-white text-black px-10 py-5 rounded-md font-extrabold shadow-xl 
+          hover:bg-primary-softcontainer hover:text-on-background transition-all duration-300">
    Download Formulir Umum
 </a>
 
 <a href="{{ $persyaratan->isi ?? '#' }}" 
    target="_blank"
-   class="bg-primary-container border border-white/30 text-white px-10 py-5 rounded-md font-extrabold hover:bg-white/10 transition-all">
+   class="bg-white text-black px-10 py-5 rounded-md font-extrabold shadow-xl 
+          hover:bg-primary-softcontainer hover:text-on-background transition-all duration-300">
    Download Persyaratan
 </a>
 

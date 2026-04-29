@@ -117,7 +117,7 @@
 <p class="text-secondary max-w-md font-body leading-relaxed">Pantau ketersediaan stok darah di bank darah kami secara langsung.</p>
 </div>
 <div class="flex items-center gap-2 text-sm font-label font-semibold text-secondary">
-<span class="w-3 h-3 rounded-full bg-green-500 animate-pulse"></span> Update terakhir: 14:02 Hari Ini
+<span class="w-3 h-3 rounded-full bg-green-500 animate-pulse"></span> Update terakhir: {{ $donornasional->updated_at ? $donornasional->updated_at->format('d M Y H:i') : '-' }}
                 </div>
 </div>
 <!-- Summary Metrics Added Here -->
@@ -151,15 +151,15 @@
 <div class="overflow-x-auto">
 <table class="w-full text-left border-collapse">
 
-<thead class="bg-primary-container/10 border-b border-surface-container-high">
+<thead class="bg-primary-softcontainer border-b border-surface-container-high">
 <tr>
-<th class="px-8 py-5 font-headline font-bold text-sm uppercase tracking-wider text-black">
+<th class="px-8 py-5 font-headline font-bold text-white tracking-wider text-black">
     Komponen Darah
 </th>
-<th class="px-8 py-5 text-center font-headline font-black text-lg text-black">A</th>
-<th class="px-8 py-5 text-center font-headline font-black text-lg text-black">B</th>
-<th class="px-8 py-5 text-center font-headline font-black text-lg text-black">O</th>
-<th class="px-8 py-5 text-center font-headline font-black text-lg text-black">AB</th>
+<th class="px-8 py-5 text-center font-headline font-black text-lg text-white">A</th>
+<th class="px-8 py-5 text-center font-headline font-black text-lg text-white">B</th>
+<th class="px-8 py-5 text-center font-headline font-black text-lg text-white">O</th>
+<th class="px-8 py-5 text-center font-headline font-black text-lg text-white">AB</th>
 </tr>
 </thead>
 
@@ -311,14 +311,14 @@ function getStatus($val) {
 </section> -->
 <!-- 3. Jadwal Unit Keliling Section -->
 <!-- Jadwal Unit Keliling Section -->
-<section class="py-24 bg-primary-container/10">
+<section class="py-24 bg-primary-softcontainer">
 <div class="max-w-7xl mx-auto px-8">
 
 <div class="mb-12">
     <h2 class="text-4xl font-headline font-extrabold mb-4 tracking-tight">
         Jadwal Donor Darah
     </h2>
-    <p class="text-secondary max-w-md font-body leading-relaxed">
+    <p class="text-on-surface font-semibold max-w-md font-body leading-relaxed">
         Sesi donor darah rutin di lokasi rumah sakit dan pusat kesehatan tetap.
     </p>
 </div>
@@ -394,7 +394,7 @@ function getStatus($val) {
 <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
 <div class="relative">
 <img class="rounded-2xl z-10 relative" data-alt="smiling donor sitting in a donation chair" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcUEcpTQ5Ik6u3nVeKCwozJWVHi0KI5zy2Z0ccm1ewZS6Kc1BKrm3AagmnHK6QjcWbLGxNk2QbiJQjTUaoUgLWJE0HCacbesBEUfRRSk19-ygXvpwQQmxEB93m8WcZTMRaONflTSbN3GWpzcc8HrVKUjfpFvKLuUj4oUOFQZ9N3NU0xXVT5SzDkwIRNfur6UJc29Jvryr9DLwPpzF_WihMdI8qTAChYCsSGbLancZ_L6SHqga_E3T0_wwah1jaiCFym8HW3Jv9lA"/>
-<div class="absolute -bottom-10 -right-10 w-64 h-64 bg-primary-container/10 rounded-full -z-0"></div>
+<div class="absolute -bottom-10 -right-10 w-64 h-64 bg-primary-softcontainer rounded-full -z-0"></div>
 </div>
 <div>
 <h2 class="text-4xl font-headline font-extrabold mb-8 tracking-tight">Bisakah Anda berdonor?</h2>
@@ -432,29 +432,29 @@ function getStatus($val) {
 </div>
 </section>
 <!-- Process Section -->
-<section class="py-24 bg-primary-container/10">
+<section class="py-24 bg-primary-softcontainer">
 <div class="max-w-7xl mx-auto px-8">
 <h2 class="text-4xl font-headline font-extrabold mb-16 tracking-tight text-center">Apa yang diharapkan</h2>
 <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
 <div class="text-center">
-<div class="text-6xl font-headline font-black text-outline-variant/30 mb-4">01</div>
+<div class="text-6xl font-headline font-black text-white mb-4">01</div>
 <h4 class="font-headline font-bold text-xl mb-2">Registrasi</h4>
-<p class="text-secondary text-sm">Masuk, tunjukkan ID Anda, dan baca materi informasi donor.</p>
+<p class="text-black text-sm">Masuk, tunjukkan ID Anda, dan baca materi informasi donor.</p>
 </div>
 <div class="text-center">
-<div class="text-6xl font-headline font-black text-outline-variant/30 mb-4">02</div>
+<div class="text-6xl font-headline font-black text-white mb-4">02</div>
 <h4 class="font-headline font-bold text-xl mb-2">Pemeriksaan Fisik</h4>
-<p class="text-secondary text-sm">Pemeriksaan cepat denyut nadi, tekanan darah, dan kadar hemoglobin Anda.</p>
+<p class="text-black text-sm">Pemeriksaan cepat denyut nadi, tekanan darah, dan kadar hemoglobin Anda.</p>
 </div>
 <div class="text-center">
-<div class="text-6xl font-headline font-black text-outline-variant/30 mb-4">03</div>
+<div class="text-6xl font-headline font-black text-white mb-4">03</div>
 <h4 class="font-headline font-bold text-xl mb-2">Proses Donor</h4>
-<p class="text-secondary text-sm">Duduk santai dan rileks. Proses donasi hanya memakan waktu sekitar 8-10 menit.</p>
+<p class="text-black text-sm">Duduk santai dan rileks. Proses donasi hanya memakan waktu sekitar 8-10 menit.</p>
 </div>
 <div class="text-center">
-<div class="text-6xl font-headline font-black text-outline-variant/30 mb-4">04</div>
+<div class="text-6xl font-headline font-black text-white mb-4">04</div>
 <h4 class="font-headline font-bold text-xl mb-2">Pemulihan</h4>
-<p class="text-secondary text-sm">Nikmati makanan ringan gratis sambil beristirahat selama 15 menit.</p>
+<p class="text-black text-sm">Nikmati makanan ringan gratis sambil beristirahat selama 15 menit.</p>
 </div>
 </div>
 </div>

@@ -14,7 +14,7 @@ class SubmenuDiklatController extends Controller
     {
         $submenus = SubmenuDiklat::with('diklat')
                     ->orderBy('urutan', 'asc')
-                    ->get();
+                    ->paginate(5);
 
         return view('admin.diklat.submenu.index', compact('submenus'));
     }

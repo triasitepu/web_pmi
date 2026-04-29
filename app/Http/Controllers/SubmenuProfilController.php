@@ -14,7 +14,7 @@ class SubmenuProfilController extends Controller
     {
         $submenus = SubmenuProfil::with('profil')
                     ->orderBy('urutan', 'asc')
-                    ->get();
+                    ->paginate(5);
 
         return view('admin.profil.submenu.index', compact('submenus'));
     }

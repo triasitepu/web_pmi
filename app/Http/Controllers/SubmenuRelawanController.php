@@ -14,7 +14,7 @@ class SubmenuRelawanController extends Controller
     {
         $submenus = SubmenuRelawan::with('relawan')
                     ->orderBy('urutan', 'asc')
-                    ->get();
+                    ->paginate(5);
 
         return view('admin.relawan.submenu.index', compact('submenus'));
     }
@@ -124,8 +124,10 @@ class SubmenuRelawanController extends Controller
     $misi = SubmenuRelawan::where('slug', 'misi')->first();
     $formulir = SubmenuRelawan::where('slug', 'formulir')->first();
     $persyaratan = SubmenuRelawan::where('slug', 'persyaratan')->first();
-    
+    $syaratpmr = SubmenuRelawan::where('slug', 'syaratpmr')->first();
+    $syaratksr = SubmenuRelawan::where('slug', 'syaratksr')->first();
+    $syarattsr = SubmenuRelawan::where('slug', 'syarattsr')->first();
 
-    return view('relawan', compact('totalrelawan', 'misi', 'formulir', 'persyaratan'));
+    return view('relawan', compact('totalrelawan', 'misi', 'formulir', 'persyaratan', 'syaratpmr', 'syaratksr', 'syarattsr'));
     }
 }

@@ -31,6 +31,7 @@
                     "on-primary-fixed": "#410003",
                     "on-surface": "#1a1c1c",
                     "primary-container": "#e21f26",
+                    "primary-softcontainer": "#B77466",
                     "outline-variant": "#e7bdb8",
                     "inverse-on-surface": "#f1f1f1",
                     "on-secondary-fixed-variant": "#474747",
@@ -114,12 +115,12 @@
 </div>
 <div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
 <div class="max-w-2xl">
-<span class="inline-block py-1 px-3 bg-primary text-on-primary text-xs font-bold tracking-widest uppercase mb-6 rounded-sm">Respon Cepat 24/7</span>
-<h1 class="font-headline text-6xl md:text-8xl font-extrabold text-white leading-[0.9] tracking-tighter mb-8">Detik <span class="text-primary-container">Menyelamatkan</span> Nyawa.</h1>
+<span class="inline-block py-1 px-3 bg-primary-softcontainer text-on-primary-softcontainer text-xs font-bold tracking-widest uppercase mb-6 rounded-sm">Respon Cepat 24/7</span>
+<h1 class="font-headline text-6xl md:text-8xl font-extrabold text-white leading-[0.9] tracking-tighter mb-8">Detik <span class="text-primary-softcontainer">Menyelamatkan</span> Nyawa.</h1>
 <p class="text-surface-dim text-lg md:text-xl max-w-lg mb-10 leading-relaxed">Mengerahkan unit perawatan intensif seluler tercanggih di wilayah ini. Kecepatan kemanusiaan, presisi profesional.</p>
 <div class="flex flex-wrap gap-4">
-<button class="flex items-center gap-3 bg-primary-container text-on-primary px-8 py-5 rounded-lg font-headline font-black text-xl tracking-tight shadow-2xl hover:bg-primary transition-all active:scale-95"><span class="material-symbols-outlined" data-icon="emergency_share" style="font-variation-settings: 'FILL' 1;">emergency_share</span> Panggil Darurat Sekarang</button>
-<button class="flex items-center gap-3 bg-surface-container-highest text-on-surface px-8 py-5 rounded-lg font-headline font-bold text-xl tracking-tight hover:bg-white transition-all">Wilayah Layanan</button>
+<button class="flex items-center gap-3 bg-primary-softcontainer text-on-background px-8 py-5 rounded-lg font-headline font-black text-xl tracking-tight shadow-2xl hover:bg-primary transition-all active:scale-95"><span class="material-symbols-outlined" data-icon="emergency_share" style="font-variation-settings: 'FILL' 1;">emergency_share</span> Panggil Darurat Sekarang</button>
+<!-- <button class="flex items-center gap-3 bg-surface-container-highest text-on-surface px-8 py-5 rounded-lg font-headline font-bold text-xl tracking-tight hover:bg-white transition-all">Wilayah Layanan</button> -->
 </div>
 </div>
 </div>
@@ -138,11 +139,11 @@
 <!-- Emergency Case -->
 <div class="md:col-span-8 group relative overflow-hidden rounded-xl bg-surface-container-lowest p-8 min-h-[400px] flex flex-col justify-end border-none transition-all">
 <div class="absolute top-0 right-0 p-8">
-<span class="material-symbols-outlined text-primary text-6xl opacity-20 group-hover:opacity-100 transition-opacity" data-icon="ambulance">ambulance</span>
+<span class="material-symbols-outlined text-primary/15 text-6xl " data-icon="ambulance">ambulance</span>
 </div>
 <div class="relative z-10">
-<h3 class="font-headline text-3xl font-black mb-4">Emergency ALS Response</h3>
-<p class="text-secondary max-w-md mb-6 leading-relaxed">Unit Advanced Life Support yang diawasi oleh paramedis dan dokter darurat. Dilengkapi dengan ventilator, monitor, dan farmakologi penyelamat nyawa.</p>
+<h3 class="font-headline text-3xl font-black mb-4">Layanan Ambulans Darurat</h3>
+<p class="text-secondary max-w-md mb-6 leading-relaxed">Layanan ambulans PMI untuk penanganan kondisi darurat seperti kecelakaan, sakit mendadak, dan evakuasi medis ke fasilitas kesehatan terdekat.</p>
 <ul class="flex flex-wrap gap-3 text-xs font-bold tracking-tight">
 <li class="px-3 py-1 bg-surface-container-low rounded-full">PERAWATAN TRAUMA</li>
 <li class="px-3 py-1 bg-surface-container-low rounded-full">DUKUNGAN JANTUNG</li>
@@ -154,8 +155,8 @@
 <div class="md:col-span-4 bg-tertiary-container text-on-tertiary-container p-8 rounded-xl flex flex-col justify-between">
 <span class="material-symbols-outlined text-4xl" data-icon="calendar_month">calendar_month</span>
 <div>
-<h3 class="font-headline text-2xl font-bold mb-3">Transportasi Terjadwal</h3>
-<p class="text-on-tertiary-container/80 text-sm mb-6 leading-relaxed">Transit medis non-darurat yang andal untuk transfer rumah sakit, janji dialisis, dan pemulangan pasca operasi.</p>
+<h3 class="font-headline text-2xl font-bold mb-3">Transportasi Medis Non-Darurat</h3>
+<p class="text-on-tertiary-container/80 text-sm mb-6 leading-relaxed">Layanan antar jemput pasien untuk kontrol, rujukan rumah sakit, atau kebutuhan medis lainnya secara terjadwal.</p>
 <a class="font-bold underline underline-offset-4 hover:opacity-80 transition-opacity" href="#">Pesan Transportasi</a>
 </div>
 </div>
@@ -168,7 +169,7 @@
 <span class="material-symbols-outlined" data-icon="helicopter">helicopter</span>
 </div>
 <div>
-<p class="font-bold text-sm">Penyelamatan Air</p>
+<p class="font-bold text-sm">Fasilitas Ambulans</p>
 <p class="text-xs text-secondary">Respon amfibi untuk zona banjir.</p>
 </div>
 </div>
@@ -189,22 +190,22 @@
 </div>
 <div class="relative p-8 h-full flex flex-col justify-between">
 <div class="flex justify-between items-start">
-<h3 class="font-headline text-3xl font-black">Jaringan Cakupan</h3>
-<span class="bg-primary px-3 py-1 rounded text-[10px] font-black uppercase tracking-widest">AKTIF LIVE</span>
+<h3 class="font-headline text-3xl font-black">Jangkauan Layanan</h3>
+<span class="bg-primary-softcontainer px-3 py-1 rounded text-[10px] font-black uppercase tracking-widest">AKTIF LIVE</span>
 </div>
 <div class="flex flex-col md:flex-row gap-8 mt-12">
 <div>
-<p class="text-4xl font-headline font-black text-primary-container">120+</p>
-<p class="text-xs font-bold text-surface-dim uppercase tracking-widest">Rata-rata Respon</p>
+<p class="text-4xl font-headline font-black text-primary-softcontainer">24 Jam</p>
+<p class="text-xs font-bold text-surface-dim uppercase tracking-widest">Siaga Layanan</p>
 </div>
 <div>
-<p class="text-4xl font-headline font-black text-primary-container">8min</p>
-<p class="text-xs font-bold text-surface-dim uppercase tracking-widest">Rata-rata Respon</p>
+<p class="text-4xl font-headline font-black text-primary-softcontainer">±10 menit</p>
+<p class="text-xs font-bold text-surface-dim uppercase tracking-widest">Estimasi Respon</p>
 </div>
-<div class="flex-grow"></div>
+<div class="flex-grow"></div> 
 <div class="text-right self-end">
-<p class="text-sm font-bold opacity-80 mb-2">Cakupan Utama: Metro Manila &amp; Wilayah Sekitarnya</p>
-<button class="text-xs font-black text-primary-container border-b-2 border-primary-container pb-1">Lihat Jaringan Langsung</button>
+<p class="text-sm font-bold opacity-80 mb-2">Cakupan Utama: Kabupaten/Kota Anda dan sekitarnya</p>
+<button class="text-xs font-black text-primary-softcontainer border-b-2 border-primary-softcontainer pb-1">Lihat Jaringan Langsung</button>
 </div>
 </div>
 </div>
@@ -213,7 +214,7 @@
 </div>
 </section>
 <!-- High-Contrast Emergency Bar -->
-<section class="bg-primary-container py-12 px-8 overflow-hidden relative">
+<section class="bg-primary-softcontainer py-12 px-8 overflow-hidden relative">
 <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-10">
 <h2 class="text-[20vw] font-black font-headline text-white whitespace-nowrap leading-none">EMERGENCY • EMERGENCY • EMERGENCY</h2>
 </div>
@@ -237,19 +238,19 @@
 <section class="py-24 bg-surface-container-low px-8">
 <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
 <div class="space-y-6">
-<div class="h-1 bg-primary w-12"></div>
-<h4 class="font-headline text-2xl font-bold">Panggil Petugas</h4>
-<p class="text-secondary leading-relaxed">Berikan lokasi Anda dan jenis keadaan darurat. Petugas kami yang dibantu AI mengidentifikasi unit terdekat dengan segera.</p>
+<div class="h-1 bg-primary-softcontainer w-12"></div>
+<h4 class="font-headline text-2xl font-bold">Hubungi PMI</h4>
+<p class="text-secondary leading-relaxed">Berikan lokasi dan kondisi darurat Anda. Petugas PMI akan segera menerima laporan dan mengidentifikasi kebutuhan penanganan.</p>
 </div>
 <div class="space-y-6">
-<div class="h-1 bg-primary w-12"></div>
-<h4 class="font-headline text-2xl font-bold">Panggil Petugas</h4>
-<p class="text-secondary leading-relaxed">Responden pertama memberikan perawatan kritis di tempat dan menstabilkan pasien sebelum dan selama transportasi.</p>
+<div class="h-1 bg-primary-softcontainer w-12"></div>
+<h4 class="font-headline text-2xl font-bold">Penanganan Awal</h4>
+<p class="text-secondary leading-relaxed">Tim ambulans memberikan pertolongan pertama di lokasi dan menstabilkan kondisi pasien sebelum proses evakuasi.</p>
 </div>
 <div class="space-y-6">
-<div class="h-1 bg-primary w-12"></div>
-<h4 class="font-headline text-2xl font-bold">Panggil Petugas</h4>
-<p class="text-secondary leading-relaxed">Komunikasi langsung dengan rumah sakit penerima memastikan tim UGD siap untuk kedatangan pasien.</p>
+<div class="h-1 bg-primary-softcontainer w-12"></div>
+<h4 class="font-headline text-2xl font-bold">Evakuasi & Rujukan</h4>
+<p class="text-secondary leading-relaxed">Pasien dievakuasi ke fasilitas kesehatan terdekat dengan koordinasi langsung agar penanganan lanjutan dapat segera dilakukan.</p>
 </div>
 </div>
 </section>

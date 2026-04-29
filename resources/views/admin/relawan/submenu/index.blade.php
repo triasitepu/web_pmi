@@ -36,8 +36,8 @@
 
   {{-- Table --}}
    <div class="table-responsive">
-    <table class="table table-bordered table-striped align-middle table-hover">
-      <thead class="text-center text-white" style="background-color: #d60100;">
+    <table class="table table-striped align-middle">
+      <thead class="text-center text-white" style="background-color: #000;">
         <tr>
           <th style="width:5%">No</th>
           <th>Judul</th>
@@ -117,6 +117,15 @@
         @endforelse
       </tbody>
     </table>
+    <div class="d-flex justify-content-between align-items-center mt-3">
+    <div>
+        Menampilkan {{ $submenus->firstItem() }} - {{ $submenus->lastItem() }} 
+        dari {{ $submenus->total() }} data
+    </div>
+    <div>
+        {{ $submenus->links() }}
+    </div>
+</div>
   </div>
 
 </div>

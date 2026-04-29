@@ -179,15 +179,15 @@ body{
 <body class="bg-gray-50">
 
 <!-- Navbar -->
-<header class="fixed top-0 left-72 right-0 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl flex justify-between items-center h-16 px-8 border-b border-slate-200/50 dark:border-slate-800/50 z-40">
-<div class="flex items-center gap-8">
-<h1 class="font-black text-black dark:text-black-500 font-headline tracking-tight uppercase text-sm">Dashboard Utama</h1>
-<nav class="hidden md:flex gap-6">
+<header class="fixed top-0 left-72 right-0 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl flex justify-between items-center h-20 px-12 border-b border-slate-200/50 dark:border-slate-800/50 z-40">
+<div class="flex items-center gap-10">
+<h1 class="font-black text-black dark:text-black-500 font-headline tracking-tight uppercase text-base">Dashboard Utama</h1>
+<!-- <nav class="hidden md:flex gap-6">
 <a class="text-black border-b-2 border-black pb-1 font-manrope text-sm tracking-tight" href="{{ route('admin.dashboard') }}">Dashboard</a>
 <a class="text-slate-500 dark:text-slate-400 hover:text-black-500 transition-all font-manrope text-sm tracking-tight" href="{{ route('admin.profil-submenu.index') }}">Kelola Profil</a>
-</nav>
+</nav> -->
 </div>
-<div class="flex items-center gap-6">
+<div class="flex items-center gap-8">
 <div class="flex items-center gap-3 pl-4 border-l border-slate-200 dark:border-slate-800">
 <div class="text-right">
 <p class="text-xs font-bold text-slate-900 dark:text-white leading-none">{{ auth()->user()->nama_pengguna ?? 'Admin' }}</p>

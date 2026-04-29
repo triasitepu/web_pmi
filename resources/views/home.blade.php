@@ -140,17 +140,17 @@
 <h2 class="text-4xl font-black text-on-surface">Statistik Kemanusiaan</h2>
 </div>
 <div class="bg-surface-container-lowest p-10 rounded-2xl shadow-sm border-b-4 border-primary">
-<span class="text-5xl font-black text-primary block mb-2">
+<span class="text-5xl font-black text-primary-softcontainer block mb-2">
      {{ $totalrelawan->isi ?? 0 }}
 </span>
 <p class="text-secondary font-bold">Relawan Aktif</p>
 </div>
 <div class="bg-surface-container-lowest p-10 rounded-2xl shadow-sm mt-8 md:mt-12">
-<span class="text-5xl font-black text-primary block mb-2">450</span>
+<span class="text-5xl font-black text-primary-softcontainer block mb-2">450</span>
 <p class="text-secondary font-bold">Kantong Darah/Bulan</p>
 </div>
 <div class="bg-surface-container-lowest p-10 rounded-2xl shadow-sm">
-<span class="text-5xl font-black text-primary block mb-2">24/7</span>
+<span class="text-5xl font-black text-primary-softcontainer block mb-2">24/7</span>
 <p class="text-secondary font-bold">Respon Ambulans</p>
 </div>
 </div>

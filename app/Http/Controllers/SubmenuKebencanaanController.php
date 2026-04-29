@@ -14,9 +14,14 @@ class SubmenuKebencanaanController extends Controller
     {
         $submenus = SubmenuKebencanaan::with('kebencanaan')
                     ->orderBy('urutan', 'asc')
-                    ->get();
+                    ->paginate(5);
 
         return view('admin.kebencanaan.submenu.index', compact('submenus'));
+    }
+
+    public function tips()
+    {
+        return view('tips_bencana');
     }
 
     public function create()
@@ -121,9 +126,9 @@ class SubmenuKebencanaanController extends Controller
 
     public function landing()
     {
-    $layout1 = SubmenuKebencanaan::where('slug', 'layout1')->first();
+    $headline = SubmenuKebencanaan::where('slug', 'headline')->first();
     
 
-    return view('bencana', compact('layout1'));
+    return view('bencana', compact('headline'));
     }
 }

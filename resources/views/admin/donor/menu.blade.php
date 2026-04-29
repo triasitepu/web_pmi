@@ -28,7 +28,7 @@
   @endif
 
    <div class="table-responsive">
-    <table class="table table-bordered table-striped align-middle table-hover">
+    <table class="table table-striped align-middle">
       <thead class="text-center text-white" style="background-color: #d60100;">
         <tr>
           <th style="width:5%">No</th>

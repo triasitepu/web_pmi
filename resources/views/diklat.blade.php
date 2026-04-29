@@ -30,7 +30,8 @@
                     "on-tertiary-fixed-variant": "#004b70",
                     "on-primary-fixed": "#410003",
                     "on-surface": "#1a1c1c",
-                    "primary-container": "#e21f26",
+                    "primary-container": "#B77466",
+                    "primary-softcontainer": "#B77466", 
                     "outline-variant": "#e7bdb8",
                     "inverse-on-surface": "#f1f1f1",
                     "on-secondary-fixed-variant": "#474747",
@@ -113,93 +114,33 @@
 </div>
 <div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
 <div class="max-w-2xl">
-<span class="inline-block py-1 px-3 bg-primary-container text-on-primary font-label text-xs font-bold tracking-widest uppercase mb-6 rounded-sm">Diklat &amp; Edukasi</span>
-<h1 class="text-6xl md:text-8xl font-headline font-extrabold text-white leading-[0.9] tracking-tighter mb-8">Memberdayakan <br/><span class="text-primary-container">Penyelamat.</span></h1>
+<!-- <span class="inline-block py-1 px-3 bg-primary-container text-on-primary font-label text-xs font-bold tracking-widest uppercase mb-6 rounded-sm">Diklat &amp; Edukasi</span> -->
+<h1 class="text-6xl md:text-8xl font-headline font-extrabold text-white leading-[0.9] tracking-tighter mb-8">Memberdayakan <br/><span class="text-primary-softcontainer">Penyelamat.</span></h1>
 <p class="text-xl text-surface-container-low font-body leading-relaxed max-w-lg mb-10">Bergabunglah dengan tradisi Kemanusiaan. Kuasai keterampilan yang menjembatani celah antara krisis dan perawatan dengan program Diklat bersertifikat kami.</p>
 <div class="flex flex-wrap gap-4">
-<button class="px-8 py-4 bg-primary-container text-on-primary font-headline font-bold rounded-lg shadow-xl hover:bg-primary transition-all">Daftar Kursus</button>
-<button class="px-8 py-4 bg-white/10 backdrop-blur-md text-white border border-white/20 font-headline font-bold rounded-lg hover:bg-white/20 transition-all">Lihat Jadwal</button>
+<!-- <button class="px-8 py-4 bg-white/10 backdrop-blur-md text-white border border-white/20 font-headline font-bold rounded-lg hover:bg-primary-softcontainer transition-all">Daftar Kursus</button> -->
+<a class="px-8 py-4 bg-white/10 backdrop-blur-md text-white border border-white/20 font-headline font-bold rounded-lg hover:bg-primary-softcontainer transition-all" href="#jadwal">Lihat Jadwal</a>
 </div>
 </div>
 </div>
 </section>
 <!-- Stats Bento Grid -->
-<section class="py-24 px-8 max-w-7xl mx-auto">
+<section class="py-24 px-8 max-w-7xl mx-auto" id="jadwal">
 <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
 <div class="md:col-span-2 bg-surface-container-lowest p-10 rounded-xl flex flex-col justify-between min-h-[300px]">
 <span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="verified_user">verified_user</span>
 <div>
-<h3 class="text-4xl font-headline font-extrabold tracking-tight mb-2">98% Tingkat Kelulusan</h3>
-<p class="text-secondary leading-relaxed">Lulusan kami secara konsisten menunjukkan kemahiran tinggi dalam simulasi tanggap darurat dan skenario dunia nyata.</p>
+<h3 class="text-4xl font-headline font-extrabold tracking-tight mb-2">98% Tingkat Kelulusan Peserta</h3>
+<p class="text-secondary leading-relaxed">Peserta diklat secara konsisten menunjukkan kompetensi tinggi dalam simulasi tanggap darurat dan praktik lapangan.</p>
 </div>
 </div>
-<div class="bg-primary-container p-10 rounded-xl text-on-primary flex flex-col justify-between">
-<h3 class="text-5xl font-headline font-extrabold">98% Tingkat Kelulusan</h3>
-<p class="font-medium opacity-90">Penyelamat Tersertifikasi yang dilatih setiap tahun di seluruh negeri.</p>
+<div class="bg-primary-softcontainer p-10 rounded-xl text-on-primary flex flex-col justify-between ">
+<h3 class="text-4xl font-headline font-extrabold">Peserta Tersertifikasi</h3>
+<p class="font-medium opacity-90">Peserta yang telah mengikuti dan lulus pelatihan mendapatkan sertifikat resmi sesuai standar PMI.</p>
 </div>
 <div class="bg-tertiary p-10 rounded-xl text-on-tertiary-container flex flex-col justify-between">
 <span class="material-symbols-outlined text-3xl" data-icon="school">school</span>
-<p class="text-xl font-headline font-bold">Sertifikasi Terakreditasi BNSP</p>
-</div>
-</div>
-</section>
-<!-- Course Catalog - Asymmetric Layout -->
-<section class="py-24 bg-surface-container-low">
-<div class="max-w-7xl mx-auto px-8">
-<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-<div class="max-w-xl">
-<h2 class="text-5xl font-headline font-extrabold tracking-tight text-on-surface mb-6">Kuasai Seni Intervensi</h2>
-<p class="text-secondary text-lg">Kurikulum terperinci yang dirancang oleh ahli medis dan petugas garis depan untuk mempersiapkan Anda menghadapi situasi apa pun.</p>
-</div>
-<div class="flex gap-2">
-<button class="p-3 bg-surface-container-highest rounded-full"><span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span></button>
-<button class="p-3 bg-primary-container text-on-primary rounded-full"><span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span></button>
-</div>
-</div>
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-<!-- Card 1 -->
-<div class="group bg-surface-container-lowest rounded-2xl overflow-hidden transition-all duration-300 hover:translate-y-[-8px]">
-<div class="h-64 overflow-hidden relative">
-<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="close up of medical training hands performing CPR on a practice mannequin in a clean studio lighting environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfkDeOIiImS5FLdNpFnQL-HgyB1GueSZ4sGnkVFaBoL4_tc195NxcTz1luhtU2B4FE58IaKACQZr-ub4j2EgAp2LTxHADanEaBSrHAWjGB_QuFWZBxYNRx1NrxkgtmsyPiWqp_obOJYuDY7zL9hwmnIYXpt890vC5Mn3XXOBJLykERCYFWxRpoJhN6D-J8BtomnGgOeW2dqz6lau20HIC-LPMKDfY-lzWwygS4z8ph1ppoCE5hKKjw2jaw5342iOjsztvKgBabxQ"/>
-<div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-primary">POPULER</div>
-</div>
-<div class="p-8">
-<h4 class="text-2xl font-headline font-bold mb-3">Pertolongan Pertama Dasar (BFA)</h4>
-<p class="text-secondary mb-6 line-clamp-3">Keterampilan penyelamatan jiwa yang penting termasuk perawatan luka, penanganan tersedak, dan stabilisasi pasien untuk masyarakat umum.</p>
-<div class="flex items-center justify-between pt-6 border-t border-surface-container-high">
-<span class="text-sm font-semibold flex items-center gap-2"><span class="material-symbols-outlined text-sm" data-icon="calendar_today"><span class="material-symbols-outlined text-sm" data-icon="calendar_today">calendar_today</span> 3 Hari</span> 3 Days</span>
-<button class="text-primary font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">Detail <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span></button>
-</div>
-</div>
-</div>
-<!-- Card 2 -->
-<div class="group bg-surface-container-lowest rounded-2xl overflow-hidden transition-all duration-300 hover:translate-y-[-8px] lg:mt-12">
-<div class="h-64 overflow-hidden relative">
-<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="advanced medical monitor showing vitals in a dimmed clinical setting with cool blue tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA_6gJEz5OFEl9Pm2fvrs7zab5EsDQdLMHHMGYrpzvLU2d9KBAmV5_5SynfB2BNuMtrgcsOgC4EpW059pW-EIFb3_7evTfWHafNNE5QQiqbJSZ-5Y11hS18SDeNxBH9Jup3iO05-0FnRYkyeKDb7_ACaaubevoCxdpDMjdvjmmYMwC-v6PTlCitZzb516uYxUKATfdjzxYKSv718dYyfA6HpDusGPkwk5rLZ8VnaeNUiROeRBaigguk3gXnDT9DPqe5ljEkobvPQ"/>
-</div>
-<div class="p-8">
-<h4 class="text-2xl font-headline font-bold mb-3">Bantuan Hidup Lanjutan</h4>
-<p class="text-secondary mb-6 line-clamp-3">Pelatihan intensif bagi tenaga medis profesional yang mencakup manajemen jalan napas tingkat lanjut dan intervensi farmakologis.</p>
-<div class="flex items-center justify-between pt-6 border-t border-surface-container-high">
-<span class="text-sm font-semibold flex items-center gap-2"><span class="material-symbols-outlined text-sm" data-icon="calendar_today"><span class="material-symbols-outlined text-sm" data-icon="calendar_today">calendar_today</span> 5 Hari</span> 5 Days</span>
-<button class="text-primary font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">Detail <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span></button>
-</div>
-</div>
-</div>
-<!-- Card 3 -->
-<div class="group bg-surface-container-lowest rounded-2xl overflow-hidden transition-all duration-300 hover:translate-y-[-8px]">
-<div class="h-64 overflow-hidden relative">
-<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="emergency rescue team operating in a simulated disaster zone with orange safety gear and dusty environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZMv6vKK_QJFSRG5hbuwPvg3I0a9w3z2mPWF9VsSI5_LkmTGohODHprN85SPl8XX84hFUtIKHHDvSetMz-xy_rNZslV9m2c-1zYca9NhlYQG1ZRQEmRPWrpcrxwPLoDsMP6VTAJ8AnuBEPPS35KCHg8Zzg5BZyGd0whitiFXryLLs3BSFAKD04t86NroRjJk2gKt0EBqtKH7eKrx2Esp5M5-UioER0Uihv7iglHdY9-y04mhA0VDWNjvC2kSuWhlOLWVaxaDFuhQ"/>
-</div>
-<div class="p-8">
-<h4 class="text-2xl font-headline font-bold mb-3">Manajemen Bencana</h4>
-<p class="text-secondary mb-6 line-clamp-3">Pelatihan berbasis lapangan tentang logistik darurat skala besar, sistem triase, dan strategi ketahanan masyarakat.</p>
-<div class="flex items-center justify-between pt-6 border-t border-surface-container-high">
-<span class="text-sm font-semibold flex items-center gap-2"><span class="material-symbols-outlined text-sm" data-icon="calendar_today"><span class="material-symbols-outlined text-sm" data-icon="calendar_today">calendar_today</span> 7 Hari</span> 7 Days</span>
-<button class="text-primary font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">Detail <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span></button>
-</div>
-</div>
-</div>
+<p class="text-xl font-headline font-bold">Sertifikat Resmi PMI</p>
 </div>
 </div>
 </section>
@@ -209,7 +150,7 @@
 <div class="md:w-1/3 bg-on-surface p-12 text-white flex flex-col justify-center">
 <h3 class="text-4xl font-headline font-extrabold mb-6 leading-tight">Siklus Pelatihan <br/>Mendatang</h3>
 <p class="opacity-70 mb-8 font-light">Kelas dibatasi untuk 20 peserta untuk memastikan pengawasan praktis berkualitas tinggi. Amankan tempat Anda lebih awal.</p>
-<a class="inline-flex items-center gap-2 text-primary-fixed font-bold hover:underline" href="#">Unduh kalender penuh 2024 <span class="material-symbols-outlined" data-icon="download">download</span></a>
+<!-- <a class="inline-flex items-center gap-2 text-primary-fixed font-bold hover:underline" href="#">Unduh kalender penuh 2024 <span class="material-symbols-outlined" data-icon="download">download</span></a> -->
 </div>
 <div class="md:w-2/3 p-12 overflow-x-auto">
 <table class="w-full text-left">
@@ -217,7 +158,6 @@
 <tr class="border-b border-surface-container-high">
 <th class="pb-4 font-headline text-xs font-bold tracking-widest text-secondary uppercase">Nama Kursus</th>
 <th class="pb-4 font-headline text-xs font-bold tracking-widest text-secondary uppercase">Rentang Tanggal</th>
-<th class="pb-4 font-headline text-xs font-bold tracking-widest text-secondary uppercase">Ketersediaan</th>
 <th class="pb-4"></th>
 </tr>
 </thead>
@@ -225,46 +165,46 @@
 <tr>
 <td class="py-6 pr-4">
 <p class="font-bold">Pertolongan Pertama Anak</p>
-<p class="text-xs text-secondary">Jakarta Training Center</p>
+<p class="text-xs text-secondary">PMI Magetan</p>
 </td>
 <td class="py-6 pr-4 text-sm font-medium">Nov 12 - 14, 2024</td>
-<td class="py-6 pr-4">
+<!-- <td class="py-6 pr-4">
 <div class="flex items-center gap-2">
 <div class="w-2 h-2 rounded-full bg-green-500"></div>
 <span class="text-sm font-medium text-green-700">Tersedia</span>
-</div>
+</div> -->
 </td>
 <td class="py-6 text-right">
-<button class="px-4 py-2 border border-primary text-primary rounded-lg text-sm font-bold hover:bg-primary-container hover:text-on-primary transition-all">Pesan</button>
+<button class="px-4 py-2 border border-primary-softcontainer text-primary-softcontainer rounded-lg text-sm font-bold hover:bg-primary-softcontainer hover:text-white transition-all">Daftar</button>
 </td>
 </tr>
 <tr>
 <td class="py-6 pr-4">
 <p class="font-bold">Keselamatan Industri Tingkat 2</p>
-<p class="text-xs text-secondary">Bandung Hub</p>
+<p class="text-xs text-secondary">PMI Magetan</p>
 </td>
 <td class="py-6 pr-4 text-sm font-medium">Nov 18 - 22, 2024</td>
-<td class="py-6 pr-4">
+<!-- <td class="py-6 pr-4">
 <div class="flex items-center gap-2">
 <div class="w-2 h-2 rounded-full bg-orange-500"></div>
 <span class="text-sm font-medium text-orange-700">Hampir Penuh</span>
-</div>
+</div> -->
 </td>
 <td class="py-6 text-right">
-<button class="px-4 py-2 border border-primary text-primary rounded-lg text-sm font-bold hover:bg-primary-container hover:text-on-primary transition-all">Pesan</button>
+<button class="px-4 py-2 border border-primary-softcontainer text-primary-softcontainer rounded-lg text-sm font-bold hover:bg-primary-softcontainer hover:text-white transition-all">Daftar</button>
 </td>
 </tr>
 <tr>
 <td class="py-6 pr-4">
 <p class="font-bold">Sertifikasi Penyelamatan Air</p>
-<p class="text-xs text-secondary">Bali Regional Office</p>
+<p class="text-xs text-secondary">PMI Magetan</p>
 </td>
 <td class="py-6 pr-4 text-sm font-medium">Dec 02 - 07, 2024</td>
-<td class="py-6 pr-4">
+<!-- <td class="py-6 pr-4">
 <div class="flex items-center gap-2">
 <div class="w-2 h-2 rounded-full bg-red-500"></div>
 <span class="text-sm font-medium text-red-700">Ditutup</span>
-</div>
+</div> -->
 </td>
 <td class="py-6 text-right">
 <button class="px-4 py-2 border border-secondary text-secondary rounded-lg text-sm font-bold cursor-not-allowed opacity-50">Daftar Tunggu</button>

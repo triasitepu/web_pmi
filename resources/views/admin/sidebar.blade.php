@@ -90,8 +90,8 @@
 <aside class="fixed left-0 top-0 h-full flex flex-col bg-slate-50 dark:bg-slate-900 h-screen w-72 border-r-0 z-50">
 <div class="p-8">
 <div class="flex items-center gap-3 mb-10">
-<div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center">
-<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">health_and_safety</span>
+<div class="w-20 h-26 bg-white rounded-lg flex items-center justify-center overflow-hidden">
+    <img src="{{ asset('images/logo.png') }}" alt="Logo" class="w-full h-full object-cover">
 </div>
 <div>
 <div class="text-lg font-bold text-slate-900 dark:text-white leading-tight">PMI Magetan</div>
