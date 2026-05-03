@@ -112,7 +112,7 @@
 <section class="relative min-h-[716px] flex items-center overflow-hidden">
 <div class="absolute inset-0 z-0">
 <img class="w-full h-full object-cover"
-src="https://images.unsplash.com/photo-1584515933487-779824d29309"
+src="{{ url('storage/' . $headline->foto) }}"
 alt="Tim medis dan relawan kemanusiaan">
 <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent"></div>
 </div>
@@ -120,7 +120,7 @@ alt="Tim medis dan relawan kemanusiaan">
 <div class="max-w-2xl">
 <!-- <span class="text-primary font-headline font-extrabold tracking-widest text-xs uppercase mb-4 block">JADILAH PAHLAWAN</span> -->
 <h1 class="text-6xl md:text-8xl font-headline font-black text-on-surface leading-tight tracking-tighter mb-6">Kemanusiaan <br/><span class="text-primary-softcontainer">Dimulai Dari Anda.</span></h1>
-<p class="text-lg text-secondary leading-relaxed mb-8 max-w-lg">Bergabunglah dengan ribuan relawan berdedikasi dalam memberikan bantuan penyelamatan jiwa dan harapan bagi masyarakat yang membutuhkan di seluruh negeri.</p>
+<p class="text-lg text-secondary leading-relaxed mb-8 max-w-lg"> {{ $headline->isi ?? 'Deskripsi headline belum tersedia.' }} </p>
 <div class="flex flex-wrap gap-4">
 <a class="bg-primary-softcontainer text-on-primary px-8 py-4 rounded-lg font-headline font-bold text-base shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform" href="#register">Daftar Relawan</a>
 <a class="bg-surface-container-highest text-on-surface px-8 py-4 rounded-lg font-headline font-bold text-base hover:bg-surface-container-high transition-colors" href="#pmr">Jelajahi Program</a>
@@ -381,9 +381,8 @@ $data = explode("\n", $syarattsr->isi ?? '');
 </div>
 <div class="flex flex-col sm:flex-row justify-center gap-4">
 
-<a href="{{ $formulir->isi ?? '#' }}" 
-   target="_blank"
-   class="bg-white text-black px-10 py-5 rounded-md font-extrabold shadow-xl 
+<a href="{{ asset('storage/' . $formulir->foto) }}" target="_blank"
+ class="bg-white text-black px-10 py-5 rounded-md font-extrabold shadow-xl 
           hover:bg-primary-softcontainer hover:text-on-background transition-all duration-300">
    Download Formulir Umum
 </a>

@@ -39,7 +39,7 @@
                 "surface-container-highest": "#e2e2e2",
                 "inverse-primary": "#ffb4ac",
                 "on-secondary": "#ffffff",
-                "primary-container": "#e21f26",
+                "primary-container": "#B77466",
                 "primary-fixed": "#ffdad6",
                 "on-secondary-container": "#646464",
                 "on-error": "#ffffff",
@@ -104,14 +104,14 @@
 
    <!-- ==================== BANJIR SECTION ==================== -->
 <section class="space-y-8 mb-20" id="banjir">
-    <div class="flex items-center space-x-4 border-l-4 border-primary pl-4">
-        <span class="material-symbols-outlined text-primary text-4xl">flood</span>
+    <div class="flex items-center space-x-4 border-l-4 border-primary-container pl-4">
+        <span class="material-symbols-outlined text-primary-container text-4xl">flood</span>
         <h2 class="text-3xl font-bold">Banjir (Flood)</h2>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Sebelum: Persiapan -->
-        <div class="bg-surface-container-lowest p-8 rounded-3xl shadow-sm border-b-4 border-tertiary">
+        <div class="bg-primary-container-lowest p-8 rounded-3xl shadow-sm border-b-4 border-tertiary">
             <div class="flex justify-between items-start mb-6">
                 <span class="text-xs font-bold uppercase tracking-widest text-tertiary">TAHAP 01</span>
                 <h3 class="text-2xl font-bold">Sebelum: Persiapan</h3>
@@ -119,36 +119,36 @@
             <p class="text-secondary leading-relaxed">
                 Siapkan <strong>Tas Siaga Bencana</strong> berisi: Dokumen penting (dalam plastik kedap air), pakaian ganti, makanan kering, air minum, obat-obatan, dan lampu senter.
             </p>
-            <div class="mt-6 bg-surface-container-low p-5 rounded-2xl">
+            <div class="mt-6 bg-primary-container-low p-5 rounded-2xl">
                 <p class="text-xs font-semibold text-secondary mb-1">TIP KUNCI</p>
                 <p class="text-sm italic">Letakkan barang elektronik dan dokumen penting di tempat yang lebih tinggi.</p>
             </div>
         </div>
 
         <!-- Saat: Tindakan -->
-        <div class="bg-surface-container-lowest p-8 rounded-3xl shadow-sm border-b-4 border-primary-container">
+        <div class="bg-primary-container-lowest p-8 rounded-3xl shadow-sm border-b-4 border-primary-container">
             <div class="flex justify-between items-start mb-6">
-                <span class="text-xs font-bold uppercase tracking-widest text-primary">TAHAP 02</span>
-                <h3 class="text-2xl font-bold">Saat: Tindakan</h3>
-            </div>
+                <span class="text-xs font-bold uppercase tracking-widest text-primary-container">TAHAP 02</span>
+                    <h3 class="text-2xl font-bold">Saat: Tindakan</h3>
+                </div>
             <ul class="space-y-4 text-secondary">
                 <li class="flex items-start gap-3">
-                    <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                    <span class="material-symbols-outlined text-primary-container mt-1">check_circle</span>
                     <span>Matikan aliran listrik dan gas di rumah.</span>
                 </li>
                 <li class="flex items-start gap-3">
-                    <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                    <span class="material-symbols-outlined  mt-1">check_circle</span>
                     <span>Evakuasi segera ke tempat yang lebih tinggi.</span>
                 </li>
                 <li class="flex items-start gap-3">
-                    <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                    <span class="material-symbols-outlined text-primary-container mt-1">check_circle</span>
                     <span>Hindari berjalan atau berkendara di air mengalir.</span>
                 </li>
             </ul>
         </div>
 
         <!-- Sesudah: Higienitas -->
-        <div class="md:col-span-2 bg-surface-container-lowest p-8 rounded-3xl shadow-sm border-b-4 border-secondary flex flex-col lg:flex-row gap-8 items-center">
+        <div class="md:col-span-2 bg-primary-container-lowest p-8 rounded-3xl shadow-sm border-b-4 border-secondary flex flex-col lg:flex-row gap-8 items-center">
             <div class="w-full lg:w-2/5">
                 <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB11QIL_jIyushLVqJElft25o1NM4LWdP_p2JUePNEKdTuvDzbs5Aw-cRsZaBLelXZKt7oCdHX1WcxZKt5LCsxSxdSRudZ_kzevpQsUFRNiKytM7yHfmzzIzmO_BaK8RaISQCPri74Uv8w_InPu0ftZM8k8NTGFoPeLGrDaGEzQP4w9vfLkR4gUTEJfZomqcW-Sol8qL36_viWTUTwnabK7PhVE7KYxG31MVQlioJfStr9h_K-H5C9PoEXmULbqGvle3uhanQC-Fw" 
                      alt="Hygiene kit after flood" 
@@ -170,13 +170,13 @@
 
 <!-- ==================== GEMPA BUMI SECTION ==================== -->
 <section class="space-y-8 mb-20" id="gempa">
-    <div class="flex items-center space-x-4 border-l-4 border-primary pl-4">
-        <span class="material-symbols-outlined text-primary text-4xl">volcano</span>
+    <div class="flex items-center space-x-4 border-l-4 border-primary-container pl-4">
+        <span class="material-symbols-outlined text-primary-container text-4xl">volcano</span>
         <h2 class="text-3xl font-bold">Gempa Bumi (Earthquake)</h2>
     </div>
 
     <div class="bg-on-primary-container p-1 rounded-3xl overflow-hidden">
-        <div class="bg-surface-container-lowest p-8 md:p-12 rounded-3xl space-y-12">
+        <div class="bg-primary-container-lowest p-8 md:p-12 rounded-3xl space-y-12">
             <!-- DROP - COVER - HOLD ON -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="text-center space-y-4">
@@ -203,9 +203,9 @@
             </div>
 
             <!-- Additional Info -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 pt-8 border-t border-surface-container-high">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 pt-8 border-t border-primary-container-high">
                 <div class="space-y-4">
-                    <h4 class="text-primary font-bold flex items-center gap-2 text-lg">
+                    <h4 class="text-primary-container font-bold flex items-center gap-2 text-lg">
                         <span class="material-symbols-outlined">home</span> 
                         Identifikasi Titik Aman
                     </h4>
@@ -216,7 +216,7 @@
                     </ul>
                 </div>
                 <div class="space-y-4">
-                    <h4 class="text-primary font-bold flex items-center gap-2 text-lg">
+                    <h4 class="text-primary-container font-bold flex items-center gap-2 text-lg">
                         <span class="material-symbols-outlined">exit_to_app</span> 
                         Prosedur Evakuasi
                     </h4>
@@ -233,30 +233,30 @@
 
 <!-- ==================== TANAH LONGSOR SECTION ==================== -->
 <section class="space-y-8 mb-20" id="longsor">
-    <div class="flex items-center space-x-4 border-l-4 border-primary pl-4">
-        <span class="material-symbols-outlined text-primary text-4xl">landscape</span>
+    <div class="flex items-center space-x-4 border-l-4 border-primary-container pl-4">
+        <span class="material-symbols-outlined text-primary-container text-4xl">landscape</span>
         <h2 class="text-3xl font-bold">Tanah Longsor (Landslide)</h2>
     </div>
 
-    <div class="bg-surface-container-low rounded-3xl p-8 lg:p-12">
+    <div class="bg-primary-container-low rounded-3xl p-8 lg:p-12">
         <div class="flex flex-col lg:flex-row gap-12">
             <div class="lg:w-1/2 space-y-6">
-                <span class="px-5 py-2 bg-red-500 text-white text-xs font-bold rounded-full">Fokus: Lereng Gunung Lawu</span>
+                <span class="px-5 py-2 bg-primary-container text-white text-xs font-bold rounded-full">Fokus: Lereng Gunung Lawu</span>
                 <h3 class="text-2xl font-bold leading-tight">Waspadai Tanda-Tanda Tanah Longsor</h3>
                 <p class="text-secondary leading-relaxed">
                     Khususnya warga di kawasan Plaosan, Poncol, dan lereng Gunung Lawu lainnya. Perhatikan perubahan lingkungan saat musim hujan.
                 </p>
 
                 <div class="space-y-4">
-                    <div class="flex gap-4 p-5 bg-surface-container-lowest rounded-2xl border-l-4 border-red-500">
+                    <div class="flex gap-4 p-5 bg-primary-container-lowest rounded-2xl border-l-4 border-primary-container">
                         <span class="material-symbols-outlined text-red-500 text-2xl">warning</span>
                         <div>
                             <h5 class="font-bold">Retakan pada tanah atau bangunan</h5>
                             <p class="text-sm text-secondary">Munculnya retakan baru di tanah, jalan, atau dinding rumah.</p>
                         </div>
                     </div>
-                    <div class="flex gap-4 p-5 bg-surface-container-lowest rounded-2xl border-l-4 border-red-500">
-                        <span class="material-symbols-outlined text-red-500 text-2xl">nature</span>
+                    <div class="flex gap-4 p-5 bg-primary-container-lowest rounded-2xl border-l-4 border-primary-container">
+                        <span class="material-symbols-outlined text-primary-container text-2xl">nature</span>
                         <div>
                             <h5 class="font-bold">Pohon dan tiang miring</h5>
                             <p class="text-sm text-secondary">Pohon atau tiang listrik yang tiba-tiba condong ke arah lereng.</p>
@@ -270,7 +270,7 @@
                      alt="Tanah Longsor Gunung Lawu" 
                      class="absolute inset-0 w-full h-full object-cover">
                 <div class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md p-6 rounded-2xl">
-                    <h5 class="font-bold text-primary flex items-center gap-2 mb-2">
+                    <h5 class="font-bold text-primary-container flex items-center gap-2 mb-2">
                         <span class="material-symbols-outlined">route</span>
                         Rute Evakuasi
                     </h5>
@@ -285,8 +285,8 @@
 
 <!-- ==================== ABU VULKANIK / GUNUNG API SECTION ==================== -->
 <section class="space-y-8 mb-20" id="gunungapi">
-    <div class="flex items-center space-x-4 border-l-4 border-primary pl-4">
-        <span class="material-symbols-outlined text-primary text-4xl">terrain</span>
+    <div class="flex items-center space-x-4 border-l-4 border-primary-container pl-4">
+        <span class="material-symbols-outlined text-primary-container text-4xl">terrain</span>
         <h2 class="text-3xl font-bold">Abu Vulkanik (Gunung Api)</h2>
     </div>
 
@@ -294,17 +294,17 @@
         <!-- Pelindung Abu -->
         <div class="bg-surface-container-lowest p-8 rounded-3xl shadow-sm border-b-4 border-primary-container">
             <h4 class="font-bold text-xl flex items-center gap-3 mb-4">
-                <span class="material-symbols-outlined text-primary">masks</span>
+                <span class="material-symbols-outlined text-primary-container">masks</span>
                 Pelindung Diri dari Abu Vulkanik
             </h4>
             <p class="text-secondary mb-6">Paparan abu vulkanik dapat mengganggu pernapasan dan mata. Siapkan perlindungan berikut:</p>
             <div class="grid grid-cols-2 gap-4">
                 <div class="bg-surface-container p-6 rounded-2xl text-center">
-                    <span class="material-symbols-outlined text-4xl text-primary mb-2 block">masks</span>
+                    <span class="material-symbols-outlined text-4xl text-primary-container mb-2 block">masks</span>
                     <p class="font-semibold text-sm">Masker N95 atau Masker Bedah</p>
                 </div>
                 <div class="bg-surface-container p-6 rounded-2xl text-center">
-                    <span class="material-symbols-outlined text-4xl text-primary mb-2 block">visibility</span>
+                    <span class="material-symbols-outlined text-4xl text-primary-container mb-2 block">visibility</span>
                     <p class="font-semibold text-sm">Kacamata Pelindung (Goggles)</p>
                 </div>
             </div>
@@ -325,18 +325,10 @@
             </a>
         </div>
     </div>
-
-    <!-- Zona Rawan -->
-    <div class="bg-surface-container-lowest p-8 rounded-3xl border-l-8 border-primary">
-        <h4 class="font-bold text-xl mb-3">Zona Rawan Bencana (ZRB) Gunung Lawu</h4>
-        <p class="text-secondary">
-            Pahami peta zona rawan dan arah angin untuk mengantisipasi sebaran abu vulkanik. Ikuti instruksi evakuasi dari pihak berwenang.
-        </p>
-    </div>
 </section>
 
     <!-- Download Resources -->
-    <section class="bg-on-tertiary-fixed text-on-tertiary p-10 rounded-3xl space-y-8 mt-16">
+    <!-- <section class="bg-on-tertiary-fixed text-on-tertiary p-10 rounded-3xl space-y-8 mt-16">
         <div class="flex flex-col md:flex-row justify-between items-center gap-8">
             <div class="space-y-3 text-center md:text-left">
                 <h2 class="text-3xl font-bold">Unduh Panduan Lengkap</h2>
@@ -353,12 +345,12 @@
                 </button>
             </div>
         </div>
-    </section>
+    </section> -->
 
 </main>
 
 <!-- Bottom Navigation (Mobile) -->
-<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 rounded-t-3xl bg-white/90 dark:bg-slate-950/90 backdrop-blur-2xl shadow-[0_-8px_30px_rgb(0,0,0,0.04)]">
+<!-- <nav class="md:hidden fixed bottom-0 left-0 w-full z-50 rounded-t-3xl bg-white/90 dark:bg-slate-950/90 backdrop-blur-2xl shadow-[0_-8px_30px_rgb(0,0,0,0.04)]">
     <div class="flex justify-around items-center px-4 pt-3 pb-8">
         <div class="flex flex-col items-center justify-center text-slate-500">
             <span class="material-symbols-outlined">home</span>
@@ -377,5 +369,5 @@
             <span class="font-inter text-[10px] font-semibold uppercase tracking-wider">Profile</span>
         </div>
     </div>
-</nav>
+</nav> -->
 </body></html>

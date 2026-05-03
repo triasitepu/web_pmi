@@ -31,7 +31,7 @@ class SubmenuRelawanController extends Controller
             'relawan_id'   => 'required|exists:relawan,id',
             'nama_submenu' => 'required|string|max:255',
             'isi'          => 'required',
-            'foto'         => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'foto'         => 'nullable|mimes:jpg,jpeg,png,pdf|max:5120 ',
             'urutan'       => 'nullable|integer|min:0'
         ]);
 
@@ -70,7 +70,7 @@ class SubmenuRelawanController extends Controller
             'relawan_id'   => 'required|exists:relawan,id',
             'nama_submenu' => 'required|string|max:255',
             'isi'          => 'required',
-            'foto'         => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'foto'         => 'nullable|mimes:jpg,jpeg,png,pdf|max:5120 ',
             'urutan'       => 'nullable|integer|min:0',
             'is_active'    => 'nullable|boolean'
         ]);
@@ -127,7 +127,8 @@ class SubmenuRelawanController extends Controller
     $syaratpmr = SubmenuRelawan::where('slug', 'syaratpmr')->first();
     $syaratksr = SubmenuRelawan::where('slug', 'syaratksr')->first();
     $syarattsr = SubmenuRelawan::where('slug', 'syarattsr')->first();
+    $headline = SubmenuRelawan::where('slug', 'headline')->first();
 
-    return view('relawan', compact('totalrelawan', 'misi', 'formulir', 'persyaratan', 'syaratpmr', 'syaratksr', 'syarattsr'));
+    return view('relawan', compact('totalrelawan', 'misi', 'formulir', 'persyaratan', 'syaratpmr', 'syaratksr', 'syarattsr', 'headline'));
     }
 }

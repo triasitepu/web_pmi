@@ -66,20 +66,37 @@
     {{-- Foto --}}
     <div class="col-md-4">
       <div class="card border-0 shadow-sm">
-        @if($submenu->foto)
-          <img src="{{ asset('storage/' . $submenu->foto) }}" 
-               alt="{{ $submenu->nama_submenu }}" 
-               class="card-img-top" 
-               style="height: 300px; object-fit: cover;">
-        @else
-          <div class="card-img-top bg-light d-flex align-items-center justify-content-center" 
-               style="height: 300px;">
-            <div class="text-center text-muted">
-              <i class="bi bi-image" style="font-size: 3rem;"></i>
-              <p class="mt-2">Tidak ada foto</p>
-            </div>
-          </div>
-        @endif
+       @php
+  $file = $submenu->foto;
+  $ext = $file ? strtolower(pathinfo($file, PATHINFO_EXTENSION)) : null;
+@endphp
+
+@if($file && in_array($ext, ['jpg','jpeg','png']))
+  {{-- ✅ Gambar --}}
+  <img src="{{ asset('storage/' . $file) }}" 
+       class="card-img-top" 
+       style="height: 300px; object-fit: cover;">
+
+@elseif($file && $ext === 'pdf')
+  {{-- ✅ PDF --}}
+  <div class="card-img-top bg-light d-flex align-items-center justify-content-center" 
+       style="height: 300px;">
+    <a href="{{ asset('storage/' . $file) }}" target="_blank" class="text-center text-decoration-none">
+      <i class="bi bi-file-earmark-pdf" style="font-size: 3rem; color:red;"></i>
+      <p class="mt-2">Lihat PDF</p>
+    </a>
+  </div>
+
+@else
+  {{-- ❌ Tidak ada file --}}
+  <div class="card-img-top bg-light d-flex align-items-center justify-content-center" 
+       style="height: 300px;">
+    <div class="text-center text-muted">
+      <i class="bi bi-image" style="font-size: 3rem;"></i>
+      <p class="mt-2">Tidak ada file</p>
+    </div>
+  </div>
+@endif
         <div class="card-body">
           <h6 class="text-muted mb-2">Informasi</h6>
           <table class="table table-sm table-borderless">

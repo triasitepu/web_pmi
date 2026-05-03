@@ -24,7 +24,7 @@ class AuthController extends Controller
     return view('admin.users.index', compact('penggunas'));
 }
 
-    // 🔐 Tampilkan halaman login
+    // Tampilkan halaman login
     public function showLogin()
     {
         if (Auth::check()) {
@@ -39,7 +39,7 @@ class AuthController extends Controller
         return view('login');
     }
 
-    // 🔑 Proses login
+    //  Proses login
     public function login(Request $request)
     {
         $request->validate([
@@ -65,10 +65,11 @@ class AuthController extends Controller
         $request->session()->regenerate();
         $role = strtolower($pengguna->peran);
 
-
-        if ($role === 'superadmin') {
+        if (in_array($role, ['superadmin', 'admin'])) {
             return redirect()->route('admin.dashboard');
-        } elseif ($role === 'admin') {
+        }
+
+        if ($role === 'admin_donor') {
             return redirect()->route('admin.dashboard');
         }
 
@@ -76,7 +77,7 @@ class AuthController extends Controller
         return back()->withErrors(['email' => 'Akun tidak memiliki akses']);
             }
 
-    // 🚪 Logout
+    //  Logout
     public function logout()
     {
         Auth::logout();
@@ -85,14 +86,14 @@ class AuthController extends Controller
         return redirect()->route('login');
     }
 
-    // 📊 Dashboard Admin
+    // Dashboard Admin
     public function dashboard()
     {
         $menus = Menu::all()->groupBy('url');
         return view('admin.dashboard', compact('menus'));
     }
 
-    // 👤 Halaman Tambah Admin (khusus superadmin)
+    // Halaman Tambah Admin (khusus superadmin)
     public function addAdmin()
     {
         $penggunas = Pengguna::whereIn('peran', ['admin', 'superadmin'])->get();

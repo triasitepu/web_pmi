@@ -52,87 +52,29 @@ Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-/*
-|--------------------------------------------------------------------------
-| ADMIN AREA
-|--------------------------------------------------------------------------
-*/
 
-Route::middleware(['auth', 'role:admin,superadmin'])
+Route::middleware(['auth', 'role:superadmin,admin,admin_donor'])
     ->prefix('admin')
     ->name('admin.')
     ->group(function () {
 
-    Route::middleware(['auth'])->group(function () {
-
-    Route::get('/kelola-admin', [UserController::class, 'index'])
-        ->name('admin.index');
-
-    Route::get('/kelola-admin/create', [UserController::class, 'create'])
-        ->name('admin.create');
-
-    Route::post('/kelola-admin/store', [UserController::class, 'store'])
-        ->name('admin.store');
-
-    Route::get('/kelola-admin/edit/{id_pengguna}', [UserController::class, 'edit'])
-        ->name('admin.edit');
-
-    Route::post('/kelola-admin/update/{id_pengguna}', [UserController::class, 'update'])
-        ->name('admin.update');
-
-    Route::post('/kelola-admin/toggle/{id_pengguna}', [UserController::class, 'toggleStatus'])
-        ->name('admin.toggle');
-    Route::delete('/kelola-admin/destroy/{id_pengguna}', [UserController::class, 'destroy'])
-        ->name('admin.destroy');
+    Route::get('/dashboard', [DashboardController::class, 'index'])
+        ->name('dashboard');
 
 });
 
-        // Dashboard
-        Route::get('/dashboard', [DashboardController::class, 'index'])
-            ->name('dashboard');
+/*
+|--------------------------------------------------------------------------
+| ADMIN DONOR AREA
+|--------------------------------------------------------------------------
+*/
 
-         /*
-        |--------------------------------------------------------------------------
-        | MENU  PROFIL PMI
-        |--------------------------------------------------------------------------
-        */
+Route::middleware(['auth', 'role:superadmin,admin,admin_donor'])
+    ->prefix('admin')
+    ->name('admin.')
+    ->group(function () {
 
-        Route::prefix('profil')->name('profil.')->group(function () {
-            Route::get('/', [ProfilController::class, 'index'])
-                ->name('index');
-
-            Route::get('/create', [ProfilController::class, 'create'])
-                ->name('create');
-
-            Route::post('/', [ProfilController::class, 'store'])
-                ->name('store');
-
-            Route::get('/{id}/edit', [ProfilController::class, 'edit'])
-                ->name('edit');
-
-            Route::put('/{id}', [ProfilController::class, 'update'])
-                ->name('update');
-
-            Route::delete('/{id}', [ProfilController::class, 'destroy'])
-                ->name('destroy');
-        });
-         /*
-        |--------------------------------------------------------------------------
-        | SUBMENU PROFIL(CRUD)
-        |--------------------------------------------------------------------------
-        */
-         Route::prefix('profil-submenu')->name('profil-submenu.')->group(function () {
-
-            Route::get('/', [SubmenuProfilController::class, 'index'])->name('index');
-            Route::get('/create', [SubmenuProfilController::class, 'create'])->name('create');
-            Route::post('/', [SubmenuProfilController::class, 'store'])->name('store');
-            Route::get('/{id}', [SubmenuProfilController::class, 'show'])->name('show');
-            Route::get('/{id}/edit', [SubmenuProfilController::class, 'edit'])->name('edit');
-            Route::put('/{id}', [SubmenuProfilController::class, 'update'])->name('update');
-            Route::delete('/{id}', [SubmenuProfilController::class, 'destroy'])->name('destroy');
-
-        });
-         /*
+        /*
         |--------------------------------------------------------------------------
         | MENU DONOR DARAH
         |--------------------------------------------------------------------------
@@ -176,6 +118,86 @@ Route::middleware(['auth', 'role:admin,superadmin'])
             Route::delete('/{id}', [SubmenuDonorController::class, 'destroy'])
                 ->name('destroy');
         });
+    });
+
+
+/*
+|--------------------------------------------------------------------------
+| ADMIN AREA
+|--------------------------------------------------------------------------
+*/
+
+Route::middleware(['auth', 'role:admin,superadmin'])
+    ->prefix('admin')
+    ->name('admin.')
+    ->group(function () {
+
+    Route::middleware(['auth'])->group(function () {
+
+    Route::get('/kelola-admin', [UserController::class, 'index'])
+        ->name('admin.index');
+
+    Route::get('/kelola-admin/create', [UserController::class, 'create'])
+        ->name('admin.create');
+
+    Route::post('/kelola-admin/store', [UserController::class, 'store'])
+        ->name('admin.store');
+
+    Route::get('/kelola-admin/edit/{id_pengguna}', [UserController::class, 'edit'])
+        ->name('admin.edit');
+
+    Route::post('/kelola-admin/update/{id_pengguna}', [UserController::class, 'update'])
+        ->name('admin.update');
+
+    Route::post('/kelola-admin/toggle/{id_pengguna}', [UserController::class, 'toggleStatus'])
+        ->name('admin.toggle');
+    Route::delete('/kelola-admin/destroy/{id_pengguna}', [UserController::class, 'destroy'])
+        ->name('admin.destroy');
+
+});
+
+         /*
+        |--------------------------------------------------------------------------
+        | MENU  PROFIL PMI
+        |--------------------------------------------------------------------------
+        */
+
+        Route::prefix('profil')->name('profil.')->group(function () {
+            Route::get('/', [ProfilController::class, 'index'])
+                ->name('index');
+
+            Route::get('/create', [ProfilController::class, 'create'])
+                ->name('create');
+
+            Route::post('/', [ProfilController::class, 'store'])
+                ->name('store');
+
+            Route::get('/{id}/edit', [ProfilController::class, 'edit'])
+                ->name('edit');
+
+            Route::put('/{id}', [ProfilController::class, 'update'])
+                ->name('update');
+
+            Route::delete('/{id}', [ProfilController::class, 'destroy'])
+                ->name('destroy');
+        });
+         /*
+        |--------------------------------------------------------------------------
+        | SUBMENU PROFIL(CRUD)
+        |--------------------------------------------------------------------------
+        */
+         Route::prefix('profil-submenu')->name('profil-submenu.')->group(function () {
+
+            Route::get('/', [SubmenuProfilController::class, 'index'])->name('index');
+            Route::get('/create', [SubmenuProfilController::class, 'create'])->name('create');
+            Route::post('/', [SubmenuProfilController::class, 'store'])->name('store');
+            Route::get('/{id}', [SubmenuProfilController::class, 'show'])->name('show');
+            Route::get('/{id}/edit', [SubmenuProfilController::class, 'edit'])->name('edit');
+            Route::put('/{id}', [SubmenuProfilController::class, 'update'])->name('update');
+            Route::delete('/{id}', [SubmenuProfilController::class, 'destroy'])->name('destroy');
+
+        });
+        
 
           /*
         |--------------------------------------------------------------------------

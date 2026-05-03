@@ -102,7 +102,7 @@
             @if($submenu->foto)
                 <div class="mb-3">
                     <img src="{{ asset('storage/' . $submenu->foto) }}"
-                         alt="Foto Submenu"
+                         alt="File"
                          width="200"
                          class="img-thumbnail shadow-sm">
                 </div>

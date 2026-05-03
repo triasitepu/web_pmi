@@ -109,14 +109,14 @@
 <!-- Hero Section -->
 <section class="relative h-[716px] flex items-center overflow-hidden">
 <div class="absolute inset-0 z-0">
-<img class="w-full h-full object-cover" data-alt="medical professional teaching first aid to a group of diverse students in a bright modern classroom with warm natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqkPEKIXZlC4nWY8aOsc8CtU8bMaYpNGUWNobwe_sjCe6h0bXDmerdmIiOY0EnTQJQO55K3XCYPkhjscGG7fobFR6h6X6MEtaQcuGxcv0eispqFZTeTjnxBRmB2z28VyzPLqbDg908McToVCpNd2Bzn8YWzIO6fBasOzO0ln1fG-EGmv4m9f0tbLCJvlu-1zFOes8wlpC3ndp-OHdlvj9xp-sLkO5UIaqA2lImIh4DO5T8l1Blkw1CpQyoy8dHjTSWV2eAkHiAcA"/>
+<img class="w-full h-full object-cover" data-alt="medical professional teaching first aid to a group of diverse students in a bright modern classroom with warm natural light" src="{{ url('storage/' . $headline->foto) }}"/>
 <div class="absolute inset-0 bg-gradient-to-r from-on-surface/80 to-transparent"></div>
 </div>
 <div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
 <div class="max-w-2xl">
 <!-- <span class="inline-block py-1 px-3 bg-primary-container text-on-primary font-label text-xs font-bold tracking-widest uppercase mb-6 rounded-sm">Diklat &amp; Edukasi</span> -->
-<h1 class="text-6xl md:text-8xl font-headline font-extrabold text-white leading-[0.9] tracking-tighter mb-8">Memberdayakan <br/><span class="text-primary-softcontainer">Penyelamat.</span></h1>
-<p class="text-xl text-surface-container-low font-body leading-relaxed max-w-lg mb-10">Bergabunglah dengan tradisi Kemanusiaan. Kuasai keterampilan yang menjembatani celah antara krisis dan perawatan dengan program Diklat bersertifikat kami.</p>
+<h1 class="text-6xl md:text-8xl font-headline font-extrabold text-white leading-[0.9] tracking-tighter mb-8">Diklat <br/><span class="text-primary-softcontainer">Bersertifikat.</span></h1>
+<p class="text-xl text-surface-container-low font-body leading-relaxed max-w-lg mb-10"> {{ $headline->isi ?? 'Deskripsi headline belum tersedia.' }} </p>
 <div class="flex flex-wrap gap-4">
 <!-- <button class="px-8 py-4 bg-white/10 backdrop-blur-md text-white border border-white/20 font-headline font-bold rounded-lg hover:bg-primary-softcontainer transition-all">Daftar Kursus</button> -->
 <a class="px-8 py-4 bg-white/10 backdrop-blur-md text-white border border-white/20 font-headline font-bold rounded-lg hover:bg-primary-softcontainer transition-all" href="#jadwal">Lihat Jadwal</a>
@@ -164,10 +164,10 @@
 <tbody class="divide-y divide-surface-container-high">
 <tr>
 <td class="py-6 pr-4">
-<p class="font-bold">Pertolongan Pertama Anak</p>
+<p class="font-bold">Pelatihan Pertolongan Pertama </p>
 <p class="text-xs text-secondary">PMI Magetan</p>
 </td>
-<td class="py-6 pr-4 text-sm font-medium">Nov 12 - 14, 2024</td>
+<td class="py-6 pr-4 text-sm font-medium">{{ $pertolongan_pertama->isi ?? 'Tanggal belum tersedia' }}</td>
 <!-- <td class="py-6 pr-4">
 <div class="flex items-center gap-2">
 <div class="w-2 h-2 rounded-full bg-green-500"></div>
@@ -180,10 +180,10 @@
 </tr>
 <tr>
 <td class="py-6 pr-4">
-<p class="font-bold">Keselamatan Industri Tingkat 2</p>
+<p class="font-bold">Manajemen Bencana</p>
 <p class="text-xs text-secondary">PMI Magetan</p>
 </td>
-<td class="py-6 pr-4 text-sm font-medium">Nov 18 - 22, 2024</td>
+<td class="py-6 pr-4 text-sm font-medium">{{ $manajemen_bencana->isi ?? 'Tanggal belum tersedia' }}</td>
 <!-- <td class="py-6 pr-4">
 <div class="flex items-center gap-2">
 <div class="w-2 h-2 rounded-full bg-orange-500"></div>
@@ -196,10 +196,10 @@
 </tr>
 <tr>
 <td class="py-6 pr-4">
-<p class="font-bold">Sertifikasi Penyelamatan Air</p>
+<p class="font-bold">Pembinaan PMR, TSR dan KSR</p>
 <p class="text-xs text-secondary">PMI Magetan</p>
 </td>
-<td class="py-6 pr-4 text-sm font-medium">Dec 02 - 07, 2024</td>
+<td class="py-6 pr-4 text-sm font-medium">{{ $jadwal_pmr->isi ?? 'Tanggal belum tersedia' }}</td>
 <!-- <td class="py-6 pr-4">
 <div class="flex items-center gap-2">
 <div class="w-2 h-2 rounded-full bg-red-500"></div>
@@ -220,12 +220,12 @@
 <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
 <div class="relative">
 <div class="aspect-square bg-surface-container-high rounded-full overflow-hidden">
-<img class="w-full h-full object-cover p-12" data-alt="top view of a professional certification document with a red wax seal and elegant typography on heavy cream paper" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcSimOgaUZb1nQiwbfpil9_Rws0Siwj0UJSGn_U84lvyNITpX1YJn3Byi96lwzFLX7dYSWBKt30IJ3n_KbRgOLfwuRVapeTnnnsa5e0khQl02vJK6DE1GbsyQHTA_ayl-83lTYU80hfj-2IB2HWh6o6YoIF9qZ13aZaK97XeomJN0XcJp5d0_ZDGP-TPNVozYB8X4K0GUDbrkXcDKaH8mMtqGyahTFtGPeNT6e5Lswonx1qdV1To9Fdbe-Jub8d_oMhiLKNc31wg"/>
+<img class="w-full h-full object-cover p-12" data-alt="top view of a professional certification document with a red wax seal and elegant typography on heavy cream paper" src="{{ url('storage/' . $headline->foto) }}"/>
 </div>
-<div class="absolute -bottom-6 -right-6 bg-white shadow-2xl p-8 rounded-2xl max-w-xs">
+<!-- <div class="absolute -bottom-6 -right-6 bg-white shadow-2xl p-8 rounded-2xl max-w-xs">
 <p class="font-headline font-black text-4xl text-primary mb-2 italic">Terstandarisasi.</p>
 <p class="text-sm text-secondary leading-relaxed">Sertifikasi kami diakui oleh Kementerian Kesehatan dan Federasi Internasional Palang Merah.</p>
-</div>
+</div> -->
 </div>
 <div>
 <h2 class="text-5xl font-headline font-extrabold text-on-surface mb-8 tracking-tight">Lencana Keunggulan Anda.</h2>
@@ -257,20 +257,6 @@
 <p class="text-secondary">Setiap sertifikat dilengkapi dengan kode QR unik untuk verifikasi instan oleh pemberi kerja melalui portal aman kami.</p>
 </div>
 </div>
-</div>
-</div>
-</div>
-</section>
-<!-- Newsletter / CTA -->
-<section class="py-24 px-8">
-<div class="max-w-7xl mx-auto bg-primary-container rounded-[2rem] p-12 md:p-24 text-center text-on-primary relative overflow-hidden">
-<div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
-<div class="relative z-10 max-w-3xl mx-auto">
-<h2 class="text-4xl md:text-6xl font-headline font-extrabold mb-8 leading-tight tracking-tighter">Siap untuk membuat perubahan dalam hidup seseorang?</h2>
-<p class="text-lg opacity-90 mb-12 font-medium">Jadilah yang pertama tahu saat siklus pelatihan baru dibuka di wilayah Anda.</p>
-<div class="flex flex-col md:flex-row gap-4 max-w-lg mx-auto">
-<input class="flex-1 bg-white/20 border-white/20 border-2 rounded-xl px-6 py-4 placeholder:text-white/60 focus:bg-white focus:text-on-surface focus:ring-0 transition-all outline-none" placeholder="Alamat email Anda" type="email"/>
-<button class="bg-white text-primary font-headline font-extrabold px-8 py-4 rounded-xl hover:bg-surface-container-low transition-colors">Beri Tahu Saya</button>
 </div>
 </div>
 </div>

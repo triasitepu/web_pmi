@@ -92,7 +92,7 @@
         name="foto"
         id="foto"
         class="form-control w-100"
-        accept="image/*,.pdf"
+        accept=".jpg,.jpeg,.png,.pdf"
       >
       @error('foto')
         <div class="text-danger small mt-1">{{ $message }}</div>

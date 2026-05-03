@@ -66,6 +66,8 @@
         <td class="text-center">
           @if($pengguna->peran == 'superadmin')
             <span class="badge bg-danger">Superadmin</span>
+           @elseif($pengguna->peran == 'admin_donor')
+            <span class="badge bg-success">Admin Donor Darah</span>  
           @else
             <span class="badge bg-primary">Admin</span>
           @endif

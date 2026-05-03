@@ -42,7 +42,7 @@
           <th style="width:5%">No</th>
           <th>Judul</th>
           <th>Isi</th>
-          <th>Foto</th>
+          <th>File</th>
           <th>Status</th>
           <th style="width:25%">Aksi</th>
         </tr>
@@ -59,17 +59,31 @@
             {{ \Illuminate\Support\Str::limit(strip_tags($submenu->isi), 100) }}
           </td>
 
-          {{-- Foto --}}
-          <td class="text-center">
-            @if($submenu->foto)
-              <img src="{{ asset('storage/' . $submenu->foto) }}" 
-                   alt="Foto" 
-                   width="100" 
-                   class="img-thumbnail">
-            @else
-              <span class="text-muted">Tidak ada foto</span>
-            @endif
-          </td>
+        {{-- File --}}
+      <td class="text-center">
+        @php
+          $file = $submenu->foto;
+          $ext = $file ? strtolower(pathinfo($file, PATHINFO_EXTENSION)) : null;
+        @endphp
+
+        @if($file && in_array($ext, ['jpg','jpeg','png']))
+          {{-- 🖼️ Gambar --}}
+          <img src="{{ asset('storage/' . $file) }}" 
+              alt="File" 
+              width="100" 
+              class="img-thumbnail">
+
+        @elseif($file && $ext === 'pdf')
+          {{-- 📄 PDF --}}
+          <a href="{{ asset('storage/' . $file) }}" target="_blank">
+            <i class="bi bi-file-earmark-pdf" style="font-size: 2rem; color:red;"></i>
+          </a>
+
+        @else
+          {{-- ❌ Tidak ada file --}}
+          <span class="text-muted">Tidak ada file</span>
+        @endif
+      </td>
 
           {{-- Status --}}
           <td class="text-center">

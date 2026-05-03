@@ -104,7 +104,10 @@
                     {{ old('peran', strtolower($admin->peran)) == 'admin' ? 'selected' : '' }}>
                     Admin
                 </option>
-
+                <option value="admin_donor" 
+                    {{ old('peran', strtolower($admin->peran)) == 'admin_donor' ? 'selected' : '' }}>
+                    Admin Donor Darah
+                </option>   
                 <option value="superadmin" 
                     {{ old('peran', strtolower($admin->peran)) == 'superadmin' ? 'selected' : '' }}>
                     Superadmin

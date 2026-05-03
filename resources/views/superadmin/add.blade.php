@@ -96,8 +96,9 @@
                     class="form-select @error('peran') is-invalid @enderror"
                     required>
                 <option value="">-- Pilih Peran --</option>
-                <option value="Admin" {{ old('peran') == 'Admin' ? 'selected' : '' }}>Admin</option>
-                <option value="Superadmin" {{ old('peran') == 'Superadmin' ? 'selected' : '' }}>Superadmin</option>
+                <option value="Admin" {{ old('peran') == 'admin' ? 'selected' : '' }}>Admin</option>
+                <option value="Admin" {{ old('peran') == 'admin_donor' ? 'selected' : '' }}>Admin Donor Darah</option>
+                <option value="Superadmin" {{ old('peran') == 'superadmin' ? 'selected' : '' }}>Superadmin</option>
             </select>
 
             @error('peran')

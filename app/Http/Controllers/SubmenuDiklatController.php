@@ -125,8 +125,12 @@ class SubmenuDiklatController extends Controller
 
         public function landing()
     {
-    $goldara = SubmenuDiklat::where('slug', 'goldara')->first();
 
-    return view('diklat', compact('goldara'));
+    $headline = SubmenuDiklat::where('slug', 'headline')->first();
+    $jadwal_pmr = SubmenuDiklat::where('slug', 'jadwal_pmr')->first();
+    $manajemen_bencana = SubmenuDiklat::where('slug', 'manajemen_bencana')->first();
+    $pertolongan_pertama = SubmenuDiklat::where('slug', 'pertolongan_pertama')->first();
+
+    return view('diklat', compact('headline', 'jadwal_pmr', 'manajemen_bencana', 'pertolongan_pertama'));
     }
 }

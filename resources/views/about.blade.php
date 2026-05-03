@@ -126,15 +126,12 @@
 <!-- Mission & Vision: Bento Layout -->
 <section class="py-24 bg-surface-container-low px-8">
 <div class="max-w-7xl mx-auto">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
 
 <!-- Mission -->
-<div class="md:col-span-7 bg-surface-container-lowest p-12 flex flex-col justify-between group overflow-hidden relative">
+<div class="md:col-span-7 bg-surface-container-lowest p-12 flex flex-col justify-between group overflow-hidden relative h-full">
     
     <div class="relative z-10">
-        <span class="material-symbols-outlined text-primary text-5xl mb-8">
-            volunteer_activism
-        </span>
 
         {{-- Judul --}}
         <h2 class="text-4xl font-extrabold text-on-surface mb-6">
@@ -147,49 +144,60 @@
         </div>
     </div>
 
-<div class="mt-12 relative z-10">
-<div class="flex items-center gap-4 text-primary font-bold">
-</div>
-</div>
-<!-- Abstract texture -->
-<div class="absolute -right-20 -bottom-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors"></div>
+    <div class="mt-12 relative z-10">
+        <div class="flex items-center gap-4 text-primary font-bold">
+        </div>
+    </div>
+
+    <!-- Abstract texture -->
+    <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors"></div>
 </div>
 
 <!-- Vision -->
-<div class="md:col-span-5 bg-primary-softcontainer p-12 text-on-primary flex flex-col justify-center">
+<div class="md:col-span-5 bg-primary-softcontainer p-12 text-on-primary flex flex-col justify-between group overflow-hidden relative h-full">
     
-    <span class="material-symbols-outlined text-white/40 text-8xl mb-8 self-end"
-          style="font-variation-settings: 'FILL' 1;">
-        visibility
-    </span>
+    <div class="relative z-10">
 
-    {{-- Judul --}}
-    <h2 class="text-3xl font-bold mb-4">
-        {{ $visi->nama_submenu ?? 'VISI KAMI' }}
-    </h2>
+        {{-- Judul --}}
+        <h2 class="text-4xl font-extrabold mb-6">
+            {{ $visi->nama_submenu ?? 'VISI KAMI' }}
+        </h2>
 
-    {{-- Isi --}}
-    <div class="text-black/80 text-lg leading-relaxed">
-        {!! $visi->isi ?? 'Isi visi belum tersedia' !!}
+        {{-- Isi --}}
+        <div class="text-white/80 text-lg leading-relaxed max-w-xl">
+            {!! $visi->isi ?? 'Isi visi belum tersedia' !!}
+        </div>
     </div>
 
+    <div class="mt-12 relative z-10">
+        <div class="flex items-center gap-4 font-bold">
+        </div>
+    </div>
+
+    <!-- Optional texture biar konsisten -->
+    <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+
 </div>
+
+</div>
+</div>
+</section>
 <!-- Stats Bar -->
  <div class="md:col-span-12 bg-surface-container-lowest py-10 px-12 grid grid-cols-2 md:grid-cols-4 gap-8">
 <div class="text-center">
-<div class="text-4xl font-extrabold text-primary mb-1">150+</div>
+<div class="text-4xl font-extrabold text-primary-softcontainer mb-1">150+</div>
 <div class="text-xs uppercase tracking-widest text-secondary font-bold">Cabang Nasional</div>
 </div>
 <div class="text-center">
-<div class="text-4xl font-extrabold text-primary mb-1">12M</div>
+<div class="text-4xl font-extrabold text-primary-softcontainer mb-1">12M</div>
 <div class="text-xs uppercase tracking-widest text-secondary font-bold">Penerima Manfaat Tahunan</div>
 </div>
 <div class="text-center">
-<div class="text-4xl font-extrabold text-primary mb-1">50K+</div>
+<div class="text-4xl font-extrabold text-primary-softcontainer mb-1">50K+</div>
 <div class="text-xs uppercase tracking-widest text-secondary font-bold">Relawan Aktif</div>
 </div>
 <div class="text-center">
-<div class="text-4xl font-extrabold text-primary mb-1">24/7</div>
+<div class="text-4xl font-extrabold text-primary-softcontainer mb-1">24/7</div>
 <div class="text-xs uppercase tracking-widest text-secondary font-bold">Respon Cepat</div>
 </div>  
 </div>
@@ -201,7 +209,7 @@
 <div class="max-w-7xl mx-auto">
 <div class="flex flex-col md:flex-row gap-16 items-start">
 <div class="md:w-1/3 sticky top-32">
-<h2 class="text-5xl font-black text-on-surface mb-6">Sejarah dan <br/><span class="text-primary">Dedikasi.</span></h2>
+<h2 class="text-5xl font-black text-on-surface mb-6">Sejarah dan <br/><span class="text-primary-softcontainer">Dedikasi.</span></h2>
 <p class="text-secondary leading-relaxed">Perjalanan kami dimulai dengan satu janji: untuk hadir saat tidak ada orang lain. Jelajahi tonggak sejarah yang mendefinisikan warisan kemanusiaan kami.</p>
 </div>
 <div class="md:w-2/3 space-y-24">
@@ -210,7 +218,7 @@
 <div>
 <h3 class="text-2xl font-bold mb-4">PMI INDONESIA</h3>
 <div class="text-secondary leading-relaxed mb-6">
-    {{ $PMI->isi ?? 'Isi belum tersedia' }}
+    {{ $sejarah_pmi->isi ?? 'Isi belum tersedia' }}
 </div>
      <!-- <img class="w-full h-64 object-cover rounded-xl grayscale hover:grayscale-0 transition-all duration-700" data-alt="Archival black and white style photo of a humanitarian tent station in a historical field setting, nostalgic and respectful mood" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBCrySCVkEISo-IHvaMM3rcfQT-CyY4jG35xyJnHOmNI5GvUfuNnDl4M8aaPVGYYlGiB6_ZlltBbiJLpcmvBr3I88Xo6ZTFuKlh8u2-l3RXZfEkiGmzmP8O3RRLb5G5PMhmfdEfOAQ_10utly32x9IXsydKM1jXNb64OsDD0QI8ZnEQjIckXv-saFL5GkCA_GRN6d5icxKFHhWYscvC0T8JfsgKLa7nl37OwTa_C_3krMW7_lPc0817jByYjEgGqG23iiSNG6opA"/> -->
 </div>
@@ -220,7 +228,7 @@
 <div>
 <h3 class="text-2xl font-bold mb-4">PMI MAGETAN</h3>
 <div class="text-secondary leading-relaxed mb-6">
-    {{ $PMIMagetan->isi ?? 'Isi belum tersedia' }}
+    {{ $sejarah_pmi_magetan->isi ?? 'Isi belum tersedia' }}
 </div>
 <img class="w-full h-64 object-cover rounded-xl grayscale hover:grayscale-0 transition-all duration-700" data-alt="A fleet of red and white relief trucks parked in a warehouse at dawn, soft atmospheric lighting, organized and ready for action" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCatLyTs01sLsMpmZiwyVpadn9_v0uFkyf1ympZGCveDriTxDEVXegN1rOJ4Fp1sR574i-_WCtqK2lj6be_rN-c90f3z8dC-iIqhgQRyyRV1ilOQIOt-joJR9jthfnnfGfAol_wXxex-586ODG6sa3RimAVT4mPwzYd86jFYaW28pzcAQG2SBYmIiaT6CUHIghQV16f9vLrTcEv0odcyBF3jumJ0NS4FFOUjFvCxzesu8ZcOPU6vMhfK8_e94XAOzvvjq6W_SSNgg"/>
 </div>
@@ -255,7 +263,7 @@
     {{ $Direktur->isi ?? 'Isi belum tersedia' }}
 </h3>
 
-<p class="text-primary text-xs uppercase tracking-widest font-bold text-center mb-4">Direktur</p>
+<p class="text-primary-softcontainer text-xs uppercase tracking-widest font-bold text-center mb-4">Direktur</p>
    
 
 <p class="text-secondary text-sm text-center leading-relaxed italic">"Kekuatan kita tidak terletak pada infrastruktur, melainkan pada empati para relawan kita."</p>
@@ -264,21 +272,21 @@
 <div class="relative group md:translate-y-12">
 <div class="absolute top-0 left-0 w-full h-[85%] bg-surface-container-lowest rounded-2xl -z-10 group-hover:translate-y-2 transition-transform duration-500"></div>
 <div class="px-8 pb-12">
-<img class="w-48 h-48 rounded-full object-cover mx-auto mb-8 shadow-2xl ring-8 ring-surface-container-low" data-alt="Professional portrait of a male medical director, friendly and authoritative, natural light, clean minimalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6tLe9aqjQAhC5inUUgeti6RQgccyNHryi0Ukxo739LDrNZugBrTnCJCtOQ4hsnNUo4XBwJWWcCJ7yywL_-umqQCuYdIwGUIlaZGX_iAL8zYQSm1E_YCCPSpnzgddSNPNSPqO8117yZXYGE9AbJ35rnFgnB9aAVPXCyDpFHiltRwLroyNxxxz5Ear-XLSFSSoh0Rlr7mXzOf6gtD9EwYyCfYrZ7n8bH7IRJsGialu6YEMQEk0zN1TfA-0ExnygVczLxvrleumQhg"/>
+<img class="w-48 h-48 rounded-full object-cover mx-auto mb-8 shadow-2xl ring-8 ring-surface-container-low" data-alt="Professional portrait of a male medical director, friendly and authoritative, natural light, clean minimalist background" src="{{ url('storage/' . $Direktur2->foto) }}"/>
 <h3 class="text-xl font-bold text-center mb-1">
     {{ $Direktur2->isi ?? 'Isi belum tersedia' }}</h3>
-<p class="text-primary text-xs uppercase tracking-widest font-bold text-center mb-4">Operasi Medis</p>
+<p class="text-primary-softcontainer text-xs uppercase tracking-widest font-bold text-center mb-4">Operasi Medis</p>
 <p class="text-secondary text-sm text-center leading-relaxed italic">"Efisiensi dalam bantuan kemanusiaan adalah pembeda antara nyawa yang hilang dan nyawa yang terselamatkan."</p>
 </div>
 </div>
 <div class="relative group pt-12">
 <div class="absolute top-0 left-0 w-full h-[85%] bg-surface-container-lowest rounded-2xl -z-10 group-hover:translate-y-2 transition-transform duration-500"></div>
 <div class="px-8 pb-12">
-<img class="w-48 h-48 rounded-full object-cover mx-auto mb-8 shadow-2xl ring-8 ring-surface-container-low" data-alt="Professional portrait of a woman in humanitarian field gear, looking optimistic, soft sunlight filtering through trees" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTGen51CwSspnfeQ3xiTGYCw6KA6viwwTPopedr8nQO2vk8mOey0Ct3uycupg_V2Dp0IPh08m7mc7Xm-EJCH_bdp0wDbZ3ycZB52c5r0F8PQx8-K2W8hLwROZxPM8oySIw7WniSQ8eYAiyc164RNJ2SRKF1OrsvQF_zDD33YXORj_98OWPzJ4a24-L_YsphwHjMrk6zZVwi6uuiaUaoF8_kbPoa9oN1Nyph5NJzu1pDlLLhqwaJ8Qhu89RVNnKtGkg05xLZfvdAQ"/>
+<img class="w-48 h-48 rounded-full object-cover mx-auto mb-8 shadow-2xl ring-8 ring-surface-container-low" data-alt="Professional portrait of a woman in humanitarian field gear, looking optimistic, soft sunlight filtering through trees" src="{{ url('storage/' . $Direktur3->foto) }}"/>
 <h3 class="text-xl font-bold text-center mb-1">
     {{ $Direktur3->isi ?? 'Isi belum tersedia' }}
 </h3>
-<p class="text-primary text-xs uppercase tracking-widest font-bold text-center mb-4">Pemimpin Relawan Global</p>
+<p class="text-primary-softcontainer text-xs uppercase tracking-widest font-bold text-center mb-4">Pemimpin Relawan Global</p>
 <p class="text-secondary text-sm text-center leading-relaxed italic">"Membangun jembatan harapan melintasi setiap perbatasan dan setiap budaya."</p>
 </div>
 </div>

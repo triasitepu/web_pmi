@@ -111,6 +111,24 @@
     <span class="material-symbols-outlined">dashboard</span>
     Dashboard
 </a>
+
+@if(strtolower(auth()->user()->peran) === 'admin_donor')
+    {{-- HANYA DONOR --}}
+    <a href="{{ route('admin.donor-submenu.index') }}"
+   class="flex items-center gap-3 px-4 py-3 
+   font-manrope text-sm font-medium transition-all duration-200
+
+   {{ request()->routeIs('admin.donor-submenu.*') 
+      ? 'bg-slate-200 dark:bg-slate-700 text-black dark:text-white border-r-4 border-red-600 font-bold' 
+      : 'text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800' }}">
+
+    <span class="material-symbols-outlined">bloodtype</span>
+    Kelola Konten Donor Darah
+</a>
+
+@else
+
+    {{-- ADMIN & SUPERADMIN --}}
 <div class="flex flex-col">
     <a href="{{ route('admin.profil-submenu.index') }}"
        class="flex items-center gap-3 px-4 py-3 
@@ -121,7 +139,7 @@
           : 'text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800' }}">
        
         <span class="material-symbols-outlined">account_circle</span>
-        Kelola Profil PMI
+        Kelola Konten Profil PMI
     </a>
 </div>
 <a href="{{ route('admin.donor-submenu.index') }}"
@@ -133,8 +151,9 @@
       : 'text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800' }}">
 
     <span class="material-symbols-outlined">bloodtype</span>
-    Donor Darah
+    Kelola Konten Donor Darah
 </a>
+
 <a href="{{ route('admin.relawan-submenu.index') }}"
    class="flex items-center gap-3 px-4 py-3 
    font-manrope text-sm font-medium transition-all duration-200
@@ -144,7 +163,7 @@
       : 'text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800' }}">
 
     <span class="material-symbols-outlined" data-icon="groups">groups</span>
-    Kelola Relawan
+    Kelola Konten Relawan
 </a>
 <a href="{{ route('admin.diklat-submenu.index') }}"
    class="flex items-center gap-3 px-4 py-3 
@@ -155,7 +174,7 @@
       : 'text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800' }}">
 
     <span class="material-symbols-outlined" data-icon="school">school</span>
-    Diklat PMI
+    Kelola Konten Diklat PMI
 </a>
 <a href="{{ route('admin.kebencanaan-submenu.index') }}"
    class="flex items-center gap-3 px-4 py-3 
@@ -166,7 +185,7 @@
       : 'text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800' }}">
 
     <span class="material-symbols-outlined" data-icon="volcano">volcano</span>
-    Kelola Kebencanaan
+    Kelola Konten Kebencanaan
 </a>
 
 
@@ -185,7 +204,7 @@
         Kelola Pengguna
       </a>
     @endif
-
+@endif
   </div>
   </nav>
 </div>

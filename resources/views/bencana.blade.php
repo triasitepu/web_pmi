@@ -211,15 +211,15 @@ alt="Gunung Lawu"/>
 <!-- Warehouse Card -->
 <div class="md:col-span-2 md:row-span-2 bg-surface-container-low rounded-2xl p-10 flex flex-col justify-between">
 <div>
-<span class="material-symbols-outlined text-4xl text-primary mb-6" data-weight="fill">warehouse</span>
+<span class="material-symbols-outlined text-4xl text-primary-container   mb-6" data-weight="fill">warehouse</span>
 <h3 class="text-2xl font-bold mb-4 font-headline uppercase">Pusat Logistik Lokal</h3>
 <p class="text-secondary text-sm mb-8">Gudang Markas PMI Magetan menyimpan paket bantuan darurat yang siap dimobilisasi segera ke seluruh kecamatan.</p>
 </div>
 <div class="grid grid-cols-2 gap-4">
-<div class="flex items-center gap-3 bg-white p-3 rounded-lg"><span class="w-2 h-2 bg-primary rounded-full"></span><span class="text-xs font-bold uppercase">Markas Pusat</span></div>
-<div class="flex items-center gap-3 bg-white p-3 rounded-lg"><span class="w-2 h-2 bg-primary rounded-full"></span><span class="text-xs font-bold uppercase">Unit Siaga Lawu</span></div>
-<div class="flex items-center gap-3 bg-white p-3 rounded-lg"><span class="w-2 h-2 bg-primary rounded-full"></span><span class="text-xs font-bold uppercase">Logistik Regional</span></div>
-<div class="flex items-center gap-3 bg-white p-3 rounded-lg"><span class="w-2 h-2 bg-primary rounded-full"></span><span class="text-xs font-bold uppercase">Cadangan Darurat</span></div>
+<div class="flex items-center gap-3 bg-white p-3 rounded-lg"><span class="w-2 h-2 bg-primary-container rounded-full"></span><span class="text-xs font-bold uppercase">Markas Pusat</span></div>
+<div class="flex items-center gap-3 bg-white p-3 rounded-lg"><span class="w-2 h-2 bg-primary-container rounded-full"></span><span class="text-xs font-bold uppercase">Unit Siaga Lawu</span></div>
+<div class="flex items-center gap-3 bg-white p-3 rounded-lg"><span class="w-2 h-2 bg-primary-container rounded-full"></span><span class="text-xs font-bold uppercase">Logistik Regional</span></div>
+<div class="flex items-center gap-3 bg-white p-3 rounded-lg"><span class="w-2 h-2 bg-primary-container rounded-full"></span><span class="text-xs font-bold uppercase">Cadangan Darurat</span></div>
 </div>
 </div>
 <!-- Specialty Equipments -->
@@ -255,43 +255,43 @@ alt="Gunung Lawu"/>
 </div>
 <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
 <div class="flex flex-col items-center p-6 text-center">
-<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-4 text-primary">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-4 text-primary-container">
 <span class="material-symbols-outlined text-3xl">groups</span>
 </div>
 <span class="text-xs font-bold uppercase tracking-wider">Evakuasi</span>
 </div>
 <div class="flex flex-col items-center p-6 text-center">
-<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-4 text-primary">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-4 text-primary-container">
 <span class="material-symbols-outlined text-3xl">home_work</span>
 </div>
 <span class="text-xs font-bold uppercase tracking-wider">Shelter</span>
 </div>
 <div class="flex flex-col items-center p-6 text-center">
-<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-4 text-primary">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-4 text-primary-container">
 <span class="material-symbols-outlined text-3xl">medical_services</span>
 </div>
 <span class="text-xs font-bold uppercase tracking-wider">P3K</span>
 </div>
 <div class="flex flex-col items-center p-6 text-center">
-<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-4 text-primary">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-4 text-primary-container">
 <span class="material-symbols-outlined text-3xl">ambulance</span>
 </div>
 <span class="text-xs font-bold uppercase tracking-wider">Ambulans</span>
 </div>
 <div class="flex flex-col items-center p-6 text-center">
-<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-4 text-primary">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-4 text-primary-container">
 <span class="material-symbols-outlined text-3xl">soup_kitchen</span>
 </div>
 <span class="text-xs font-bold uppercase tracking-wider">Dapur Umum</span>
 </div>
 <div class="flex flex-col items-center p-6 text-center">
-<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-4 text-primary">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-4 text-primary-container">
 <span class="material-symbols-outlined text-3xl">package_2</span>
 </div>
 <span class="text-xs font-bold uppercase tracking-wider">Logistik</span>
 </div>
 <div class="flex flex-col items-center p-6 text-center">
-<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-4 text-primary">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-4 text-primary-container">
 <span class="material-symbols-outlined text-3xl">faucet</span>
 </div>
 <span class="text-xs font-bold uppercase tracking-wider">WASH</span>
@@ -309,7 +309,7 @@ alt="Gunung Lawu"/>
 </div>
 <div class="h-px flex-grow bg-outline-variant/30 hidden md:block mx-8 mb-4"></div>
 
-<a class="text-primary font-bold text-sm uppercase flex items-center gap-2" href="{{ route('tips_bencana') }}">
+<a class="text-primary-container font-bold text-sm uppercase flex items-center gap-2" href="{{ route('tips_bencana') }}">
     Baca Selengkapnya <span class="material-symbols-outlined text-xs">arrow_forward</span>
 </a>
 </div>
