@@ -192,7 +192,11 @@ body{
 <div class="text-right">
 <p class="text-xs font-bold text-slate-900 dark:text-white leading-none">{{ auth()->user()->nama_pengguna ?? 'Admin' }}</p>
 </div>
-<img alt="Administrator Profile" class="w-8 h-8 rounded-full object-cover border border-slate-200" data-alt="professional portrait of a confident middle-aged man in business attire, clean grey background, soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOh27tdFfyiOjhTq67ooP2rK7W-kusvrkOGenRDQ2TnP7zHmPmJAWolaBYfGThLCj1v-l_4f-cFcpHye2OWih9KX0ZXZpLHGIIEROcrcbgEusxVFU1dd0mlV3zojD5Ejyf8WYK1T2QLmVKDCoQQH5ZqOIq4Iy-UF3gbPzEDKoU6wcpdL4n5YeMgX5ItVy0YIIWs9QMOypZBdIxp0As_sRDRwbEIHWzpRSN2o31IKNK8rT6nrvfABk_O8psWeZUdcwMt4rBBnjzjQ"/>
+<div class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center border border-slate-200">
+    <span class="material-symbols-outlined text-gray-600 text-xl">
+        account_circle
+    </span>
+</div>
 </div>
 </div>
 </header>

@@ -5,18 +5,11 @@
 @section('content')
 <div class="p-8">
 
-    <!-- Hero Section -->
-    <div class="bg-white rounded-lg p-6 mb-10">
-        <p class="text-secondary font-body">
-            Selamat datang kembali. Berikut adalah status terkini unit PMI Kabupaten Magetan hari ini.
-        </p>
-    </div>
-
     <!-- Bento Grid -->
     <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
 
         <!-- Total Relawan -->
-        <div class="bg-surface-container-lowest p-6 rounded-xl relative overflow-hidden group">
+        <div class="bg-surface-container-lowest p-6 rounded-xl relative overflow-hidden border-l-4 border-red-500 group">
             <div class="absolute -right-4 -top-4 opacity-5 group-hover:scale-110 transition-transform duration-500">
                 <span class="material-symbols-outlined text-9xl">groups</span>
             </div>
@@ -36,35 +29,9 @@
             </p>
         </div>
 
-        <!-- Stok Darah -->
-        <div class="bg-surface-container-lowest p-6 rounded-xl relative overflow-hidden border-l-4 border-red-500 group">
-            <div class="flex items-center justify-between mb-4">
-                <div class="w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center text-red-600">
-                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">
-                        bloodtype
-                    </span>
-                </div>
-
-                <span class="text-[10px] font-black text-white bg-red-600 px-2 py-1 rounded uppercase">
-                    Kritis
-                </span>
-            </div>
-
-            <p class="text-secondary text-xs font-bold uppercase tracking-widest mb-1">
-                Stok Darah (O+)
-            </p>
-
-            <p class="text-3xl font-black text-on-surface font-headline">
-                12 Unit
-            </p>
-
-            <p class="text-[10px] text-black-600 mt-2 font-medium">
-                Butuh donor segera
-            </p>
-        </div>
 
         <!-- Diklat -->
-        <div class="bg-surface-container-lowest p-6 rounded-xl relative overflow-hidden group">
+        <div class="bg-surface-container-lowest p-6 rounded-xl relative overflow-hidden border-l-4 border-red-500 group">
             <div class="flex items-center justify-between mb-4">
                 <div class="w-10 h-10 rounded-lg bg-purple-50 flex items-center justify-center text-purple-600">
                     <span class="material-symbols-outlined">school</span>
@@ -79,13 +46,11 @@
                 4 Aktif
             </p>
 
-            <div class="w-full bg-surface-container-high h-1 mt-4 rounded-full overflow-hidden">
-                <div class="bg-purple-600 h-full w-3/4"></div>
-            </div>
+         
         </div>
 
         <!-- Bencana -->
-        <div class="bg-surface-container-lowest p-6 rounded-xl relative overflow-hidden group">
+        <div class="bg-surface-container-lowest p-6 rounded-xl relative overflow-hidden border-l-4 border-red-500 group">
             <div class="flex items-center justify-between mb-4">
                 <div class="w-10 h-10 rounded-lg bg-orange-50 flex items-center justify-center text-orange-600">
                     <span class="material-symbols-outlined">report_problem</span>
@@ -99,70 +64,182 @@
             <p class="text-3xl font-black text-on-surface font-headline">
                 2 Baru
             </p>
-
-            <p class="text-[10px] text-orange-600 mt-2 font-medium">
-                Tindakan diperlukan segera
-            </p>
         </div>
     </div>
 
-    <!-- Detail Stok Darah -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div class="lg:col-span-2 space-y-8">
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden mb-8">
 
-            <div class="bg-surface-container-lowest rounded-xl overflow-hidden">
-                <div class="p-6 border-b border-surface-container flex justify-between items-center">
-                    <h3 class="font-bold text-lg font-headline">
-                        Status Stok Darah
-                    </h3>
-                    <button class="text-primary text-xs font-bold hover:underline">
-                        Lihat Detail Inventaris
-                    </button>
-                </div>
-
-                <div class="p-8 grid grid-cols-2 md:grid-cols-4 gap-8">
-
-                    <!-- A+ -->
-                    <div class="text-center">
-                        <div class="text-4xl font-black text-black-600 font-headline mb-2">A+</div>
-                        <p class="text-xs font-bold text-secondary uppercase">24 Unit</p>
-                        <div class="mt-2 h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
-                            <div class="bg-emerald-500 h-full w-[60%]"></div>
-                        </div>
-                    </div>
-
-                    <!-- B+ -->
-                    <div class="text-center">
-                        <div class="text-4xl font-black text-black-600 font-headline mb-2">B+</div>
-                        <p class="text-xs font-bold text-secondary uppercase">18 Unit</p>
-                        <div class="mt-2 h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
-                            <div class="bg-amber-500 h-full w-[40%]"></div>
-                        </div>
-                    </div>
-
-                    <!-- AB+ -->
-                    <div class="text-center">
-                        <div class="text-4xl font-black text-black-600 font-headline mb-2">AB+</div>
-                        <p class="text-xs font-bold text-secondary uppercase">8 Unit</p>
-                        <div class="mt-2 h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
-                            <div class="bg-red-500 h-full w-[15%]"></div>
-                        </div>
-                    </div>
-
-                    <!-- O+ -->
-                    <div class="text-center">
-                        <div class="text-4xl font-black text-black-600 font-headline mb-2">O+</div>
-                        <p class="text-xs font-bold text-secondary uppercase">12 Unit</p>
-                        <div class="mt-2 h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
-                            <div class="bg-red-500 h-full w-[25%]"></div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
+    <!-- Header -->
+    <div class="px-4 py-3 border-b border-surface-container">
+        <h3 class="text-sm font-bold font-headline">
+            Detail Stok Darah
+        </h3>
     </div>
 
+    <!-- Table -->
+    <div class="overflow-x-auto">
+        <div class="max-w-3xl">
+
+            <table class="w-full text-sm     text-left text-black">
+
+                <thead class="bg-surface-container uppercase text-sm">
+                    <tr>
+                        <th class="px-4 py-2">Jenis</th>
+                        <th class="px-4 py-2 text-center">A</th>
+                        <th class="px-4 py-2 text-center">B</th>
+                        <th class="px-4 py-2 text-center">O</th>
+                        <th class="px-4 py-2 text-center">AB</th>
+                    </tr>
+                </thead>
+
+            <tbody class="divide-y divide-surface-container-high">
+
+            @php
+            function getStatus($val) {
+                if ($val == 0) return ['Kosong', 'text-error'];
+                if ($val <= 5) return ['Kritis', 'text-error'];
+                return ['Aman', 'text-on-surface'];
+            }
+            @endphp
+
+            <!-- WB -->
+            <tr class="hover:bg-surface-container transition">
+                <td class="px-4 py-3">
+                    <div class="font-bold text-sm">WB</div>
+                    <div class="text-[10px] text-secondary">Whole Blood</div>
+                </td>
+
+                @foreach([$wba->isi ?? 0, $wbb->isi ?? 0, $wbo->isi ?? 0, $wbab->isi ?? 0] as $val)
+                @php [$label, $color] = getStatus($val); @endphp
+                <td class="px-4 py-3 text-center">
+                    <div class="font-bold text-sm {{ $color }}">{{ $val }}</div>
+                    <div class="text-[9px] {{ $color }}">{{ $label }}</div>
+                </td>
+                @endforeach
+            </tr>
+
+            <!-- PRC -->
+            <tr class="hover:bg-surface-container transition">
+                <td class="px-4 py-3">
+                    <div class="font-bold text-sm">PRC</div>
+                    <div class="text-[10px] text-secondary">Red Cell</div>
+                </td>
+
+                @foreach([$prca->isi ?? 0, $prcb->isi ?? 0, $prco->isi ?? 0, $prcab->isi ?? 0] as $val)
+                @php [$label, $color] = getStatus($val); @endphp
+                <td class="px-4 py-3 text-center">
+                    <div class="font-bold text-sm {{ $color }}">{{ $val }}</div>
+                    <div class="text-[9px] {{ $color }}">{{ $label }}</div>
+                </td>
+                @endforeach
+            </tr>
+
+            <!-- TC -->
+            <tr class="hover:bg-surface-container transition">
+                <td class="px-4 py-3">
+                    <div class="font-bold text-sm">TC</div>
+                    <div class="text-[10px] text-secondary">Trombocyte</div>
+                </td>
+
+                @foreach([$tca->isi ?? 0, $tcb->isi ?? 0, $tco->isi ?? 0, $tcab->isi ?? 0] as $val)
+                @php [$label, $color] = getStatus($val); @endphp
+                <td class="px-4 py-3 text-center">
+                    <div class="font-bold text-sm {{ $color }}">{{ $val }}</div>
+                    <div class="text-[9px] {{ $color }}">{{ $label }}</div>
+                </td>
+                @endforeach
+            </tr>
+
+            <!-- FFP -->
+            <tr class="hover:bg-surface-container transition">
+                <td class="px-4 py-3">
+                    <div class="font-bold text-sm">FFP</div>
+                    <div class="text-[10px] text-secondary">Plasma</div>
+                </td>
+
+                @foreach([$ffpa->isi ?? 0, $ffpb->isi ?? 0, $ffpo->isi ?? 0, $ffpab->isi ?? 0] as $val)
+                @php [$label, $color] = getStatus($val); @endphp
+                <td class="px-4 py-3 text-center">
+                    <div class="font-bold text-sm {{ $color }}">{{ $val }}</div>
+                    <div class="text-[9px] {{ $color }}">{{ $label }}</div>
+                </td>
+                @endforeach
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden">
+
+    <!-- Header -->
+    <div class="px-4 py-3 border-b border-surface-container flex justify-between items-center">
+        <h3 class="text-sm font-bold font-headline">
+            Pengaduan Masyarakat
+        </h3>
+    </div>
+
+    <!-- Table -->
+    <div class="overflow-x-auto">
+    <table class="min-w-full text-sm text-left text-black">
+
+        <thead class="bg-surface-container uppercase text-sm">
+            <tr>
+                <th class="px-4 py-3">No</th>
+                <th class="px-4 py-3">Nama</th>
+                <th class="px-4 py-3">Email</th>
+                <th class="px-4 py-3">Kategori</th>
+                <th class="px-4 py-3">Keluhan</th>
+                <th class="px-4 py-3 text-center">Waktu</th>
+            </tr>
+        </thead>
+
+        <tbody class="divide-y divide-surface-container-high">
+
+            @forelse ($pengaduan as $index => $item)
+                <tr class="hover:bg-surface-container transition">
+                    <td class="px-4 py-3">{{ $pengaduan->firstItem() + $index }}</td>
+
+                    <td class="px-4 py-3">
+                        {{ $item->nama ?? 'Guest' }}
+                    </td>
+
+                    <td class="px-4 py-3 text-secondary">
+                        {{ $item->email ?? '-' }}
+                    </td>
+
+                    <td class="px-4 py-3">
+                        <span class="text-[10px] font-bold bg-red-50 text-red-600 px-2 py-1 rounded">
+                            {{ $item->kategori }}
+                        </span>
+                    </td>
+
+                    <td class="px-4 py-3 text-secondary max-w-xs truncate">
+                        {{ $item->isi }}
+                    </td>
+
+                    <td class="px-4 py-3 text-center text-[10px] text-secondary">
+                        {{ $item->created_at->diffForHumans() }}
+                    </td>
+                </tr>
+            @empty
+                <tr>
+                    <td colspan="6" class="text-center py-4 text-secondary">
+                        Belum ada pengaduan
+                    </td>
+                </tr>
+            @endforelse
+
+        </tbody>
+    </table>
+     <div class="d-flex justify-content-between align-items-center mt-3">
+    <div>
+        Menampilkan {{ $pengaduan->firstItem() }} - {{ $pengaduan->lastItem() }} 
+        dari {{ $pengaduan->total() }} data
+    </div>
+    <div>
+        {{ $pengaduan->links() }}
+    </div>
 </div>
 @endsection

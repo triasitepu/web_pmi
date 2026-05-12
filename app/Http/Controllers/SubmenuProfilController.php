@@ -121,6 +121,7 @@ class SubmenuProfilController extends Controller
 
     public function landing()
 {
+    $headline = SubmenuProfil::where('slug', 'headline')->first();
     $visi = SubmenuProfil::where('slug', 'visi')->first();
     $misi = SubmenuProfil::where('slug', 'misi')->first();
     $Direktur = SubmenuProfil::where('slug', 'Direktur')->first();
@@ -130,7 +131,7 @@ class SubmenuProfilController extends Controller
     $Direktur3 = SubmenuProfil::where('slug', 'Direktur3')->first();
 
 
-    return view('about', compact('visi', 'misi','sejarah_pmi', 'sejarah_pmi_magetan', 'Direktur', 'Direktur2', 'Direktur3'));
+    return view('about', compact('headline', 'visi', 'misi','sejarah_pmi', 'sejarah_pmi_magetan', 'Direktur', 'Direktur2', 'Direktur3'));
 }
 }
 

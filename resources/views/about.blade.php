@@ -111,14 +111,14 @@
 <!-- Hero Section -->
 <section class="relative h-[716px] flex items-center overflow-hidden">
 <div class="absolute inset-0 z-0">
-<img class="w-full h-full object-cover" data-alt="Humanitarian worker providing aid to a child in a sunlit outdoor setting, high-end editorial photography style with warm natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJymdz3pz_nJMZk26SKHTAp_IrwVOSqkWmvJ4IxwKxt5Wi5zoo0Xr9Bt9CS-7qkRWwnTGFRR9O_1tgwpRaDv8yTLhHgHyHwqUU-5a_caBjM2F43W-_tbubO9u2qTlGOgUqxLhkLL3zOuCVGbbbKonAupcvMzeDAhF_Zj-XfMaYlv9dm22sTv_uBUSSK2iu9J5eiYg1h-3hdlqrohD5I3fbpsnzwldLYChQzhjzErAX6ppkKJE-iNSrG_hDj578iOEHUo8b1PRt0Q"/>
+<img class="w-full h-full object-cover" data-alt="Humanitarian worker providing aid to a child in a sunlit outdoor setting, high-end editorial photography style with warm natural light" src="{{ url('storage/' . $headline->foto) }}"/>
 <div class="absolute inset-0 bg-black/40"></div>
 </div>
 <div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
 <div class="max-w-2xl">
-<span class="inline-block py-1 px-3 bg-primary-container text-on-primary text-xs font-bold tracking-widest rounded mb-6">SEJAK 1945</span>
 <h1 class="text-6xl md:text-7xl font-extrabold text-white leading-tight mb-8">Detak jantung <br/><span class="text-primary-fixed">kemanusiaan.</span></h1>
-<p class="text-white/90 text-lg md:text-xl leading-relaxed max-w-lg font-light mb-10">Berdedikasi untuk meringankan penderitaan manusia, melindungi kehidupan, dan memastikan rasa hormat terhadap setiap individu melalui aksi kemanusiaan yang netral dan tidak memihak.</p>
+<p class="text-white/90 text-lg md:text-xl leading-relaxed max-w-lg font-light mb-10">
+    {{ $headline->isi ?? 'Komitmen kami untuk kesiapsiagaan dan respons cepat dalam menghadapi bencana di Magetan.' }}</p>
 </div>
 </div>
 </div>
@@ -312,44 +312,10 @@
 </div>
 </section> -->
 </main>
-<!-- Footer -->
-<footer class="bg-gray-50 py-12 px-8 border-t border-gray-200">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-<div class="space-y-4">
-<div class="text-xl font-bold text-gray-900">PMI Portal</div>
-<p class="font-inter text-sm leading-relaxed text-gray-500 max-w-xs">Memberdayakan layanan kemanusiaan melalui transparansi dan tindakan segera sejak 1945.</p>
-<div class="flex gap-4">
-<span class="material-symbols-outlined text-gray-400 hover:text-red-600 cursor-pointer" data-icon="public">public</span>
-<span class="material-symbols-outlined text-gray-400 hover:text-red-600 cursor-pointer" data-icon="share">share</span>
-<span class="material-symbols-outlined text-gray-400 hover:text-red-600 cursor-pointer" data-icon="mail">mail</span>
-</div>
-</div>
-<div class="grid grid-cols-2 gap-4">
-<div class="space-y-2">
-<h4 class="font-headline font-bold text-sm text-gray-900 mb-4">Organisasi</h4>
-<a class="block font-inter text-sm text-gray-500 hover:text-red-600 transition-colors" href="#">Tentang Kami</a>
-<a class="block font-inter text-sm text-gray-500 hover:text-red-600 transition-colors" href="#">Tata Kelola</a>
-<a class="block font-inter text-sm text-gray-500 hover:text-red-600 transition-colors" href="#">Laporan Tahunan</a>
-<a class="block font-inter text-sm text-gray-500 hover:text-red-600 transition-colors" href="#">Karir</a>
-</div>
-<div class="space-y-2">
-<h4 class="font-headline font-bold text-sm text-gray-900 mb-4">Hukum</h4>
-<a class="block font-inter text-sm text-gray-500 hover:text-red-600 transition-colors" href="#">Kebijakan Privasi</a>
-<a class="block font-inter text-sm text-gray-500 hover:text-red-600 transition-colors" href="#">Syarat Penggunaan</a>
-<a class="block font-inter text-sm text-gray-500 hover:text-red-600 transition-colors" href="#">Kebijakan Cookie</a>
-<a class="block font-inter text-sm text-gray-500 hover:text-red-600 transition-colors" href="#">Ketentuan Donasi</a>
-</div>
-</div>
-<div class="space-y-6">
-<h4 class="font-headline font-bold text-sm text-gray-900">Berlangganan Berita Kami</h4>
-<div class="flex">
-<input class="w-full bg-white border-gray-200 text-sm py-2 px-4 focus:ring-red-500 focus:border-red-500 rounded-l-lg outline-none" placeholder="email@address.com" type="email"/>
-<button class="bg-primary text-white px-4 py-2 rounded-r-lg">
-<span class="material-symbols-outlined text-sm" data-icon="send">send</span>
-</button>
-</div>
-<p class="font-inter text-xs text-gray-400">© 2024 Layanan Kemanusiaan. Seluruh Hak Cipta Dilindungi.</p>
-</div>
-</div>
-</footer>
+@include('partials.footer')
+@include('partials.chatbox')
+@stack('scripts')
+
 </body></html>
+
+

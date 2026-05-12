@@ -370,4 +370,7 @@
         </div>
     </div>
 </nav> -->
+@include('partials.footer')
+@include('partials.chatbox')
+@stack('scripts')
 </body></html>

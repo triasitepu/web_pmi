@@ -434,73 +434,34 @@ function getStatus($val) {
 <!-- Process Section -->
 <section class="py-24 bg-primary-softcontainer">
 <div class="max-w-7xl mx-auto px-8">
-<h2 class="text-4xl font-headline font-extrabold mb-16 tracking-tight text-center">Apa yang diharapkan</h2>
+<h2 class="text-4xl font-headline font-extrabold mb-16 tracking-tight text-center text-white">Alur Donor Darah</h2>
 <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
 <div class="text-center">
 <div class="text-6xl font-headline font-black text-white mb-4">01</div>
-<h4 class="font-headline font-bold text-xl mb-2">Registrasi</h4>
-<p class="text-black text-sm">Masuk, tunjukkan ID Anda, dan baca materi informasi donor.</p>
+<h4 class="font-headline font-bold text-xl mb-2 text-white">Registrasi</h4>
+<p class="text-white text-sm">Masuk, tunjukkan ID Anda, dan baca materi informasi donor.</p>
 </div>
 <div class="text-center">
 <div class="text-6xl font-headline font-black text-white mb-4">02</div>
-<h4 class="font-headline font-bold text-xl mb-2">Pemeriksaan Fisik</h4>
-<p class="text-black text-sm">Pemeriksaan cepat denyut nadi, tekanan darah, dan kadar hemoglobin Anda.</p>
+<h4 class="font-headline font-bold text-xl mb-2 text-white">Pemeriksaan Fisik</h4>
+<p class="text-white text-sm">Pemeriksaan cepat denyut nadi, tekanan darah, dan kadar hemoglobin Anda.</p>
 </div>
 <div class="text-center">
 <div class="text-6xl font-headline font-black text-white mb-4">03</div>
-<h4 class="font-headline font-bold text-xl mb-2">Proses Donor</h4>
-<p class="text-black text-sm">Duduk santai dan rileks. Proses donasi hanya memakan waktu sekitar 8-10 menit.</p>
+<h4 class="font-headline font-bold text-xl mb-2 text-white">Proses Donor</h4>
+<p class="text-white text-sm">Duduk santai dan rileks. Proses donasi hanya memakan waktu sekitar 8-10 menit.</p>
 </div>
 <div class="text-center">
 <div class="text-6xl font-headline font-black text-white mb-4">04</div>
-<h4 class="font-headline font-bold text-xl mb-2">Pemulihan</h4>
-<p class="text-black text-sm">Nikmati makanan ringan gratis sambil beristirahat selama 15 menit.</p>
+<h4 class="font-headline font-bold text-xl mb-2 text-white">Pemulihan</h4>
+<p class="text-white text-sm">Nikmati makanan ringan gratis sambil beristirahat selama 15 menit.</p>
 </div>
 </div>
 </div>
 </section>
 </main>
 <!-- Footer -->
-<footer class="w-full py-12 px-8 bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-<div>
-<div class="text-xl font-bold text-gray-900 dark:text-white mb-4">PMI Portal</div>
-<p class="text-gray-500 dark:text-gray-400 font-inter text-sm leading-relaxed max-w-xs">© 2024 Layanan Kemanusiaan. Seluruh Hak Cipta Dilindungi.</p>
-</div>
-<div class="grid grid-cols-2 gap-4">
-<div>
-<h5 class="text-red-600 dark:text-red-500 font-bold mb-4 uppercase text-xs tracking-widest">SUMBER DAYA</h5>
-<ul class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
-<li><a class="hover:text-red-600 dark:hover:text-red-400 transition-colors" href="#">Golongan Darah</a></li>
-<li><a class="hover:text-red-600 dark:hover:text-red-400 transition-colors" href="#">Manfaat</a></li>
-<li><a class="hover:text-red-600 dark:hover:text-red-400 transition-colors" href="#">Kisah Donor</a></li>
-</ul>
-</div>
-<div>
-<h5 class="text-red-600 dark:text-red-500 font-bold mb-4 uppercase text-xs tracking-widest">LEGAL</h5>
-<ul class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
-<li><a class="hover:text-red-600 dark:hover:text-red-400 transition-colors" href="#">Kebijakan Privasi</a></li>
-<li><a class="hover:text-red-600 dark:hover:text-red-400 transition-colors" href="#">Syarat &amp; Ketentuan</a></li>
-</ul>
-</div>
-</div>
-<div>
-<h5 class="text-red-600 dark:text-red-500 font-bold mb-4 uppercase text-xs tracking-widest">TETAP TERUPDATE</h5>
-<div class="flex flex-col gap-4">
-<p class="text-sm text-gray-500 dark:text-gray-400">Berlangganan untuk mendapatkan peringatan stok darurat.</p>
-<div class="flex gap-2">
-<input class="bg-surface-container-high border-none rounded px-4 py-2 text-sm w-full focus:ring-2 focus:ring-primary-container" placeholder="Alamat email" type="email"/>
-<button class="bg-on-surface text-surface px-4 py-2 rounded text-sm font-bold">Gabung</button>
-</div>
-</div>
-</div>
-</div>
-<div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
-<div class="text-gray-500 dark:text-gray-400 font-inter text-sm">© 2024 Layanan Kemanusiaan. Seluruh Hak Cipta Dilindungi.</div>
-<div class="flex gap-6 text-gray-400">
-<a class="hover:text-red-600 transition-colors" href="#">Kontak</a>
-<a class="hover:text-red-600 transition-colors" href="#">Media Sosial</a>
-</div>
-</div>
-</footer>
+@include('partials.footer')
+@include('partials.chatbox')
+@stack('scripts')
 </body></html>

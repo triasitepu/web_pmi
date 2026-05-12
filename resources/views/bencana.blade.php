@@ -99,6 +99,7 @@
             }
         }
     </style>
+    
 </head>
 <body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-white">
 <!-- TopNavBar -->
@@ -355,18 +356,7 @@ alt="Gunung Lawu"/>
 </section>
 </main>
 <!-- Footer Shell -->
-<footer class="bg-slate-50 dark:bg-slate-950">
-<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center py-12 px-8 border-t border-slate-200 dark:border-slate-800">
-<div class="mb-8 md:mb-0">
-<div class="text-lg font-bold text-slate-900 dark:text-slate-100 uppercase font-headline mb-2">PMI KABUPATEN MAGETAN</div>
-<p class="font-['Inter'] text-xs tracking-wide leading-relaxed text-slate-500 uppercase">© 2024 PALANG MERAH INDONESIA KABUPATEN MAGETAN. DIVISI PENANGGULANGAN BENCANA.</p>
-</div>
-<nav class="flex flex-wrap justify-center gap-8 font-['Inter'] text-xs tracking-wide uppercase">
-<a class="text-slate-500 hover:text-slate-900 underline decoration-red-600/30 underline-offset-4 transition-opacity opacity-80 hover:opacity-100" href="#">Etika Operasional</a>
-<a class="text-slate-500 hover:text-slate-900 underline decoration-red-600/30 underline-offset-4 transition-opacity opacity-80 hover:opacity-100" href="#">Privasi</a>
-<a class="text-slate-500 hover:text-slate-900 underline decoration-red-600/30 underline-offset-4 transition-opacity opacity-80 hover:opacity-100" href="#">Legal</a>
-<a class="text-slate-500 hover:text-slate-900 underline decoration-red-600/30 underline-offset-4 transition-opacity opacity-80 hover:opacity-100" href="#">Donasi</a>
-</nav>
-</div>
-</footer>
+@include('partials.footer')
+@include('partials.chatbox')
+@stack('scripts')
 </body></html>

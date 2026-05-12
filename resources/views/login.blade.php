@@ -100,7 +100,7 @@
         }
 
         button:hover {
-            background-color: #c2410c;
+            background-color: #ff8a36;
             transform: translateY(-1px);
         }
 

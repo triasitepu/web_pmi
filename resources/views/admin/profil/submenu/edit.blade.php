@@ -52,11 +52,11 @@
         @csrf
         @method('PUT')
 
-        {{-- Pilih Profil --}}
+        {{-- Pilih Kategori --}}
         <div class="mb-3">
-            <label for="profil_id" class="form-label fw-semibold">Pilih Profil</label>
+            <label for="profil_id" class="form-label fw-semibold">Pilih Kategori</label>
             <select name="profil_id" id="profil_id" class="form-select @error('profil_id') is-invalid @enderror" required>
-                <option value="" disabled>-- Pilih Profil --</option>
+                <option value="" disabled>-- Pilih Kategori --</option>
                 @foreach($profils as $profil)
                     <option value="{{ $profil->id }}" {{ old('profil_id', $submenu->profil_id) == $profil->id ? 'selected' : '' }}>
                         {{ $profil->nama_profil ?? 'Profil ' . $profil->id }}

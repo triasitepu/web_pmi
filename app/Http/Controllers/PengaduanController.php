@@ -7,11 +7,17 @@ use Illuminate\Http\Request;
 
 class PengaduanController extends Controller
 {
-    public function store(Request $request)
+   public function store(Request $request)
     {
+        $request->validate([
+            'email' => 'nullable|email',
+            'kategori' => 'required',
+            'isi' => 'required',
+        ]);
+
         Pengaduan::create([
-            'nama' => $request->nama ?? 'Guest',
-            'no_hp' => $request->no_hp ?? '-',
+            'nama' => $request->nama ?: 'Guest',
+            'email' => $request->email ?: '-',
             'kategori' => $request->kategori,
             'isi' => $request->isi,
         ]);
@@ -20,4 +26,5 @@ class PengaduanController extends Controller
             'message' => 'Pengaduan berhasil dikirim!'
         ]);
     }
+
 }

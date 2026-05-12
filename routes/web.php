@@ -16,11 +16,22 @@ use App\Http\Controllers\SubmenuKebencanaanController;
 use App\Http\Controllers\DiklatController;
 use App\Http\Controllers\SubmenuDiklatController;
 use App\Http\Controllers\PengaduanController;
+use App\Events\VisitUpdated;
 
+Route::get('/test-visit', function () {
+    event(new VisitUpdated([
+        'total' => 123,
+        'online' => 7
+    ]));
+
+    return 'OK';
+});
 
 Route::get('/tes-sederhana', function () {
     return 'TES ROUTE SEDERHANA BERHASIL! (tanpa auth, prefix, middleware)';
 });
+
+
 /*
 |--------------------------------------------------------------------------
 | FRONTEND (UMUM)
@@ -60,6 +71,7 @@ Route::middleware(['auth', 'role:superadmin,admin,admin_donor'])
 
     Route::get('/dashboard', [DashboardController::class, 'index'])
         ->name('dashboard');
+    
 
 });
 
@@ -323,6 +335,8 @@ Route::middleware(['auth', 'role:admin,superadmin'])
             Route::delete('/{id}', [SubmenuKebencanaanController::class, 'destroy'])->name('destroy');
 
         });
+
+        
         /*
         |--------------------------------------------------------------------------
         | SUPERADMIN ONLY

@@ -37,9 +37,10 @@
             border-left: .3em solid transparent;
         }
     </style>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body>
+<body style="isolation: isolate; contain: paint;">
 
     <!-- Header -->
     @include('partials.header')
@@ -54,6 +55,7 @@
     <!-- chatbox -->
     @include('partials.chatbox')
     @stack('scripts')
+    
 
     <!-- JS -->
     <script src="{{ asset('js/jquery.min.js') }}"></script>
@@ -97,5 +99,5 @@ if(closeBtn){
 });
 </script>
 
-</body>
+</>
 </html>

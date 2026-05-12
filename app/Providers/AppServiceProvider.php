@@ -50,8 +50,32 @@ class AppServiceProvider extends ServiceProvider
                 $view->with(['diklatSubmenus' => $diklatSubmenus]);
             });
 
-            // ✅ INI YANG BENAR (global ke semua view)
+            // global ke semua view
             View::share('totalrelawan', SubmenuRelawan::where('slug', 'totalrelawan')->first());
-        }
+            View::share('wba', SubmenuDonor::where('slug', 'wba')->first());
+            View::share('wbb', SubmenuDonor::where('slug', 'wbb')->first());
+            View::share('wbo', SubmenuDonor::where('slug', 'wbo')->first());
+            View::share('wbab', SubmenuDonor::where('slug', 'wbab')->first());
+
+            View::share('prca', SubmenuDonor::where('slug', 'prca')->first());
+            View::share('prcb', SubmenuDonor::where('slug', 'prcb')->first());
+            View::share('prco', SubmenuDonor::where('slug', 'prco')->first());
+            View::share('prcab', SubmenuDonor::where('slug', 'prcab')->first());
+
+            View::share('tca', SubmenuDonor::where('slug', 'tca')->first());
+            View::share('tcb', SubmenuDonor::where('slug', 'tcb')->first());
+            View::share('tco', SubmenuDonor::where('slug', 'tco')->first());
+            View::share('tcab', SubmenuDonor::where('slug', 'tcab')->first());
+
+            View::share('ffpa', SubmenuDonor::where('slug', 'ffpa')->first());
+            View::share('ffpb', SubmenuDonor::where('slug', 'ffpb')->first());
+            View::share('ffpo', SubmenuDonor::where('slug', 'ffpo')->first());
+            View::share('ffpab', SubmenuDonor::where('slug', 'ffpab')->first());
+            View::share('totaldonor', SubmenuDonor::where('slug', 'totaldonor')->first());
+            View::share('headlineberanda', SubmenuProfil::where('slug', 'headlineberanda')->first());
+
+
+
+                    }
 
 }

@@ -175,7 +175,7 @@
 </div> -->
 </td>
 <td class="py-6 text-right">
-<button class="px-4 py-2 border border-primary-softcontainer text-primary-softcontainer rounded-lg text-sm font-bold hover:bg-primary-softcontainer hover:text-white transition-all">Daftar</button>
+<a class="px-4 py-2 border border-primary-softcontainer text-primary-softcontainer rounded-lg text-sm font-bold hover:bg-primary-softcontainer hover:text-white transition-all" href="https://dash.s.id/l/relawanpmimagetan">Daftar</a>
 </td>
 </tr>
 <tr>
@@ -184,14 +184,9 @@
 <p class="text-xs text-secondary">PMI Magetan</p>
 </td>
 <td class="py-6 pr-4 text-sm font-medium">{{ $manajemen_bencana->isi ?? 'Tanggal belum tersedia' }}</td>
-<!-- <td class="py-6 pr-4">
-<div class="flex items-center gap-2">
-<div class="w-2 h-2 rounded-full bg-orange-500"></div>
-<span class="text-sm font-medium text-orange-700">Hampir Penuh</span>
-</div> -->
 </td>
 <td class="py-6 text-right">
-<button class="px-4 py-2 border border-primary-softcontainer text-primary-softcontainer rounded-lg text-sm font-bold hover:bg-primary-softcontainer hover:text-white transition-all">Daftar</button>
+<a class="px-4 py-2 border border-primary-softcontainer text-primary-softcontainer rounded-lg text-sm font-bold hover:bg-primary-softcontainer hover:text-white transition-all" href="https://dash.s.id/l/relawanpmimagetan">Daftar</a>
 </td>
 </tr>
 <tr>
@@ -207,7 +202,7 @@
 </div> -->
 </td>
 <td class="py-6 text-right">
-<button class="px-4 py-2 border border-secondary text-secondary rounded-lg text-sm font-bold cursor-not-allowed opacity-50">Daftar Tunggu</button>
+<a class="px-4 py-2 border border-primary-softcontainer text-primary-softcontainer rounded-lg text-sm font-bold hover:bg-primary-softcontainer hover:text-white transition-all" href="https://dash.s.id/l/relawanpmimagetan">Daftar</a>
 </td>
 </tr>
 </tbody>
@@ -263,30 +258,7 @@
 </section>
 </main>
 <!-- Footer -->
-<footer class="w-full py-12 px-8 bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-<div>
-<div class="text-xl font-bold text-gray-900 dark:white font-headline mb-6">PMI Portal</div>
-<p class="font-inter text-sm leading-relaxed text-gray-500 dark:text-gray-400 max-w-xs">Berkomitmen pada kemanusiaan. Menyediakan pelatihan medis kelas dunia dan sistem tanggap darurat ke setiap pelosok negeri.</p>
-</div>
-<div class="flex flex-col gap-4">
-<h6 class="font-headline font-bold text-sm tracking-widest uppercase text-gray-900 dark:text-white">Tautan Cepat</h6>
-<div class="flex flex-col gap-2">
-<a class="text-gray-500 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 font-inter text-sm transition-colors" href="#">Kontak</a>
-<a class="text-gray-500 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 font-inter text-sm transition-colors" href="#">Media Sosial</a>
-<a class="text-gray-500 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 font-inter text-sm transition-colors" href="#">Kebijakan Privasi</a>
-<a class="text-gray-500 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 font-inter text-sm transition-colors" href="#">Ketentuan</a>
-</div>
-</div>
-<div class="flex flex-col gap-4">
-<h6 class="font-headline font-bold text-sm tracking-widest uppercase text-gray-900 dark:text-white">Tautan Cepat</h6>
-<div class="flex gap-4">
-<span class="material-symbols-outlined text-gray-500 hover:text-red-600 cursor-pointer" data-icon="language">language</span>
-<span class="material-symbols-outlined text-gray-500 hover:text-red-600 cursor-pointer" data-icon="alternate_email">alternate_email</span>
-<span class="material-symbols-outlined text-gray-500 hover:text-red-600 cursor-pointer" data-icon="phone_in_talk">phone_in_talk</span>
-</div>
-<p class="font-inter text-sm leading-relaxed text-gray-500 dark:text-gray-400 mt-4">© 2024 Layanan Kemanusiaan. Seluruh Hak Cipta Dilindungi.</p>
-</div>
-</div>
-</footer>
+@include('partials.footer')
+@include('partials.chatbox')
+@stack('scripts')
 </body></html>

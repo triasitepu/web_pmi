@@ -387,7 +387,7 @@ $data = explode("\n", $syarattsr->isi ?? '');
    Download Formulir Umum
 </a>
 
-<a href="{{ $persyaratan->isi ?? '#' }}" 
+<a href="{{ asset('storage/' . $persyaratan->foto) }}" target="_blank" 
    target="_blank"
    class="bg-white text-black px-10 py-5 rounded-md font-extrabold shadow-xl 
           hover:bg-primary-softcontainer hover:text-on-background transition-all duration-300">
@@ -399,27 +399,7 @@ $data = explode("\n", $syarattsr->isi ?? '');
 </section>
 </main>
 <!-- Footer -->
-<footer class="w-full py-12 px-8 bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-<div>
-<div class="text-xl font-bold text-gray-900 dark:text-white font-headline mb-4">PMI Magetan</div>
-<p class="text-gray-500 dark:text-gray-400 font-inter text-sm leading-relaxed max-w-xs">© 2024 Layanan Kemanusiaan. Seluruh Hak Cipta Dilindungi Undang-Undang.</p>
-</div>
-<div class="flex flex-col gap-3">
-<h4 class="font-bold text-gray-900 dark:text-white text-sm mb-2">Tautan Cepat</h4>
-<a class="text-gray-500 dark:text-gray-400 hover:text-red-600 transition-colors text-sm" href="#">Kontak</a>
-<a class="text-gray-500 dark:text-gray-400 hover:text-red-600 transition-colors text-sm" href="#">Sosial</a>
-<a class="text-gray-500 dark:text-gray-400 hover:text-red-600 transition-colors text-sm" href="#">Kebijakan Privasi</a>
-<a class="text-gray-500 dark:text-gray-400 hover:text-red-600 transition-colors text-sm" href="#">Ketentuan</a>
-</div>
-<div>
-<h4 class="font-bold text-gray-900 dark:text-white text-sm mb-4">Tautan Cepat</h4>
-<div class="flex gap-2">
-<input class="bg-white dark:bg-gray-800 border-none rounded px-4 py-2 text-sm w-full outline-none focus:ring-1 focus:ring-red-500" placeholder="Alamat email" type="text"/>
-<button class="bg-red-600 text-white px-4 py-2 rounded text-sm font-bold">Gabung</button>
-</div>
-<p class="mt-6 text-gray-500 dark:text-gray-400 text-xs">© 2024 Layanan Kemanusiaan. Seluruh Hak Cipta Dilindungi Undang-Undang.</p>
-</div>
-</div>
-</footer>
+@include('partials.footer')
+@include('partials.chatbox')
+@stack('scripts')
 </body></html>

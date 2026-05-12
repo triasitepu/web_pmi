@@ -255,36 +255,10 @@
 </div>
 </section>
 </main>
+
+
 <!-- Footer -->
-<footer class="bg-gray-50 dark:bg-gray-900 w-full py-12 px-8 border-t border-gray-200 dark:border-gray-800">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-<div class="flex flex-col gap-4">
-<div class="text-xl font-bold text-gray-900 dark:text-white font-headline">PMI Portal</div>
-<p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed font-inter">Pemimpin global dalam respon kemanusiaan dan logistik medis darurat. Memberikan perawatan ketika setiap detik sangat berarti.</p>
-</div>
-<div class="grid grid-cols-2 gap-4">
-<div class="flex flex-col gap-2">
-<span class="text-red-600 dark:text-red-500 text-xs font-black uppercase tracking-widest mb-2">Layanan</span>
-<a class="text-gray-500 dark:text-gray-400 text-sm hover:text-red-600 dark:hover:text-red-400 transition-opacity" href="#">Ambulans</a>
-<a class="text-gray-500 dark:text-gray-400 text-sm hover:text-red-600 dark:hover:text-red-400 transition-opacity" href="#">Bencana</a>
-<a class="text-gray-500 dark:text-gray-400 text-sm hover:text-red-600 dark:hover:text-red-400 transition-opacity" href="#">Pelatihan</a>
-</div>
-<div class="flex flex-col gap-2">
-<span class="text-red-600 dark:text-red-500 text-xs font-black uppercase tracking-widest mb-2">Layanan</span>
-<a class="text-gray-500 dark:text-gray-400 text-sm hover:text-red-600 dark:hover:text-red-400 transition-opacity" href="#">Kontak</a>
-<a class="text-gray-500 dark:text-gray-400 text-sm hover:text-red-600 dark:hover:text-red-400 transition-opacity" href="#">Sosial</a>
-<a class="text-gray-500 dark:text-gray-400 text-sm hover:text-red-600 dark:hover:text-red-400 transition-opacity" href="#">Kebijakan Privasi</a>
-</div>
-</div>
-<div class="flex flex-col justify-between items-start md:items-end">
-<div class="flex gap-4">
-<span class="material-symbols-outlined text-secondary hover:text-primary transition-colors cursor-pointer" data-icon="public">public</span>
-<span class="material-symbols-outlined text-secondary hover:text-primary transition-colors cursor-pointer" data-icon="mail">mail</span>
-</div>
-<div class="text-gray-500 dark:text-gray-400 text-sm font-inter mt-8">© 2024 Layanan Kemanusiaan. Seluruh hak cipta dilindungi undang-undang.</div>
-</div>
-</div>
-</footer>
+@include('partials.footer')
 <!-- Mobile Navigation Shell -->
 <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md px-6 py-4 flex justify-around items-center">
 <a class="flex flex-col items-center gap-1 text-gray-500" href="#">
@@ -304,4 +278,6 @@
 <span class="text-[10px] font-bold">Profil</span>
 </a>
 </div>
+@include('partials.chatbox')
+@stack('scripts')
 </body></html>

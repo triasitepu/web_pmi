@@ -39,11 +39,11 @@
 
     {{-- Pilih Relawan --}}
     <div class="mb-3">
-      <label for="profil_id" class="form-label fw-semibold">Pilih Relawan</label>
+      <label for="profil_id" class="form-label fw-semibold">Pilih Kategori</label>
       <select name="profil_id" id="profil_id" class="form-select w-100" required>
-        <option value="" disabled selected>-- Pilih Relawan --</option>
+          <option value="" disabled selected>-- Pilih Kategori --</option>
         @foreach($profils as $profil)
-          <option value="{{ $profil->id }}">{{ $profil->nama_menu ?? 'Relawan ' . $profil->id }}</option>
+          <option value="{{ $profil->id }}">{{ $profil->nama_menu ?? 'Kategori ' . $profil->id }}</option>
         @endforeach
       </select>
       @error('profil_id')

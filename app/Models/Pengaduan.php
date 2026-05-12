@@ -8,7 +8,7 @@ class Pengaduan extends Model
 {
     protected $fillable = [
     'nama',
-    'no_hp',
+    'email',
     'kategori',
     'isi'
 ];

@@ -1,62 +1,60 @@
-<footer class="wide-tb-70 pb-0 mb-spacer-md shadow">
-    <div class="container pos-rel">
-        <div class="row">
+<footer class="bg-surface-container-low py-16 mt-20">
+  <div class="max-w-7xl mx-auto px-8">
 
-            <div class="col-lg-4 col-md-6">
-                <div class="logo-footer mb-3">
-                    <img src="{{ asset('images/logo.png') }}" alt="">
-                </div>
-                <div class="footer-widget-contact">
-                    <ul class="list-unstyled">
-                        <li class="d-flex mb-2">
-                            <i data-feather="map-pin" class="me-2"></i>
-                            <span>Jl. Gatot Subroto No.15, Magetan</span>
-                        </li>
-                        <li class="d-flex mb-2">
-                            <i data-feather="phone" class="me-2"></i>
-                            <span>(021) 775 6643</span>
-                        </li>
-                        <li class="d-flex mb-2">
-                            <i data-feather="mail" class="me-2"></i>
-                            <span>info@pmimagetan.com</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
 
-            <div class="col-lg-5 col-md-6">
-                <h3 class="footer-heading">Ikuti Kami</h3>
-                <ul class="list-unstyled list-group list-group-horizontal mt-3 flex-wrap">
-                    <li class="me-3 mb-2"><i class="icofont-facebook"></i> Facebook</li>
-                    <li class="me-3 mb-2"><i class="icofont-twitter"></i> Twitter</li>
-                    <li class="me-3 mb-2"><i class="icofont-instagram"></i> Instagram</li>
-                    <li class="mb-2"><i class="icofont-youtube-play"></i> YouTube</li>
-                </ul>
-            </div>
+      <!-- Column 1 -->
+      <div>
+        <img src="images/logo.png" alt="Logo PMI" class="mb-4 w-32">
 
-            <div class="col-lg-3 col-md-6">
-                <h3 class="footer-heading">PMI Kabupaten/Kota</h3>
-                <ul class="list-unstyled">
-                    <li>PMI DKI Jakarta</li>
-                    <li>Jakarta Pusat</li>
-                    <li>Jakarta Utara</li>
-                    <li>Jakarta Barat</li>
-                    <li>Jakarta Selatan</li>
-                    <li>Jakarta Timur</li>
-                    <li>Kepulauan Seribu</li>
-                </ul>
-            </div>
+        <ul class="space-y-3 text-sm text-secondary">
+          <li class="flex items-start gap-2">
+            <span class="material-symbols-outlined">location_on</span>
+            Jl. Gatot Subroto No.15, Magetan
+          </li>
 
+          <li class="flex items-center gap-2">
+            <span class="material-symbols-outlined">call</span>
+            <a href="tel:+62217756643">(021) 775 6643</a>
+          </li>
+
+          <li class="flex items-center gap-2">
+            <span class="material-symbols-outlined">mail</span>
+            <a href="mailto:info@pmi.go.id">info@pmi.go.id</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 2 -->
+      <div>
+        <h3 class="font-bold text-lg mb-4">Ikuti Kami</h3>
+
+        <div class="flex flex-wrap gap-4 text-sm">
+          <a href="#" class="hover:text-primary">Facebook</a>
+          <a href="#" class="hover:text-primary">Twitter</a>
+          <a href="#" class="hover:text-primary">Instagram</a>
+          <a href="#" class="hover:text-primary">YouTube</a>
         </div>
+      </div>
+
+      <!-- Column 3 -->
+      <div>
+        <h3 class="font-bold text-lg mb-4">PMI Cabang</h3>
+
+        <ul class="space-y-2 text-sm">
+          <li><a href="#" class="hover:text-primary">PMI Magetan</a></li>
+          <li><a href="#" class="hover:text-primary">PMI Madiun</a></li>
+          <li><a href="#" class="hover:text-primary">PMI Ponorogo</a></li>
+          <li><a href="#" class="hover:text-primary">PMI Ngawi</a></li>
+        </ul>
+      </div>
+
     </div>
 
-    <div class="copyright-wrap">
-        <div class="container pos-rel">
-            <div class="row text-md-start text-center">
-                <div class="col-sm-12 col-md-auto">
-                    © PMI Magetan 2025
-                </div>
-            </div>
-        </div>
+    <!-- Bottom -->
+    <div class="border-t mt-12 pt-6 text-center text-sm text-secondary">
+      © 2026 PMI Kabupaten Magetan. All rights reserved.
     </div>
+
+  </div>
 </footer>

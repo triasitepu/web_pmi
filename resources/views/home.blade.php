@@ -78,6 +78,7 @@
         },
       }
     </script>
+   
 <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -105,11 +106,12 @@
 
 @extends('partials.header')
 
+
 <main class="pt-20">
 <!-- Hero Section -->
 <section class="relative h-[870px] flex items-center overflow-hidden bg-surface-dim">
 <div class="absolute inset-0 z-0">
-<img class="w-full h-full object-cover opacity-60 mix-blend-multiply" data-alt="Humanitarian workers providing medical assistance in a community setting, warm cinematic lighting, high-end editorial photography style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1f9mxCTL3rdhuC1nlA-3B0V5Qvl3vJ4RfyjFYy4BTay53vBAvUKEbK8mg4otmYVSAycFVK38N7Oc9pXbwBHHE5g4nSCOf3BaOBPNNgE8vOpxH9rOqAAHIwCLwvW6oJxBK_BT8-MviIxSVx6NAEtznCrmVFLnLJEKvwyJ23F_3fO7JgL0ycu5YOGW4dVnvU-Q01Uzn5ZP7T7cXR5aIchi3ItXUJCMlq8jtxicZUdxFVNVMEowYTa7Nt0l7YmlNzdN6T4zcQJVksQ"/>
+<img class="w-full h-full object-cover opacity-60 mix-blend-multiply" data-alt="Humanitarian workers providing medical assistance in a community setting, warm cinematic lighting, high-end editorial photography style" src="{{ url('storage/' . $headlineberanda->foto) }}"/>
 <div class="absolute inset-0 bg-gradient-to-r from-primary/40 to-transparent"></div>
 </div>
 <div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
@@ -118,7 +120,7 @@
                         Kemanusiaan untuk Semua
                     </h1>
 <p class="text-xl text-white/90 font-medium leading-relaxed max-w-lg">
-                        Melayani dengan tulus, bergerak dengan sigap. Kami hadir sebagai garda terdepan dalam aksi kemanusiaan di Kabupaten Magetan.
+    {{ $headlineberanda->isi ?? 'Komitmen kami untuk kesiapsiagaan dan respons cepat dalam menghadapi bencana di Magetan.' }}
                     </p>
 <div class="flex flex-wrap gap-4 pt-4">
 <!-- <button class="bg-primary-container text-on-primary px-10 py-4 rounded-xl font-bold text-lg hover:bg-primary transition-all shadow-lg">
@@ -139,17 +141,17 @@
 <span class="text-primary font-bold tracking-widest text-sm uppercase">Dampak Nyata</span>
 <h2 class="text-4xl font-black text-on-surface">Statistik Kemanusiaan</h2>
 </div>
-<div class="bg-surface-container-lowest p-10 rounded-2xl shadow-sm border-b-4 border-primary">
+<div class="bg-surface-container-lowest p-10 rounded-2xl shadow-sm border-b-4 border-primary-softcontainer">
 <span class="text-5xl font-black text-primary-softcontainer block mb-2">
      {{ $totalrelawan->isi ?? 0 }}
 </span>
 <p class="text-secondary font-bold">Relawan Aktif</p>
 </div>
-<div class="bg-surface-container-lowest p-10 rounded-2xl shadow-sm mt-8 md:mt-12">
-<span class="text-5xl font-black text-primary-softcontainer block mb-2">450</span>
-<p class="text-secondary font-bold">Kantong Darah/Bulan</p>
+<div class="bg-surface-container-lowest p-10 rounded-2xl shadow-sm border-b-4 border-primary-softcontainer">
+<span class="text-5xl font-black text-primary-softcontainer block mb-2">{{ $totaldonor->isi ?? 0 }}</span>
+<p class="text-secondary font-bold">Kantong Darah Bulan Ini</p>
 </div>
-<div class="bg-surface-container-lowest p-10 rounded-2xl shadow-sm">
+<div class="bg-surface-container-lowest p-10 rounded-2xl shadow-sm border-b-4 border-primary-softcontainer">
 <span class="text-5xl font-black text-primary-softcontainer block mb-2">24/7</span>
 <p class="text-secondary font-bold">Respon Ambulans</p>
 </div>
@@ -219,201 +221,45 @@ class="bg-on-background text-surface px-6 py-2 rounded-lg font-bold flex justify
 </section>
 <!-- Mitra Kami Section -->
 <section class="py-24 bg-surface">
-<div class="max-w-7xl mx-auto px-8">
-<div class="text-center mb-12">
-<h2 class="text-2xl font-bold text-secondary">Mitra Strategis Kami</h2>
-</div>
-<div class="flex flex-wrap justify-center items-center gap-16 grayscale opacity-50 hover:grayscale-0 transition-all">
-<span class="text-2xl font-black font-manrope">PEMKAB MAGETAN</span>
-<span class="text-2xl font-black font-manrope">KEMENKES RI</span>
-<span class="text-2xl font-black font-manrope">BASARNAS</span>
-<span class="text-2xl font-black font-manrope">BNPB</span>
-<span class="text-2xl font-black font-manrope">RSUD SAYIDIMAN</span>
-</div>
-</div>
+  <div class="max-w-7xl mx-auto px-8">
+
+    <!-- Heading -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold mb-2">Mitra & Kolaborator</h2>
+      <p class="text-secondary">Bekerja sama dengan berbagai instansi terpercaya</p>
+    </div>
+
+    <!-- Logo Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-10 items-center">
+
+      <a href="https://www.bmkg.go.id" target="_blank" class="flex justify-center opacity-60 hover:opacity-100 transition">
+        <img src="{{ asset('images/-sxPkWOP45VIxLWC3Hw65epUphvUoVPvQ.jpg') }}" alt="Pemkab Magetan" class="h-12 object-contain">
+      </a>
+
+      <a href="https://www.bmkg.go.id" target="_blank" class="flex justify-center opacity-60 hover:opacity-100 transition">
+        <img  src="{{ asset('images/bmkg.png') }}"  alt="BMKG" class="h-12 object-contain">
+      </a>
+
+      <a href="https://www.bpbd.go.id" target="_blank" class="flex justify-center opacity-60 hover:opacity-100 transition">
+        <img src="{{ asset('images/bpbd.png') }}" alt="BPBD" class="h-12 object-contain">
+      </a>
+
+      <a href="https://www.bnpb.go.id" target="_blank" class="flex justify-center opacity-60 hover:opacity-100 transition">
+        <img src="{{ asset('images/bnpb.png') }}" alt="BNPB" class="h-12 object-contain">
+      </a>
+
+      <a href="https://www.icrc.org" target="_blank" class="flex justify-center opacity-60 hover:opacity-100 transition">
+        <img src="{{ asset('images/icrc.png') }}" alt="ICRC" class="h-12 object-contain">
+      </a>
+
+    </div>
+
+  </div>
 </section>
 </main>
-<!-- Footer -->
-<footer class="w-full border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 font-inter text-sm leading-relaxed">
-<div class="flex flex-col md:flex-row justify-between items-center px-8 py-12 max-w-7xl mx-auto gap-6">
-<div class="space-y-4 text-center md:text-left">
-<div class="font-manrope font-bold text-slate-900 dark:text-white text-xl">
-                    PMI Kabupaten Magetan
-                </div>
-<p class="text-slate-500 max-w-xs">Markas PMI Kab. Magetan, Jl. Salak No.1, Magetan, Jawa Timur.</p>
-<p class="text-slate-500 dark:text-slate-400">© 2024 PMI Kabupaten Magetan. Kemanusiaan untuk Semua.</p>
-</div>
-<div class="flex flex-wrap justify-center gap-8">
-<a class="text-slate-500 dark:text-slate-400 hover:text-red-600 dark:hover:text-red-400 underline-offset-4 hover:underline transition-all duration-300" href="#">Kebijakan Privasi</a>
-<a class="text-slate-500 dark:text-slate-400 hover:text-red-600 dark:hover:text-red-400 underline-offset-4 hover:underline transition-all duration-300" href="#">Kontak Darurat</a>
-<a class="text-slate-500 dark:text-slate-400 hover:text-red-600 dark:hover:text-red-400 underline-offset-4 hover:underline transition-all duration-300" href="#">Pusat Bantuan</a>
-<a class="text-slate-500 dark:text-slate-400 hover:text-red-600 dark:hover:text-red-400 underline-offset-4 hover:underline transition-all duration-300" href="#">Lokasi Markas</a>
-</div>
-<div class="flex gap-4">
-<button class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all">
-<span class="material-symbols-outlined text-sm">public</span>
-</button>
-<button class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all">
-<span class="material-symbols-outlined text-sm">share</span>
-</button>
-</div>
-</div>
-</footer>
-
+@include('partials.footer')
 @include('partials.chatbox')
-
-<button id="chatToggle"
-class="fixed bottom-6 right-6 flex items-center gap-2 px-4 py-3 
-bg-gradient-to-r from-red-600 to-red-500 
-text-white rounded-full shadow-xl 
-hover:scale-105 hover:shadow-2xl 
-transition-all duration-300 z-50 group">
-
-    <span class="material-symbols-outlined text-2xl group-hover:rotate-12 transition">
-        support_agent
-    </span>
-
-    <span class="font-semibold text-sm hidden md:block">
-        Chat PMI
-    </span>
-
-</button>
-
-<script>
-document.addEventListener("DOMContentLoaded", function(){
-
-    const toggle = document.getElementById('chatToggle');
-    const box = document.getElementById('chatBox');
-    const closeBtn = document.getElementById('closeChat');
-
-    toggle.onclick = () => {
-        if (box.style.display === "none") {
-            box.style.display = "flex";
-        } else {
-            box.style.display = "none";
-        }
-    }
-
-    closeBtn.onclick = () => {
-        box.style.display = "none";
-    }
-
-});
-</script>
-
-<script>
-function handleEmergency() {
-    const nomorAdmin = "6281234567890"; // ganti nomor kamu
-
-    const pesan = encodeURIComponent(
-        "🚨 Halo Admin PMI, saya ingin melaporkan kondisi DARURAT.\nMohon segera dibantu."
-    );
-
-    window.open(`https://wa.me/${nomorAdmin}?text=${pesan}`, "_blank");
-}
-</script>
-<script>
-function startChatbot() {
-    const content = document.getElementById('chatContent');
-
-    content.innerHTML = `
-        <div class="space-y-3">
-
-            <!-- BOT MESSAGE -->
-            <div class="bg-gray-100 p-2 rounded w-fit max-w-[80%]">
-                Halo 👋, silakan pilih kebutuhan Anda:
-            </div>
-
-            <!-- BUTTON PILIHAN -->
-            <button onclick="kirimAuto('Ambulans')"
-            class="w-full border p-2 rounded">🚑 Ambulans</button>
-
-            <button onclick="kirimAuto('Keluhan')"
-            class="w-full border p-2 rounded">📢 Keluhan</button>
-
-            <button onclick="kirimAuto('Donor Darah')"
-            class="w-full border p-2 rounded">🩸 Donor Darah</button>
-
-        </div>
-    `;
-}
-</script>
-<script>
-function kirimAuto(kategori) {
-    const content = document.getElementById('chatContent');
-
-    let reply = '';
-
-    if(kategori === 'Ambulans'){
-        reply = 'Untuk layanan ambulans, silakan hubungi hotline kami atau gunakan menu emergency 🚨';
-    } 
-    else if(kategori === 'Keluhan'){
-        reply = 'Silakan tuliskan keluhan Anda, kami akan membantu 😊';
-    } 
-    else if(kategori === 'Donor Darah'){
-        reply = 'Untuk info donor darah, cek jadwal di menu donor atau hubungi admin.';
-    }
-
-    content.innerHTML = `
-        <div class="space-y-3">
-
-            <!-- USER -->
-            <div class="text-right">
-                <div class="inline-block bg-red-600 text-white p-2 rounded">
-                    ${kategori}
-                </div>
-            </div>
-
-            <!-- BOT -->
-            <div class="bg-gray-100 p-2 rounded w-fit max-w-[80%]">
-                ${reply}
-            </div>
-
-            <!-- INPUT -->
-            <textarea id="pesan"
-            class="w-full border p-2 rounded mt-2"
-            placeholder="Tulis pesan..."></textarea>
-
-            <button onclick="kirimPesan('${kategori}')"
-            class="bg-red-600 text-white px-3 py-2 rounded w-full">
-                Kirim
-            </button>
-
-        </div>
-    `;
-}
-</script>
-<script>
-function kirimPesan(kategori) {
-    const isi = document.getElementById('pesan').value;
-    const content = document.getElementById('chatContent');
-
-    content.innerHTML += `
-        <div class="text-right">
-            <div class="inline-block bg-red-600 text-white p-2 rounded mt-2">
-                ${isi}
-            </div>
-        </div>
-
-        <div class="bg-gray-100 p-2 rounded w-fit max-w-[80%] mt-2">
-            🤖 Terima kasih, pesan Anda sudah kami terima.
-        </div>
-    `;
-
-    // OPTIONAL: kirim ke Laravel
-    fetch("{{ route('pengaduan.store') }}", {
-        method: "POST",
-        headers: {
-            'X-CSRF-TOKEN': "{{ csrf_token() }}",
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            kategori: kategori,
-            isi: isi
-        })
-    });
-}
-</script>
+@stack('scripts')
 
 </body></html>
 
