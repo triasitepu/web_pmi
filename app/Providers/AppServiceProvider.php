@@ -11,6 +11,7 @@ use App\Models\SubmenuDonor;
 use App\Models\SubmenuRelawan;
 use App\Models\SubmenuKebencanaan;
 use App\Models\SubmenuDiklat;
+use App\Models\Pengaduan;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -52,27 +53,43 @@ class AppServiceProvider extends ServiceProvider
 
             // global ke semua view
             View::share('totalrelawan', SubmenuRelawan::where('slug', 'totalrelawan')->first());
-            View::share('wba', SubmenuDonor::where('slug', 'wba')->first());
-            View::share('wbb', SubmenuDonor::where('slug', 'wbb')->first());
-            View::share('wbo', SubmenuDonor::where('slug', 'wbo')->first());
-            View::share('wbab', SubmenuDonor::where('slug', 'wbab')->first());
+            View::share('whole_blood_a', SubmenuDonor::where('slug', 'whole-blood-a')->first());
+            View::share('whole_blood_b', SubmenuDonor::where('slug', 'whole-blood-b')->first());
+            View::share('whole_blood_o', SubmenuDonor::where('slug', 'whole-blood-o')->first());
+            View::share('whole_blood_ab', SubmenuDonor::where('slug', 'whole-blood-ab')->first());
 
-            View::share('prca', SubmenuDonor::where('slug', 'prca')->first());
-            View::share('prcb', SubmenuDonor::where('slug', 'prcb')->first());
-            View::share('prco', SubmenuDonor::where('slug', 'prco')->first());
-            View::share('prcab', SubmenuDonor::where('slug', 'prcab')->first());
+            View::share('packed_red_cell_a', SubmenuDonor::where('slug', 'packed-red-cell-a')->first());
+            View::share('packed_red_cell_b', SubmenuDonor::where('slug', 'packed-red-cell-b')->first());
+            View::share('packed_red_cell_o', SubmenuDonor::where('slug', 'packed-red-cell-o')->first());
+            View::share('packed_red_cell_ab', SubmenuDonor::where('slug', 'packed-red-cell-ab')->first());
 
-            View::share('tca', SubmenuDonor::where('slug', 'tca')->first());
-            View::share('tcb', SubmenuDonor::where('slug', 'tcb')->first());
-            View::share('tco', SubmenuDonor::where('slug', 'tco')->first());
-            View::share('tcab', SubmenuDonor::where('slug', 'tcab')->first());
+            View::share('trombocyte_concentrate_a', SubmenuDonor::where('slug', 'trombocyte-concentrate-a')->first());
+            View::share('trombocyte_concentrate_b', SubmenuDonor::where('slug', 'trombocyte-concentrate-b')->first());
+            View::share('trombocyte_concentrate_o', SubmenuDonor::where('slug', 'trombocyte-concentrate-o')->first());
+            View::share('trombocyte_concentrate_ab', SubmenuDonor::where('slug', 'trombocyte-concentrate-ab')->first());
 
-            View::share('ffpa', SubmenuDonor::where('slug', 'ffpa')->first());
-            View::share('ffpb', SubmenuDonor::where('slug', 'ffpb')->first());
-            View::share('ffpo', SubmenuDonor::where('slug', 'ffpo')->first());
-            View::share('ffpab', SubmenuDonor::where('slug', 'ffpab')->first());
+            View::share('fresh_frozen_plasma_a', SubmenuDonor::where('slug', 'fresh-frozen-plasma-a')->first());
+            View::share('fresh_frozen_plasma_b', SubmenuDonor::where('slug', 'fresh-frozen-plasma-b')->first());
+            View::share('fresh_frozen_plasma_o', SubmenuDonor::where('slug', 'fresh-frozen-plasma-o')->first());
+            View::share('fresh_frozen_plasma_ab', SubmenuDonor::where('slug', 'fresh-frozen-plasma-ab')->first());
             View::share('totaldonor', SubmenuDonor::where('slug', 'totaldonor')->first());
+           View::share('totalstokdarah',\App\Models\SubmenuDonor::whereIn('slug', [
+                    'whole-blood-a','whole-blood-b','whole-blood-o','whole-blood-ab',
+                    'packed-red-cell-a','packed-red-cell-b','packed-red-cell-o','packed-red-cell-ab',
+                    'trombocyte-concentrate-a','trombocyte-concentrate-b','trombocyte-concentrate-o','trombocyte-concentrate-ab',
+                    'fresh-frozen-plasma-a','fresh-frozen-plasma-b','fresh-frozen-plasma-o','fresh-frozen-plasma-ab'
+                ])->get()->sum(function($item){
+                    return (int) filter_var($item->isi, FILTER_SANITIZE_NUMBER_INT);
+                })
+            );
             View::share('headlineberanda', SubmenuProfil::where('slug', 'headlineberanda')->first());
+            
+            View::share('bencana', Pengaduan::where('kategori', 'Bencana Daerah')
+                ->latest()
+                ->first());
+
+            View::share('totalBencana', Pengaduan::where('kategori', 'Bencana Daerah')
+                ->count());
 
 
 

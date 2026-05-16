@@ -99,32 +99,36 @@
 @endif
         <div class="card-body">
           <h6 class="text-muted mb-2">Informasi</h6>
-          <table class="table table-sm table-borderless">
+          <table class="table table-sm table-borderless mb-0">
             <tr>
-              <td class="text-muted" style="width: 40%;">Relawan:</td>
-              <td><span class="badge bg-info">{{ $submenu->relawan->nama ?? 'N/A' }}</span></td>
+              <td class="text-muted py-2" style="width: 45%;">Kategori Submenu</td>
+              <td class="py-2">
+                <span class="badge bg-info">
+                  {{ $submenu->relawan->nama_menu ?? $submenu->relawan->nama_menu ?? 'N/A' }}
+                </span>
+              </td>
             </tr>
             <tr>
-              <td class="text-muted">Urutan:</td>
-              <td><strong>{{ $submenu->urutan ?? '-' }}</strong></td>
+              <td class="text-muted py-2">Urutan</td>
+              <td class="py-2 fw-semibold">{{ $submenu->urutan ?? '-' }}</td>
             </tr>
             <tr>
-              <td class="text-muted">Status:</td>
-              <td>
+              <td class="text-muted py-2">Status</td>
+              <td class="py-2">
                 @if($submenu->is_active)
-                  <span class="badge bg-success">Aktif</span>
+                  <span class="badge bg-success px-3">Aktif</span>
                 @else
-                  <span class="badge bg-secondary">Tidak Aktif</span>
+                  <span class="badge bg-secondary px-3">Tidak Aktif</span>
                 @endif
               </td>
             </tr>
             <tr>
-              <td class="text-muted">Dibuat:</td>
-              <td>{{ $submenu->created_at->format('d M Y H:i') ?? '-' }}</td>
+              <td class="text-muted py-2">Dibuat</td>
+              <td class="py-2 small">{{ $submenu->created_at?->format('d M Y • H:i') }}</td>
             </tr>
             <tr>
-              <td class="text-muted">Diupdate:</td>
-              <td>{{ $submenu->updated_at->format('d M Y H:i') ?? '-' }}</td>
+              <td class="text-muted py-2">Diupdate</td>
+              <td class="py-2 small">{{ $submenu->updated_at?->format('d M Y • H:i') }}</td>
             </tr>
           </table>
         </div>

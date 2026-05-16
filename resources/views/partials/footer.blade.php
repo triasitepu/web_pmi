@@ -30,10 +30,10 @@
         <h3 class="font-bold text-lg mb-4">Ikuti Kami</h3>
 
         <div class="flex flex-wrap gap-4 text-sm">
-          <a href="#" class="hover:text-primary">Facebook</a>
+          <a href="https://www.facebook.com/share/1D5QPJNjia/" class="hover:text-primary">Facebook</a>
           <a href="#" class="hover:text-primary">Twitter</a>
-          <a href="#" class="hover:text-primary">Instagram</a>
-          <a href="#" class="hover:text-primary">YouTube</a>
+          <a href="https://www.instagram.com/pmi_kabupaten_magetan?igsh=bGYwa3JudGEzd2po" class="hover:text-primary">Instagram</a>
+          <a href="https://youtube.com/@pmikabupatenmagetan?si=BD6YCExR890AiGdS" class="hover:text-primary">YouTube</a>
         </div>
       </div>
 
@@ -42,10 +42,10 @@
         <h3 class="font-bold text-lg mb-4">PMI Cabang</h3>
 
         <ul class="space-y-2 text-sm">
-          <li><a href="#" class="hover:text-primary">PMI Magetan</a></li>
-          <li><a href="#" class="hover:text-primary">PMI Madiun</a></li>
-          <li><a href="#" class="hover:text-primary">PMI Ponorogo</a></li>
-          <li><a href="#" class="hover:text-primary">PMI Ngawi</a></li>
+          <li><a href="https://pmikabmagetan.or.id/" class="hover:text-primary">PMI Magetan</a></li>
+          <li><a href="https://pmimadiun.com/" class="hover:text-primary">PMI Madiun</a></li>
+          <li><a href="https://pmiponorogo.com/" class="hover:text-primary">PMI Ponorogo</a></li>
+          <li><a href="https://pmingawi.com/" class="hover:text-primary">PMI Ngawi</a></li>
         </ul>
       </div>
 

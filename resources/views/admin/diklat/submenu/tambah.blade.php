@@ -22,21 +22,30 @@
   </div>
 
   {{-- Judul --}}
-  <h2 class="text-black text-center text-2xl font-bold mb-4">
+  <h2 class="text-dark fw-bold mb-4">
     Tambah Submenu Diklat Baru
   </h2>
 
   {{-- Pesan sukses/error --}}
   @if(session('success'))
-    <div class="alert alert-success text-center">{{ session('success') }}</div>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <i class="bi bi-check-circle me-2"></i>{{ session('success') }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
   @elseif(session('error'))
-    <div class="alert alert-danger text-center">{{ session('error') }}</div>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <i class="bi bi-exclamation-circle me-2"></i>{{ session('error') }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
   @endif
 
   {{-- Form Tambah --}}
   <form action="{{ route('admin.diklat-submenu.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
+    <div class="row">
 
+      <!-- Kolom Kiri -->
+      <div class="col-lg-8">
     {{-- Pilih Diklat --}}
     <div class="mb-3">
       <label for="diklat_id" class="form-label fw-semibold">Pilih Diklat</label>
@@ -83,6 +92,10 @@
         <div class="text-danger small mt-1">{{ $message }}</div>
       @enderror
     </div>
+    </div>
+
+      <!-- Kolom Kanan -->
+      <div class="col-lg-4">
 
     {{-- Input Foto --}}
     <div class="mb-3">
@@ -113,12 +126,29 @@
       >
     </div>
 
+        {{-- Status (default aktif) --}}
+        <div class="mb-4">
+          <label class="form-label fw-semibold">Status</label>
+          <div class="form-check">
+            <input type="checkbox" name="is_active" id="is_active" class="form-check-input" checked>
+            <label class="form-check-label" for="is_active">
+              Aktif
+            </label>
+          </div>
+        </div>
+
+      </div>
+    </div>
     {{-- Tombol Simpan --}}
-    <div class="text-end mt-4">
-      <button type="submit" class="btn btn-soft-danger px-4">
-        <i class="bi bi-save me-1"></i> Simpan
+     <div class="d-flex justify-content-end gap-2 mt-5">
+      <a href="{{ route('admin.profil-submenu.index') }}" class="btn btn-secondary px-4">
+        Batal
+      </a>
+      <button type="submit" class="btn btn-success px-5">
+       Simpan Submenu
       </button>
     </div>
+
   </form>
 
 </div>

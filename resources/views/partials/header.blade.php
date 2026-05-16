@@ -3,13 +3,9 @@
 <div class="flex justify-between items-center px-8 h-20 max-w-screen-2xl mx-auto">
     <div class="flex items-center">
     <a href="/" class="flex items-center bg-white rounded-b-lg px-2 py-1 shadow-sm">
-        <img src="{{ asset('images/logo.png') }}" 
+        <img src="{{ asset('images/logo.jpg') }}" 
              alt="PMI Logo" 
              class="h-12 w-auto object-contain">
-
-        <span class="ml-3 font-bold text-lg text-red-600">
-            Magetan
-        </span>
     </a>
 </div>
 <div class="hidden md:flex items-center gap-8 font-headline text-sm font-semibold tracking-tight">
@@ -50,7 +46,7 @@
 </div>
 
 <button>
-<a href="https://wa.me/6281234567890?text=Halo%20Admin%20PMI"
+<a href="https://wa.me/6281234567890?text=Halo%20Admin%20PMI" target="_blank"
 target="_blank"
 class="bg-red-600 text-white px-6 py-2.5 rounded-lg flex items-center gap-2 hover:opacity-90 transition">
     <i class="bi bi-whatsapp"></i>

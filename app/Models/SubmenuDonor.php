@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class SubmenuDonor extends Model
 {
-    protected $table = 'submenu_donor';  // nama tabel asli dari phpMyAdmin kamu
+    protected $table = 'submenu_donor'; 
 
     protected $fillable = [
         'donor_darah_id',

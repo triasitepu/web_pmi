@@ -127,8 +127,9 @@ class SubmenuKebencanaanController extends Controller
     public function landing()
     {
     $headline = SubmenuKebencanaan::where('slug', 'headline')->first();
+    $visikebencanaan = SubmenuKebencanaan::where('slug', 'visikebencanaan')->first();
     
 
-    return view('bencana', compact('headline'));
+    return view('bencana', compact('headline', 'visikebencanaan'));
     }
 }

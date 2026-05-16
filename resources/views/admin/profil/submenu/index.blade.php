@@ -35,100 +35,106 @@
   @endif
 
   {{-- Table --}}
-   <div class="table-responsive">
-    <table class="table table-striped align-middle">
-      <thead class="text-center text-white" style="background-color: #000;">
-        <tr>
-          <th style="width:5%">No</th>
-          <th>Judul</th>
-          <th>Isi</th>
-          <th>Foto</th>
-          <th>Status</th>
-          <th style="width:25%">Aksi</th>
-        </tr>
-      </thead>
-      <tbody>
-        @forelse($submenus as $key => $submenu)
-        <tr>
-          <td class="text-center">{{ $key + 1 }}</td>
-          {{-- Judul --}}
-          <td>{{ $submenu->nama_submenu }}</td>
+<div class="table-responsive">
+    <table class="table table-hover align-middle">
+        <thead class="text-center" style="background-color: #f8f9fa; border-bottom: 2px solid #dee2e6;">
+            <tr>
+                <th style="width:5%">No</th>
+                <th class="text-start">Judul</th>
+                <th class="text-start">Isi</th>
+                <th class="text-center">Foto</th>
+                <th class="text-center">Status</th>
+                <th style="width:22%" class="text-center">Aksi</th>
+            </tr>
+        </thead>
+        <tbody class="border-top-0">
+            @forelse($submenus as $key => $submenu)
+            <tr>
+                <td class="text-center fw-medium">{{ $key + 1 }}</td>
+                
+                {{-- Judul --}}
+                <td class="fw-medium">{{ $submenu->nama_submenu }}</td>
 
-          {{-- Isi dipotong agar tidak terlalu panjang --}}
-          <td>
-            {{ \Illuminate\Support\Str::limit(strip_tags($submenu->isi), 100) }}
-          </td>
+                {{-- Isi --}}
+                <td>
+                    <small class="text-muted">
+                        {{ \Illuminate\Support\Str::limit(strip_tags($submenu->isi), 120) }}
+                    </small>
+                </td>
 
-          {{-- Foto --}}
-          <td class="text-center">
-            @if($submenu->foto)
-              <img src="{{ asset('storage/' . $submenu->foto) }}" 
-                   alt="Foto" 
-                   width="100" 
-                   class="img-thumbnail">
-            @else
-              <span class="text-muted">Tidak ada foto</span>
-            @endif
-          </td>
+                {{-- Foto --}}
+                <td class="text-center">
+                    @if($submenu->foto)
+                        <img src="{{ asset('storage/' . $submenu->foto) }}" 
+                             alt="Foto" 
+                             width="85" 
+                             height="55"
+                             class="img-thumbnail shadow-sm"
+                             style="object-fit: cover;">
+                    @else
+                        <span class="text-muted small">—</span>
+                    @endif
+                </td>
 
-          {{-- Status --}}
-          <td class="text-center">
-            @if($submenu->is_active)
-              <span class="badge bg-success">Aktif</span>
-            @else
-              <span class="badge bg-secondary">Tidak Aktif</span>
-            @endif
-          </td>
+                {{-- Status --}}
+                <td class="text-center">
+                    @if($submenu->is_active)
+                        <span class="badge bg-success px-3 py-2">Aktif</span>
+                    @else
+                        <span class="badge bg-secondary px-3 py-2">Tidak Aktif</span>
+                    @endif
+                </td>
 
-          {{-- Aksi --}}
-          <td class="text-center">
+                {{-- Aksi --}}
+                <td class="text-center">
+                    <div class="d-flex justify-content-center gap-2">
+                        <!-- Detail -->
+                        <a href="{{ route('admin.profil-submenu.show', $submenu->id) }}" 
+                           class="btn-icon text-primary">
+                            <i class="bi bi-eye"></i>
+                        </a>
 
-          <!-- Detail -->
-          <a href="{{ route('admin.profil-submenu.show', $submenu->id) }}"
-            class="btn-icon text-info">
-            <i class="bi bi-eye"></i>
-          </a>
+                        <!-- Edit -->
+                        <a href="{{ route('admin.profil-submenu.edit', $submenu->id) }}" 
+                           class="btn-icon text-warning">
+                            <i class="bi bi-pencil-square"></i>
+                        </a>
 
-          <!-- Edit -->
-          <a href="{{ route('admin.profil-submenu.edit', $submenu->id) }}" 
-            class="btn-icon text-warning">
-            <i class="bi bi-pencil-square"></i>
-          </a>
-
-          <!-- Hapus -->
-          <form action="{{ route('admin.profil-submenu.destroy', $submenu->id) }}" 
-                method="POST" 
-                class="d-inline"
-                onsubmit="return confirm('Yakin ingin menghapus submenu ini?')">
-            @csrf
-            @method('DELETE')
-            <button type="submit" class="btn-icon text-danger">
-              <i class="bi bi-trash"></i>
-            </button>
-          </form>
-
-        </td>
-          </td>
-        </tr>
-        @empty
-        <tr>
-          <td colspan="6" class="text-center py-4">
-            <i class="bi bi-info-circle me-2"></i>Belum ada data submenu
-          </td>
-        </tr>
-        @endforelse
-      </tbody>
+                        <!-- Hapus -->
+                        <form action="{{ route('admin.profil-submenu.destroy', $submenu->id) }}" 
+                              method="POST" 
+                              class="d-inline"
+                              onsubmit="return confirm('Yakin ingin menghapus submenu ini?')">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn-icon text-danger" title="Hapus">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+            @empty
+            <tr>
+                <td colspan="6" class="text-center py-5 text-muted">
+                    <i class="bi bi-inbox display-6 mb-3"></i><br>
+                    Belum ada data submenu
+                </td>
+            </tr>
+            @endforelse
+        </tbody>
     </table>
-    <div class="d-flex justify-content-between align-items-center mt-3">
-    <div>
-        Menampilkan {{ $submenus->firstItem() }} - {{ $submenus->lastItem() }} 
-        dari {{ $submenus->total() }} data
-    </div>
-    <div>
-        {{ $submenus->links() }}
+
+    <div class="d-flex justify-content-between align-items-center mt-4">
+        <div class="text-muted small">
+            Menampilkan {{ $submenus->firstItem() }} - {{ $submenus->lastItem() }} 
+            dari {{ $submenus->total() }} data
+        </div>
+        <div>
+            {{ $submenus->links() }}
+        </div>
     </div>
 </div>
-  </div>
 
 </div>
 @endsection

@@ -46,6 +46,7 @@ Route::get('/ambulans', fn() => view('ambulans'))->name('ambulans');
 Route::get('/donor', [SubmenuDonorController::class, 'landing'])->name('donor');
 Route::get('/diklat', [SubmenuDiklatController::class, 'landing'])->name('diklat');
 Route::post('/pengaduan', [PengaduanController::class, 'store'])->name('pengaduan.store');
+Route::get('/pengaduan', [PengaduanController::class, 'index'])->name('pengaduan.index');
 Route::get('/tips-bencana', [SubmenuKebencanaanController::class, 'tips'])->name('tips_bencana');
 
 

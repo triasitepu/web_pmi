@@ -92,6 +92,8 @@ function startChatbot() {
             <button onclick="kirimAuto('Ambulans')" class="w-full border p-2 rounded">🚑 Ambulans</button>
             <button onclick="kirimAuto('Keluhan')" class="w-full border p-2 rounded">📢 Keluhan</button>
             <button onclick="kirimAuto('Donor Darah')" class="w-full border p-2 rounded">🩸 Donor Darah</button>
+            <button onclick="kirimAuto('Bencana Daerah')" class="w-full border p-2 rounded">🌋 Laporkan Bencana Daerah</button>
+
 
         </div>
     `;
@@ -113,7 +115,10 @@ function kirimAuto(kategori) {
     else if(kategori === 'Donor Darah'){
         reply = 'Untuk info donor darah, cek jadwal di menu donor atau hubungi admin.';
     }
-    
+    else if(kategori === 'Bencana Daerah'){
+        reply = 'Silakan tuliskan lokasi dan jenis bencana (banjir, longsor, dll) agar tim kami dapat segera menindaklanjuti 🚨';
+    }
+
             content.innerHTML = `
             <div class="space-y-3">
 

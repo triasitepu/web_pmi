@@ -32,7 +32,7 @@ class SubmenuDonorController extends Controller
             'nama_submenu'   => 'required|string|max:255',
             'urutan'         => 'nullable|integer|min:0',
             'isi'            => 'required',
-            'foto'           => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
+            'foto'           => 'nullable|mimes:jpg,jpeg,png,pdf|max:5120 ',
         ]);
 
         $submenu = new SubmenuDonor();
@@ -125,6 +125,7 @@ class SubmenuDonorController extends Controller
 
         public function landing()
     {
+    $headline = SubmenuDonor::where('slug', 'headline')->first(); 
     $wba = SubmenuDonor::where('slug', 'wba')->first();
     $wbb = SubmenuDonor::where('slug', 'wbb')->first();
     $wbo = SubmenuDonor::where('slug', 'wbo')->first();
@@ -154,6 +155,6 @@ class SubmenuDonorController extends Controller
 
 
     return view('donor', compact('wba', 'wbb', 'wbo', 'wbab', 'prca', 'prcb', 'prco', 'prcab', 'tca', 'tcb', 'tco', 'tcab',
-     'ffpa', 'ffpb', 'ffpo', 'ffpab', 'jadwal1', 'lokasi1', 'jadwal2', 'lokasi2', 'totaldonor', 'donornasional'));
+     'ffpa', 'ffpb', 'ffpo', 'ffpab', 'jadwal1', 'lokasi1', 'jadwal2', 'lokasi2', 'totaldonor', 'donornasional', 'headline'));
     }
 }

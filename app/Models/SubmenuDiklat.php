@@ -32,4 +32,5 @@ class SubmenuDiklat extends Model
             }
         });
     }
+    
 }

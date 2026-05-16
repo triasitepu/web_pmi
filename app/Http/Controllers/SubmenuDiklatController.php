@@ -130,7 +130,8 @@ class SubmenuDiklatController extends Controller
     $jadwal_pmr = SubmenuDiklat::where('slug', 'jadwal_pmr')->first();
     $manajemen_bencana = SubmenuDiklat::where('slug', 'manajemen_bencana')->first();
     $pertolongan_pertama = SubmenuDiklat::where('slug', 'pertolongan_pertama')->first();
+    $pembinaanpmr = SubmenuDiklat::where('slug', 'pembinaanpmr')->first();
 
-    return view('diklat', compact('headline', 'jadwal_pmr', 'manajemen_bencana', 'pertolongan_pertama'));
+    return view('diklat', compact('headline', 'jadwal_pmr', 'manajemen_bencana', 'pertolongan_pertama', 'pembinaanpmr'));
     }
 }

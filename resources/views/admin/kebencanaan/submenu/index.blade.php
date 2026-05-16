@@ -20,7 +20,6 @@
     </div>
   </div>
 
-
   {{-- Alert --}}
   @if(session('success'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -35,28 +34,31 @@
   @endif
 
   {{-- Table --}}
-   <div class="table-responsive">
-    <table class="table table-striped align-middle">
-      <thead class="text-center text-white" style="background-color: #d60100;">
+  <div class="table-responsive">
+    <table class="table table-hover align-middle">
+      <thead class="text-center" style="background-color: #f8f9fa; border-bottom: 2px solid #dee2e6;">
         <tr>
           <th style="width:5%">No</th>
-          <th>Judul</th>
-          <th>Isi</th>
-          <th>Foto</th>
-          <th>Status</th>
-          <th style="width:25%">Aksi</th>
+          <th class="text-start">Judul</th>
+          <th class="text-start">Isi</th>
+          <th class="text-center">Foto</th>
+          <th class="text-center">Status</th>
+          <th style="width:22%" class="text-center">Aksi</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="border-top-0">
         @forelse($submenus as $key => $submenu)
         <tr>
-          <td class="text-center">{{ $key + 1 }}</td>
+          <td class="text-center fw-medium">{{ $key + 1 }}</td>
+          
           {{-- Judul --}}
-          <td>{{ $submenu->nama_submenu }}</td>
+          <td class="fw-medium">{{ $submenu->nama_submenu }}</td>
 
-          {{-- Isi dipotong agar tidak terlalu panjang --}}
+          {{-- Isi --}}
           <td>
-            {{ \Illuminate\Support\Str::limit(strip_tags($submenu->isi), 100) }}
+            <small class="text-muted">
+              {{ \Illuminate\Support\Str::limit(strip_tags($submenu->isi), 120) }}
+            </small>
           </td>
 
           {{-- Foto --}}
@@ -64,69 +66,73 @@
             @if($submenu->foto)
               <img src="{{ asset('storage/' . $submenu->foto) }}" 
                    alt="Foto" 
-                   width="100" 
-                   class="img-thumbnail">
+                   width="85" 
+                   height="55"
+                   class="img-thumbnail shadow-sm"
+                   style="object-fit: cover;">
             @else
-              <span class="text-muted">Tidak ada foto</span>
+              <span class="text-muted small">—</span>
             @endif
           </td>
 
           {{-- Status --}}
           <td class="text-center">
             @if($submenu->is_active)
-              <span class="badge bg-success">Aktif</span>
+              <span class="badge bg-success px-3 py-2">Aktif</span>
             @else
-              <span class="badge bg-secondary">Tidak Aktif</span>
+              <span class="badge bg-secondary px-3 py-2">Tidak Aktif</span>
             @endif
           </td>
 
           {{-- Aksi --}}
           <td class="text-center">
+            <div class="d-flex justify-content-center gap-2">
+              <!-- Detail -->
+              <a href="{{ route('admin.kebencanaan-submenu.show', $submenu->id) }}" 
+                 class="btn-icon text-primary">
+                <i class="bi bi-eye"></i>
+              </a>
 
-          <!-- Detail -->
-          <a href="{{ route('admin.kebencanaan-submenu.show', $submenu->id) }}"
-            class="btn-icon text-info">
-            <i class="bi bi-eye"></i>
-          </a>
+              <!-- Edit -->
+              <a href="{{ route('admin.kebencanaan-submenu.edit', $submenu->id) }}" 
+                 class="btn-icon text-warning">
+                <i class="bi bi-pencil-square"></i>
+              </a>
 
-          <!-- Edit -->
-          <a href="{{ route('admin.kebencanaan-submenu.edit', $submenu->id) }}" 
-            class="btn-icon text-warning">
-            <i class="bi bi-pencil-square"></i>
-          </a>
-
-          <!-- Hapus -->
-          <form action="{{ route('admin.kebencanaan-submenu.destroy', $submenu->id) }}" 
-                method="POST" 
-                class="d-inline"
-                onsubmit="return confirm('Yakin ingin menghapus submenu ini?')">
-            @csrf
-            @method('DELETE')
-            <button type="submit" class="btn-icon text-danger">
-              <i class="bi bi-trash"></i>
-            </button>
-          </form>
-
-        </td>
+              <!-- Hapus -->
+              <form action="{{ route('admin.kebencanaan-submenu.destroy', $submenu->id) }}" 
+                    method="POST" 
+                    class="d-inline"
+                    onsubmit="return confirm('Yakin ingin menghapus submenu ini?')">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn-icon text-danger">
+                  <i class="bi bi-trash"></i>
+                </button>
+              </form>
+            </div>
+          </td>
         </tr>
         @empty
         <tr>
-          <td colspan="6" class="text-center py-4">
-            <i class="bi bi-info-circle me-2"></i>Belum ada data submenu
+          <td colspan="6" class="text-center py-5 text-muted">
+            <i class="bi bi-inbox display-6 mb-3"></i><br>
+            Belum ada data submenu
           </td>
         </tr>
         @endforelse
       </tbody>
     </table>
-    <div class="d-flex justify-content-between align-items-center mt-3">
-    <div>
+
+    <div class="d-flex justify-content-between align-items-center mt-4">
+      <div class="text-muted small">
         Menampilkan {{ $submenus->firstItem() }} - {{ $submenus->lastItem() }} 
         dari {{ $submenus->total() }} data
-    </div>
-    <div>
+      </div>
+      <div>
         {{ $submenus->links() }}
+      </div>
     </div>
-</div>
   </div>
 
 </div>
