@@ -7,6 +7,10 @@ use App\Models\Kebencanaan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Http;
+use Symfony\Component\DomCrawler\Crawler;
+use Illuminate\Support\Facades\Cache;
+
 
 class SubmenuKebencanaanController extends Controller
 {
@@ -128,8 +132,29 @@ class SubmenuKebencanaanController extends Controller
     {
     $headline = SubmenuKebencanaan::where('slug', 'headline')->first();
     $visikebencanaan = SubmenuKebencanaan::where('slug', 'visikebencanaan')->first();
-    
+    $berita = Cache::remember('berita_bpbd', 3600, function () {return $this->getBeritaBNPB();});
 
-    return view('bencana', compact('headline', 'visikebencanaan'));
+    return view('bencana', compact('headline', 'visikebencanaan', 'berita'));
     }
+    private function getBeritaBNPB()
+    {
+        $response = Http::withoutVerifying()->get(
+            'https://bpbd.magetan.go.id/category/berita-kebencanaan-kabupaten-magetan/');
+
+        if ($response->successful()) {
+            $crawler = new Crawler($response->body());
+
+            $data = [];
+
+            $crawler->filter('.post')->each(function ($node) use (&$data) {
+                $data[] = [
+                    'judul' => $node->filter('h2')->text(),
+                    'isi'   => $node->filter('p')->first()->text(),
+                    'link'  => $node->filter('a')->attr('href'),
+                ];
+            });
+
+            return array_slice($data, 0, 3);
+    }
+        }
 }

@@ -122,13 +122,13 @@ class SubmenuRelawanController extends Controller
     {
     $totalrelawan = SubmenuRelawan::where('slug', 'totalrelawan')->first();
     $misi = SubmenuRelawan::where('slug', 'misi')->first();
-    $formulir = SubmenuRelawan::where('slug', 'formulir')->first();
+    $daftar = SubmenuRelawan::where('slug', 'daftar')->first();
     $persyaratan = SubmenuRelawan::where('slug', 'persyaratan')->first();
     $syaratpmr = SubmenuRelawan::where('slug', 'syaratpmr')->first();
     $syaratksr = SubmenuRelawan::where('slug', 'syaratksr')->first();
     $syarattsr = SubmenuRelawan::where('slug', 'syarattsr')->first();
     $headline = SubmenuRelawan::where('slug', 'headline')->first();
 
-    return view('relawan', compact('totalrelawan', 'misi', 'formulir', 'persyaratan', 'syaratpmr', 'syaratksr', 'syarattsr', 'headline'));
+    return view('relawan', compact('totalrelawan', 'misi', 'daftar', 'persyaratan', 'syaratpmr', 'syaratksr', 'syarattsr', 'headline'));
     }
 }

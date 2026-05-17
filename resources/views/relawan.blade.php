@@ -108,7 +108,7 @@
                     {{ $headline->isi ?? 'Deskripsi headline belum tersedia.' }}
                 </p>
                 <div class="flex flex-col sm:flex-row flex-wrap gap-4">
-                    <a href="https://pelatihan.pmikabmagetan.or.id/" target="_blank"
+                    <a href="{{ $daftar->isi ?? '#' }}" target="_blank"
                        class="bg-primary-softcontainer text-on-primary px-8 py-4 rounded-2xl font-headline font-bold text-base shadow-lg hover:scale-[1.02] transition-all text-center">
                         Daftar Relawan
                     </a>
@@ -378,7 +378,7 @@ $data = explode("\n", $syarattsr->isi ?? '');
 
             <!-- Tombol Daftar-->
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="https://pelatihan.pmikabmagetan.or.id/" target="_blank"
+                <a href="{{ $daftar->isi ?? '#' }}" target="_blank"
                    class="bg-primary-softcontainer hover:bg-primary-fixed text-white px-10 py-5 rounded-2xl font-bold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2">
                     <span class="material-symbols-outlined">login</span>
                     Daftar Relawan

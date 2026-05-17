@@ -17,7 +17,7 @@ transition-all duration-300 z-[9999]">
 class="hidden fixed bottom-24 right-6 w-[350px] bg-white rounded-2xl shadow-2xl z-[9999] flex flex-col">
 
   <!-- HEADER -->
-  <div class="bg-red-600 text-white p-3 flex justify-between rounded-t-2xl">
+  <div class="bg-white text-black p-3 flex justify-between rounded-t-2xl">
     <span>PMI Assistant</span>
     <button id="closeChat">✖</button>
   </div>
@@ -123,7 +123,7 @@ function kirimAuto(kategori) {
             <div class="space-y-3">
 
                 <div class="text-right">
-                    <div class="inline-block bg-red-600 text-white p-2 rounded">
+                   <div class="inline-block bg-green-600 text-white px-4 py-2 rounded-full">
                         ${kategori}
                     </div>
                 </div>
@@ -140,7 +140,7 @@ function kirimAuto(kategori) {
                 placeholder="Tulis pesan..."></textarea>
 
                 <button onclick="kirimPesan('${kategori}')"
-                class="bg-red-600 text-white px-3 py-2 rounded w-full">
+                class="inline-block bg-green-600 text-white px-4 py-2 rounded w-full">
                     Kirim
                 </button>
 

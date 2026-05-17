@@ -128,10 +128,18 @@ class SubmenuDiklatController extends Controller
 
     $headline = SubmenuDiklat::where('slug', 'headline')->first();
     $jadwal_pmr = SubmenuDiklat::where('slug', 'jadwal_pmr')->first();
-    $manajemen_bencana = SubmenuDiklat::where('slug', 'manajemen_bencana')->first();
-    $pertolongan_pertama = SubmenuDiklat::where('slug', 'pertolongan_pertama')->first();
-    $pembinaanpmr = SubmenuDiklat::where('slug', 'pembinaanpmr')->first();
+    $jadwal_manajemen_bencana = SubmenuDiklat::where('slug', 'jadwal-manajemen-bencana')->first();
+    $jadwal_pelatihan_pertolongan_pertama = SubmenuDiklat::where('slug', 'jadwal-pelatihan-pertolongan-pertama')->first();
+    $pembinaan_pmrtsr_dan_ksr = SubmenuDiklat::where('slug', 'pembinaan-pmrtsr-dan-ksr')->first();
+    $isPembinaanAktif = $pembinaan_pmrtsr_dan_ksr && !empty($pembinaan_pmrtsr_dan_ksr->isi);
 
-    return view('diklat', compact('headline', 'jadwal_pmr', 'manajemen_bencana', 'pertolongan_pertama', 'pembinaanpmr'));
-    }
+    return view('diklat', compact(
+        'headline',
+        'jadwal_pmr',
+        'jadwal_manajemen_bencana',
+        'jadwal_pelatihan_pertolongan_pertama',
+        'pembinaan_pmrtsr_dan_ksr',
+        'isPembinaanAktif'
+    ));
+}
 }

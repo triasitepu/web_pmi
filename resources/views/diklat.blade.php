@@ -173,44 +173,95 @@
                         </thead>
                         <tbody class="divide-y divide-surface-container-high">
                             <tr>
-                                <td class="py-7">
-                                    <p class="font-bold">Pelatihan Pertolongan Pertama</p>
-                                    <p class="text-xs text-secondary">PMI Magetan</p>
-                                </td>
-                                <td class="py-7 text-sm font-medium">{{ $pertolongan_pertama->isi ?? 'Tanggal belum tersedia' }}</td>
-                                <td class="py-7 text-right">
-                                    <a href="https://dash.s.id/l/relawanpmimagetan" 
-                                       class="inline-block px-6 py-3 border border-primary-softcontainer text-primary-softcontainer rounded-2xl text-sm font-bold hover:bg-primary-softcontainer hover:text-white transition-all">
-                                        Daftar
-                                    </a>
-                                </td>
-                            </tr>
+                            <td class="py-7">
+                                <p class="font-bold">Pelatihan Pertolongan Pertama</p>
+                                <p class="text-xs text-secondary">PMI Magetan</p>
+                            </td>
+
+                            @php
+                                $aktif_pp = optional($jadwal_pelatihan_pertolongan_pertama)->is_active == 1;
+                            @endphp
+
+                            <td class="py-7 text-sm font-medium">
+                                @if($aktif_pp)
+                                    {{ $jadwal_pelatihan_pertolongan_pertama->isi ?? '-' }}
+                                @else
+                                    <span class="text-gray-400 italic">
+                                        Pendaftaran belum dibuka
+                                    </span>
+                                @endif
+                            </td>
+
+                            <td class="py-7 text-right">
+                                <a href="{{ $aktif_pp ? 'https://pelatihan.pmikabmagetan.or.id/' : '#' }}"
+                                class="inline-block px-6 py-3 rounded-2xl text-sm font-bold transition-all
+                                {{ $aktif_pp
+                                        ? 'border border-primary-softcontainer text-primary-softcontainer hover:bg-primary-softcontainer hover:text-white'
+                                        : 'bg-gray-300 text-gray-500 cursor-not-allowed pointer-events-none' }}">
+                                    Daftar
+                                </a>
+                            </td>
+                        </tr>
                             <tr>
                                 <td class="py-7">
-                                    <p class="font-bold">Manajemen Bencana</p>
+                                    <p class="font-bold">Pelatihan Manajemen Bencana</p>
                                     <p class="text-xs text-secondary">PMI Magetan</p>
                                 </td>
-                                <td class="py-7 text-sm font-medium">{{ $manajemen_bencana->isi ?? 'Tanggal belum tersedia' }}</td>
+
+                                @php
+                                    $aktif_mb = optional($jadwal_manajemen_bencana)->is_active == 1;
+                                @endphp
+
+                                <td class="py-7 text-sm font-medium">
+                                    @if($aktif_mb)
+                                        {{ $jadwal_manajemen_bencana->isi ?? '-' }}
+                                    @else
+                                        <span class="text-gray-400 italic">
+                                            Pendaftaran belum dibuka
+                                        </span>
+                                    @endif
+                                </td>
+
                                 <td class="py-7 text-right">
-                                    <a href="https://dash.s.id/l/relawanpmimagetan" 
-                                       class="inline-block px-6 py-3 border border-primary-softcontainer text-primary-softcontainer rounded-2xl text-sm font-bold hover:bg-primary-softcontainer hover:text-white transition-all">
+                                    <a href="{{ $aktif_mb ? 'https://pelatihan.pmikabmagetan.or.id/' : '#' }}"
+                                    class="inline-block px-6 py-3 rounded-2xl text-sm font-bold transition-all
+                                    {{ $aktif_mb
+                                            ? 'border border-primary-softcontainer text-primary-softcontainer hover:bg-primary-softcontainer hover:text-white'
+                                            : 'bg-gray-300 text-gray-500 cursor-not-allowed pointer-events-none' }}">
                                         Daftar
                                     </a>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td class="py-7">
-                                    <p class="font-bold">Pembinaan PMR, TSR dan KSR</p>
-                                    <p class="text-xs text-secondary">PMI Magetan</p>
-                                </td>
-                                <td class="py-7 text-sm font-medium">{{ $pembinaanpmr->isi ?? 'Tanggal belum tersedia' }}</td>
-                                <td class="py-7 text-right">
-                                    <a href="https://dash.s.id/l/relawanpmimagetan" 
-                                       class="inline-block px-6 py-3 border border-primary-softcontainer text-primary-softcontainer rounded-2xl text-sm font-bold hover:bg-primary-softcontainer hover:text-white transition-all">
-                                        Daftar
-                                    </a>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td class="py-7">
+                                        <p class="font-bold">Pelatihan Pembinaan PMR, TSR, dan KSR</p>
+                                        <p class="text-xs text-secondary">PMI Magetan</p>
+                                    </td>
+
+                                    @php
+                                        $aktif_pmr = optional($pembinaan_pmrtsr_dan_ksr)->is_active == 1;
+                                    @endphp
+
+                                    <td class="py-7 text-sm font-medium">
+                                        @if($aktif_pmr)
+                                            {{ $pembinaan_pmrtsr_dan_ksr->isi ?? '-' }}
+                                        @else
+                                            <span class="text-gray-400 italic">
+                                                Pendaftaran belum dibuka
+                                            </span>
+                                        @endif
+                                    </td>
+
+                                    <td class="py-7 text-right">
+                                        <a href="{{ $aktif_pmr ? 'https://pelatihan.pmikabmagetan.or.id/' : '#' }}"
+                                        class="inline-block px-6 py-3 rounded-2xl text-sm font-bold transition-all
+                                        {{ $aktif_pmr
+                                                ? 'border border-primary-softcontainer text-primary-softcontainer hover:bg-primary-softcontainer hover:text-white'
+                                                : 'bg-gray-300 text-gray-500 cursor-not-allowed pointer-events-none' }}">
+                                            Daftar
+                                        </a>
+                                    </td>
+                            
+                        </tr>
                         </tbody>
                     </table>
                 </div>

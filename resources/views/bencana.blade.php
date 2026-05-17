@@ -181,6 +181,51 @@
         </div>
     </section>
 
+<section class="py-16 md:py-24 bg-surface-container-low px-6 md:px-8">
+    <div class="max-w-7xl mx-auto">
+
+        <div class="flex items-center justify-between mb-10">
+            <h2 class="text-3xl md:text-4xl font-extrabold font-headline">
+                Berita Kebencanaan Magetan
+            </h2>
+
+            <a href="https://bpbd.magetan.go.id/category/berita-kebencanaan-kabupaten-magetan/" 
+               target="_blank"
+               class="text-black font-semibold hover:underline">
+                Lihat Semua →
+            </a>
+        </div>
+
+        <div class="w-full">
+
+            @if($berita)
+
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-outline-variant/10 hover:shadow-lg transition">
+
+                    <h3 class="font-bold text-xl mb-3">
+                        {{ $berita['judul'] ?? '-' }}
+                    </h3>
+
+                    <p class="text-sm text-secondary mb-4">
+                        {{ \Illuminate\Support\Str::limit($berita['isi'] ?? '-', 150) }}
+                    </p>
+
+                    <a href="{{ $berita['link'] ?? 'https://bpbd.magetan.go.id/category/berita-kebencanaan-kabupaten-magetan/' }}" 
+                       target="_blank"
+                       class="text-black font-semibold text-sm hover:underline">
+                        Baca Selengkapnya →
+                    </a>
+
+                </div>
+
+            @else
+                <p class="text-gray-500">Tidak ada berita tersedia</p>
+            @endif
+
+        </div>
+    </div>
+</section>
+
     <!-- Mandat & Dasar Hukum -->
     <section class="py-16 md:py-24 bg-surface-container-low px-6 md:px-8">
         <div class="max-w-7xl mx-auto">
